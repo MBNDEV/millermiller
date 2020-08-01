@@ -1,0 +1,73 @@
+
+
+
+// Custom pager
+.pager {
+	position: relative;
+	&.inline {
+		display: inline-block;
+	}
+	a {
+		font-size: 0;
+		display: inline-block;
+		vertical-align: middle;
+		width: 30px;
+		height: 30px;
+		opacity: 0.4;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.pager-prev {
+		background: url(../img/icn-chev-left.svg) no-repeat center;
+	}
+	.pager-next {
+		background: url(../img/icn-chev-right.svg) no-repeat center;
+	}
+
+	/* gr - grey(default) red(hover) */
+	&.gr {
+		.pager-prev {
+			&:hover {
+				background: url(../img/icn-chev-left-r.svg) no-repeat center;
+			}
+		}
+		.pager-next {
+			&:hover {
+				background: url(../img/icn-chev-right-r.svg) no-repeat center;
+			}
+		}
+	}
+
+	/* wr - white(default) red(hover) */
+	&.wr {
+		.pager-prev {
+			background: url(../img/icn-chev-left-w.svg) no-repeat center;
+
+			&:hover {
+				background: url(../img/icn-chev-left-r.svg) no-repeat center;
+			}
+		}
+		.pager-next {
+			background: url(../img/icn-chev-right-w.svg) no-repeat center;
+
+			&:hover {
+				background: url(../img/icn-chev-right-r.svg) no-repeat center;
+			}
+		}
+	}
+}
+
+
+// Check list 
+ul.check-list {
+	margin:0 0 20px;
+	padding:0;
+	li {
+		list-style: none;
+		background: url(../img/icn-check.svg) no-repeat left 10px;
+		padding-left: 25px;
+		color: $color-dark;
+	}
+}

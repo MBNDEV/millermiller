@@ -1,0 +1,309 @@
+.foot-s1 {
+    padding: 110px 0 30px;
+    font-size: 14px;
+    background: $color-primary;
+    color: $color-white;
+
+    .foot-logo {
+        margin: 0 0 30px;
+    }
+
+    .foot-info {
+        padding:0;
+        margin:0 75px 30px 0;
+        max-width: 300px;
+        li {
+            list-style: none;
+            font-size: 18px;
+            padding: 0 0 0 40px; 
+            margin-bottom: 20px;
+            a {
+                color: $color-white;
+            }
+            i {
+                margin-left: -45px;
+                margin-right: 10px;
+            }
+
+            &.ph {
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 1;
+            }
+        }
+    }
+
+    
+
+    .foot-social {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        .foot-pay {
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: middle;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .foot-panav {
+        position: relative;
+        margin: 0;
+
+        h5 {
+            font:bold 18px "Manrope", sans-serif;
+            color: $color-white;
+            letter-spacing: 2px;
+            margin: 0 0 25px;
+            a {
+                color: $color-white;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        ul {
+            margin: 0;
+            padding:0;
+
+            li {
+                list-style: none;
+                margin: 0 0 10px;
+                text-transform: uppercase;
+                display: inline-block;
+                width: 100%;
+
+                a {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: $color-lgreen;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            ul {
+                columns: 1;
+                margin-top: 5px;
+
+                li {
+                    display: block;
+                    margin: 0;
+                    text-transform: none;
+                    a {
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: $color-white;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .foot-menu {
+        > ul {
+            margin:0;
+            padding: 0;
+            > li {
+                list-style: none;
+                margin:0 0 10px;
+                padding:0;
+
+                > a {
+                    font:bold 18px "Manrope", sans-serif;
+                    color: $color-white;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                &:first-child{
+                    > a{
+                        display: block;
+                        margin: 0 0 25px;
+                    }
+                }
+
+                ul {
+                    margin:0 0 40px;
+                    padding: 0;
+                    li {
+                        list-style: none;
+                        margin:0 0 10px;
+                        padding:0;
+                        a {
+                            font-size: 16px;
+                            color: $color-lgreen;
+                            font-weight: 500;
+                            letter-spacing: normal;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+
+        .small {
+            margin: 0;
+            a {
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: normal;
+            }
+        }
+    }
+
+    .copyright {
+        padding: 80px 0 0;
+        display: flex;
+        justify-content: space-between;
+        color: $color-lgreen;
+
+        a {
+            color: $color-lgreen;
+        }
+
+        .copyright-text{
+            ul{
+                margin:0 0 0 20px;
+                padding: 0;
+                display: inline-block;
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    margin:0 10px 0 0;
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    .designby {
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    @include media(max-width, 1023px) {
+        padding-top: 80px;
+
+        .grid-margin-x > .medium-6 {
+            width: calc(50% - 1.875rem);
+        }
+
+        .foot-logo {
+            text-align: center;
+        }
+
+        .foot-info {
+            float: left;
+            width: 50%;
+            max-width: none;
+            padding-right: 15px;
+            margin-right: 0;
+        }
+        .foot-social{
+            float: left;
+            margin: 0 15px;
+        }
+        // .foot-pay {
+        //     width: 50%;
+        // }
+        // .foot-social {
+        //     width: 50%;
+        // }
+
+        .foot-panav {
+            margin-bottom: 30px;
+        }
+
+        .foot-menu {
+            ul {
+            
+            li {
+                display: inline-block;
+                width: 100%;
+            }
+
+                ul {
+                    column-count: 1;
+                }
+            }
+        }
+
+        .copyright {
+            text-align: center;
+            flex-direction: column;
+
+            .copyright-text{
+                ul{
+                    display: block;
+                    margin: 10px 0;
+                    text-align: center;
+                }
+            }
+            .designby {
+                display: block;
+                float: none;
+                text-align: center;
+            }
+        }
+
+    }
+
+    @include media(max-width, 639px) {
+
+        .grid-margin-x > .medium-6 {
+            width: 100%;
+        }
+
+        .foot-info,
+        .foot-pay,
+        .foot-social {
+            float: none;
+            width: 100%;
+            text-align: center;
+            margin-block-end: 35px;
+        }
+
+        .foot-panav {
+            text-align: center;
+            
+            ul {
+                column-count: 1;
+            }
+        }
+
+        .foot-menu {
+            text-align: center;            
+            ul {
+                column-count: 1;
+            }
+        }
+    
+    }
+
+}

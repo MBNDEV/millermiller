@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="118" height="33" viewBox="0 0 118 33">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#ace5df;font-size:26px;font-family:Lato-Black,Lato;font-weight:800}
+        </style>
+    </defs>
+    <g id="prefix__payonline_logo" data-name="payonline logo" transform="translate(-309 -6684)">
+        <text id="prefix__Pay" class="prefix__cls-1" transform="translate(309 6710)">
+            <tspan x="0" y="0">Pay</tspan>
+        </text>
+        <text id="prefix__Online" class="prefix__cls-1" transform="translate(348 6711)">
+            <tspan x="0" y="0">Online</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,0 +1,144 @@
+
+/* FORMS */
+::-moz-placeholder{color:#333;opacity:1;}
+:-ms-input-placeholder{color:#333;}
+::-webkit-input-placeholder{color:#333;}
+:focus::-webkit-input-placeholder {opacity:0.3;}
+:focus::-moz-placeholder {opacity:0.3;}
+:focus:-ms-input-placeholder {opacity:0.3;}
+
+input[type="text"], 
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+    color: lighten($color-black, 7%);
+    border:0;
+    border: 2px solid darken($color-white, 12%);
+    height:60px;
+    padding:15px 20px;
+    font-size:18px;
+    font-family: $body-font-family;
+    margin: 0 0 15px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+
+    &:focus {
+        border: 2px solid $color-lblue;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+}
+input[type="text"], 
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea {
+    background: $color-white;
+
+    &:focus {
+        background: $color-white;
+    }
+}
+textarea {
+    resize: none;
+    height: auto;
+}
+
+select {
+    padding-right:30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+.field {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+
+    input, select, textarea, select {
+        margin-bottom: 0;
+    }
+
+    label {
+        font-size: 18px;
+        line-height: 1;
+        color: lighten($color-black, 7%);
+        margin-bottom: 10px;;
+    }
+
+    &.js {
+        label {
+            color: lighten($color-black, 50%);
+            position: absolute;
+            left: 20px;
+            top: 22px;
+            transition: all 0.2s ease;
+            background: $color-white;
+            z-index: 1;
+            margin-bottom: 0;
+        }
+        &.focus {
+            label {
+                top: 8px;
+                font-size: 14px; 
+            }
+            input, select, textarea, select {
+                padding-top: 25px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+
+    &.error {
+        position: relative;
+        &:before {
+            content:"";
+            position: absolute;
+            left: -10px;
+            top:-10px;
+            right: -10px;
+            bottom: -10px;
+            background: rgba($color-alert, 0.3);
+            z-index: -1;
+        }
+        &.js {
+            label {
+                 color: lighten($color-black, 50%);
+            }
+        }
+
+        label {
+            color: darken($color-alert, 8%);
+        }
+        input, select, textarea {
+            border-color: lighten($color-alert, 20%);
+            & + span {
+                color: darken($color-alert, 8%);
+                font-size: 14px;
+                font-weight: bold;
+                display: block;
+                margin-bottom: -5px;
+            }
+        }
+    }
+
+    .wpcf7-not-valid {
+        border-color: darken($color-alert, 8%);
+    }
+    .wpcf7-not-valid-tip {
+        color: darken($color-alert, 8%);
+        font-size: 14px;
+        display: block;
+        margin-bottom: -5px;
+    }
+}
+

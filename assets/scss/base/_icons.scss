@@ -1,0 +1,164 @@
+[class*="icn"] {
+	width: 32px;
+	height: 32px;
+	//margin-right: 5px;
+	margin-top: -2px;
+	display: inline-block;
+	vertical-align: middle;
+	font-style: normal;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	z-index: 1;
+	&:before {
+		content: "";
+		background-repeat: no-repeat;
+		background-position: center;	
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;	
+	}
+
+	&.icn-phone {
+		&:before {
+			background-image: url(../img/icn-phone.svg); 
+		}
+
+		&.dark:before {
+			background-image: url(../img/icn-phone-dark.svg); 
+		}
+
+		&.light:before {
+			background-image: url(../img/icn-phone-light.svg); 
+		}
+
+		&.circle:before {
+			background-image: url(../img/icn-phone-circle.svg); 
+		}
+	}
+
+	&.icn-play:before {
+		background-image: url(../img/icn-play.svg);
+	}
+
+	&.icn-search:before {
+		background-image: url(../img/icn-search.svg);
+	}
+
+	&.icn-bag:before {
+		background-image: url(../img/icn-bag.svg);
+		background-size: auto 30px;
+	}
+
+	&.icn-cart:before {
+		background-image: url(../img/icn-cart.svg);
+	}
+	
+	&.icn-user {
+		&:before {
+			background-image: url(../img/icn-user.svg);
+			background-size: auto 30px;	
+		}	
+
+		&.circle:before {
+			background-image: url(../img/icn-user-circle.svg);
+			background-size: auto;	
+		}
+		&.circle-dark:before {
+			background-image: url(../img/icn-user-circle-b.svg);
+			background-size: auto;	
+		}
+		&.circle-light:before {
+			background-image: url(../img/icn-user-circle-w.svg);
+			background-size: auto;	
+		}
+	}
+
+	&.icn-arrow {
+		&:before {
+			background-image: url(../img/icn-arrow.svg);
+		}
+		&.right:before {
+			transform: none;
+		}
+		&.left:before {
+			transform: rotate(-180deg);
+		}
+		&.up:before {
+			transform: rotate(-90deg);
+		}
+		&.down:before {
+			transform: rotate(90deg);
+		}
+
+		&.light:before {
+			background-image: url(../img/icn-arrow-light.svg);
+		}
+
+		&.dark:before {
+			background-image: url(../img/icn-arrow-dark.svg);
+		}
+	}
+
+	&.icn-arrow-l {
+		&:before {
+			background-image: url(../img/icn-arrow-l.svg);
+		}
+
+		&.red:before {
+			background-image: url(../img/icn-arrow-lr.svg);
+		}
+
+		&.white:before {
+			background-image: url(../img/icn-arrow-lw.svg);
+		}
+	}
+
+	&.icn-arrow-r {
+		&:before {
+			background-image: url(../img/icn-arrow-r.svg);
+		}
+
+		&.red:before {
+			background-image: url(../img/icn-arrow-rr.svg);
+		}
+
+		&.white:before {
+			background-image: url(../img/icn-arrow-rw.svg);
+		}
+	}
+
+
+
+	&.icn-cart {
+		
+	}
+
+	&.icn-write {
+		&:before {
+			background-image: url(../img/icn-write.svg);
+		}
+	}
+
+
+	&.icn-location {
+		&:before {
+			background-image: url(../img/icn-location.svg);
+		}
+
+		&.dark:before {
+			background-image: url(../img/icn-location-dark.svg); 
+		}
+
+		&.light:before {
+			background-image: url(../img/icn-location-light.svg); 
+		}
+	}
+	
+
+}
+
+
+

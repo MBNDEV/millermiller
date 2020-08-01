@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--  CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/header.css" /> -->
+    <link rel='stylesheet' id='font-manrope-css'  href='https://fonts.googleapis.com/css?family=Manrope%3Awght%40300%3B400%3B500%3B600%3B700%3B800&#038;display=swap&#038;ver=5.4.2' type='text/css' media='all' />
+
+
+    <!-- JS -->
+    <script src="../assets/vendor/jquery-3.4.1.min.js"></script>
+    <script src="../assets/vendor/foundation/dist/js/foundation.min.js"></script>
+ 
+
+</head>
+
+<body > 
+    
+<header id="header" data-sticky-container data-toggler=".show-menu">
+    <div class="hsnav-s6 sticky" data-sticky data-options="marginTop:0">
+        <div class="navbar">
+            <a class="navlogo" href="#">
+                <img src="../assets/img/logo.svg" alt="">
+            </a>
+            <span class="navicon hide-for-large" data-toggle="header">mobile menu</span>
+
+            <div class="navutil">
+                <ul>
+                    <li><a href="#"><i class="icn-phone"></i> 301-762-5212</a></li>
+                    <li class="nav-cta"><a href="#">contact us</a></li>
+                </ul>
+            </div>
+
+            <nav class="navmenu show-for-large">
+                <ul class="menu align-center dropdown" data-dropdown-menu>
+                    <li><a href="#">Services</a>
+                        <ul>
+                            <li><a href="#">Services 1</a></li>
+                            <li><a href="#">Services 2</a>
+                                <ul>
+                                    <li><a href="#">Services 1</a></li>
+                                    <li><a href="#">Services 2</a></li>
+                                    <li><a href="#">Services 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Services 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="nav-cta"><a href="#">CTA BUTTON</a></li>
+                </ul>
+            </nav>
+            <nav class="mobmenu hide-for-large">
+                <ul class="menu accordion-menu" data-multi-open="false" data-accordion-menu data-submenu-toggle="true">
+                    <li class="current-menu-item"><a href="#">Home</a></li>
+                    <li><a href="#">Services</a>
+                        <ul>
+                            <li><a href="#">Services 1</a></li>
+                            <li><a href="#">Services 2</a></li>
+                            <li><a href="#">Services 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News & Events</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>            
+</header>
+
+<div style="height: 1500px; background: grey"></div>
+
+<script>$(document).foundation();</script>
+</body>
+
+</html>

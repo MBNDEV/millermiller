@@ -66,7 +66,7 @@
 
             <div class="copyright">
                 <span class="copyright-text">
-                    &copy; All rights reserved — <?php echo date('Y'); ?> &copy; Miller, Miller & Canby.  test
+                    &copy; All rights reserved — <?php echo date('Y'); ?> &copy; Miller, Miller & Canby.  
                     <ul>
                         <li><a href="<?php the_permalink(104); ?>">Confidentiality</a></li>
                         <li><a href="<?php the_permalink(106); ?>">Privacy Policy</a></li>

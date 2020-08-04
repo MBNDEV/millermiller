@@ -28,8 +28,7 @@ get_header();
                                     <?php
                                         $attList = get_categories(array(
                                             'hide_empty' => false,
-                                            'taxonomy' => 'practice-areas',
-                                            //'pad_counts' => true
+                                            'taxonomy' => 'practice-areas'
                                         ));
                                         foreach ($attList as $category):
                                     ?>
@@ -46,21 +45,11 @@ get_header();
         <div class="attorneys-list">
             <div class="grid-container">
             <div class="grid-x grid-margin-x">
-            <?php 
-                $args = array(
-                    'post_type' => 'attorney',
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                    'orderby'=>'title',
-                    'order'=>'ASC'
-                );
-                $loop = new WP_Query( $args );
-            ?>
-            <?php while ( $loop -> have_posts() ) : $loop -> the_post();
+            <?php while ( have_posts() ) : the_post(); 
                     $terms = get_the_terms( $post->ID, 'practice-areas' ); 
              ?>
                 <div class="large-3 cell grid-item <?php if($terms) foreach( $terms as $term ) echo strtolower(str_replace(" ","-",$term->name)) . ' '; ?>">
-                    <div class="attorney-item"><figure>
+                    <div class="attorneys-item"><figure>
                    <a class="post-link" rel="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
                     <?php 
                         if ( has_post_thumbnail() ) {

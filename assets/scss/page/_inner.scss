@@ -1,4 +1,123 @@
 
 .page-content {
     padding: 100px 0;
+
+    .blog-lists article {
+	    margin-bottom: 70px;
+
+	    h5{ 
+	        line-height: 1.8em;
+	        margin-top: 40px;
+	        margin-bottom: 15px;
+	        margin-right: 2rem;
+	    }
+	}
+}
+
+.blog-filter{
+    background-color: $color-dark;
+    color: $color-white;
+    z-index: 9999;
+
+    .button-filter{
+    	color:$color-white;
+	    font-size: 18px;
+	    font-weight: bold;
+	    letter-spacing: 3.8px;
+	    text-transform: uppercase;
+	    position: relative;
+	    display: inline-block;
+	    padding: 20px 0;
+	    padding-right: 20px;
+    }
+
+    .button-dropdown{
+		
+		display: inline-block;
+
+    	.button-filter{
+		    &:after{
+				content: '';
+			    position: absolute;
+			    top: 50%;
+			    right: 0;
+			    width: 0; 
+			    height: 0; 
+			    transform: translateY(-50%) rotate(180deg);
+			    border-left: 5px solid transparent;
+			    border-right: 5px solid transparent;
+			    border-bottom: 5px solid $color-white;
+	     	}
+	    }
+
+	    &:hover {
+	    	.button-filter:after{
+			    transform: translateY(-50%) rotate(0);
+			}
+
+			.dropdown-lists{
+			    display: block;
+			}
+	    }
+		
+		.dropdown-lists{
+		    display: none;
+		    position: absolute;
+		    top: 100%;
+		    left: 0;
+		    background-color: $color-dark;;
+		    padding: 15px 30px;
+		    z-index: 9999;
+
+		    ul{
+		    	list-style: none;
+			    margin: 0;
+			    padding: 0;
+				
+				li{
+					a{
+						font-size: 16px;
+    					color: $color-white;
+    					opacity: 0.8;
+
+    					&:hover{
+							color: $color-white;
+    					}
+					}
+				}
+
+			    li + li{
+			    	margin-top: 10px;
+			    }
+		    }
+		}
+		.dropdown-lists.full{
+		    width: 100%;
+		}
+		.button-filter.button-filter-active{
+		    position: relative;
+
+		    &:after{
+
+		    }
+		}
+
+    }
+}
+.blog-lists{
+	article{
+		img{
+			width: 100%;
+		}
+		h5 a{
+			color: $color-dark-grey;
+
+			&:hover{
+				opacity: 0.8;
+			}
+		}
+	}
+}
+.blog-lists article img{
+    width: 100%;
 }

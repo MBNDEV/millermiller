@@ -861,6 +861,18 @@ header {
 .blog-lists article img {
   width: 100%; }
 
+.blog-details .featured-image {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px; }
+
+@media (max-width: 767px) {
+  .blog-details .featured-image {
+    float: initial;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 20px; } }
+
 .foot-s1 {
   padding: 110px 0 30px;
   font-size: 14px;

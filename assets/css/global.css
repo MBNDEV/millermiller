@@ -8316,6 +8316,80 @@ header {
 
 .page-content {
   padding: 100px 0; }
+  .page-content .blog-lists article {
+    margin-bottom: 70px; }
+    .page-content .blog-lists article h5 {
+      line-height: 1.8em;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      margin-right: 2rem; }
+
+.blog-filter {
+  background-color: #2e2e2e;
+  color: #fff;
+  z-index: 9999; }
+  .blog-filter .button-filter {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3.8px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 20px 0;
+    padding-right: 20px; }
+  .blog-filter .button-dropdown {
+    display: inline-block; }
+    .blog-filter .button-dropdown .button-filter:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 0;
+      height: 0;
+      transform: translateY(-50%) rotate(180deg);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #fff; }
+    .blog-filter .button-dropdown:hover .button-filter:after {
+      transform: translateY(-50%) rotate(0); }
+    .blog-filter .button-dropdown:hover .dropdown-lists {
+      display: block; }
+    .blog-filter .button-dropdown .dropdown-lists {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #2e2e2e;
+      padding: 15px 30px;
+      z-index: 9999; }
+      .blog-filter .button-dropdown .dropdown-lists ul {
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+        .blog-filter .button-dropdown .dropdown-lists ul li a {
+          font-size: 16px;
+          color: #fff;
+          opacity: 0.8; }
+          .blog-filter .button-dropdown .dropdown-lists ul li a:hover {
+            color: #fff; }
+        .blog-filter .button-dropdown .dropdown-lists ul li + li {
+          margin-top: 10px; }
+    .blog-filter .button-dropdown .dropdown-lists.full {
+      width: 100%; }
+    .blog-filter .button-dropdown .button-filter.button-filter-active {
+      position: relative; }
+
+.blog-lists article img {
+  width: 100%; }
+
+.blog-lists article h5 a {
+  color: #404040; }
+  .blog-lists article h5 a:hover {
+    opacity: 0.8; }
+
+.blog-lists article img {
+  width: 100%; }
 
 .foot-s1 {
   padding: 110px 0 30px;

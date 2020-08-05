@@ -66,7 +66,7 @@ get_header();
     </div>
     <section class="page-content">
         <div class="grid-container">
-             <div class="grid-x grid-margin-x blog-lists">
+            <div class="grid-x grid-margin-x blog-lists">
 
                 <?php while ( have_posts() ) : the_post(); ?>
 

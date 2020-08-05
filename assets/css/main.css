@@ -7312,6 +7312,20 @@ ul.check-list {
     top: 0;
     right: 0;
     bottom: 0; }
+  [class*="icn"].icn-facebook:before {
+    background-image: url(../img/icn-facebook.svg); }
+  [class*="icn"].icn-twitter:before {
+    background-image: url(../img/icn-twitter.svg); }
+  [class*="icn"].icn-pinterest:before {
+    background-image: url(../img/icn-pinterest.svg); }
+  [class*="icn"].icn-email:before {
+    background-image: url(../img/icn-email.svg); }
+  [class*="icn"].icn-comments:before {
+    background-image: url(../img/icn-comments.svg); }
+  [class*="icn"].icn-print:before {
+    background-image: url(../img/icn-print.svg); }
+  [class*="icn"].icn-views:before {
+    background-image: url(../img/icn-views.svg); }
   [class*="icn"].icn-phone:before {
     background-image: url(../img/icn-phone.svg); }
   [class*="icn"].icn-phone.dark:before {

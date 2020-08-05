@@ -21,6 +21,42 @@
 		bottom: 0;	
 	}
 
+	&.icn-facebook{
+		&:before{
+			background-image: url(../img/icn-facebook.svg);
+		}
+	}
+	&.icn-twitter{
+		&:before{
+			background-image: url(../img/icn-twitter.svg);
+		}
+	}
+	&.icn-pinterest{
+		&:before{
+			background-image: url(../img/icn-pinterest.svg);
+		}
+	}
+	&.icn-email{
+		&:before{
+			background-image: url(../img/icn-email.svg);
+		}
+	}
+	&.icn-comments{
+		&:before{
+			background-image: url(../img/icn-comments.svg);
+		}
+	}
+	&.icn-print{
+		&:before{
+			background-image: url(../img/icn-print.svg);
+		}
+	}
+	&.icn-views{
+		&:before{
+			background-image: url(../img/icn-views.svg);
+		}
+	}
+
 	&.icn-phone {
 		&:before {
 			background-image: url(../img/icn-phone.svg); 

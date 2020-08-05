@@ -29,7 +29,8 @@ get_header();
                                         $attList = get_categories(array(
                                             'hide_empty' => false,
                                             'taxonomy' => 'practice-areas',
-                                            //'pad_counts' => true
+                                            'parent' => 0,
+                                            'pad_counts' => true
                                         ));
                                         foreach ($attList as $category):
                                     ?>

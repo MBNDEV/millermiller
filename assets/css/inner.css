@@ -217,3 +217,336 @@
 
 .sec-practice {
   padding: 50px 0; }
+
+.attorneys-list {
+  position: relative;
+  padding: 50px 0; }
+  .attorneys-list .attorney-item {
+    padding: 0 5px;
+    margin-bottom: 40px; }
+    .attorneys-list .attorney-item figure {
+      margin: 0 0 20px; }
+    .attorneys-list .attorney-item h4 {
+      color: #397670;
+      color: #404040; }
+      .attorneys-list .attorney-item h4 a {
+        color: #404040; }
+        .attorneys-list .attorney-item h4 a:hover {
+          color: #397670; }
+    .attorneys-list .attorney-item .attorney-pa {
+      font-size: 15px;
+      font-weight: 500;
+      color: #404040; }
+      .attorneys-list .attorney-item .attorney-pa a {
+        color: #737373; }
+        .attorneys-list .attorney-item .attorney-pa a:hover {
+          color: #397670; }
+
+.bio-header {
+  background: #2a5c57;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 24px; }
+  .bio-header h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px; }
+  .bio-header h5 {
+    color: #a9d5d1;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3px; }
+  .bio-header p {
+    font-weight: bold; }
+  .bio-header .copy {
+    padding-top: 50px;
+    padding-bottom: 50px; }
+  .bio-header .email-vcard {
+    margin: 0 0 50px;
+    padding: 10px 3px;
+    background: #214b47;
+    display: inline-block; }
+    .bio-header .email-vcard li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 15px;
+      font-family: 500; }
+      .bio-header .email-vcard li a {
+        color: #fff;
+        display: flex;
+        align-items: center; }
+      .bio-header .email-vcard li img {
+        max-height: 25px;
+        margin-right: 10px; }
+  .bio-header .listed-in {
+    margin: 0 -20px 50px;
+    padding: 0; }
+    .bio-header .listed-in li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 15px 10px; }
+  @media (max-width: 1023px) {
+    .bio-header {
+      padding: 0 15px;
+      text-align: center; }
+      .bio-header h1 {
+        font-size: 35px; }
+      .bio-header p {
+        font-size: 18px; }
+      .bio-header .email-vcard {
+        font-size: 15px; }
+      .bio-header .listed-in {
+        display: flex;
+        justify-content: center; } }
+
+.bio-subhead {
+  background: #214b47;
+  color: #fff; }
+  .bio-subhead .sub-name {
+    display: flex;
+    align-items: center; }
+    .bio-subhead .sub-name img {
+      height: 130px; }
+    .bio-subhead .sub-name h5 {
+      color: #a9d5d1;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 0; }
+    .bio-subhead .sub-name h2 {
+      font-size: 50px;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0; }
+  .bio-subhead .email-vcard {
+    margin: 0;
+    padding: 10px 3px;
+    background: #214b47;
+    display: inline-block; }
+    .bio-subhead .email-vcard li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 15px;
+      font-family: 500; }
+      .bio-subhead .email-vcard li a {
+        color: #fff;
+        display: flex;
+        align-items: center; }
+      .bio-subhead .email-vcard li img {
+        max-height: 25px;
+        margin-right: 10px; }
+
+.bio-content .hbg {
+  margin-bottom: 40px; }
+  .bio-content .hbg:before {
+    background: #a9d5d1;
+    opacity: 0.3; }
+
+.bio-content hr {
+  border-color: #ecf8f7;
+  border-width: 5px;
+  margin-top: 75px;
+  margin-bottom: 75px; }
+
+.bio-content .offtop {
+  margin-top: -4em;
+  padding-top: 4em; }
+
+.bio-side {
+  position: relative;
+  z-index: 1;
+  background: #f5f1ec;
+  height: 100%;
+  padding: 70px 0;
+  margin: 0 40px 0 0; }
+  .bio-side:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc((-100vw - -1410px - 30px) / 2);
+    right: 0;
+    background: #f5f1ec;
+    z-index: -1; }
+  .bio-side .bio-menu {
+    margin-bottom: 5em; }
+    .bio-side .bio-menu ul {
+      margin: 0;
+      padding: 0 0 5em; }
+      .bio-side .bio-menu ul li {
+        list-style: none;
+        margin: 0; }
+        .bio-side .bio-menu ul li a {
+          color: #404040;
+          font-size: 25px;
+          display: block;
+          padding: 10px 0;
+          position: relative; }
+          .bio-side .bio-menu ul li a.is-active {
+            font-weight: bold;
+            color: #214b47; }
+            .bio-side .bio-menu ul li a.is-active:before {
+              content: "";
+              position: absolute;
+              width: 25px;
+              height: 25px;
+              right: -9px;
+              top: 12px;
+              background: #f5f1ec;
+              transform: rotate(45deg);
+              z-index: -1; }
+  @media (max-width: 1410px) {
+    .bio-side {
+      margin-right: 0; }
+      .bio-side:before {
+        left: -30px; }
+      .bio-side .bio-menu ul li a {
+        font-size: 20px; } }
+  @media (max-width: 1023px) {
+    .bio-side:before {
+      right: -30px; }
+    .bio-side .bio-menu {
+      text-align: center; } }
+
+.bio-copy {
+  padding: 70px 0; }
+  .bio-copy a {
+    color: #2e2e2e; }
+    .bio-copy a:hover {
+      color: #397670; }
+  .bio-copy ul {
+    margin: 0;
+    padding: 0; }
+    .bio-copy ul li {
+      list-style: none;
+      margin-bottom: 20px;
+      color: #2e2e2e; }
+  .bio-copy blockquote {
+    background: #f8f8f8;
+    border: 0;
+    color: #6f4f2a;
+    font-size: 25px;
+    font-family: "Lato", sans-serif;
+    padding: 45px; }
+    .bio-copy blockquote p {
+      font-style: normal;
+      color: #6f4f2a; }
+      .bio-copy blockquote p:before {
+        content: '"'; }
+      .bio-copy blockquote p:after {
+        content: '"'; }
+      .bio-copy blockquote p:last-child {
+        margin-bottom: 0; }
+  .bio-copy .bio-post {
+    color: #737373;
+    font-size: 15px;
+    font-weight: 500; }
+    .bio-copy .bio-post strong {
+      color: #404040; }
+    .bio-copy .bio-post figure {
+      margin: 0 0 30px; }
+    .bio-copy .bio-post h6 {
+      color: #737373;
+      font-size: 15px;
+      margin: 0 0 5px;
+      font-weight: 500; }
+      .bio-copy .bio-post h6 a {
+        color: #737373; }
+    .bio-copy .bio-post h3 {
+      font-size: 20px; }
+  .bio-copy .bio-testimonials {
+    background: whitesmoke;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.8; }
+    .bio-copy .bio-testimonials p {
+      line-height: 1.8; }
+      .bio-copy .bio-testimonials p:before {
+        content: '"'; }
+      .bio-copy .bio-testimonials p:after {
+        content: '"'; }
+    .bio-copy .bio-testimonials h5 {
+      font-size: 18px;
+      font-style: normal;
+      margin-bottom: 0; }
+    .bio-copy .bio-testimonials .testi-slider {
+      padding-left: 120px;
+      padding-right: 120px; }
+  .bio-copy .bio-practice-areas {
+    font-size: 25px;
+    color: #2e2e2e; }
+    .bio-copy .bio-practice-areas ul {
+      margin: 0;
+      padding: 0; }
+      .bio-copy .bio-practice-areas ul li {
+        list-style: none;
+        margin-bottom: 20px;
+        color: #2e2e2e; }
+  .bio-copy .bio-bar-admissions {
+    font-size: 25px; }
+    .bio-copy .bio-bar-admissions a {
+      color: #2e2e2e; }
+      .bio-copy .bio-bar-admissions a:hover {
+        color: #397670; }
+  .bio-copy .bio-affiliations ul {
+    margin: 0;
+    padding: 0; }
+    .bio-copy .bio-affiliations ul li {
+      list-style: none;
+      font-size: 18px;
+      line-height: 1.8;
+      background: url(../img/icn-check.svg) no-repeat left 10px;
+      padding: 0 0 0 26px;
+      margin: 0 0 20px; }
+  .bio-copy .bio-education {
+    font-size: 25px;
+    color: #2e2e2e; }
+  .bio-copy .bio-awards ul {
+    margin: 0;
+    padding: 0; }
+    .bio-copy .bio-awards ul li {
+      list-style: none;
+      font-size: 18px;
+      line-height: 1.8;
+      background: url(../img/icn-check.svg) no-repeat left 10px;
+      padding: 0 0 0 26px;
+      margin: 0 0 20px; }
+  .bio-copy .bio-appellate ul {
+    margin: 0;
+    padding: 0; }
+    .bio-copy .bio-appellate ul li {
+      list-style: none;
+      font-size: 25px;
+      line-height: 1.8;
+      background: url(../img/icn-pdf.svg) no-repeat left 8px/35px;
+      padding: 0 0 0 50px;
+      margin: 0 0 20px; }
+  .bio-copy .bio-publications ul {
+    margin: 0;
+    padding: 0; }
+    .bio-copy .bio-publications ul li {
+      list-style: none;
+      font-size: 18px;
+      line-height: 1.8;
+      background: url(../img/icn-check.svg) no-repeat left 10px;
+      padding: 0 0 0 26px;
+      margin: 0 0 20px; }
+  @media (max-width: 1023px) {
+    .bio-copy {
+      padding: 70px 15px; }
+      .bio-copy blockquote {
+        font-size: 16px;
+        padding: 20px; } }
+  @media (max-width: 767px) {
+    .bio-copy {
+      font-size: 18px; }
+      .bio-copy h2.hbg {
+        text-align: center;
+        font-size: 30px; }
+      .bio-copy .offtop {
+        font-size: 15px; }
+      .bio-copy .text-center-medium {
+        text-align: center; } }

@@ -36,6 +36,11 @@
 			background-image: url(../img/icn-pinterest.svg);
 		}
 	}
+	&.icn-email-green{
+		&:before{
+			background-image: url(../img/icn-email-green.svg);
+		}
+	}
 	&.icn-email{
 		&:before{
 			background-image: url(../img/icn-email.svg);

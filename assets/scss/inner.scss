@@ -1,0 +1,929 @@
+
+//Global Variables
+@import "./base/variables";
+@import "./base/mixins";
+
+
+$color-dgreen: #2a5c57;
+$color-xgreen: #326762;
+$color-brown: #b79064;
+$color-dbrown: #5a3d1c;
+$color-xbrown: #6f4f2a;
+
+
+
+/* BLOCK TWO COLUMNS STYLE 4 */
+.cols2-s4 {
+	padding: 60px 0;
+	
+	.col-image {
+		margin-right: 90px;
+		margin-left: calc((-100vw - -#{$grid-container} - #{$grid-container-padding}) / 2);
+
+		img {
+			width: 100%;
+		}
+	}
+	.large-order-2, .overlap-image {
+		.col-image {
+			margin-right: calc((-100vw - -#{$grid-container} - #{$grid-container-padding}) / 2);
+			margin-left: 90px;
+		}
+	}
+
+	.col-copy {
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@include media(max-width, 1410px){
+
+		.col-image {
+			margin-right: 15px;
+			margin-left: -$grid-container-padding;
+		}
+
+		.large-order-2, .overlap-image {
+			.col-image {
+				margin-right: -$grid-container-padding;
+				margin-left: 15px;
+			}
+		}
+	}
+
+	@include media(max-width, 1023px){
+		.col-image {
+			margin-left: 0 !important;
+			margin-bottom: 30px !important;
+		}
+	}
+
+	@include media(max-width, 639px){
+		padding: 40px 0;
+
+	}
+} 
+
+
+
+.grid-x .cell {
+	flex-basis: auto !important;
+}
+.wp-block-columns {
+	margin-bottom: 0;
+}
+
+.wp-block-group__inner-container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 1410px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .wp-block-group__inner-container {
+    	padding-left: 0;
+    	padding-right: 0;
+    }
+}
+
+.wp-block-button {
+
+	.wp-block-button__link {
+	    padding: 8px 35px;
+	    font-size: 14px;
+	    font-weight: 700;
+	    text-transform: uppercase;
+	    margin-bottom: 20px;
+	    line-height: 32px;
+	    letter-spacing: 3.5px;
+	    transition:all 0.5s ease;
+
+        background: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            background: $color-secondary;        	
+        }
+	}
+}
+
+
+.practice-areas {
+	position: relative;
+
+	h4 {
+		a {
+			color: $color-dark;
+
+			&:hover {
+				color: $color-grey;
+			}
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding:0;
+
+		li {
+			list-style: none;
+
+			a {
+				color: $color-grey;
+
+				&:hover {
+					color: $color-dark;
+				}
+			}
+		}
+	}
+
+	.cell {
+		margin-bottom: 40px;
+	}
+
+	.wp-block-image img {
+		width: 100%;
+	}
+}
+
+
+
+.page-content {
+    padding: 100px 0;
+}
+
+ 
+.sec-banner {
+	background-color: $color-primary;
+	color: $color-white;
+	text-align: center;
+	padding: 20px 0;
+	min-height: 230px;
+	display: flex;
+	align-items: center;
+
+	.wp-block-group__inner-container {
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	h2, h3, h4, h5, h6 {
+		color: $color-lgreen;
+	}
+
+	h1 {
+		font-size: 50px;
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+
+	h5 {
+		font-weight: normal;
+		font-size: 25px;
+	}
+
+	h6 {
+		font-size: 18px;
+		text-transform: uppercase;
+		letter-spacing: 3.78px;
+	}
+
+	p {
+		font-size: 25px;
+	}
+
+	.hbg {
+		color: $color-white;
+		&:before {
+			background: $color-dgreen;
+			left: -25px;
+			right: -25px;
+			top: 45%;
+		}
+	}
+}
+
+
+.sec-firm-s1 {
+    position: relative;
+    padding: 50px 0;
+
+    h2 {
+        font-size: 77px;
+        font-weight: normal;
+    }
+
+    .col-image {
+        position: relative;
+        margin-bottom: 50px;
+
+        &:before {
+            content: "";
+            border:1px solid lighten($color-black, 80%);
+            position: absolute;
+            left: 50px;
+            right: 0;
+            top: -50px;
+            bottom:  -50px;
+            z-index: -1;
+        }
+    }
+
+    @include media(max-width, 1410px) {
+        h2 {
+            font-size: 60px;
+        }
+
+        .col-image {
+            &:before {
+                content: "";
+                border:1px solid lighten($color-black, 80%);
+                position: absolute;
+                left: 30px;
+                right: 0;
+                top: -30px;
+                bottom:  -30px;
+                z-index: -1;
+            }
+        }
+    }    
+
+    @include media(max-width, 639px) {
+        h2 {
+            font-size: 38px;
+        }
+
+    }
+
+}
+
+
+.sec-firm-s2 {
+	h3 {
+		font-size: 25px;
+		font-weight: normal;
+		line-height: 1.5;
+		max-width: 930px;
+		margin: 0 auto 30px;
+	}
+
+	
+}
+
+
+.sec-history {
+	padding: 50px 0;
+
+	.hbg {
+		&:before {
+			left: -10px;
+			right: -10px;
+		}
+	}
+	
+	.history-item:nth-of-type(odd) {
+		.hbg {
+			&:before {
+				background: $color-lgreen;
+				opacity: 0.3;
+			}
+		}
+
+
+		.history-year {
+
+			> *:last-child {
+				&:after {
+					border-left: 1px solid $color-green;
+				}
+			}
+
+			h2 {
+				color: $color-green;
+			}
+
+		}
+
+	}
+
+	.history-year {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 20px;
+
+		> * {
+			width: 170px;
+			text-align: center;
+
+			&:last-child {
+				position: relative;
+
+				&:after {
+					content: "";
+					position: absolute;
+					left: 85px;
+					top:110%;
+					height: 100vh;
+					border-left: 1px solid $color-dbrown;
+				}
+			}
+		}
+
+		h2 {
+			font-size: 50px;
+			font-weight: 300;
+			line-height: 1;
+			color: $color-dbrown;
+
+			br {display: none;}
+
+
+			s, small {
+				text-decoration: none;
+				font-size: 18px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+				display: block;
+				padding: 10px 0;
+				line-height: 1;
+				color: $color-brown;
+			}
+		}
+
+		p {
+			font-size: 15px;
+		}
+	}
+
+	.history-copy {
+		padding-left: 60px;
+		margin-bottom: 70px;
+		line-height: 1.8;
+		font-size: 18px;
+
+		p {
+			line-height: 1.8;
+		}
+	}
+
+	@include media(max-width,  1023px) {
+		.history-copy {
+			padding-left: 0;
+		}
+	}
+
+	@include media(max-width,  767px) {
+		.history-year > * {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+}
+
+
+.sec-practice {
+	padding: 50px 0;
+}
+
+
+
+.attorneys-list {
+    position: relative;
+    padding: 50px 0;
+
+	.attorney-item {
+         padding:0 5px;
+         margin-bottom: 40px;
+        figure {
+            margin: 0 0 20px;
+        }
+        h4 {
+            color: $color-green;
+            color: $color-dark-grey;
+
+            a {
+                color: $color-dark-grey;
+
+                &:hover {
+                    color: $color-green;
+                }
+            }
+         }
+
+        .attorney-pa {
+             font-size: 15px;
+             font-weight: 500;
+             color: $color-dark-grey;
+
+            a {
+                 color: lighten($color-dark-grey, 20%);
+
+                 &:hover {
+                     color: $color-green;
+                 }
+             }
+         }
+	}
+}
+
+
+.bio-header {
+	 background: $color-dgreen;
+     color: $color-white;
+     font-family: "Lato", sans-serif;
+     font-size: 24px;
+
+     h1 {
+         color: $color-white;
+         font-size: 50px;
+         font-weight: 500;
+         margin-bottom: 30px;
+     }
+     h5 {
+         color: $color-lgreen;
+         font-size: 18px;
+         text-transform: uppercase;
+         letter-spacing: 3px;
+     }
+
+     p {
+         font-weight: bold;
+     }
+
+     .copy {
+         padding-top: 50px;
+         padding-bottom: 50px;
+     }
+
+     .email-vcard {
+         margin: 0 0 50px;
+         padding:10px 3px;
+         background: $color-primary;
+         display: inline-block;
+
+         li {
+             list-style: none;
+             display: inline-block;
+             padding: 0 15px;
+             font-family: 500;
+
+             a {
+                 color: $color-white;
+                 display: flex;
+                 align-items: center;
+             }
+
+             img {
+                 max-height: 25px;
+                 margin-right: 10px;
+             }
+         }
+     }
+
+     .listed-in {
+         margin: 0 -20px 50px;
+         padding: 0;
+
+         li {
+             list-style: none;
+             display: inline-block;
+             margin: 0 15px 10px;
+         }
+     }
+
+     
+    @include media(max-width, 1023px){
+
+        padding: 0 15px;
+        text-align: center;
+        
+        h1 {
+            font-size: 35px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+        
+        .email-vcard {
+            font-size: 15px;
+        }
+        .listed-in {
+            display: flex;
+            justify-content: center;
+        }
+  
+    }
+}
+
+.bio-subhead {
+    background: $color-primary;
+    color: $color-white;
+
+	.sub-name {
+		display: flex;
+        align-items: center;
+		img {
+			height: 130px;;
+		}
+
+		h5 {
+			color: $color-lgreen;
+			font-size: 18px;
+			text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0;
+		}
+
+		h2 {
+			font-size: 50px;
+			color: $color-white;
+            font-weight: 500;
+            margin-bottom: 0;
+		}
+    }
+
+    .email-vcard {
+        margin: 0;
+        padding:10px 3px;
+        background: $color-primary;
+        display: inline-block;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 0 15px;
+            font-family: 500;
+
+            a {
+                color: $color-white;
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                max-height: 25px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.bio-content {
+
+	.hbg {
+        margin-bottom: 40px;
+
+		&:before {
+			background: $color-lgreen;
+			opacity: 0.3;
+		}
+	}
+
+	hr {
+		border-color: #ecf8f7;
+		border-width: 5px;
+		margin-top: 75px;
+		margin-bottom: 75px;
+	}
+
+	.offtop {
+		margin-top: -4em;
+		padding-top: 4em;
+	}
+
+
+
+}
+.bio-side {
+	position: relative;
+	z-index: 1;
+	background: $color-light;
+	height: 100%;
+	padding: 70px 0;
+	margin: 0 40px 0 0;
+
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc((-100vw - -#{$grid-container} - #{$grid-container-padding}) / 2);
+		right: 0;
+		background: $color-light;
+		z-index: -1;
+	}
+
+	.bio-menu {
+		margin-bottom: 5em;
+		ul {
+			margin:0;
+			padding: 0 0 5em;
+			li {
+				list-style: none;
+				margin: 0;				
+				a {
+					color: lighten($color-black, 25%);
+					font-size: 25px;
+					display: block;
+					padding:10px 0;
+					position: relative;
+
+					&.is-active {
+                        font-weight: bold;
+                        color: $color-primary;
+
+						&:before {
+							content: "";
+							position: absolute;
+							width: 25px;
+							height: 25px;
+							right: -9px;
+							top: 12px;
+							background: $color-light;
+							transform: rotate(45deg);
+							z-index: -1;
+						}
+					}					
+				}
+			}
+		}
+    }
+
+    @include media(max-width, 1410px){
+
+        margin-right: 0;
+
+		&:before {
+			left: -$grid-container-padding;
+        }
+        
+        .bio-menu ul li a {
+            font-size: 20px;
+        }
+	}
+
+    @include media(max-width, 1023px){
+		&:before {
+			right: -$grid-container-padding;
+        }
+        
+        .bio-menu {
+            text-align: center;
+        }
+    }
+}
+
+
+.bio-copy {
+    padding: 70px 0;
+
+    a {
+        color: $color-dark;
+
+        &:hover {
+            color: $color-green;
+        }
+    }
+    
+    ul {
+        margin:0;
+        padding:0;
+
+        li {
+            list-style: none;
+            margin-bottom: 20px;
+            color: $color-dark;
+        }
+    }
+
+    blockquote {
+        background:darken($color-white, 2.8%);
+        border:0;
+        color: $color-xbrown;
+        font-size: 25px;
+        font-family: $heading-font-family;
+        padding:45px;
+
+        p {
+            font-style: normal;
+            color: $color-xbrown;
+            
+            &:before {
+                content: '"';
+            }
+            &:after {
+                content: '"';
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .bio-post {
+        color: lighten($color-dark-grey, 20%);
+        font-size: 15px;
+        font-weight: 500;
+
+        strong {
+            color: $color-dark-grey;
+        }
+        figure {
+            margin:0 0 30px;
+        }
+
+        h6 {
+            color: lighten($color-dark-grey, 20%);
+            font-size: 15px;
+            margin:0 0 5px;
+            font-weight: 500;
+
+            a {
+                color: lighten($color-dark-grey, 20%);
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    .bio-testimonials {
+        background:darken($color-white, 4%);
+        padding:40px 20px;
+        text-align: center;
+        font-size: 18px;
+        font-style: italic;
+        line-height: 1.8;
+
+        p {
+            line-height: 1.8;
+            
+            &:before {
+                content: '"';
+            }
+            &:after {
+                content: '"';
+            }
+        }
+
+        h5 {
+            font-size: 18px;
+            font-style: normal;
+            margin-bottom: 0;
+        }
+
+        .testi-slider {
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+    }
+
+
+    .bio-practice-areas {
+        font-size: 25px;
+        color: $color-dark;
+
+        ul {
+            margin:0;
+            padding:0;
+
+            li {
+                list-style: none;
+                margin-bottom: 20px;
+                color: $color-dark;
+            }
+        }
+    }
+
+
+    .bio-bar-admissions {
+        font-size: 25px;
+
+        a {
+            color: $color-dark;
+
+            &:hover {
+                color: $color-green;
+            }
+
+        }
+
+    }
+
+    .bio-affiliations {
+
+        ul {
+            margin: 0;
+            padding:0;
+
+            li {
+                list-style: none;
+                font-size: 18px;
+                line-height: 1.8;
+                background: url(../img/icn-check.svg) no-repeat left 10px;
+                padding:0 0 0 26px;
+                margin:0 0 20px;
+            }
+        }
+    }
+
+    .bio-education {
+        font-size: 25px;
+        color: $color-dark;
+
+    }
+
+    .bio-awards {
+
+        ul {
+            margin: 0;
+            padding:0;
+
+            li {
+                list-style: none;
+                font-size: 18px;
+                line-height: 1.8;
+                background: url(../img/icn-check.svg) no-repeat left 10px;
+                padding:0 0 0 26px;
+                margin:0 0 20px;
+            }
+        }
+    }
+
+    .bio-appellate {
+
+        ul {
+            margin: 0;
+            padding:0;
+
+            li {
+                list-style: none;
+                font-size: 25px;
+                line-height: 1.8;
+                background: url(../img/icn-pdf.svg) no-repeat left 8px / 35px;
+                padding:0 0 0 50px;
+                margin:0 0 20px;
+            }
+        }
+    }
+
+    .bio-publications {
+
+        ul {
+            margin: 0;
+            padding:0;
+
+            li {
+                list-style: none;
+                font-size: 18px;
+                line-height: 1.8;
+                background: url(../img/icn-check.svg) no-repeat left 10px;
+                padding:0 0 0 26px;
+                margin:0 0 20px;
+            }
+        }
+    }
+
+    
+    @include media(max-width, 1023px){
+
+        padding: 70px 15px;
+
+        blockquote {
+            font-size: 16px;
+            padding: 20px;
+        }
+  
+    }
+
+    @include media(max-width, 767px){
+        font-size: 18px;
+
+        h2.hbg {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .offtop {
+            font-size: 15px;
+        }
+
+        .text-center-medium {
+            text-align: center;
+        }
+    }
+
+}
+
+
+
+

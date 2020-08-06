@@ -7,16 +7,6 @@ get_header();
 ?>
 
 <main id="content">
-	<?php
-	while ( have_posts() ) : the_post();
-		
-		the_content();
-
-	endwhile; // End of the loop.
-	?>
-
-
-
         <div class="attorneys-filter blog-filter">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x align-middle text-center medium-text-left">
@@ -28,7 +18,9 @@ get_header();
                                     <?php
                                         $attList = get_categories(array(
                                             'hide_empty' => false,
-                                            'taxonomy' => 'attorneys'
+                                            'taxonomy' => 'attorneys',
+                                            'parent' => 0,
+                                            'pad_counts' => true
                                         ));
                                         foreach ($attList as $category):
                                     ?>
@@ -45,17 +37,8 @@ get_header();
         <div class="attorneys-list">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x">
-                <?php 
-                    $args = array(
-                        'post_type' => 'attorney',
-                        'post_status' => 'publish',
-                        'posts_per_page' => -1,
-                        'orderby'=>'title',
-                        'order'=>'ASC'
-                    );
-                    $loop = new WP_Query( $args );
-                ?>
-                <?php while ( $loop -> have_posts() ) : $loop -> the_post(); ?>
+                    <?php if(have_posts()) { ?>
+                    <?php while ( have_posts() ) : the_post(); ?>
                     <div class="medium-6 large-4 xlarge-3 cell grid-item">
                         <div class="attorney-item">
                             <figure>
@@ -84,11 +67,17 @@ get_header();
                         </div>
                     </div>
                     <?php endwhile; wp_reset_postdata(); ?>
+                    <?php } else { ?>
+                        <div class="cell">
+                            <br><br>
+                            <h3 class="no-post text-center">No Attorney's Found</h3>
+                            <br><br>
+                        </div>
+                    <?php }  ?>
                 </div>
             </div>
         </div>
     
-
     <?php 
         $subscribe = get_post(182);
         echo apply_filters('the_content',$subscribe->post_content);

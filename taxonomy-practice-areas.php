@@ -1,7 +1,5 @@
 <?php
-/**
-	Template Name: Attorneys Template
- */
+
 
 get_header();
 ?>

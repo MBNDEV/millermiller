@@ -1,12 +1,21 @@
 <?php
-/**
-	Template Name: Attorneys Template
- */
 
 get_header();
 ?>
 
 <main id="content">
+        <div class="wp-block-group sec-banner">
+            <div class="wp-block-group__inner-container">
+                <h6>
+                    <?php
+                        $getTaxTitle = get_post(11);
+                        echo $getTaxTitle->post_title;
+                    ?>
+                </h6>
+                <h1 class="hbg"><?php echo single_cat_title( '', false ); ?></h1>
+            </div>
+        </div>
+        
         <div class="attorneys-filter blog-filter">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x align-middle text-center medium-text-left">

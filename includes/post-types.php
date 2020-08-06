@@ -88,7 +88,7 @@ function case_studies_post() {
 			'has_archive' 	=> false,
 			'show_in_rest' 	=> true,
             'menu_position' => 20,
-			'supports'		=>	array('title', 'editor', 'page-attributes', 'thumbnail'),
+			'supports'		=>	array('title', 'page-attributes', 'thumbnail'),
         	'menu_icon' 	=> 'dashicons-editor-paragraph',
 		)
 	);

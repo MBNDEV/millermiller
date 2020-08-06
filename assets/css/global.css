@@ -8450,7 +8450,7 @@ header {
       margin-bottom: 20px;
       font-weight: bold;
       letter-spacing: 3.78px; }
-
+    .blog-header .blog-hero p, .blog-header .blog-hero h1, .blog-header .blog-hero .content-issue h5 {
       color: #fff; }
     .blog-header .blog-hero h1 {
       font-size: 50px; }
@@ -8461,7 +8461,15 @@ header {
       left: 0;
       margin-left: 50px; }
     .blog-header .blog-hero .vertical-center-left {
-
+      margin-left: 50px;
+      width: 75%; }
+    .blog-header .blog-hero .blog-date {
+      font-size: 15px; }
+    .blog-header .blog-hero .content-issue {
+      margin-top: 60px; }
+      .blog-header .blog-hero .content-issue p {
+        color: #ecf8f7;
+        font-size: 18px; }
   .blog-header .box-design {
     position: relative; }
     .blog-header .box-design:before {
@@ -8538,6 +8546,20 @@ header {
   left: 0;
   top: 50%;
   transform: translateY(-50%); }
+
+.divider {
+  height: 10px;
+  margin: 20px 0 50px;
+  background-color: #ecf8f7; }
+
+@media print {
+  #header,
+  #footer,
+  .box-design {
+    display: none; }
+  .blog-details .grid-container h3:first-child {
+    width: 100%;
+    line-height: 1.2em; } }
 
 .foot-s1 {
   padding: 110px 0 30px;

@@ -7318,6 +7318,8 @@ ul.check-list {
     background-image: url(../img/icn-twitter.svg); }
   [class*="icn"].icn-pinterest:before {
     background-image: url(../img/icn-pinterest.svg); }
+  [class*="icn"].icn-email-green:before {
+    background-image: url(../img/icn-email-green.svg); }
   [class*="icn"].icn-email:before {
     background-image: url(../img/icn-email.svg); }
   [class*="icn"].icn-comments:before {

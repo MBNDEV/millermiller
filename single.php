@@ -167,7 +167,6 @@ get_header();
                 <ul>
                     <li><a href="javascript:;"><i class="icn-comments"></i> <?= get_comments_number() ?> Comments</a></li>
                     <li><a href="javascript:;" id="printMe"><i class="icn-print"></i> Print</a></li>
-                    <li><a href="javascript:;" style="display: none;"><i class="icn-views"></i> <?php pvc_post_views(get_the_ID(), true ); ?> Views</a></li>
                 </ul>
             </div>
 

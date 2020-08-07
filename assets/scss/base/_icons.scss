@@ -203,3 +203,31 @@
 
 
 
+
+.fa{
+	display: inline-block;
+	position: relative;
+
+	&:before{
+		content: '';
+		width: 15px;
+		height: 15px;
+		vertical-align: middle;
+		display: inline-block;
+		background-repeat: no-repeat;
+	}
+
+	&.fa-facebook:before{
+		
+		background-image: url(../img/fa-facebook.svg);
+	}
+
+	&.fa-twitter:before{
+		
+		background-image: url(../img/fa-twitter.svg);
+	}
+
+	&.fa-linkedin:before{
+		background-image: url(../img/fa-linkedin.svg);
+	}
+}

@@ -3,31 +3,7 @@
 
 get_header();
 ?>
-<style>
-    .case-lists .case-content p{
-        font-size: 15px;
-        color: #818181;
-    }
-    .case-lists .case-content b{
-        color: #404040;
-    }
-    .case-lists .case-content h2{
-        font-size: 20px;
-        font-weight: bold;
-        line-height: 34px;
-        margin-bottom: 15px;
-    }
-    .case-lists .category-lists{
-        font-size: 15px;
-        color: #214b47;
-    }
-    .case-lists article{
-        margin-bottom: 60px;
-    }
-    .case-lists .case-thumbnail{
-        margin-bottom: 36px;
-    }
-</style>
+
 <main id="content">
     <div class="wp-block-group sec-banner">
         <div class="wp-block-group__inner-container">
@@ -61,7 +37,7 @@ get_header();
                     
                 </div>
                 <div class="cell auto">
-                    <div class="grid-x align-right">
+                     <div class="grid-x align-center medium-align-right">
                         <div class="position-relative">
                             <div class="button-dropdown">
                                 <a href="#" class="button-filter display-block padding-horizontal-2">filter by attorney</a>

@@ -8,12 +8,124 @@
 
 get_header();
 ?>
+<style>
+    .comment-form{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin:0 -10px;
+    }
+    .comment-form > p{
+        margin-bottom: 20px;
+    }
+    .comment-form .comment-form-author{
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
 
+        -ms-flex-order: 1;
+        order: 1;
+        padding:0 10px;
+    }
+    .comment-form .comment-form-email{
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        -ms-flex-order: 2;
+        order: 2;
+        padding:0 10px;
+    }
+    .comment-form .comment-form-comment{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        -ms-flex-order: 3;
+        order: 3;
+        padding:0 10px;
+    }
+    .comment-form .form-submit{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        -ms-flex-order: 4;
+        order: 4;
+        padding:0 10px;
+        text-align: right;
+    }
+    .comment-form .form-submit .submit{
+        background-color: #214b47;
+        color: #fff;
+        padding:10px 25px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        border: 0;
+        border-radius: 50px;
+        transition: all 0.5s ease;
+    }
+    .comment-form .form-submit .submit:hover{
+        background-color: #432b0f;
+    }
+
+    .comment-form input[type="text"], 
+    .comment-form input[type="email"], 
+    .comment-form input[type="password"],
+    .comment-form textarea{
+        border: 1px solid #707070;
+    }
+
+    .comment-form label{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .comments-section{
+        padding-left: 80px;
+    }
+
+    .comment-form .comment-form-url,
+    .comment-form .comment-form-cookies-consent,
+    .comment-form .comment-notes,
+    .comment-respond .comment-reply-title{
+        display: none !important;
+    }
+
+    .control-flex{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .comments-section .comment-list{
+        list-style: none;
+        margin: 0;
+
+    }
+
+    .comments-section .comment-list .says{
+        display: none;
+    }
+
+    /*find bottom-share-links*/
+
+    .blog-details .bottom-share-links h5{
+        margin-bottom: 0;
+    }
+    .blog-details .bottom-share-links .jssocials{
+        margin-left: 20px;
+    }
+    .blog-details .bottom-share-links .jssocials .jssocials-share-link {
+        border-radius: 8px;
+    }
+</style>
 <main id="content">
     <div class="blog-header">
-        <div class="medium-fluid"></div>
         <?php while ( have_posts() ) : the_post();  ?>
-            <div class="grid-x grid-margin-x align-stretch">
+            <div class="grid-x align-stretch">
                 <div class="cell small-12 medium-6">
                     <div class="blog-thumbnail">
                         <?php the_post_thumbnail(); ?>
@@ -53,30 +165,27 @@ get_header();
 
             <div class="bottom-blog-links">
                 <ul>
-                    <li><a href="javascript:;"><i class="icn-comments"></i> Comments (<?= get_comments_number() ?>)</a></li>
+                    <li><a href="javascript:;"><i class="icn-comments"></i> <?= get_comments_number() ?> Comments</a></li>
                     <li><a href="javascript:;" id="printMe"><i class="icn-print"></i> Print</a></li>
-                    <li><a href="javascript:;"><i class="icn-views"></i> <?php pvc_post_views(get_the_ID(), true ); ?> Views</a></li>
+                    <li><a href="javascript:;" style="display: none;"><i class="icn-views"></i> <?php pvc_post_views(get_the_ID(), true ); ?> Views</a></li>
                 </ul>
             </div>
 
             <?php while ( have_posts() ) : the_post();  ?>
-                <div id="comments" class="comments-section" style="display: none">
+                <div id="comments" class="comments-section">
+
+                    <div class="bottom-share-links control-flex">
+                        <h5>Share this Article:</h5>
+                        
+                        <div id="jsSocial" style=""></div>
+                    </div>
 
                     <?php comments_template('/comments.php'); ?>
 
                 </div><!-- #comments -->
             <?php endwhile; ?>
 
-            <div class="bottom-share-links">
-                <h5>Share this Article:</h5>
-                <ul>
-                    <li><a href="javascript:;" data-social="facebook"><i class="icn-facebook"></i></a></li>
-                    <li><a href="javascript:;" data-social="twitter"><i class="icn-twitter"></i></a></li>
-                    <li><a href="javascript:;" data-social="pinterest"><i class="icn-pinterest"></i></a></li>
-                    <li><a href="javascript:;" data-social="email"><i class="icn-email"></i></a></li>
-                </ul>
-                <div id="jsSocial" style="display: none"></div>
-            </div>
+            
 
             <div class="bottom-related-posts">
                 <div class="text-center">
@@ -145,13 +254,31 @@ get_header();
     </section>
 </main>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
 <script>
     $(function(){
         $("#jsSocial").jsSocials({
-            showLabel: false,
+            showLabel: true,
             showCount: false,
             shareIn: "popup",
-            shares: ["facebook", "twitter", "pinterest", "email"]
+            shares: [
+                {
+                    share : "facebook",
+                    label : "Share on Facebook",
+                    logo: "fa fa-facebook"
+                }, 
+                {
+                    share : "twitter",
+                    label : "Tweet this",
+                    logo : "fa fa-twitter"
+                }, 
+                {
+                    share : "linkedin",
+                    label : "Share on Linkedin",
+                    logo : "fa fa-linkedin"
+                }
+            ]
         });
 
         $('.bottom-share-links a').click(function(){

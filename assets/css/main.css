@@ -7392,6 +7392,23 @@ ul.check-list {
   [class*="icn"].icn-location.light:before {
     background-image: url(../img/icn-location-light.svg); }
 
+.fa {
+  display: inline-block;
+  position: relative; }
+  .fa:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    background-repeat: no-repeat; }
+  .fa.fa-facebook:before {
+    background-image: url(../img/fa-facebook.svg); }
+  .fa.fa-twitter:before {
+    background-image: url(../img/fa-twitter.svg); }
+  .fa.fa-linkedin:before {
+    background-image: url(../img/fa-linkedin.svg); }
+
 @-webkit-keyframes heartBeat {
   0% {
     -webkit-transform: scale(1);

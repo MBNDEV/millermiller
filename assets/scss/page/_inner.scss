@@ -657,7 +657,11 @@
 @media print{
 	#header,
 	#footer,
-	.box-design{
+	.box-design,
+	.bottom-blog-links,
+	.comments-section,
+	.bottom-related-posts,
+	.bottom-share-links{
 		display: none;
 	}
 	.blog-details .grid-container h3:first-child{

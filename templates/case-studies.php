@@ -44,16 +44,19 @@ get_header();
                                 <a href="#" class="button-filter display-block padding-horizontal-2">filter by attorney</a>
                                 <div class="dropdown-lists full">
                                     <ul>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
+                                        <?php
+                                            $currentPageID = get_permalink(13);
+                                            $query = new WP_Query( array(
+                                                'post_type' => 'attorney',
+                                                'post_status' => 'publish',
+                                                'posts_per_page' => -1,
+                                                'orderby' => 'name',
+                                                'order' => 'ASC',
+                                            ));
+                                            while ($query->have_posts()) : $query->the_post();
+                                        ?>
+                                            <li><a href="<?= $currentPageID ?>?attrorney=<?= get_the_ID(); ?>"><?= get_the_title(); ?></a></li>
+                                        <?php endwhile; wp_reset_postdata(); ?>
                                     </ul>
                                 </div>
                             </div>
@@ -70,11 +73,27 @@ get_header();
             	<?php 
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $query_limit_items = 3;
+
+                    $attorneyQuery = [];
+
+                    if (isset($_GET['attrorney'])) {
+                        $attorney = $_GET['attrorney'];
+                        
+                        $attorneyQuery = array(
+                            'key'       => 'csa_attorney_assign',
+                            'value'     => $attorney
+                        );
+                    }
+
+
+
+
 				    $query = new WP_Query( array(
-				        'post_type' => 'case-study',
-				        'post_status' => 'publish',
+				        'post_type'     => 'case-study',
+				        'post_status'   => 'publish',
 				        'posts_per_page' => $query_limit_items,
-                        'paged' => $paged
+                        'paged'         => $paged,
+                        'meta_query'    => array( $attorneyQuery )
 				    ));
 				    while ($query->have_posts()) : $query->the_post();
 				?>

@@ -5,85 +5,60 @@ get_header();
 ?>
 
 <main id="content">
-	<?php
-	while ( have_posts() ) : the_post();
-		
-		the_content();
 
-	endwhile; // End of the loop.
-	?>
-
-
-
-        <div class="attorneys-filter blog-filter">
-            <div class="grid-container">
-                <div class="grid-x grid-margin-x align-middle text-center medium-text-left">
-                    <div class="cell auto position-relative">
-                        <div class="button-dropdown">
-                            <a href="javascript:;" class="button-filter">Filter by Practice Area</a>
-                            <div class="dropdown-lists">
-                                <ul>
-                                    <?php
-                                        $attList = get_categories(array(
-                                            'hide_empty' => false,
-                                            'taxonomy' => 'practice-areas',
-                                            'parent' => 0,
-                                            'pad_counts' => true
-                                        ));
-                                        foreach ($attList as $category):
-                                    ?>
-                                        <li><a href="<?= esc_url(get_category_link( $category->term_id )) ?>"><?= $category->name; ?> (<?= $category->category_count ?>)</a></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="wp-block-group sec-banner">
+        <div class="wp-block-group__inner-container">
+            <h6>
+                <?php
+                    $getTaxTitle = get_post(9);
+                    echo $getTaxTitle->post_title;
+                ?>
+            </h6>
+            <h1 class="hbg"><?php echo single_cat_title( '', false ); ?></h1>
         </div>
-        
-        <div class="attorneys-list">
-            <div class="grid-container">
-            <div class="grid-x grid-margin-x">
-            <?php while ( have_posts() ) : the_post(); 
-                    $terms = get_the_terms( $post->ID, 'practice-areas' ); 
-             ?>
-                <div class="large-3 cell grid-item <?php if($terms) foreach( $terms as $term ) echo strtolower(str_replace(" ","-",$term->name)) . ' '; ?>">
-                    <div class="attorneys-item"><figure>
-                   <a class="post-link" rel="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
+    </div>
+
+    <div class="sec-practice">  
+        <div class="grid-container">
+        <div class="grid-x grid-margin-x practice-areas">
+                
+            <?php while (have_posts() ) { the_post(); ?>
+                <div class="cell large-4 medium-6 pa-item">
+                    <figure>
+                    <a href="<?php the_permalink(); ?>">
                     <?php 
                         if ( has_post_thumbnail() ) {
                             the_post_thumbnail();
                         } else {
-                            echo '<img src="https://via.placeholder.com/660x445/020202/111111?text=[no+thumnail]" alt="" />';
+                            echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />';
                         }
                     ?>
-                    </a></figure>
-                    <h4><?php the_title(); ?></h4>
-                    <?php 
-
-                    if($terms) {
-                        foreach( $terms as $term ) {
-                            echo $term->name. ', ';
-                        }
-                    } 
-
+                    </a>
+                    </figure>
+                    <h4 class="hbg">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h4>
+                    <p>
+                    <?php
+                        $excerpt = get_the_excerpt(); 
+                        $excerpt = substr( $excerpt, 0, 165 );
+                        $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                        echo $excerpt;
                     ?>
-                    </div>
-                </div>
-                <?php endwhile; wp_reset_postdata(); ?>
+                    </p>
 
-                    <div class="grid-sizer"></div>
-            </div>
-
-            </div>
+                </div>  
+                            
+            <?php }   wp_reset_postdata();  ?>
+                  
         </div>
-    
-
-    <?php 
-        $subscribe = get_post(182);
-        echo apply_filters('the_content',$subscribe->post_content);
-    ?>
+        
+        <?php 
+            $subscribe = get_post(182);
+            echo apply_filters('the_content',$subscribe->post_content);
+        ?>
+    </div>  
+    </div>  
 
 </main>
 

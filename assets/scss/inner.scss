@@ -143,8 +143,35 @@ $color-xbrown: #6f4f2a;
 		margin-bottom: 40px;
 	}
 
+    .pa-item {
+        font-size: 18px;
+
+        h4 {
+            font-weight: 400;
+            max-width: 93%;
+        }
+
+        a {
+            position: relative;
+            &:hover {
+                color: $color-green;
+            }
+
+            &:before {
+                content: "";
+            }
+        }
+
+        figure {
+            margin-bottom: 15px;
+            
+            img {
+                width: 100%;
+            }
+        }
+    }
 	.wp-block-image img {
-		width: 100%;
+        width: 100%;		
 	}
 }
 

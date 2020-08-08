@@ -134,13 +134,30 @@ get_header();
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script>
     $(function(){
-        $('.case-lists').isotope({
+        var $caseList_iso =  $('.case-lists').isotope({
             itemSelector: '.case-item',
             percentPosition: true,
-            // masonry: {
-           //   columnWidth: '.grid-sizer'
-            // }
-        })
+        });
+
+
+        var $current_page = 0;
+
+        $('#loadMorePosts').click(function(){
+            $current_page++;
+            var $item = $('#post-pagination .page-numbers').eq($current_page);
+            if ($item.next().hasClass('next')) {
+                $(this).hide();
+            }
+            var getLink = $item.attr('href');
+            
+            $.get( getLink, function( data ) {
+                var getList = $(data).find('.case-lists').html();
+                getList = $(getList);
+                $caseList_iso.append(getList).isotope( 'appended', getList );
+
+            });
+            
+        });
     })
 </script>
 

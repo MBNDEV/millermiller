@@ -7397,8 +7397,8 @@ ul.check-list {
   position: relative; }
   .fa:before {
     content: '';
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
     vertical-align: middle;
     display: inline-block;
     background-repeat: no-repeat; }

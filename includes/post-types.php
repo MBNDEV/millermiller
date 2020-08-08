@@ -51,8 +51,9 @@ function practice_area_post() {
 			'has_archive' 	=> true,
 			'show_in_rest' 	=> true,
             'menu_position' => 20,
-			'supports'		=>	array('title', 'editor', 'page-attributes', 'thumbnail'),
-        	'menu_icon' 	=> 'dashicons-editor-paragraph',
+			'supports'		=>	array('title', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
+			'menu_icon' 	=> 'dashicons-editor-paragraph',
+			//'rewrite' => array( 'slug' => '', 'with_front' => false ),
 		)
 	);
 	
@@ -66,10 +67,7 @@ function practice_area_post() {
 			'query_var' => true,
 			'show_admin_column' => true,
 			'show_in_rest' => true,
-            /*'rewrite' => array(
-                'slug' => 'attorneys',
-                'with_front' => true  
-            )*/
+            //'rewrite' => array('slug' => '','with_front' => false)
 		)
 	);
 }
@@ -110,3 +108,29 @@ function case_studies_post() {
 	);
 }
 add_action( 'init', 'case_studies_post' );
+
+
+function mbn_remove_slugs_post_type($post_link,$post,$leavename){
+	if(!in_array($post->post_type,['practice-area']) || $post->post_status!='publish'){
+		return $post_link;
+	}
+
+	// if($post->post_type=="attorneys"){
+	// 	return str_replace("/"."attorneys/","/",$post_link);
+	// }
+
+	return str_replace("/"."practice-area/","/",$post_link);
+}
+add_filter("post_type_link","mbn_remove_slugs_post_type",10,3);
+function mbn_parse_request($query){
+	
+	if(!$query->is_main_query() || count($query->query)!=2 || !isset($query->query['page'])){
+		return false;
+	}
+
+	if(!empty($query->query['name'])){
+		$query->set('post_type',array('post','practice-area','attorney','page'));
+	}
+
+}
+add_action('pre_get_posts','mbn_parse_request',10,1);

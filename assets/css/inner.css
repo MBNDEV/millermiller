@@ -73,6 +73,21 @@
           color: #2e2e2e; }
   .practice-areas .cell {
     margin-bottom: 40px; }
+  .practice-areas .pa-item {
+    font-size: 18px; }
+    .practice-areas .pa-item h4 {
+      font-weight: 400;
+      max-width: 93%; }
+    .practice-areas .pa-item a {
+      position: relative; }
+      .practice-areas .pa-item a:hover {
+        color: #397670; }
+      .practice-areas .pa-item a:before {
+        content: ""; }
+    .practice-areas .pa-item figure {
+      margin-bottom: 15px; }
+      .practice-areas .pa-item figure img {
+        width: 100%; }
   .practice-areas .wp-block-image img {
     width: 100%; }
 

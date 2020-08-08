@@ -8,127 +8,18 @@
 
 get_header();
 ?>
-<style>
-    .comment-form{
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin:0 -10px;
-    }
-    .comment-form > p{
-        margin-bottom: 20px;
-    }
-    .comment-form .comment-form-author{
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-
-        -ms-flex-order: 1;
-        order: 1;
-        padding:0 10px;
-    }
-    .comment-form .comment-form-email{
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-        -ms-flex-order: 2;
-        order: 2;
-        padding:0 10px;
-    }
-    .comment-form .comment-form-comment{
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
-
-        -ms-flex-order: 3;
-        order: 3;
-        padding:0 10px;
-    }
-    .comment-form .form-submit{
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
-
-        -ms-flex-order: 4;
-        order: 4;
-        padding:0 10px;
-        text-align: right;
-    }
-    .comment-form .form-submit .submit{
-        background-color: #214b47;
-        color: #fff;
-        padding:10px 25px;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: bold;
-        border: 0;
-        border-radius: 50px;
-        transition: all 0.5s ease;
-    }
-    .comment-form .form-submit .submit:hover{
-        background-color: #432b0f;
-    }
-
-    .comment-form input[type="text"], 
-    .comment-form input[type="email"], 
-    .comment-form input[type="password"],
-    .comment-form textarea{
-        border: 1px solid #707070;
-    }
-
-    .comment-form label{
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .comments-section{
-        padding-left: 80px;
-    }
-
-    .comment-form .comment-form-url,
-    .comment-form .comment-form-cookies-consent,
-    .comment-form .comment-notes,
-    .comment-respond .comment-reply-title{
-        display: none !important;
-    }
-
-    .control-flex{
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-
-    .comments-section .comment-list{
-        list-style: none;
-        margin: 0;
-
-    }
-
-    .comments-section .comment-list .says{
-        display: none;
-    }
-
-    /*find bottom-share-links*/
-
-    .blog-details .bottom-share-links h5{
-        margin-bottom: 0;
-    }
-    .blog-details .bottom-share-links .jssocials{
-        margin-left: 20px;
-    }
-    .blog-details .bottom-share-links .jssocials .jssocials-share-link {
-        border-radius: 8px;
-    }
-</style>
 <main id="content">
     <div class="blog-header">
         <?php while ( have_posts() ) : the_post();  ?>
             <div class="grid-x align-stretch">
                 <div class="cell small-12 medium-6">
                     <div class="blog-thumbnail">
-                        <?php the_post_thumbnail(); ?>
+                        <?php if (get_the_post_thumbnail_url()): ?>
+                            <?php the_post_thumbnail(); ?>
+                        <?php else: ?>
+                            
+                            <img src="<?= esc_attr(catch_that_image()) ?>" alt="<?= the_title(); ?>">
+                        <?php endif ?>
                     </div>
                 </div>
                 <div class="cell small-12 medium-6">

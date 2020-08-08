@@ -68,10 +68,13 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x case-lists">
             	<?php 
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $query_limit_items = 3;
 				    $query = new WP_Query( array(
 				        'post_type' => 'case-study',
 				        'post_status' => 'publish',
-				        'posts_per_page' => 6
+				        'posts_per_page' => $query_limit_items,
+                        'paged' => $paged
 				    ));
 				    while ($query->have_posts()) : $query->the_post();
 				?>
@@ -107,17 +110,36 @@ get_header();
 	            		</article>
 	            	</div>
 
-				<?php endwhile; wp_reset_postdata(); ?>
+				<?php endwhile;  ?>
             	
             </div>
-             <?php if (wp_count_posts('case-study')->publish > 6): ?>
+             <?php if (wp_count_posts('case-study')->publish > $query_limit_items): ?>
                 <div class="text-center">
-                    <div id="post-pagination" style="display: none"><?= paginate_links(); ?></div>
+                    <div id="post-pagination" style="display: none">
+                        <?php 
+
+                            $total_pages = $query->max_num_pages;
+
+                            if ($total_pages > 1){
+
+                                $current_page = max(1, get_query_var('paged'));
+
+                                echo paginate_links(array(
+                                    'base' => get_pagenum_link(1) . '%_%',
+                                    'format'       => '/page/%#%',
+                                    'current'      => $current_page,
+                                    'total'        => $total_pages,
+                                    'prev_text'    => __('« prev'),
+                                    'next_text'    => __('next »'),
+                                ));
+                            }   
+                         ?>
+                    </div>
                     <div class="wp-block-button">
                         <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
                     </div>
                 </div>
-            <?php endif ?>
+            <?php endif; wp_reset_postdata(); ?>
         </div>
     </section>
 </main>
@@ -125,13 +147,30 @@ get_header();
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script>
 	$(function(){
-		$('.case-lists').isotope({
+		var $caseList_iso =  $('.case-lists').isotope({
 		  	itemSelector: '.case-item',
 		  	percentPosition: true,
-		  	// masonry: {
-		   //  	columnWidth: '.grid-sizer'
-		  	// }
-		})
+		});
+
+
+        var $current_page = 0;
+
+        $('#loadMorePosts').click(function(){
+            $current_page++;
+            var $item = $('#post-pagination .page-numbers').eq($current_page);
+            if ($item.next().hasClass('next')) {
+                $(this).hide();
+            }
+            var getLink = $item.attr('href');
+            
+            $.get( getLink, function( data ) {
+                var getList = $(data).find('.case-lists').html();
+                getList = $(getList);
+                $caseList_iso.append(getList).isotope( 'appended', getList );
+
+            });
+            
+        });
 	})
 </script>
 

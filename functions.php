@@ -106,7 +106,7 @@ function html5blankcomments($comment, $args, $depth)
 	<?php if ( 'div' != $args['style'] ) : ?>
 		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
-			<div class="comment-author vcard">
+			<div class="comment-author-profile">
 				<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, 90 ); ?>
 			</div>
 			<?php if ($comment->comment_approved == '0') : ?>
@@ -114,22 +114,34 @@ function html5blankcomments($comment, $args, $depth)
 				<br />
 			<?php endif; ?>
 
-			<div class="comment-author">
+			<div class="comment-author-content">
 				<?php printf(__('<span class="fn">%s</span>'), get_comment_author_link()) ?> &bull; 
 				<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-				<?php
-					printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-				?>
+				<?php printf( _x( '%s ago', '%s = human-readable time difference', 'your-text-domain' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
 
 				<div class="comment-content">
 					<?php comment_text() ?>
 				</div>
+
+				<div class="reply">
+					<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+				</div>
 			</div>
 
-			<div class="reply">
-				<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-			</div>
+			
 	<?php if ( 'div' != $args['style'] ) : ?>
 		</div>
 	<?php endif; ?>
 <?php }
+
+
+function catch_that_image() {
+	global $post, $posts;
+	$first_img = '';
+	ob_start();
+	ob_end_clean();
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+	$first_img = $matches[1][0];
+
+	return $first_img;
+}

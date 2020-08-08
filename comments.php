@@ -10,17 +10,7 @@
 		<?php the_comments_navigation(); ?>
 
 
-
 		<ul class="comment-list">
-			<?php
-				// wp_list_comments(
-				// 	array(
-				// 		'max_depth' => 5,
-				// 		'short_ping' => true,
-				// 		'avatar_size' => 90,
-				// 	)
-				// );
-			?>
 			<?php wp_list_comments('type=comment&callback=html5blankcomments'); // Custom callback in functions.php ?>
 		</ul><!-- .comment-list -->
 

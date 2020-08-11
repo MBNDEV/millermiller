@@ -9,12 +9,198 @@
 get_header();
 ?>
 <main id="content">
+    <?php 
+        while ( have_posts() ) : the_post(); 
 
+        $terms = get_the_terms($post->ID, 'practice-areas' );
+    ?>
+    
+    <div class="sec-banner spa">
+        <figure class="bg">
+            <?php 
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail();
+                }
+            ?>
+        </figure>
+        <div class="grid-container">
+            <div class="breadcrumbs">
+                <a href="<?php the_permalink(9); ?>"><?php echo get_post(9)->post_title; ?></a>
+                <a href="<?= get_term_link($terms[0]->term_id); ?>"><?= $terms[0]->name; ?></a>
+            </div>   
+            <h5>
+                <?php if(get_field('paf_banner_sub_title') != "") {
+                the_field('paf_banner_sub_title');
+            } else {
+                echo "Client Focused. Results Driven.";
+            } ?>
+            </h5>
+            <h1 class="hbg">
+            <?php if(get_field('paf_banner_title') != "") {
+                the_field('paf_banner_title');
+            } else {
+                the_title();
+            } ?>
+            </h1>
+
+            <p><?php if(get_field('paf_banner_description') != "") {
+                the_field('paf_banner_description');
+            } ?></p>
+        </div>
+    </div>
+
+    <div class="sec-pa-cont">      
+        <div class="grid-container">
+            <?php the_content(); ?>
+        </div>
+    </div>  
+
+    <?php $paAttorneys = get_field('paf_attorneys_select');
+    if( $paAttorneys ): ?>
+    <div class="sec-pa-attr">
+        <div class="grid-container">
+            <div class="text-center">
+                <h2 class="hbg">
+                    <?php if(get_field('paf_attorneys_title') != "") {
+                        the_field('paf_attorneys_title');
+                    } else {
+                        echo "Attorneys";
+                    } ?>
+                </h2>
+            </div>
+            <ul class="grid-x grid-margin-x">
+                <?php foreach( $paAttorneys as $post ):  setup_postdata($post); ?>
+                    <li class="cell large-4">
+                        <div class="attr-item">
+                            <a class="img" href="<?php the_permalink(); ?>">
+                            <?php
+                                if ( has_post_thumbnail() ) {
+                                    the_post_thumbnail();
+                                } else {
+                                    echo '<img src="https://via.placeholder.com/170x170/f0f0f0/cccccc?text=[no+thumnail]" alt="" />';
+                                }
+                            ?>
+                            </a>
+
+                            <h4><?php the_title(); ?></h4>
+                            <a href="<?php the_permalink(); ?>">View Bio</a>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+            </ul>
+
+            <script>
+                $(function(){
+                    $('.sec-pa-attr ul').slick({
+                        dots: false,
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        responsive: [
+                            {
+                                breakpoint: 1366,
+                                settings: {slidesToShow: 2}
+                            },
+                            {
+                                breakpoint: 1024,
+                                settings: {slidesToShow: 1}
+                            }
+                        ]
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <?php $paFaqs = get_field('paf_faqs_select');
+    if( $paFaqs ): ?>
+    <div class="sec-pa-faqs"> 
+        <div class="grid-container">
+            <div class="text-center">
+                <h2 class="hbg">
+                    <?php if(get_field('paf_faqs_title') != "") {
+                        the_field('paf_faqs_title');
+                    } else {
+                        echo "FAQs";
+                    } ?>
+                </h2>
+            </div>
+            <ul  class="accordion" data-accordion  data-multi-expand="true" data-allow-all-closed="true">
+                <?php foreach( $paFaqs as $post ):  setup_postdata($post); ?>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title"><?php the_title(); ?></a>
+                        <div class="accordion-content" data-tab-content>
+                            <?php the_content(); ?>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+            </ul>
+        </div>
+    </div>   
+    <?php endif; ?>
+
+
+    <div class="sec-pa-rel">
+        <div class="grid-container">
+            <div class="text-center">
+                <h2 class="hbg">MORE ON <?php echo $terms[0]->name; ?></h2>
+            </div><br>
+        <?php                 
+            $args = array(
+                'posts_per_page' => 3,
+                'tax_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'taxonomy' => 'practice-areas',
+                        'field' => 'slug',
+                        'terms' => $terms[0]->slug,
+                        'include_children' => false
+                    )
+                ),
+                'post_type' => 'practice-area',
+                'orderby' => 'title,',
+                'post__not_in' => array( $post->ID )
+            );
+            $relPa = new WP_Query( $args ); ?>
+
+            <div class="grid-x grid-margin-x practice-areas">        
+            <?php while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
+
+                <div class="cell large-4 medium-6 pa-item">
+                    <figure>
+                    <a href="<?php the_permalink(); ?>">
+                    <?php 
+                        if ( has_post_thumbnail() ) {
+                            the_post_thumbnail();
+                        } else {
+                            echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />';
+                        }
+                    ?>
+                    </a>
+                    </figure>
+                    <h4 class="hbg">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h4>
+                    <p>
                     <?php
-                        while ( have_posts() ) : the_post();
-                            the_content();
-                        endwhile; // End of the loop.
-                    ?>  
+                        $excerpt = get_the_excerpt(); 
+                        $excerpt = substr( $excerpt, 0, 165 );
+                        $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                        echo $excerpt;
+                    ?>
+                    </p>
+
+                </div>  
+                        
+            <?php } ?>
+            </div>
+        </div>
+    </div>
+
+    <?php   endwhile;  wp_reset_postdata(); ?> 
+
                    
 </main>
 

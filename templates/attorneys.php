@@ -73,7 +73,7 @@ get_header();
                             <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 
                             <?php 
-                            $practice_areas = get_field('af_practice_areas_practice_areas');
+                            $practice_areas = get_field('af_practice_areas_items');
                             if( $practice_areas ): ?>
                                 <p class="attorney-pa"><strong>PRACTICE AREAS:</strong><br>
                                 <?php foreach( $practice_areas as $post ):  setup_postdata($post); ?>

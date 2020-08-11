@@ -58,10 +58,10 @@ get_header();
                         'post_type' => 'practice-area',
                         'orderby' => 'title,'
                     );
-                    $products = new WP_Query( $args );
+                    $paPost = new WP_Query( $args );
 
                     echo "<ul>";
-                    while ( $products->have_posts() ) { $products->the_post(); ?>
+                    while ( $paPost->have_posts() ) { $paPost->the_post(); ?>
 
                         <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                                 

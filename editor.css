@@ -79,3 +79,11 @@ body {
     flex-basis: 30% !important;
     margin: 3% 1% !important;
 }
+
+.two-columns {
+    column-count: 2;
+}
+
+.block-award {    
+    grid-template-columns: 240px auto !important;
+}

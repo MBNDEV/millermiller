@@ -10,7 +10,8 @@ get_header();
         <div class="wp-block-group__inner-container">
             <h6>
                 <?php
-                    echo get_post(9)->post_title;
+                    $getTaxTitle = get_post(9);
+                    echo $getTaxTitle->post_title;
                 ?>
             </h6>
             <h1 class="hbg"><?php echo single_cat_title( '', false ); ?></h1>

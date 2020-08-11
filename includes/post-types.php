@@ -53,7 +53,7 @@ function practice_area_post() {
             'menu_position' => 20,
 			'supports'		=>	array('title', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
 			'menu_icon' 	=> 'dashicons-editor-paragraph',
-			//'rewrite' => array( 'slug' => '', 'with_front' => false ),
+			//'rewrite' => array( 'slug' => 'practice-area', 'with_front' => true ),
 		)
 	);
 	
@@ -67,7 +67,7 @@ function practice_area_post() {
 			'query_var' => true,
 			'show_admin_column' => true,
 			'show_in_rest' => true,
-            //'rewrite' => array('slug' => '','with_front' => false)
+            //'rewrite' => array('slug' => 'practice-areas')
 		)
 	);
 }
@@ -110,6 +110,27 @@ function case_studies_post() {
 add_action( 'init', 'case_studies_post' );
 
 
+
+// Register faqs Post Type
+function faqs_post() {
+	register_post_type( 'faq',
+		array(
+			'labels' 	=> array(
+				'name' => __( 'FAQs' ),
+				'singular_name' => __('FAQ')
+			),
+			'public' 		=> true,
+			'has_archive' 	=> false,
+			'show_in_rest' 	=> true,
+            'menu_position' => 20,
+			'supports'		=>	array('title', 'editor', 'page-attributes', 'thumbnail'),
+        	'menu_icon' 	=> 'dashicons-editor-paragraph',
+		)
+	);
+}
+add_action( 'init', 'faqs_post' );
+
+
 function mbn_remove_slugs_post_type($post_link,$post,$leavename){
 	if(!in_array($post->post_type,['practice-area']) || $post->post_status!='publish'){
 		return $post_link;
@@ -121,7 +142,7 @@ function mbn_remove_slugs_post_type($post_link,$post,$leavename){
 
 	return str_replace("/"."practice-area/","/",$post_link);
 }
-add_filter("post_type_link","mbn_remove_slugs_post_type",10,3);
+//add_filter("post_type_link","mbn_remove_slugs_post_type",10,3);
 function mbn_parse_request($query){
 	
 	if(!$query->is_main_query() || count($query->query)!=2 || !isset($query->query['page'])){
@@ -133,4 +154,4 @@ function mbn_parse_request($query){
 	}
 
 }
-add_action('pre_get_posts','mbn_parse_request',10,1);
+//add_action('pre_get_posts','mbn_parse_request',10,1);

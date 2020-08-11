@@ -41,6 +41,10 @@ var compile = {
                 $(this).parent().toggleClass('focus');
             }
         });
+
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+          location = '/thank-you';
+        }, false );
     },
     
     //windown.load scripts

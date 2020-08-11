@@ -11,13 +11,14 @@ get_header();
 
 <main id="content">
     <div class="page-not-found">
-        <div class="grid-container">
+        <div class="grid-container text-center margin-vertical-3">
             <h1>Page Not Found.</h1>
             <p>The page you requested cannot be found.</p>
             <a href="/" class="button">go back to homepage</a>
         </div>
     </div>
 </main>
+
 <?php
 
 get_footer();

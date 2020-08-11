@@ -1,3 +1,162 @@
+main {
+	.sec-banner{
+		h5{
+			span{
+				color: $color-white;
+			}
+		}
+	}
+
+	label {
+		font-weight: bold;
+		font-family: $body-font-family;
+		font-size: 18px;
+		color: $color-dark-grey;
+		margin-bottom: 5px;
+	}
+
+	textarea{
+		max-height: 160px;
+	}
+
+	.overlap-image {
+		.control-map{
+			margin-right: calc(-35vw + 50%)
+		}
+	}
+	.control-map{
+		position: relative;
+		margin-bottom: 100px;
+
+		&:before{
+			content: "";
+		    border: 1px solid #cccccc;
+		    position: absolute;
+		    left: 50px;
+		    right: 0;
+		    top: -50px;
+		    bottom: -50px;
+		    z-index: -1;	
+		}
+	}
+	.form-control{
+		padding-right: 100px;
+	}
+	.wp-block-button .wp-block-button__link{
+		border-radius: 28px;
+		margin-top: 15px;
+	}
+
+	.control-footer-contact{
+		font-weight: bold;
+		font-family: $body-font-family;
+		font-size: 18px;
+	}
+
+	.footer-lists{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li{
+			font-weight: bold;
+
+
+
+			span:first-child{
+				width: 30px;
+				height: 30px;
+				position: relative;
+
+				img{
+					position: absolute;
+					top:50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+			span{
+				display: inline-block;
+				vertical-align: top;
+			}
+			span + span{
+				margin-left: 15px;
+			}
+
+			& + li{
+				margin-top: 15px;
+			}
+
+			&:first-child{
+				font-weight: normal;
+			}
+
+
+		}
+	}
+
+	&.contact-page{
+		.page-content{
+			overflow: hidden;
+		}
+	}
+
+	.contact-form{
+		p{
+			display: none;
+		}
+	}
+}
+@include media(max-width, 992px) {
+	main{
+		.form-control{
+			padding-right: 0;
+		}
+	}
+}
+
+@include media(max-width, 767px) {
+	main{
+		.form-control{
+			margin-bottom: 50px;
+		}
+
+		.control-map + .grid-x{
+			text-align: center;
+		}
+	}
+	
+}
+
+.foot-s2{
+	font-size: 14px;
+    background: #214b47;
+    color: #fff;
+
+    .copyright{
+		padding: 20px 0;
+		display: flex;
+    	justify-content: space-between;
+    	color: #a9d5d1;
+
+    	.copyright-text ul{
+			margin: 0 0 0 20px;
+		    padding: 0;
+		    display: inline-block;
+
+		    li {
+			    list-style: none;
+			    display: inline-block;
+			    margin: 0 10px 0 0;
+			}
+    	}
+
+    	a{
+			color: #a9d5d1;
+    	}
+    }
+}
+
 
 .page-content {
     padding: 100px 0;
@@ -127,6 +286,10 @@
 		float: right;
 		margin-left: 20px;
 		margin-bottom: 20px;
+	}
+
+	img:first-child{
+		display: none;
 	}
 }
 

@@ -784,6 +784,108 @@ header {
         font-size: 24px;
         line-height: 1.2; } }
 
+main .sec-banner h5 span {
+  color: #fff; }
+
+main label {
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  color: #404040;
+  margin-bottom: 5px; }
+
+main textarea {
+  max-height: 160px; }
+
+main .overlap-image .control-map {
+  margin-right: calc(-35vw + 50%); }
+
+main .control-map {
+  position: relative;
+  margin-bottom: 100px; }
+  main .control-map:before {
+    content: "";
+    border: 1px solid #cccccc;
+    position: absolute;
+    left: 50px;
+    right: 0;
+    top: -50px;
+    bottom: -50px;
+    z-index: -1; }
+
+main .form-control {
+  padding-right: 100px; }
+
+main .wp-block-button .wp-block-button__link {
+  border-radius: 28px;
+  margin-top: 15px; }
+
+main .control-footer-contact {
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px; }
+
+main .footer-lists {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  main .footer-lists li {
+    font-weight: bold; }
+    main .footer-lists li span:first-child {
+      width: 30px;
+      height: 30px;
+      position: relative; }
+      main .footer-lists li span:first-child img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+    main .footer-lists li span {
+      display: inline-block;
+      vertical-align: top; }
+    main .footer-lists li span + span {
+      margin-left: 15px; }
+    main .footer-lists li + li {
+      margin-top: 15px; }
+    main .footer-lists li:first-child {
+      font-weight: normal; }
+
+main.contact-page .page-content {
+  overflow: hidden; }
+
+main .contact-form p {
+  display: none; }
+
+@media (max-width: 992px) {
+  main .form-control {
+    padding-right: 0; } }
+
+@media (max-width: 767px) {
+  main .form-control {
+    margin-bottom: 50px; }
+  main .control-map + .grid-x {
+    text-align: center; } }
+
+.foot-s2 {
+  font-size: 14px;
+  background: #214b47;
+  color: #fff; }
+  .foot-s2 .copyright {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #a9d5d1; }
+    .foot-s2 .copyright .copyright-text ul {
+      margin: 0 0 0 20px;
+      padding: 0;
+      display: inline-block; }
+      .foot-s2 .copyright .copyright-text ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px 0 0; }
+    .foot-s2 .copyright a {
+      color: #a9d5d1; }
+
 .page-content {
   padding: 100px 0; }
   .page-content .blog-lists article {
@@ -865,6 +967,9 @@ header {
   float: right;
   margin-left: 20px;
   margin-bottom: 20px; }
+
+.blog-details img:first-child {
+  display: none; }
 
 @media (max-width: 767px) {
   .blog-details .featured-image {

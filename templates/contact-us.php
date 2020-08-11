@@ -22,7 +22,10 @@ get_header();
                     <p>Please fill in the following form to contact us:</p>
 
                     <div class="form-control">
+
                         <?= do_shortcode( '[contact-form-7 id="1301" title="Contact Us Form"]' ); ?>
+
+
                     </div>
                     
                 </div>

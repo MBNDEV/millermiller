@@ -25,6 +25,7 @@ get_header();
 
                         <?= do_shortcode( '[contact-form-7 id="1301" title="Contact Us Form"]' ); ?>
 
+
                     </div>
                     
                 </div>
@@ -33,7 +34,7 @@ get_header();
                         <iframe src="https://snazzymaps.com/embed/254219" width="100%" height="600px" style="border:none;"></iframe>
                     </div>
 
-                    <div class="grid-x">
+                    <div class="grid-x footer-contact-info">
                         <div class="cell small-12 medium-6">
                             <div class="margin-bottom-2">
                                 <a href="/">

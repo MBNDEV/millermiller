@@ -124,8 +124,26 @@ main {
 		.control-map + .grid-x{
 			text-align: center;
 		}
+
+		.overlap-image{
+
+			.control-map{
+				margin-right: 0;
+
+				margin-bottom: 50px;
+
+				iframe{
+					height: auto !important;
+				}
+
+				&:before{
+					display: none;
+				}
+			}
+		}
+		
 	}
-	
+
 }
 
 .foot-s2{

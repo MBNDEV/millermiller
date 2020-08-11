@@ -864,7 +864,14 @@ main .contact-form p {
   main .form-control {
     margin-bottom: 50px; }
   main .control-map + .grid-x {
-    text-align: center; } }
+    text-align: center; }
+  main .overlap-image .control-map {
+    margin-right: 0;
+    margin-bottom: 50px; }
+    main .overlap-image .control-map iframe {
+      height: auto !important; }
+    main .overlap-image .control-map:before {
+      display: none; } }
 
 .foot-s2 {
   font-size: 14px;

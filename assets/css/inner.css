@@ -59,6 +59,10 @@
 .two-columns {
   column-count: 2; }
 
+@media (max-width: 1023px) {
+  .text-center-md {
+    text-align: center; } }
+
 .practice-areas {
   position: relative;
   justify-content: center; }
@@ -184,7 +188,8 @@
   padding: 50px 0; }
   .sec-history .hbg:before {
     left: -10px;
-    right: -10px; }
+    right: -10px;
+    background-color: #f5f1ec; }
   .sec-history .history-item:nth-of-type(odd) .hbg:before {
     background: #a9d5d1;
     opacity: 0.3; }
@@ -208,6 +213,8 @@
           top: 110%;
           height: 100vh;
           border-left: 1px solid #5a3d1c; }
+    .sec-history .history-year .no-vline:after {
+      display: none; }
     .sec-history .history-year h2 {
       font-size: 50px;
       font-weight: 300;
@@ -225,6 +232,12 @@
         padding: 10px 0;
         line-height: 1;
         color: #b79064; }
+      .sec-history .history-year h2 + h4 {
+        margin-top: -20px; }
+    .sec-history .history-year h4 {
+      font-size: 30px;
+      color: #5a3d1c;
+      font-weight: normal; }
     .sec-history .history-year p {
       font-size: 15px; }
   .sec-history .history-copy {
@@ -234,6 +247,8 @@
     font-size: 18px; }
     .sec-history .history-copy p {
       line-height: 1.8; }
+    .sec-history .history-copy h4 {
+      font-weight: normal; }
   @media (max-width: 1023px) {
     .sec-history .history-copy {
       padding-left: 0; } }

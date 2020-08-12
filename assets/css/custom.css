@@ -775,6 +775,11 @@ header {
     .sec-subscribe .subscribe-box p .button {
       margin: 0 0 0 15px;
       border: 2px solid #fff; }
+      @media (max-width: 1100px) {
+        .sec-subscribe .subscribe-box p .button {
+          display: block;
+          margin-top: 20px;
+          max-width: 185px; } }
     .sec-subscribe .subscribe-box > *:last-child {
       margin-bottom: 0; }
   @media (max-width: 639px) {

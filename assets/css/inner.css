@@ -109,7 +109,7 @@
   color: #fff;
   text-align: center;
   padding: 20px 0;
-  min-height: 518px;
+  min-height: 230px;
   display: flex;
   align-items: center; }
   .sec-banner .wp-block-group__inner-container > *:last-child {
@@ -598,7 +598,8 @@
 .sec-banner.spa {
   position: relative;
   z-index: 1;
-  padding: 40px 0; }
+  padding: 40px 0;
+  min-height: 518px; }
   .sec-banner.spa:before {
     content: "";
     background-image: linear-gradient(to bottom, #214b47, rgba(25, 52, 49, 0) 158%);

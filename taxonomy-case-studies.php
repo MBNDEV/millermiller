@@ -42,17 +42,20 @@ get_header();
                             <div class="button-dropdown">
                                 <a href="#" class="button-filter display-block padding-horizontal-2">filter by attorney</a>
                                 <div class="dropdown-lists full">
-                                    <ul>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
-                                        <li><a href="#">Lorem ipsum.</a></li>
+                                   <ul>
+                                        <?php
+                                            $currentPageID = get_permalink(13);
+                                            $query = new WP_Query( array(
+                                                'post_type' => 'attorney',
+                                                'post_status' => 'publish',
+                                                'posts_per_page' => -1,
+                                                'orderby' => 'name',
+                                                'order' => 'ASC',
+                                            ));
+                                            while ($query->have_posts()) : $query->the_post();
+                                        ?>
+                                            <li><a href="<?= $currentPageID ?>?attrorney=<?= get_the_ID(); ?>"><?= get_the_title(); ?></a></li>
+                                        <?php endwhile; wp_reset_postdata(); ?>
                                     </ul>
                                 </div>
                             </div>

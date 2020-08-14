@@ -22,22 +22,14 @@ get_header();
                 <div class="cell small-12 medium-6">
                     <div class="blog-hero">
                         <div class="vertical-center-left">
-                            <small>
-                                case studies 
-                                <span>|</span>
+                            <div class="breadcrumbs">
+                                <a href="/case-studies">case studies</a>
                                 <?php 
-                                    $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies')
+                                    $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
+                                    $controlPostCategory = $controlPostCategory[0];
                                 ?>
-                                <?php if ($controlPostCategory): ?>
-                                    <?php
-                                        $postCategoryLength = count($controlPostCategory);
-                                        $postCtr = 1;
-                                         foreach ($controlPostCategory as $pc): ?>
-                                        <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
-                                    <?php $postCtr++; endforeach; ?>
-                                <?php endif ?>
-
-                            </small>
+                                <a href="<?= esc_url(get_term_link($controlPostCategory->term_id)) ?>"><?= $controlPostCategory->name ?></a>
+                            </div>
                             <h1><?php the_title(); ?></h1>    
                             <div class="content-issue">
                                 <h5>Issue:</h5>

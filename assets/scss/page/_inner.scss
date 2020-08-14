@@ -30,7 +30,7 @@ main {
 
 		&:before{
 			content: "";
-		    border: 1px solid #cccccc;
+		    border: 1px solid $color-gray-100;
 		    position: absolute;
 		    left: 50px;
 		    right: 0;
@@ -99,7 +99,7 @@ main {
 		.sec-firm-s1 .col-image:before{
 			display: none;
 		}
-		
+
 		.page-content{
 			overflow: hidden;
 		}
@@ -152,14 +152,14 @@ main {
 
 .foot-s2{
 	font-size: 14px;
-    background: #214b47;
-    color: #fff;
+    background: $color-primary;
+    color: $color-white;
 
     .copyright{
 		padding: 20px 0;
 		display: flex;
     	justify-content: space-between;
-    	color: #a9d5d1;
+    	color: $color-lgreen;
 
     	.copyright-text ul{
 			margin: 0 0 0 20px;
@@ -174,7 +174,7 @@ main {
     	}
 
     	a{
-			color: #a9d5d1;
+			color: $color-lgreen;
     	}
     }
 }
@@ -357,7 +357,7 @@ main {
 		    left: 0;
 		    width: 200%;
 		    height: 100%;
-		    background-color: #326762;
+		    background-color: $color-green-hover;
 		    z-index: 10;
 	    }
 		
@@ -367,10 +367,10 @@ main {
 		}
 
 		small, .categories {
-			color: #ace5df;
+			color: $color-blue-200;
 		}
 
-		small {
+		small{
 		    text-transform: uppercase;
 		    display: inline-block;
 		    margin-bottom: 20px;
@@ -378,8 +378,32 @@ main {
 		    letter-spacing: 3.78px;
 		}
 
+		.breadcrumbs{
+			a{
+				color: $color-blue-200;
+				text-transform: uppercase;
+		    	display: inline-block;
+		    	font-weight: bold;
+		    	letter-spacing: 3.78px;
+		    	font-size: 80%;
+			}
+			a:before:hover{
+				color: $color-blue-200;
+			}
+			a + a:before{
+				content: '|';
+				text-transform: uppercase;
+			    display: inline-block;
+			    margin-bottom: 20px;
+			    font-weight: bold;
+			    letter-spacing: 3.78px;
+			    color: $color-blue-200;
+			    margin:0 3px;
+			}
+		}
+
 		p, h1, .content-issue h5 {
-		    color: #fff;
+		    color: $color-white;
 		}
 
 
@@ -408,7 +432,7 @@ main {
 			margin-top: 60px;
 
 			p{
-				color: #ecf8f7;
+				color: $color-blue-100;
 				font-size: 18px;
 			}
 		}
@@ -422,7 +446,7 @@ main {
 		    display: block;
 		    width: 100%;
 		    height: 30px;
-		    border:1px solid #cccccc;
+		    border:1px solid $color-gray-100;
 		    border-top: 0;
 	    }
 	}
@@ -430,7 +454,7 @@ main {
 }
 
 .blog-details{
-    color: #707070;
+    color: $color-gray-400;
     font-size: 18px;
 
     .grid-container {
@@ -440,7 +464,7 @@ main {
 		    margin: 0 auto;
 		    font-family: 'Lato', sans-serif; 
 		    font-size: 25px;
-		    color: #2e2e2e;
+		    color: $color-dark;
 		    margin-bottom: 100px;
 		    line-height: 44px;
     	}
@@ -449,19 +473,19 @@ main {
 		    padding-bottom: 50px;
 		}
 		.wp-block-group + .wp-block-group {
-			border-top: 10px solid #ecf8f7;
+			border-top: 10px solid $color-blue-100;
     		padding-top: 50px;
 		}
 		.wp-block-group .wp-block-columns .wp-block-column:first-child h2{
 		    font-size: 50px;
 		    font-weight: normal;
-		    color: #2e2e2e;
+		    color: $color-dark;
 		}
     }
 
     .bottom-blog-links{
 	    padding: 25px 0;
-	    border-bottom: 1px solid #2e2e2e;
+	    border-bottom: 1px solid $color-dark;
 
 	    ul{
 	    	list-style: none;
@@ -475,7 +499,7 @@ main {
 			    	font-size: 18px;
 				    font-family: 'Manrope', sans-serif;
 				    font-weight: bold;
-				    color: #2e2e2e;
+				    color: $color-dark;
 			    }
 			}
 
@@ -625,7 +649,7 @@ main {
     		color: $color-gray-300;
 		}
 		b{
-			color: $color-gray-400;
+			color: $color-gray-500;
 		}
 		h2{
 			font-size: 20px;
@@ -637,7 +661,7 @@ main {
 
 	.category-lists{
 		font-size: 15px;
-    	color: #214b47;
+    	color: $color-primary;
 	}
 	article{
 		margin-bottom: 60px;
@@ -663,7 +687,7 @@ main {
 		    & + .children{
 		    	margin: 30px 0 0 110px;
 		    	list-style: none;
-		    	border-top: 1px solid #707070;
+		    	border-top: 1px solid $color-gray-400;
 		    	padding-top: 30px;
 		    }
 	    }
@@ -753,8 +777,8 @@ main {
 	    text-align: right;
 
 	    .submit{
-		    background-color: #214b47;
-		    color: #fff;
+		    background-color: $color-primary;
+		    color: $color-white;
 		    padding:10px 25px;
 		    text-transform: uppercase;
 		    font-size: 14px;
@@ -764,7 +788,7 @@ main {
 		    transition: all 0.5s ease;
 
 		    &:hover{
-		    	background-color: #432b0f;
+		    	background-color: $color-secondary;
 		    }
 		}
 	}
@@ -773,7 +797,7 @@ main {
 	input[type="email"], 
 	input[type="password"],
 	textarea{
-	    border: 1px solid #707070;
+	    border: 1px solid $color-gray-400;
 	}
 	label{
 	    font-size: 18px;
@@ -873,7 +897,7 @@ main {
 .divider{
 	height: 10px;
 	margin: 20px 0 50px;
-	background-color: #ecf8f7;
+	background-color: $color-blue-100;
 }
 
 @include media(min-width, 992px) {

@@ -118,7 +118,7 @@ get_header();
     <div class="sec-pa-faqs"> 
         <div class="grid-container">
             <div class="text-center">
-                <h2 class="hbg">
+                <h2 class="hbg more_on">
                     <span class="lblue">
                         <?php if(get_field('paf_faqs_title') != "") {
                             the_field('paf_faqs_title');

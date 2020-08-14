@@ -8387,7 +8387,7 @@ main .control-map {
   margin-bottom: 100px; }
   main .control-map:before {
     content: "";
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     position: absolute;
     left: 50px;
     right: 0;
@@ -8604,6 +8604,24 @@ main .contact-form p {
       margin-bottom: 20px;
       font-weight: bold;
       letter-spacing: 3.78px; }
+    .blog-header .blog-hero .breadcrumbs a {
+      color: #ace5df;
+      text-transform: uppercase;
+      display: inline-block;
+      font-weight: bold;
+      letter-spacing: 3.78px;
+      font-size: 80%; }
+    .blog-header .blog-hero .breadcrumbs a:before:hover {
+      color: #ace5df; }
+    .blog-header .blog-hero .breadcrumbs a + a:before {
+      content: '|';
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: bold;
+      letter-spacing: 3.78px;
+      color: #ace5df;
+      margin: 0 3px; }
     .blog-header .blog-hero p, .blog-header .blog-hero h1, .blog-header .blog-hero .content-issue h5 {
       color: #fff; }
     .blog-header .blog-hero h1 {
@@ -8631,7 +8649,7 @@ main .contact-form p {
       display: block;
       width: 100%;
       height: 30px;
-      border: 1px solid #cccccc;
+      border: 1px solid #ccc;
       border-top: 0; }
 
 .blog-details {

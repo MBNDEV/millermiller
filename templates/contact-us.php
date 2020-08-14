@@ -14,9 +14,9 @@ get_header();
         </div>
     </div>
     
-    <div class="page-content">
+    <div class="page-content sec-firm-s1">
         <div class="grid-container">
-            <div class="grid-x grid-margin-x">
+            <div class="grid-x grid-margin-x cols2-s4">
                 <div class="cell medium-6">
 
                     <p>Please fill in the following form to contact us:</p>
@@ -30,8 +30,11 @@ get_header();
                     
                 </div>
                 <div class="cell medium-6 overlap-image">
-                    <div class="control-map">
-                        <iframe src="https://snazzymaps.com/embed/254219" width="100%" height="600px" style="border:none;"></iframe>
+
+                    <div class="wp-block-image size-full col-image">
+                        <a href="https://goo.gl/maps/HE55AEui3iRUqSdL9" target="_blank">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/map.jpg" alt="200-B Monroe Street, Rockville, MD 20850" title="200-B Monroe Street, Rockville, MD 20850">
+                        </a>
                     </div>
 
                     <div class="grid-x footer-contact-info">

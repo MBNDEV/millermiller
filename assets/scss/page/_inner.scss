@@ -175,7 +175,11 @@ main {
     }
 }
 
-
+.blog{
+	.page-content{
+		padding: 100px 0 50px;
+	}
+} 
 .page-content {
     padding: 100px 0;
 
@@ -794,6 +798,54 @@ main {
 }
 
 
+.footer-contact-info{
+	margin-top: 100px;
+}
+
+@include media(max-width, 1023px) {
+	#footer{
+		.control-website-info{
+			display: -ms-flexbox;
+	    	display: flex;
+	        -ms-flex-wrap: wrap;
+	    	flex-wrap: wrap;
+	    	-ms-flex-pack: center;
+	    	justify-content: center;
+
+	    	.foot-pay{
+	    		margin-bottom: 45px;
+	    	}
+
+
+		}
+
+		.foot-social{
+    		text-align: right;
+    	}
+
+    	.foot-panav, .foot-menu{
+    		text-align: center;
+    	}
+    	.foot-menu{
+			.sub-menu{
+				margin-bottom: 0;
+			}
+    	}
+	}
+
+}
+
+@include media(max-width, 639px) {
+	#footer{
+		.foot-social{
+    		text-align: center;
+			margin-left: 0;
+			margin-right: 0;
+    	}
+    }
+}
+
+
 
 
 
@@ -803,6 +855,8 @@ main {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .vertical-center-left{
@@ -816,16 +870,6 @@ main {
 	height: 10px;
 	margin: 20px 0 50px;
 	background-color: #ecf8f7;
-}
-
-
-
-.control-flex{
-	-ms-flex-wrap: wrap!important;
-    flex-wrap: wrap!important;
-}
-.control-flex > *{
-
 }
 
 @include media(min-width, 992px) {

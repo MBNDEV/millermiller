@@ -70,6 +70,8 @@
     color: #2e2e2e; }
     .practice-areas h4 a:hover {
       color: #707070; }
+  .practice-areas p.excerpt {
+    line-height: 33px; }
   .practice-areas ul {
     margin: 0;
     padding: 0; }
@@ -107,7 +109,7 @@
   color: #fff;
   text-align: center;
   padding: 20px 0;
-  min-height: 230px;
+  min-height: 518px;
   display: flex;
   align-items: center; }
   .sec-banner .wp-block-group__inner-container > *:last-child {
@@ -609,7 +611,8 @@
   .sec-banner.spa p {
     max-width: 990px;
     margin: 15px auto 30px;
-    font-size: 20px; }
+    font-size: 20px;
+    font-weight: 700; }
   .sec-banner.spa .bg {
     position: absolute;
     left: 0;
@@ -649,7 +652,8 @@
     padding: 40px 200px;
     margin-bottom: 50px;
     text-align: center;
-    z-index: 1; }
+    z-index: 1;
+    font-size: 20px; }
     .sec-pa-cont .intro:before {
       content: "";
       background: #326762;
@@ -667,6 +671,10 @@
     padding: 30px 90px;
     margin: 45px 0;
     grid-template-columns: 240px auto !important; }
+    .sec-pa-cont .block-award h5 {
+      font-size: 25px; }
+    .sec-pa-cont .block-award p {
+      font-size: 18px; }
     .sec-pa-cont .block-award figure {
       width: 200px; }
     .sec-pa-cont .block-award > * {

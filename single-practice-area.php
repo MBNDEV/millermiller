@@ -36,11 +36,11 @@ get_header();
             } ?>
             </h5>
             <h1 class="hbg">
-            <?php if(get_field('paf_banner_title') != "") {
-                the_field('paf_banner_title');
-            } else {
-                the_title();
-            } ?>
+                <span><?php if(get_field('paf_banner_title') != "") {
+                    the_field('paf_banner_title');
+                } else {
+                    the_title();
+                } ?></span>
             </h1>
 
             <p><?php if(get_field('paf_banner_description') != "") {
@@ -119,11 +119,13 @@ get_header();
         <div class="grid-container">
             <div class="text-center">
                 <h2 class="hbg">
-                    <?php if(get_field('paf_faqs_title') != "") {
-                        the_field('paf_faqs_title');
-                    } else {
-                        echo "FAQs";
-                    } ?>
+                    <span class="lblue">
+                        <?php if(get_field('paf_faqs_title') != "") {
+                            the_field('paf_faqs_title');
+                        } else {
+                            echo "FAQs";
+                        } ?>
+                    </span>
                 </h2>
             </div>
             <ul  class="accordion" data-accordion  data-multi-expand="true" data-allow-all-closed="true">
@@ -145,7 +147,8 @@ get_header();
     <div class="sec-pa-rel">
         <div class="grid-container">
             <div class="text-center">
-                <h2 class="hbg">MORE ON <?php echo $terms[0]->name; ?></h2>
+                <h2 class="hbg more_on">
+                    <span class="lblue">MORE ON <?php echo $terms[0]->name; ?></span></h2>
             </div><br>
         <?php                 
             $args = array(
@@ -183,7 +186,7 @@ get_header();
                     <h4 class="hbg">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h4>
-                    <p>
+                    <p class="excerpt">
                     <?php
                         $excerpt = get_the_excerpt(); 
                         $excerpt = substr( $excerpt, 0, 165 );
@@ -201,7 +204,12 @@ get_header();
 
     <?php   endwhile;  wp_reset_postdata(); ?> 
 
-                   
+    <div class="sec-subscribe">
+        <?php 
+            $subscribe = get_post(182);
+            echo apply_filters('the_content',$subscribe->post_content);
+        ?>
+    </div>        
 </main>
 
 <?php

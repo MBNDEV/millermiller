@@ -135,6 +135,10 @@ $color-xbrown: #6f4f2a;
 		}
 	}
 
+    p.excerpt{
+        line-height:33px;
+    }
+
 	ul {
 		margin: 0;
 		padding:0;
@@ -202,7 +206,7 @@ $color-xbrown: #6f4f2a;
 	color: $color-white;
 	text-align: center;
 	padding: 20px 0;
-	min-height: 230px;
+	min-height: 518px;
 	display: flex;
     align-items: center;
 
@@ -1025,7 +1029,8 @@ $color-xbrown: #6f4f2a;
     p {
         max-width: 990px;
         margin:15px auto 30px;
-        font-size: 20px;;
+        font-size: 20px;
+        font-weight:700;
     }
     
     
@@ -1084,6 +1089,7 @@ $color-xbrown: #6f4f2a;
         margin-bottom: 50px;
         text-align: center;
         z-index: 1;
+        font-size:20px;
 
         &:before {
             content: "";
@@ -1107,7 +1113,13 @@ $color-xbrown: #6f4f2a;
         padding: 30px 90px;
         margin:45px 0;
         grid-template-columns: 240px auto !important;
-
+        
+        h5{
+            font-size:25px;
+        }
+        p{
+            font-size:18px;
+        }
         figure {
             width: 200px;
         }

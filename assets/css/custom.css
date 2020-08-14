@@ -763,6 +763,8 @@ header {
 .sec-subscribe {
   position: relative;
   margin: 0 0 70px; }
+  .sec-subscribe .wp-block-group__inner-container {
+    padding: 0; }
   .sec-subscribe .subscribe-box {
     background: url(../img/newsletter-bg.jpg) no-repeat 75% center/cover;
     padding: 45px;
@@ -780,8 +782,15 @@ header {
           display: block;
           margin-top: 20px;
           max-width: 185px; } }
+      @media (max-width: 1024px) {
+        .sec-subscribe .subscribe-box p .button {
+          margin-left: auto;
+          margin-right: auto; } }
     .sec-subscribe .subscribe-box > *:last-child {
       margin-bottom: 0; }
+  @media (max-width: 1024px) {
+    .sec-subscribe .wp-block-cover__inner-container {
+      width: 100%; } }
   @media (max-width: 639px) {
     .sec-subscribe .subscribe-box {
       padding: 20px; }
@@ -1372,9 +1381,11 @@ main .contact-form p {
         margin-left: -45px;
         margin-right: 10px; }
       .foot-s1 .foot-info li.ph {
-        font-size: 28px;
+        font-size: 20px;
         font-weight: bold;
         line-height: 1; }
+        .foot-s1 .foot-info li.ph a {
+          font-size: 20px; }
   .foot-s1 .foot-social {
     font-size: 18px;
     font-weight: bold;

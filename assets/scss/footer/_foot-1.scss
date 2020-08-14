@@ -1,5 +1,5 @@
 .foot-s1 {
-    padding: 110px 0 30px;
+    padding: 70px 0 30px;
     font-size: 14px;
     background: $color-primary;
     color: $color-white;
@@ -26,9 +26,12 @@
             }
 
             &.ph {
-                font-size: 28px;
+                font-size: 20px;
                 font-weight: bold;
                 line-height: 1;
+                a{
+                    font-size:20px;
+                }
             }
         }
     }

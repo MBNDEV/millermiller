@@ -640,6 +640,10 @@
     position: relative;
     margin:0 0 70px;
 
+    .wp-block-group__inner-container{
+        padding:0;
+    }
+
     .subscribe-box {
         background: url(../img/newsletter-bg.jpg) no-repeat 75% center / cover;
         padding:45px;
@@ -660,6 +664,11 @@
                         margin-top:20px;
                         max-width:185px;
                 }
+                @include media(max-width, 1024px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
             }
 
         }
@@ -669,7 +678,14 @@
         }
     }
 
+    @include media(max-width, 1024px) {
+        .wp-block-cover__inner-container{
+            width:100%;
+        }
+    }
+
     @include media(max-width, 639px) {
+
         .subscribe-box {
             padding:20px;
 

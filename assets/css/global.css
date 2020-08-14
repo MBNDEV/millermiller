@@ -8418,6 +8418,9 @@ main .footer-lists {
     main .footer-lists li:first-child {
       font-weight: normal; }
 
+main.contact-page .sec-firm-s1 .col-image:before {
+  display: none; }
+
 main.contact-page .page-content {
   overflow: hidden; }
 

@@ -96,6 +96,10 @@ main {
 	}
 
 	&.contact-page{
+		.sec-firm-s1 .col-image:before{
+			display: none;
+		}
+		
 		.page-content{
 			overflow: hidden;
 		}

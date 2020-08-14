@@ -729,8 +729,11 @@
       .sec-pa-attr .attr-item h4 {
         margin-top: 0; } }
 
+.sec-pa-rel {
+  padding-top: 40px; }
+
 .sec-pa-faqs {
-  padding: 90px 0; }
+  padding: 90px 0 40px 0; }
   .sec-pa-faqs .accordion .accordion-item {
     border-bottom: 2px solid #397670; }
   .sec-pa-faqs .accordion .accordion-title {

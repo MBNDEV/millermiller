@@ -71,7 +71,7 @@
                     &copy; All rights reserved — <?php echo date('Y'); ?> &copy; Miller, Miller & Canby.  
                     <ul>
                         <li><a href="<?php the_permalink(104); ?>">Confidentiality</a></li>
-                        <li><a href="<?php the_permalink(106); ?>">Privacy Policy</a></li>
+                        <li><a href="<?php the_permalink(1447); ?>">Privacy Policy</a></li>
                     </ul>
                 </span>
                 <span class="designby">

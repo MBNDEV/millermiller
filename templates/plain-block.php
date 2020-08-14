@@ -16,7 +16,9 @@ get_header();
 
     <div class="grid-container">
  		<div class="grid-x grid-margin-x align-center">
-    		<div class="cell small-10 padding-vertical-3">
+
+    		<div class="cell small-10 medium-8 padding-vertical-3">
+
 				<?php
 					while ( have_posts() ) : the_post();
 						

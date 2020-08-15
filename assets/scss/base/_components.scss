@@ -71,3 +71,10 @@ ul.check-list {
 		color: $color-dark;
 	}
 }
+
+.single-practice-area{
+    ul.check-list{
+        margin-bottom:0;
+        padding-bottom:40px;
+    }
+}

@@ -1107,6 +1107,14 @@ $color-xbrown: #6f4f2a;
             width: 100vw;
             z-index: -1;
         }
+
+        a{
+            color:#a9d5d1;
+            &:hover{
+                color:#a9d5d1;
+                text-decoration: underline;
+            }
+        }
     }
 
     .two-columns {

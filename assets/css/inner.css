@@ -669,6 +669,11 @@
       margin-left: -50vw;
       width: 100vw;
       z-index: -1; }
+    .sec-pa-cont .intro a {
+      color: #a9d5d1; }
+      .sec-pa-cont .intro a:hover {
+        color: #a9d5d1;
+        text-decoration: underline; }
   .sec-pa-cont .two-columns {
     margin-left: 190px; }
   .sec-pa-cont .block-award {

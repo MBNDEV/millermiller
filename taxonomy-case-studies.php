@@ -115,6 +115,7 @@ get_header();
                                 
                                 <h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                 <p><b>Issue:</b> <?= strip_tags(get_field('cs_issue')) ?></p>
+                                
                             </div>
                         </article>
                     </div>

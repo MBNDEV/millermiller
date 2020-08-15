@@ -71,7 +71,8 @@
     .practice-areas h4 a:hover {
       color: #707070; }
   .practice-areas p.excerpt {
-    line-height: 33px; }
+    line-height: 33px;
+    margin-bottom: 0; }
   .practice-areas ul {
     margin: 0;
     padding: 0; }
@@ -103,6 +104,9 @@
 
 .page-content {
   padding: 100px 0; }
+
+.sec-subscribe-spa {
+  padding-top: 40px; }
 
 .sec-banner {
   background-color: #214b47;

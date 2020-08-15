@@ -137,6 +137,7 @@ $color-xbrown: #6f4f2a;
 
     p.excerpt{
         line-height:33px;
+        margin-bottom:0;
     }
 
 	ul {
@@ -200,6 +201,9 @@ $color-xbrown: #6f4f2a;
     padding: 100px 0;
 }
 
+.sec-subscribe-spa{
+    padding-top:40px;
+}
  
 .sec-banner {
 	background-color: $color-primary;

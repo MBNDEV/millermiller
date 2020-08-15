@@ -144,33 +144,37 @@ get_header();
     <?php endif; ?>
 
 
+
+    <?php                 
+    $args = array(
+        'posts_per_page' => 3,
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'practice-areas',
+                'field' => 'slug',
+                'terms' => $terms[0]->slug,
+                'include_children' => false
+            )
+        ),
+        'post_type' => 'practice-area',
+        'orderby' => 'title,',
+        'post__not_in' => array( $post->ID )
+    );
+    $relPa = new WP_Query( $args ); ?>
+
+    <?php if($relPa->have_posts()): ?>
     <div class="sec-pa-rel">
         <div class="grid-container">
             <div class="text-center">
                 <h2 class="hbg more_on">
                     <span class="lblue">MORE ON <?php echo $terms[0]->name; ?></span></h2>
             </div><br>
-        <?php                 
-            $args = array(
-                'posts_per_page' => 3,
-                'tax_query' => array(
-                    'relation' => 'AND',
-                    array(
-                        'taxonomy' => 'practice-areas',
-                        'field' => 'slug',
-                        'terms' => $terms[0]->slug,
-                        'include_children' => false
-                    )
-                ),
-                'post_type' => 'practice-area',
-                'orderby' => 'title,',
-                'post__not_in' => array( $post->ID )
-            );
-            $relPa = new WP_Query( $args ); ?>
-
+        
+            
             <div class="grid-x grid-margin-x practice-areas">        
-            <?php while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
-
+            
+                <?php while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
                 <div class="cell large-4 medium-6 pa-item">
                     <figure>
                     <a href="<?php the_permalink(); ?>">
@@ -193,18 +197,15 @@ get_header();
                         $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
                         echo $excerpt;
                     ?>
-                    </p>
-
                 </div>  
-                        
-            <?php } ?>
+                <?php } ?>
             </div>
         </div>
     </div>
-
+    <?php endif; ?>
     <?php   endwhile;  wp_reset_postdata(); ?> 
 
-    <div class="sec-subscribe">
+    <div class="sec-subscribe-spa">
         <?php 
             $subscribe = get_post(182);
             echo apply_filters('the_content',$subscribe->post_content);

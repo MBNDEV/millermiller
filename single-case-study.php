@@ -15,9 +15,8 @@ get_header();
         <?php while ( have_posts() ) : the_post();  ?>
             <div class="grid-x grid-margin-x align-stretch">
                 <div class="cell small-12 medium-6">
-                    <div class="blog-thumbnail">
-                        <?= get_the_post_thumbnail(get_the_ID(),'full'); ?>
-                    </div>
+                    <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+                    <div class="blog-thumbnail" style="background-image: url(<?= esc_url( $controlThumbnail['url'] ); ?>);"></div>
                 </div>
                 <div class="cell small-12 medium-6">
                     <div class="blog-hero">
@@ -33,7 +32,13 @@ get_header();
                             <h1><?php the_title(); ?></h1>    
                             <div class="content-issue">
                                 <h5>Issue:</h5>
+
                                 <?php the_field('cs_issue'); ?>
+
+
+                                <div class="wp-block-button margin-vertical-3">
+                                    <a class="wp-block-button__link" href="<?= get_field('cs_pdf_link') ?>" target="_blank">Download This Case Studies</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,56 +48,13 @@ get_header();
         <div class="grid-container box-design"></div>
     </div>
     
-    <section class="page-content blog-details">
+    <section class="page-content case-details">
         <div class="grid-container">
-            
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-12 medium-2">
-                    <h2>Goal:</h2>
-                </div>
-                <div class="cell small-12 medium-10">
-                    <?php the_field('cs_goal') ?>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-12 medium-2">
-                    <h2>Success:</h2>
-                </div>
-                <div class="cell small-12 medium-10">
-                    <?php the_field('cs_goal') ?>
-                </div>
-            </div>
-
-           <div class="bottom-blog-links">
-                <ul>
-                    <li><a href="javascript:;"><i class="icn-comments"></i> <?= get_comments_number() ?> Comments</a></li>
-                    <li><a href="javascript:;" id="printMe"><i class="icn-print"></i> Print</a></li>
-                </ul>
-            </div>
-
-            <?php while ( have_posts() ) : the_post();  ?>
-                <div id="comments" class="comments-section">
-
-                    <div class="bottom-share-links control-flex">
-                        <h5>Share this Article:</h5>
-                        
-                        <div id="jsSocial" style=""></div>
-                    </div>
-
-                    <?php comments_template('/comments.php'); ?>
-
-                </div><!-- #comments -->
-            <?php endwhile; ?>
-
-
             <div class="bottom-related-posts">
                 <div class="text-center">
                     <h2 class="hbg">RELATED NEWS & RESOURCES</h2>
                 </div>
-                <div class="grid-x grid-margin-x blog-lists">
+                <div class="grid-x grid-margin-x blog-lists margin-top-3">
                     
                      <?php 
                         $post_id = get_the_ID();
@@ -164,50 +126,7 @@ get_header();
 
 
 </main>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
-<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
-<script>
-    $(function(){
-        $("#jsSocial").jsSocials({
-            showLabel: true,
-            showCount: false,
-            shareIn: "popup",
-            shares: [
-                {
-                    share : "facebook",
-                    label : "Share on Facebook",
-                    logo: "fa fa-facebook"
-                }, 
-                {
-                    share : "twitter",
-                    label : "Tweet this",
-                    logo : "fa fa-twitter"
-                }, 
-                {
-                    share : "linkedin",
-                    label : "Share on Linkedin",
-                    logo : "fa fa-linkedin"
-                }
-            ]
-        });
 
-        $('.bottom-share-links a').click(function(){
-            var getSocial = $(this).data('social');
-            $('#jsSocial .jssocials-share').each(function(){
-                var getClass = $(this).attr('class');
-                if (getClass.indexOf(getSocial) > -1) {
-                    console.log(getClass);
-                    $(this).find('.jssocials-share-link').click();
-                }
-            });
-        });
-
-        $('#printMe').click(function(){
-            window.print();
-        });
-    })
-</script>
 
 <?php
 

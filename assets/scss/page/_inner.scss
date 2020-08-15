@@ -293,6 +293,7 @@ main {
 	article{
 		img{
 			width: 100%;
+			display: block;
 		}
 		h5 a{
 			color: $color-dark-grey;
@@ -339,6 +340,9 @@ main {
 	    position: relative;
 	    overflow: hidden;
 	    height: 100%;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+
 
 	    img {
 	    	width: 100%;
@@ -451,6 +455,16 @@ main {
 	    }
 	}
 	
+}
+
+@include media(max-width, 991px) {
+	.blog-header{
+
+		.blog-thumbnail {
+			padding-bottom: 56.25%;
+			position: relative;
+		}
+	}
 }
 
 .blog-details{
@@ -668,6 +682,16 @@ main {
 
 		.case-thumbnail{
 		    margin-bottom: 36px;
+		    position: relative;
+		    overflow: hidden;
+		    padding-bottom: 56.25%;
+
+		    img{
+		    	position: absolute;
+		    	top: 50%;
+		    	left: 50%;
+		    	transform: translate(-50%, -50%);
+		    }
 		}
 	}
 }

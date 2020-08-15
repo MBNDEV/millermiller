@@ -7297,6 +7297,10 @@ ul.check-list {
     padding-left: 25px;
     color: #2e2e2e; }
 
+.single-practice-area ul.check-list {
+  margin-bottom: 0;
+  padding-bottom: 40px; }
+
 [class*="icn"] {
   width: 32px;
   height: 32px;

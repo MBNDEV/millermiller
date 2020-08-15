@@ -52,7 +52,7 @@ get_header();
         <div class="grid-container">
             <div class="bottom-related-posts">
                 <div class="text-center">
-                    <h2 class="hbg">RELATED NEWS & RESOURCES</h2>
+                    <h2 class="hbg">RELATED CASE STUDIES</h2>
                 </div>
                 <div class="grid-x grid-margin-x blog-lists margin-top-3">
                     

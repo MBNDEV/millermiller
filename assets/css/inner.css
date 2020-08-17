@@ -90,7 +90,8 @@
       font-weight: 400;
       max-width: 93%; }
     .practice-areas .pa-item a {
-      position: relative; }
+      position: relative;
+      line-height: 35px; }
       .practice-areas .pa-item a:hover {
         color: #397670; }
       .practice-areas .pa-item a:before {
@@ -658,7 +659,8 @@
     margin-bottom: 50px;
     text-align: center;
     z-index: 1;
-    font-size: 20px; }
+    font-size: 20px;
+    line-height: 37px; }
     .sec-pa-cont .intro:before {
       content: "";
       background: #326762;

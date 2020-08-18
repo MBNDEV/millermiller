@@ -484,17 +484,9 @@ main {
 
 @include media(max-width, 991px) {
 	.blog-header{
-
-		.blog-thumbnail {
-			padding-bottom: 56.25%;
-			position: relative;
-		}
-	}
-}
-
-@include media(max-width, 767px){
-    .blog-header{
         .blog-thumbnail{
+            padding-bottom: 56.25%;
+            position: relative;
             img{
                 position: absolute;
                 top: 50%;
@@ -510,6 +502,10 @@ main {
             }
         }
     }
+}
+
+@include media(max-width, 767px){
+    
 }
 
 .blog-details{
@@ -668,7 +664,8 @@ main {
 			}
 		}
 		.blog-hero {
-			.vertical-center-left{
+            .vertical-center-left,
+            &.blog-detailed > .vertical-center-left{
 				width: 100%;
 			    top: initial;
 			    position: relative;

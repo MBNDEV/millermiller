@@ -8976,7 +8976,8 @@ main .contact-form p {
     left: 0;
     width: calc(100% + 10px);
     height: 80%;
-    z-index: -1; }
+    z-index: -1;
+    opacity: 1 !important; }
 
 .sec-history .history-item:nth-child(odd) h4.hbg:before {
   background-color: #ecf8f7; }

@@ -9,7 +9,7 @@
 get_header();
 ?>
 
-<main id="content">
+<main id="content" class="case-studies-detailed">
     <div class="blog-header">
         <div class="medium-fluid"></div>
         <?php while ( have_posts() ) : the_post();  ?>
@@ -19,7 +19,7 @@ get_header();
                     <div class="blog-thumbnail" style="background-image: url(<?= esc_url( $controlThumbnail['url'] ); ?>);"></div>
                 </div>
                 <div class="cell small-12 medium-6">
-                    <div class="blog-hero">
+                    <div class="blog-hero case-study-detailed">
                         <div class="vertical-center-left">
                             <div class="breadcrumbs">
                                 <a href="/case-studies">case studies</a>

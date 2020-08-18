@@ -8967,6 +8967,23 @@ main .contact-form p {
     margin-left: 0;
     margin-right: 0; } }
 
+.sec-history .history-item h4.hbg {
+  position: relative; }
+  .sec-history .history-item h4.hbg:before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: calc(100% + 10px);
+    height: 80%;
+    z-index: -1; }
+
+.sec-history .history-item:nth-child(odd) h4.hbg:before {
+  background-color: #ecf8f7; }
+
+.sec-history .history-item:nth-child(even) h4.hbg:before {
+  background-color: #f5f1ec; }
+
 .control-flex {
   display: -ms-flexbox;
   display: flex;

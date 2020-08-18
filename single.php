@@ -23,7 +23,7 @@ get_header();
                     </div>
                 </div>
                 <div class="cell small-12 medium-6">
-                    <div class="blog-hero">
+                    <div class="blog-hero blog-detailed">
                         <div class="vertical-center-left">
                             <small>news & Resources</small>
                             <h1><?php the_title(); ?></h1>    
@@ -58,6 +58,7 @@ get_header();
                 <ul>
                     <li><a href="javascript:;"><i class="icn-comments"></i> <?= get_comments_number() ?> Comments</a></li>
                     <li><a href="javascript:;" id="printMe"><i class="icn-print"></i> Print</a></li>
+                    <li><a href="javascript:;">(<?= do_shortcode( '[post-views]' ); ?>) Views</a></li>
                 </ul>
             </div>
 

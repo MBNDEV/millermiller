@@ -20,7 +20,7 @@ get_header();
                 </div>
                 <div class="cell small-12 medium-6">
                     <div class="blog-hero case-study-detailed">
-                        <div class="vertical-center-left">
+                        <div class="vertical-center-left-x case-info">
                             <div class="breadcrumbs">
                                 <a href="/case-studies">case studies</a>
                                 <?php 

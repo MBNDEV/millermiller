@@ -72,7 +72,7 @@ get_header();
             <div class="grid-x grid-margin-x case-lists">
             	<?php 
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    $query_limit_items = 3;
+                    $query_limit_items = 9;
 
                     $attorneyQuery = [];
 
@@ -84,10 +84,7 @@ get_header();
                             'value'     => $attorney
                         );
                     }
-
-
-
-
+                    
 				    $query = new WP_Query( array(
 				        'post_type'     => 'case-study',
 				        'post_status'   => 'publish',
@@ -132,27 +129,10 @@ get_header();
 				<?php endwhile;  ?>
             	
             </div>
-             <?php if (wp_count_posts('case-study')->publish > $query_limit_items): ?>
+             <?php if (paginate_links()): ?>
                 <div class="text-center">
                     <div id="post-pagination" style="display: none">
-                        <?php 
-
-                            $total_pages = $query->max_num_pages;
-
-                            if ($total_pages > 1){
-
-                                $current_page = max(1, get_query_var('paged'));
-
-                                echo paginate_links(array(
-                                    'base' => get_pagenum_link(1) . '%_%',
-                                    'format'       => '/page/%#%',
-                                    'current'      => $current_page,
-                                    'total'        => $total_pages,
-                                    'prev_text'    => __('« prev'),
-                                    'next_text'    => __('next »'),
-                                ));
-                            }   
-                         ?>
+                        <?php paginate_links(); ?>
                     </div>
                     <div class="wp-block-button">
                         <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
@@ -171,24 +151,19 @@ get_header();
 		  	percentPosition: true,
 		});
 
-
-        var $current_page = 0;
-
-        $('#loadMorePosts').click(function(){
-            $current_page++;
-            var $item = $('#post-pagination .page-numbers').eq($current_page);
-            if ($item.next().hasClass('next')) {
-                $(this).hide();
-            }
-            var getLink = $item.attr('href');
+        var $nextLink = $('#post-pagination .next').attr('href');
+        $('#loadMorePosts').click(function(e){
+            e.preventDefault();
             
-            $.get( getLink, function( data ) {
-                var getList = $(data).find('.case-lists').html();
-                getList = $(getList);
-                $caseList_iso.append(getList).isotope( 'appended', getList );
-
+            $.get( $nextLink, function( data ) {
+                var getList = $(data).find('.blog-lists').html();
+                $('.blog-lists').append(getList);
+                $nextLink = $(data).find('#post-pagination .next').attr('href');
+                if (!$nextLink) {
+                    $('#loadMorePosts').hide();
+                }
             });
-            
+
         });
 	})
 </script>

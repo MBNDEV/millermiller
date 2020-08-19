@@ -53,7 +53,7 @@ get_header();
                                 <a href="#" class="button-filter display-block padding-horizontal-2">Archive</a>
                                 <div class="dropdown-lists full">
                                     <ul>
-                                        <?php wp_get_archives( array( 'type' => 'yearly', 'limit' => 5 ) ); ?>
+                                        <?php wp_get_archives( array( 'type' => 'yearly', 'limit' => 15 ) ); ?>
                                     </ul>
                                 </div>
                             </div>
@@ -93,9 +93,11 @@ get_header();
 
                 <?php endwhile; ?>
             </div>
-            <?php if (wp_count_posts()->publish > 9): ?>
+            <?php if (paginate_links()): ?>
                 <div class="text-center">
-                    <div id="post-pagination" style="display: none"><?= paginate_links(); ?></div>
+                    <div id="post-pagination" style="display: none">
+                        <?php  echo paginate_links(); ?>
+                    </div>
                     <div class="wp-block-button">
                         <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
                     </div>
@@ -108,20 +110,20 @@ get_header();
     <script>
         $(function(){
 
-            var $current_page = 0;
+            var $nextLink = $('#post-pagination .next').attr('href');
 
-            $('#loadMorePosts').click(function(){
-                $current_page++;
-                var $item = $('#post-pagination .page-numbers').eq($current_page);
-                if ($item.next().hasClass('next')) {
-                    $(this).hide();
-                }
-                var getLink = $item.attr('href');
-                $.get( getLink, function( data ) {
+            $('#loadMorePosts').click(function(e){
+                e.preventDefault();
+                
+                $.get( $nextLink, function( data ) {
                     var getList = $(data).find('.blog-lists').html();
                     $('.blog-lists').append(getList);
+                    $nextLink = $(data).find('#post-pagination .next').attr('href');
+                    if (!$nextLink) {
+                        $('#loadMorePosts').hide();
+                    }
                 });
-                
+
             });
         })
     </script>

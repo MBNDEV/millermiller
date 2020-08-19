@@ -17,14 +17,13 @@ get_header();
                         <?php if (get_the_post_thumbnail_url()): ?>
                             <?php the_post_thumbnail(); ?>
                         <?php else: ?>
-                            
                             <img src="<?= esc_attr(catch_that_image()) ?>" alt="<?= the_title(); ?>">
                         <?php endif ?>
                     </div>
                 </div>
                 <div class="cell small-12 medium-6">
                     <div class="blog-hero blog-detailed">
-                        <div class="vertical-center-left">
+                        <div class="vertical-center-left-x blog-info">
                             <small>news & Resources</small>
                             <h1><?php the_title(); ?></h1>    
                             <p class="blog-date">Posted <?= get_the_date( 'F j, Y' ); ?> at <?php the_time( 'g:i A' ); ?></p>       

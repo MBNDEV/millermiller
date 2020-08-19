@@ -1023,7 +1023,8 @@ main .contact-form p {
     background-size: cover; }
     .blog-header .blog-thumbnail img {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      object-fit: cover; }
   .blog-header .blog-hero {
     position: relative;
     height: 100%; }

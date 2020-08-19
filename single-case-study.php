@@ -16,7 +16,10 @@ get_header();
             <div class="grid-x grid-margin-x align-stretch">
                 <div class="cell small-12 medium-6">
                     <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
-                    <div class="blog-thumbnail" style="background-image: url(<?= esc_url( $controlThumbnail['url'] ); ?>);"></div>
+                     <!-- style="background-image: url(<?= esc_url( $controlThumbnail['url'] ); ?>);" -->
+                    <div class="blog-thumbnail">
+                        <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr($controlThumbnail['alt']) ?>" title="<?= esc_attr($controlThumbnail['alt']) ?>">
+                    </div>
                 </div>
                 <div class="cell small-12 medium-6">
                     <div class="blog-hero case-study-detailed">

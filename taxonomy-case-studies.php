@@ -144,23 +144,19 @@ get_header();
         });
 
 
-        var $current_page = 0;
-
-        $('#loadMorePosts').click(function(){
-            $current_page++;
-            var $item = $('#post-pagination .page-numbers').eq($current_page);
-            if ($item.next().hasClass('next')) {
-                $(this).hide();
-            }
-            var getLink = $item.attr('href');
+        var $nextLink = $('#post-pagination .next').attr('href');
+        $('#loadMorePosts').click(function(e){
+            e.preventDefault();
             
-            $.get( getLink, function( data ) {
-                var getList = $(data).find('.case-lists').html();
-                getList = $(getList);
-                $caseList_iso.append(getList).isotope( 'appended', getList );
-
+            $.get( $nextLink, function( data ) {
+                var getList = $(data).find('.blog-lists').html();
+                $('.blog-lists').append(getList);
+                $nextLink = $(data).find('#post-pagination .next').attr('href');
+                if (!$nextLink) {
+                    $('#loadMorePosts').hide();
+                }
             });
-            
+
         });
     })
 </script>

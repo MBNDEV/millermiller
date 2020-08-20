@@ -67,7 +67,7 @@ get_header();
                     <?php the_field('cs_success') ?>
                 </div>
             </div>
-            <div class="bottom-related-posts">
+            <div class="bottom-related-posts margin-top-3">
                     
                  <?php 
                     $post_id = get_the_ID();
@@ -99,7 +99,7 @@ get_header();
 
                     $related_cats_post = new WP_Query( $query_args );
                     $countRposts = $related_cats_post->found_posts;
-                ?>>
+                ?>
 
                 <?php if ($countRposts != 1): ?>
                     <div class="text-center">
@@ -109,31 +109,32 @@ get_header();
                     
                        <?php while($related_cats_post->have_posts()): $related_cats_post->the_post(); ?>
 
-                            
-
-                            <div class="cell large-4 medium-6 small-12">
-                                <article>
-                                    <div class="wp-block-image">
-                                        <?php $controlThumb = get_field('cs_thumbnail'); ?>
-                                        <img src="<?= esc_url($controlThumb['url']) ?>" alt="<?= esc_attr($controlThumb['alt']) ?>" title="<?= esc_attr($controlThumb['alt']) ?>">
-                                    </div>
-                                    
-                                    <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                                    <small>
-                                        <?php 
-                                            $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
-                                        ?>
-                                        <?php if ($controlPostCategory): ?>
-                                            <?php
-                                                $postCategoryLength = count($controlPostCategory);
-                                                $postCtr = 1;
-                                                 foreach ($controlPostCategory as $pc): ?>
-                                                <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
-                                            <?php $postCtr++; endforeach; ?>
-                                        <?php endif ?>
-                                    </small>
-                                </article>
-                            </div>
+                            <?php if ($post_id == get_the_ID()): ?>
+                                <div class="cell large-4 medium-6 small-12">
+                                    <article>
+                                        <div class="wp-block-image">
+                                            <?php $controlThumb = get_field('cs_thumbnail'); ?>
+                                            <img src="<?= esc_url($controlThumb['url']) ?>" alt="<?= esc_attr($controlThumb['alt']) ?>" title="<?= esc_attr($controlThumb['alt']) ?>">
+                                        </div>
+                                        
+                                        <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                                        <small>
+                                            <?php 
+                                                $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
+                                            ?>
+                                            <?php if ($controlPostCategory): ?>
+                                                <?php
+                                                    $postCategoryLength = count($controlPostCategory);
+                                                    $postCtr = 1;
+                                                     foreach ($controlPostCategory as $pc): ?>
+                                                    <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
+                                                <?php $postCtr++; endforeach; ?>
+                                            <?php endif ?>
+                                        </small>
+                                    </article>
+                                </div>
+                                
+                            <?php endif ?>
 
                         <?php endwhile; wp_reset_postdata(); ?>
                     </div>

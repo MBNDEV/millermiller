@@ -662,7 +662,31 @@ main {
 			margin-bottom: 60px;
 		    text-transform: uppercase;
 		    letter-spacing: 6.3px;
+		    font-size: 30px;
+		    font-weight: bold;
 		}
+	    
+	}
+}
+
+.case-details{
+	.bottom-related-posts{
+		h2 {
+		    text-transform: uppercase;
+		    letter-spacing: 6.3px;
+		    font-size: 30px;
+		    font-weight: bold;
+
+		    &:before{
+				background-color: #ecf8f7;
+			    width: calc(100% + 30px);
+			    left: 50%;
+			    top: 50%;
+			    transform: translateX(-50%);
+		    }
+
+		}
+
 	    
 	}
 }

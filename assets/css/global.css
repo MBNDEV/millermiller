@@ -8791,7 +8791,21 @@ main .contact-form p {
   .blog-details .bottom-related-posts h2 {
     margin-bottom: 60px;
     text-transform: uppercase;
-    letter-spacing: 6.3px; }
+    letter-spacing: 6.3px;
+    font-size: 30px;
+    font-weight: bold; }
+
+.case-details .bottom-related-posts h2 {
+  text-transform: uppercase;
+  letter-spacing: 6.3px;
+  font-size: 30px;
+  font-weight: bold; }
+  .case-details .bottom-related-posts h2:before {
+    background-color: #ecf8f7;
+    width: calc(100% + 30px);
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%); }
 
 @media (min-width: 992px) {
   .blog-details .grid-container .wp-block-group .wp-block-columns .wp-block-column:first-child h2 {

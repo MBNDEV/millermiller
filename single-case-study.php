@@ -88,9 +88,6 @@ get_header();
                         'post_not_in'    => array($post_id),
                         'posts_per_page'  => '3',
                         'orderby' => 'rand',
-                        'meta_key'      => 'ID',
-                        'meta_value'    => $post_id,
-                        'meta_compare' => '!=',
                         'tax_query' => array(
                             array(
                                 'taxonomy' => 'case-studies',
@@ -101,15 +98,18 @@ get_header();
                      );
 
                     $related_cats_post = new WP_Query( $query_args );
-                ?>
+                    $countRposts = $related_cats_post->found_posts;
+                ?>>
 
-                <?php if ($related_cats_post->have_posts()): ?>
+                <?php if ($countRposts != 1): ?>
                     <div class="text-center">
                         <h2 class="hbg">RELATED CASE STUDIES</h2>
                     </div>
                     <div class="grid-x grid-margin-x blog-lists margin-top-3">
                     
                        <?php while($related_cats_post->have_posts()): $related_cats_post->the_post(); ?>
+
+                            
 
                             <div class="cell large-4 medium-6 small-12">
                                 <article>

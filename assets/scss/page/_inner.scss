@@ -1,3 +1,14 @@
+.hbg{
+	&:before {
+		content: '';
+		position: absolute;
+		top: 60%;
+		left: 0;
+		height: 80%;
+		z-index: -1;
+		opacity: 1 !important;
+	}
+}
 main {
 	.sec-banner{
 		h5{
@@ -411,7 +422,7 @@ main {
 		    	display: inline-block;
 		    	font-weight: bold;
 		    	letter-spacing: 3.78px;
-		    	font-size: 80%;
+		    	font-size: 18px;
 			}
 			a:before:hover{
 				color: $color-blue-200;
@@ -422,14 +433,21 @@ main {
 			    display: inline-block;
 			    margin-bottom: 20px;
 			    font-weight: bold;
-			    letter-spacing: 3.78px;
+			    letter-spacing: 1px;
 			    color: $color-blue-200;
-			    margin:0 3px;
+			    margin:0 25px;
+			    opacity: 0.5;
 			}
 		}
 
 		p, h1, .content-issue h5 {
 		    color: $color-white;
+
+		}
+		.content-issue{
+			h5{
+				font-size: 25px;
+			}
 		}
 
 
@@ -486,6 +504,15 @@ main {
 	    }
 	}
 	
+}
+
+.case-details{
+	h2{
+		font-size: 25px;
+	}
+	p{
+		font-size: 18px;
+	}
 }
 
 
@@ -732,9 +759,11 @@ main {
 
 .case-lists {
 	.case-content{
+
 		p{
 			font-size: 15px;
     		color: $color-gray-300;
+    		font-weight: 500;
 		}
 		b{
 			color: $color-gray-500;
@@ -750,6 +779,10 @@ main {
 	.category-lists{
 		font-size: 15px;
     	color: $color-primary;
+
+    	small{
+    		font-size: inherit;
+    	}
 	}
 	article{
 		margin-bottom: 60px;

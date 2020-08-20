@@ -109,7 +109,7 @@ get_header();
                     
                        <?php while($related_cats_post->have_posts()): $related_cats_post->the_post(); ?>
 
-                            <?php if ($post_id == get_the_ID()): ?>
+                            <?php if ($post_id != get_the_ID()): ?>
                                 <div class="cell large-4 medium-6 small-12">
                                     <article>
                                         <div class="wp-block-image">

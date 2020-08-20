@@ -798,6 +798,15 @@ header {
         font-size: 24px;
         line-height: 1.2; } }
 
+.hbg:before {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 0;
+  height: 80%;
+  z-index: -1;
+  opacity: 1 !important; }
+
 main .sec-banner h5 span {
   color: #fff; }
 
@@ -1063,7 +1072,7 @@ main .contact-form p {
       display: inline-block;
       font-weight: bold;
       letter-spacing: 3.78px;
-      font-size: 80%; }
+      font-size: 18px; }
     .blog-header .blog-hero .breadcrumbs a:before:hover {
       color: #ace5df; }
     .blog-header .blog-hero .breadcrumbs a + a:before {
@@ -1072,11 +1081,14 @@ main .contact-form p {
       display: inline-block;
       margin-bottom: 20px;
       font-weight: bold;
-      letter-spacing: 3.78px;
+      letter-spacing: 1px;
       color: #ace5df;
-      margin: 0 3px; }
+      margin: 0 25px;
+      opacity: 0.5; }
     .blog-header .blog-hero p, .blog-header .blog-hero h1, .blog-header .blog-hero .content-issue h5 {
       color: #fff; }
+    .blog-header .blog-hero .content-issue h5 {
+      font-size: 25px; }
     .blog-header .blog-hero h1 {
       font-size: 50px;
       line-height: 1.46em; }
@@ -1110,6 +1122,12 @@ main .contact-form p {
       height: 30px;
       border: 1px solid #ccc;
       border-top: 0; }
+
+.case-details h2 {
+  font-size: 25px; }
+
+.case-details p {
+  font-size: 18px; }
 
 @media (max-width: 991px) {
   .blog-header .blog-thumbnail {
@@ -1246,7 +1264,8 @@ main .contact-form p {
 
 .case-lists .case-content p {
   font-size: 15px;
-  color: #818181; }
+  color: #818181;
+  font-weight: 500; }
 
 .case-lists .case-content b {
   color: #404040; }
@@ -1260,6 +1279,8 @@ main .contact-form p {
 .case-lists .category-lists {
   font-size: 15px;
   color: #214b47; }
+  .case-lists .category-lists small {
+    font-size: inherit; }
 
 .case-lists article {
   margin-bottom: 60px; }

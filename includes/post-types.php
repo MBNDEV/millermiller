@@ -109,6 +109,8 @@ function case_studies_post() {
 }
 add_action( 'init', 'case_studies_post' );
 
+
+// attorney_testimonials
 function attorney_testimonials_post() {
     register_post_type( 
         'attorney-testimony',
@@ -127,6 +129,54 @@ function attorney_testimonials_post() {
     );
 }
 add_action( 'init', 'attorney_testimonials_post' );
+// attorney_testimonials
+
+
+// attorney_partners_post
+function attorney_partners_post() {
+    register_post_type( 
+        'attorney-partner',
+        array(
+            'labels'    => array(
+                'name' => __( 'Attorney Partners' ),
+                'singular_name' => __('Attorney Partner')
+            ),
+            'public'        => true,
+            'publicly_queryable' => false,
+            'has_archive'   => false,
+            'show_in_rest'  => false,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'page-attributes'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+        )
+    );
+}
+add_action( 'init', 'attorney_partners_post' );
+// attorney_partners_post
+
+
+
+// attorney_partners_post
+function attorney_appellate_post() {
+    register_post_type( 
+        'attorney-appellate',
+        array(
+            'labels'    => array(
+                'name' => __( 'Attorney Appellates' ),
+                'singular_name' => __('Attorney Appellate')
+            ),
+            'public'        => true,
+            'publicly_queryable' => false,
+            'has_archive'   => false,
+            'show_in_rest'  => false,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'page-attributes'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+        )
+    );
+}
+add_action( 'init', 'attorney_appellate_post' );
+// attorney_partners_post
 
 
 

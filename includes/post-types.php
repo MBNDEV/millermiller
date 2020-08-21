@@ -155,7 +155,7 @@ function attorney_appellate_post() {
 add_action( 'init', 'attorney_appellate_post' );
 // attorney_partners_post
 
-// attorney_partners_post
+// attorney_publication_post
 function attorney_publication_post() {
     register_post_type( 
         'attorney-publication',
@@ -175,7 +175,29 @@ function attorney_publication_post() {
     );
 }
 add_action( 'init', 'attorney_publication_post' );
-// attorney_partners_post
+// attorney_publication_post
+
+// case_representative_post
+function case_representative_post() {
+    register_post_type( 
+        'case-representative',
+        array(
+            'labels'    => array(
+                'name' => __( 'Case Representatives' ),
+                'singular_name' => __('Case Representative')
+            ),
+            'public'        => true,
+            'publicly_queryable' => false,
+            'has_archive'   => false,
+            'show_in_rest'  => false,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'page-attributes'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+        )
+    );
+}
+add_action( 'init', 'case_representative_post' );
+// case_representative_post
 
 
 

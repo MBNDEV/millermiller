@@ -42,7 +42,7 @@ get_header();
                     <img src="<?php bloginfo('template_url') ?>/assets/img/img-Joseph-Suntum-2.png" alt="">
                     <h2>Joseph Suntum</h2>
                 </div>
-                <div class="cell large-4 align-self-middle sub-ev">
+                <div class="cell large-4 align-self-middle sub-ev text-right">
                     <ul class="email-vcard">
                         <li><a href=""><img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a></li>
                         <li><a href=""><img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a></li>
@@ -113,21 +113,36 @@ get_header();
 
                                 
                             <div class="bio-testimonials testi-s1 show-for-large">
-                                <div class="testi-slider">
-                                    <div class="testi-item">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                        <h5>Mr. First Name Last Name</h5>
+                                <?php 
+                                    $currentAttorney = get_the_ID();
+                                    $query = new WP_Query( array(
+                                        'post_type' => 'attorney-testimony',
+                                        'post_status' => 'publish',
+                                        'posts_per_page' => -1,
+                                        'meta_key'      => 'atf_attorney_for',
+                                        'meta_value'    => $currentAttorney
+                                    ));
+                                    
+                                ?>
+
+                                
+                                <?php if ($query->have_posts()): ?>
+                                    <div class="testi-slider">
+                                        <?php while ($query->have_posts()) : $query->the_post() ?>
+                                            <div class="testi-item">
+                                                <p><?php the_field('atf_testimony') ?></p>
+                                                <h5><?php the_field('atf_author') ?></h5>
+                                            </div>
+                                        <?php endwhile; wp_reset_postdata(); ?>
                                     </div>
-                                    <div class="testi-item">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                        <h5>Mr. First Name Last Name</h5>
-                                    </div>
-                                </div>
+                                <?php endif ?>
+                                
                                 
                                 <script>
                                     $(function(){
                                         $('.testi-s1 .testi-slider').slick({
-                                            dots: false
+                                            dots: false,
+                                            adaptiveHeight: true
                                         });
                                     });
                                 </script>

@@ -311,6 +311,8 @@
   .bio-header .copy {
     padding-top: 50px;
     padding-bottom: 50px; }
+  .bio-header .image img {
+    width: 100%; }
   .bio-header .email-vcard {
     margin: 0 0 50px;
     padding: 10px 3px;
@@ -328,6 +330,8 @@
       .bio-header .email-vcard li img {
         max-height: 25px;
         margin-right: 10px; }
+    .bio-header .email-vcard a[href=""], .bio-header .email-vcard a[href=" "], .bio-header .email-vcard a[href="mailto:"] {
+      pointer-events: none; }
   .bio-header .listed-in {
     margin: 0 -20px 50px;
     padding: 0; }
@@ -356,7 +360,10 @@
     display: flex;
     align-items: center; }
     .bio-subhead .sub-name img {
-      height: 130px; }
+      height: 130px;
+      object-fit: cover;
+      width: 150px;
+      margin: 0 10px; }
     .bio-subhead .sub-name h5 {
       color: #a9d5d1;
       font-size: 18px;
@@ -385,6 +392,8 @@
       .bio-subhead .email-vcard li img {
         max-height: 25px;
         margin-right: 10px; }
+    .bio-subhead .email-vcard a[href=""], .bio-subhead .email-vcard a[href=" "], .bio-subhead .email-vcard a[href="mailto:"] {
+      pointer-events: none; }
 
 .bio-content .hbg {
   margin-bottom: 40px; }
@@ -504,6 +513,12 @@
         color: #737373; }
     .bio-copy .bio-post h3 {
       font-size: 20px; }
+  .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
+    margin: 0 -50px 25px 0; }
+    .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
+      width: 25%;
+      margin: 0;
+      padding: 0 50px 25px 0; }
   .bio-copy .bio-testimonials {
     background: whitesmoke;
     padding: 40px 20px;
@@ -598,7 +613,17 @@
       .bio-copy .offtop {
         font-size: 15px; }
       .bio-copy .text-center-medium {
-        text-align: center; } }
+        text-align: center; }
+        .bio-copy .text-center-medium .hbg:before {
+          left: -15px; } }
+  @media (max-width: 639px) {
+    .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
+      margin: 0 -40px 25px 0; }
+      .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
+        width: 50%;
+        padding: 0 40px 25px 0; }
+        .bio-copy .bio-overview .wp-block-gallery ul li figure, .bio-copy .bio-overview .partners-logo ul li figure {
+          justify-content: center; } }
 
 .sec-banner.spa {
   position: relative;

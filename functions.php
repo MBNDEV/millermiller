@@ -60,6 +60,7 @@ function mbn_scripts() {
     //Pugins
 	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/assets/js/foundation.min.js', [], $wp_version, true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', [], $wp_version, true );
+	wp_enqueue_script( 'aos', get_template_directory_uri() . '/assets/js/aos.min.js', [], $wp_version, true );
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', [], $wp_version, true );
     
 }

@@ -2,6 +2,8 @@
 //Foundation Init
 $(document).foundation();
 
+AOS.init();
+
 
 //Document ready function scripts 
 $(document).ready(function() {

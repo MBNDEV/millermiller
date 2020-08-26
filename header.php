@@ -19,7 +19,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> data-sample="test"> 
+<body <?php body_class(); ?>> 
 
 <div id="wrapper">
     <header id="header" data-sticky-container data-toggler=".show-menu">
@@ -74,9 +74,9 @@
             <div class="grid-container"> 
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-8 large-offset-2 align-self-middle">
-                        <h6><img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt=""></h6>
-                        <h1>Client <strong>Focused. <br>Results</strong> Driven.</h1>
-                        <p>Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
+                        <h6 data-aos="fade-up"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="miller miller canby" title="miller miller canby"></h6>
+                        <h1 data-aos="fade-up">Client <strong>Focused. <br>Results</strong> Driven.</h1>
+                        <p data-aos="fade-up">Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
                         <a href="<?php the_permalink(24); ?>" class="button secondary large round">contact us </a>
                     </div>
                 </div>

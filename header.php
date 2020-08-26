@@ -74,7 +74,7 @@
             <div class="grid-container"> 
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-8 large-offset-2 align-self-middle">
-                        <h6 data-aos="fade-up">
+                        <h6 data-aos="fade-up" data-aos-delay="1000">
                             <img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="miller miller canby" title="miller miller canby">
                         </h6>
                         <h1 data-aos="fade-up" data-aos-delay="1200">Client <strong>Focused. <br>Results</strong> Driven.</h1>

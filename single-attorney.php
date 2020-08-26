@@ -54,7 +54,7 @@ get_header();
                         <img src="<?php echo esc_url($profile['url']); ?>" alt="<?php echo esc_attr($profile['alt']); ?>" />
                     <?php else : ?>
                         <?php the_post_thumbnail('full'); ?>
-                    <?php endif; ?>
+                    <?php endif; ?> 
 
                     <h2><?php the_title(); ?></h2>
                 </div>

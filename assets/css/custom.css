@@ -528,7 +528,7 @@ header {
 .sec-cases {
   position: relative;
   text-align: center;
-  padding: 100px 0;
+  padding: 110px 0 100px 0;
   overflow: hidden; }
   .sec-cases h2 {
     font-size: 35px;

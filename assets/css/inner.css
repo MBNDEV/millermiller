@@ -522,7 +522,7 @@
     margin: 0 0 0 40px;
     padding: 0; }
     .bio-copy .bio-overview ul li {
-      list-style: none;
+      list-style: disc;
       margin-bottom: 20px;
       color: #2e2e2e; }
   .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {

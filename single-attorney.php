@@ -246,7 +246,7 @@ get_header();
                             <ul>
                                 <?php foreach( $apdeItems as $post ):  setup_postdata($post); ?>
                                 <li>
-                                    <a href="<?php the_permalink(); ?>">
+                                    <a href="<?php the_field('aaf_file'); ?>">
                                         <?php the_title(); ?>
                                     </a>
                                 </li>

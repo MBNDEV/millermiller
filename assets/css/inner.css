@@ -513,12 +513,34 @@
         color: #737373; }
     .bio-copy .bio-post h3 {
       font-size: 20px; }
+  .bio-copy .bio-overview ul {
+    margin: 0 0 0 40px;
+    padding: 0; }
+    .bio-copy .bio-overview ul li {
+      list-style: none;
+      margin-bottom: 20px;
+      color: #2e2e2e; }
   .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
     margin: 0 -50px 25px 0; }
     .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
       width: 25%;
-      margin: 0;
-      padding: 0 50px 25px 0; }
+      margin: 0 0 25px;
+      padding: 0 50px 0 0; }
+  .bio-copy .bio-overview .partners-logo figure {
+    display: inline-block;
+    height: auto;
+    position: relative; }
+    .bio-copy .bio-overview .partners-logo figure img {
+      max-height: 100px; }
+    .bio-copy .bio-overview .partners-logo figure figcaption {
+      background: none;
+      padding: 0;
+      top: 0;
+      overflow: visible; }
+      .bio-copy .bio-overview .partners-logo figure figcaption a {
+        font-size: 0;
+        display: block;
+        height: 100%; }
   .bio-copy .bio-testimonials {
     background: whitesmoke;
     padding: 40px 20px;

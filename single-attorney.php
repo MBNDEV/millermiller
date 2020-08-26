@@ -18,12 +18,16 @@ get_header();
                     <h5>attorneys</h5>
                     <h1><?php the_title(); ?></h1>
                     <ul class="email-vcard">
+                        <?php  if( get_field('af_banner_email') ): ?>
                         <li><a href="mailto:<?php the_field('af_banner_email') ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
                         </li>
+                        <?php endif; ?>
+                        <?php  if( get_field('af_banner_vcard') ): ?>
                         <li><a href="<?php the_field('af_banner_vcard') ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
                         </li>
+                        <?php endif; ?>
                     </ul>
                     <p><?php the_field('af_banner_intro') ?></p>
 
@@ -113,6 +117,10 @@ get_header();
                                     <li><a href="#representative">Representative Cases</a></li>
                                     <?php endif; ?>
                                     
+                                    <?php  if( get_field('af_representative_trans_content') ): ?>
+                                    <li><a href="#representative-trans">Representative Transactions</a></li>
+                                    <?php endif; ?>
+                                    
                                     <?php  if( get_field('fa_case_studies_items') ): ?>
                                     <li><a href="#case-studies">Case Studies</a></li>
                                     <?php endif; ?>
@@ -133,42 +141,39 @@ get_header();
 
                             <?php the_content(); ?>
 
+                            <?php 
+                                $currentAttorney = get_the_ID();
+                                $query = new WP_Query( array(
+                                    'post_type' => 'attorney-testimony',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => -1,
+                                    'meta_key'      => 'atf_attorney_for',
+                                    'meta_value'    => $currentAttorney
+                                ));
                                 
-                            <div class="bio-testimonials testi-s1 show-for-large">
-                                <?php 
-                                    $currentAttorney = get_the_ID();
-                                    $query = new WP_Query( array(
-                                        'post_type' => 'attorney-testimony',
-                                        'post_status' => 'publish',
-                                        'posts_per_page' => -1,
-                                        'meta_key'      => 'atf_attorney_for',
-                                        'meta_value'    => $currentAttorney
-                                    ));
-                                    
-                                ?>
-
-                                
-                                <?php if ($query->have_posts()): ?>
-                                    <div class="testi-slider">
-                                        <?php while ($query->have_posts()) : $query->the_post() ?>
-                                            <div class="testi-item">
-                                                <p><?php the_field('atf_testimony') ?></p>
-                                                <h5><?php the_field('atf_author') ?></h5>
-                                            </div>
-                                        <?php endwhile; wp_reset_postdata(); ?>
-                                    </div>
-                                <?php endif ?>
-                                
-                                
-                                <script>
-                                    $(function(){
-                                        $('.testi-s1 .testi-slider').slick({
-                                            dots: false,
-                                            adaptiveHeight: true
-                                        });
+                            ?>
+                            <?php if ($query->have_posts()): ?>
+                                <div class="bio-testimonials testi-s1 show-for-large">
+                                <div class="testi-slider">
+                                    <?php while ($query->have_posts()) : $query->the_post() ?>
+                                        <div class="testi-item">
+                                            <p><?php the_field('atf_testimony') ?></p>
+                                            <h5><?php the_field('atf_author') ?></h5>
+                                        </div>
+                                    <?php endwhile; wp_reset_postdata(); ?>
+                                </div>
+                                </div>
+                            <?php endif ?>
+                            
+                            <script>
+                                $(function(){
+                                    $('.testi-s1 .testi-slider').slick({
+                                        dots: false,
+                                        adaptiveHeight: true
                                     });
-                                </script>
-                            </div>
+                                });
+                            </script>
+                            
                         </div>    
                         
                         <?php 
@@ -267,9 +272,17 @@ get_header();
                             <ul>
                                 <?php foreach( $pubItems as $post ):  setup_postdata($post); ?>
                                 <li>
-                                    <a href="<?php the_field('aaf_file'); ?>">
+                                <?php if (get_field('apf_file') !="" || get_field('apf_link') != "") { ?>
+                                                                          
+                                    <a href="<?php if(get_field('apf_file') !=""){the_field('apf_file');} else {the_field('apf_link');} ?>">
                                         <?php the_title(); ?>
                                     </a>
+
+                                <?php } else { ?>
+                                    
+                                     <?php the_title(); ?>
+
+                                <?php } ?>
                                 </li>
                                 <?php endforeach;  wp_reset_postdata(); ?>
                             </ul>
@@ -292,29 +305,36 @@ get_header();
                                         <figure>
                                         <a class="img" href="<?php the_permalink(); ?>">
                                         <?php
-                                            if ( has_post_thumbnail() ) {
-                                                the_post_thumbnail();
-                                            } else {
-                                                echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />';
-                                            }
+                                            $rcImage = get_field('crf_before_image');
+                                            if( !empty( $rcImage ) ): ?>
+                                                <img src="<?php echo esc_url($rcImage['url']); ?>" alt="<?php echo esc_attr($rcImage['alt']); ?>" />
+                                            <?php else : ?>
+                                                <?php echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />'; ?>
+                                            <?php endif; ?>
                                         ?>
                                         </a>
                                         </figure>
-                                        <h6><a href="">Eminent Domain </a></h6>
+                                        <!-- <h6><a href="">Eminent Domain </a></h6> -->
                                         <h3><?php the_title(); ?></h3>
-                                        <p><?php
-                                            $excerpt = get_the_excerpt(); 
-                                            $excerpt = substr( $excerpt, 0, 165 );
-                                            $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-                                            echo $excerpt;
-                                        ?></p>
+                                        <p><?php the_field('crf_short_description'); ?></p>
                                     </div>
                                 </li>
                                 <?php endforeach;  wp_reset_postdata(); ?>
                             </ul>
                             <div class="show-for-medium">
-                                <a href="" class="button primary round">more representative cases</a>
+                                <a href="/representative-cases" class="button primary round">more representative cases</a>
                             </div>
+                        </div>
+                        <?php endif; ?>
+
+
+                        <?php if(get_field('af_representative_trans_content') != "") : ?>
+                        <hr>
+                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans">
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Representative Transactions</h2>
+                            </div>
+                            <?php the_field('af_representative_trans_content'); ?>
                         </div>
                         <?php endif; ?>
 

@@ -18,16 +18,12 @@ get_header();
                     <h5>attorneys</h5>
                     <h1><?php the_title(); ?></h1>
                     <ul class="email-vcard">
-                        <?php  if( get_field('af_banner_email') ): ?>
                         <li><a href="mailto:<?php the_field('af_banner_email') ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
                         </li>
-                        <?php endif; ?>
-                        <?php  if( get_field('af_banner_vcard') ): ?>
                         <li><a href="<?php the_field('af_banner_vcard') ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
                         </li>
-                        <?php endif; ?>
                     </ul>
                     <p><?php the_field('af_banner_intro') ?></p>
 
@@ -302,17 +298,17 @@ get_header();
                                 <?php foreach( $repCase as $post ):  setup_postdata($post); ?>
                                 <li class="cell medium-6">
                                     <div class="bio-post">
-                                        <figure>
-                                        <a class="img" href="<?php the_permalink(); ?>">
+                                        <figure>                                        
                                         <?php
                                             $rcImage = get_field('crf_before_image');
                                             if( !empty( $rcImage ) ): ?>
+                                                <a class="img" data-fancybox href="<?php echo esc_url($rcImage['url']); ?>">
                                                 <img src="<?php echo esc_url($rcImage['url']); ?>" alt="<?php echo esc_attr($rcImage['alt']); ?>" />
+                                                </a>
                                             <?php else : ?>
                                                 <?php echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />'; ?>
-                                            <?php endif; ?>
-                                        ?>
-                                        </a>
+                                            <?php endif; 
+                                        ?>                                        
                                         </figure>
                                         <!-- <h6><a href="">Eminent Domain </a></h6> -->
                                         <h3><?php the_title(); ?></h3>
@@ -336,6 +332,14 @@ get_header();
                             </div>
                             <?php the_field('af_representative_trans_content'); ?>
                         </div>
+
+                        <script>
+                            jQuery(function(){
+                                jQuery('.bio-reptrans ul li .title').click(function(){
+                                    jQuery(this).parent().toggleClass('active');
+                                });
+                            });
+                        </script>
                         <?php endif; ?>
 
 

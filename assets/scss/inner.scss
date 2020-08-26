@@ -10,7 +10,9 @@ $color-brown: #b79064;
 $color-dbrown: #5a3d1c;
 $color-xbrown: #6f4f2a;
 
-
+.is-dropdown-submenu {
+    display: none;
+}
 
 /* BLOCK TWO COLUMNS STYLE 4 */
 .cols2-s4 {
@@ -846,6 +848,9 @@ $color-xbrown: #6f4f2a;
         }
         figure {
             margin:0 0 30px;
+            img {
+                width: 100%;
+            }
         }
 
         h6 {
@@ -875,7 +880,7 @@ $color-xbrown: #6f4f2a;
                 color: $color-dark;
             }
         }
-        
+
         .wp-block-gallery, .partners-logo  {
             ul {
                 margin: 0 -50px 25px 0;
@@ -1097,6 +1102,54 @@ $color-xbrown: #6f4f2a;
                         }
                     }
                 }   
+            }
+        }
+    }
+
+    .bio-reptrans {
+        > ul {            
+            > li {
+                line-height: 1.5;
+
+                > span, 
+                .title {
+                    display: block;
+                    position: relative;
+                    padding: 0 0 0 20px;
+                    font-weight: 600;
+                    color: $color-primary;
+                    cursor: pointer;
+
+                    &:before {
+                        content:"\25BC";
+                        font-size: 15px;
+                        position: absolute;
+                        left: 0;
+                        top:4px;
+                    }
+                }
+                
+                &.active {
+                    .title {
+                        &:before {
+                            content:"\25B2";
+                        }
+                    }
+
+                    ul {
+                        display: block;
+                    }
+                }
+            }
+
+            ul {    
+                display: none;
+                margin: 15px 0 0 50px;
+
+                li {
+                    list-style: disc;
+                    font-size: 80%;
+                }
             }
         }
     }

@@ -87,3 +87,13 @@ body {
 .block-award {    
     grid-template-columns: 240px auto !important;
 }
+
+.partners-logo figure {
+    display: block;
+}
+.partners-logo figure figcaption {
+    background: none;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}

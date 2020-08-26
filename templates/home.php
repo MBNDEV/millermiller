@@ -15,57 +15,65 @@ get_header();
                 <h1 class="hbg">Experienced Maryland Lawyers</h1>
                 <h2>Focusing on 6 Core Practice Areas</h2>
             </hgroup>
+
             <div class="grid-x grid-margin-x cols3-s2">
+                <?php
+                $paTax = get_terms( 'practice-areas', array(
+                    'meta_key'          => 'pac_order_by',
+                    'orderby'    => 'meta_value',
+                    'order'      => 'ASC',
+                    'parent' => 0,
+                    'hide_empty' => false
+                ));
+                
+                foreach ( $paTax as $paCat ) { ?>
+
                 <div class="cell medium-6 large-4 col-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/img-land-use.jpg" alt=""></figure>
-                    <h3 class="hbg"><a href="<?php the_permalink(26); ?>">Land Use & Zoning</a></h3>
-                    <ul>
-                        <li><a href="<?php the_permalink(44); ?>">Zoning Law</a></li>
-                        <li><a href="<?php the_permalink(46); ?>">Land Use Planning & Land Development</a></li>
-                        <li><a href="<?php the_permalink(48); ?>">Telecommunications Law</a></li>
-                    </ul>
-                </div>
-                <div class="cell medium-6 large-4 col-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/img-real-estate.jpg" alt=""></figure>
-                    <h3 class="hbg"><a href="<?php the_permalink(28); ?>">Real Estate</a></h3>
-                    <ul>
-                        <li><a href="<?php the_permalink(57); ?>">Real Estate Transactions & Leasing</a></li>
-                        <li><a href="<?php the_permalink(59); ?>">Real Estate Financing & Settlement Services</a></li>
-                        <li><a href="<?php the_permalink(64); ?>">Maryland Property Tax Appeals</a></li>
-                    </ul>
-                </div>
-                <div class="cell medium-6 large-4 col-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/img-litigation.jpg" alt=""></figure>
-                    <h3 class="hbg"><a href="<?php the_permalink(30); ?>">Litigation</a></h3>
-                    <ul>
-                        <li><a href="<?php the_permalink(76); ?>">Business & Commercial</a></li>
-                        <li><a href="<?php the_permalink(78); ?>">Personal Injury & Insurance</a></li>
-                        <li><a href="<?php the_permalink(74); ?>">Appeals</a></li>
-                    </ul>
-                </div>
-                <div class="cell medium-6 large-4 col-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/img-eminent-domain.jpg" alt=""></figure>
-                    <h3 class="hbg"><a href="<?php the_permalink(32); ?>">Eminent Domain</a></h3>
-                </div>
-                <div class="cell medium-6 large-4 col-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/img-business-tax.jpg" alt=""></figure>
-                    <h3 class="hbg"><a href="<?php the_permalink(34); ?>">Business & Tax</a></h3>
-                    <ul>
-                        <li><a href="<?php the_permalink(88); ?>">Business Law</a></li>
-                        <li><a href="<?php the_permalink(90); ?>">Tax Advocacy</a></li>
-                    </ul>
-                </div>
-                <div class="cell medium-6 large-4 col-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/img-trust-estates.jpg" alt=""></figure>
-                    <h3 class="hbg"><a href="<?php the_permalink(36); ?>">Trust & Estates</a></h3>
-                    <ul>
-                        <li><a href="<?php the_permalink(92); ?>">Estate Planning</a></li>
-                        <li><a href="<?php the_permalink(94); ?>">Probate</a></li>
-                        <li><a href="<?php the_permalink(96); ?>">Trust & Estate Administration</a></li>
-                        <li><a href="<?php the_permalink(98); ?>">Elder Law</a></li>
-                    </ul>
-                </div>
+
+                    <figure>
+                        <a href="<?=  get_term_link( $paCat ); ?>"> 
+                        <?php if(get_field('pac_thumbnail', $paCat) != "") { ?>
+                            <img src="<?php the_field('pac_thumbnail', $paCat); ?>" alt="<?= $paCat->name; ?>">
+                        <?php } else { ?>
+                           <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />
+                        <?php } ?>
+                        </a>
+                    </figure>
+
+                    <h3 class="hbg">
+                        <a href="<?=  get_term_link( $paCat ); ?>"><?= $paCat->name; ?></a>
+                    </h3>
+                    <?php                 
+                        $args = array(
+                            'posts_per_page' => -1,
+                            'tax_query' => array(
+                                'relation' => 'AND',
+                                array(
+                                    'taxonomy' => 'practice-areas',
+                                    'field' => 'slug',
+                                    'terms' => $paCat->slug,
+                                    'include_children' => false
+                                )
+                            ),
+                            'post_type' => 'practice-area',
+                            'orderby' => 'title,'
+                        );
+                        $paPost = new WP_Query( $args );
+
+                        echo "<ul>";
+                        while ( $paPost->have_posts() ) { $paPost->the_post(); ?>
+
+                            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                                    
+                            <?php
+                        }
+                        echo "</ul>"; ?>
+
+                </div>        
+
+                <?php }  ?>
             </div>
+
         </div>
     </section>
 

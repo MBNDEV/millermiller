@@ -10,7 +10,9 @@ $color-brown: #b79064;
 $color-dbrown: #5a3d1c;
 $color-xbrown: #6f4f2a;
 
-
+.sub-menu {
+    display: none;
+}
 
 /* BLOCK TWO COLUMNS STYLE 4 */
 .cols2-s4 {
@@ -254,6 +256,11 @@ $color-xbrown: #6f4f2a;
 			right: -25px;
 			top: 45%;
 		}
+
+        span {
+            background: none;
+            padding: 0;
+        }
     }
 
     
@@ -551,6 +558,12 @@ $color-xbrown: #6f4f2a;
          padding-bottom: 50px;
      }
 
+     .image {
+        img {
+            width: 100%;
+        }
+     }
+
      .email-vcard {
          margin: 0 0 50px;
          padding:10px 3px;
@@ -573,7 +586,11 @@ $color-xbrown: #6f4f2a;
                  max-height: 25px;
                  margin-right: 10px;
              }
-         }
+        }
+
+        a[href=""], a[href=" "], a[href="mailto:"] {
+            pointer-events:none;
+        }
      }
 
      .listed-in {
@@ -620,7 +637,10 @@ $color-xbrown: #6f4f2a;
 		display: flex;
         align-items: center;
 		img {
-			height: 130px;;
+			height: 130px;
+            object-fit: cover;
+            width: 150px;
+            margin: 0 10px;
 		}
 
 		h5 {
@@ -661,6 +681,10 @@ $color-xbrown: #6f4f2a;
                 max-height: 25px;
                 margin-right: 10px;
             }
+        }
+
+        a[href=""], a[href=" "], a[href="mailto:"] {
+            pointer-events:none;
         }
     }
 }
@@ -829,6 +853,9 @@ $color-xbrown: #6f4f2a;
         }
         figure {
             margin:0 0 30px;
+            img {
+                width: 100%;
+            }
         }
 
         h6 {
@@ -844,6 +871,52 @@ $color-xbrown: #6f4f2a;
 
         h3 {
             font-size: 20px;
+        }
+    }
+
+    .bio-overview {
+        ul {
+            margin:0 0 0 40px;
+            padding:0;
+
+            li {
+                list-style: disc;
+                margin-bottom: 20px;
+                color: $color-dark;
+            }
+        }
+
+        .wp-block-gallery, .partners-logo  {
+            ul {
+                margin: 0 -50px 25px 0;
+
+                li {
+                    width: 25%;
+                    margin: 0 0 25px;
+                    padding: 0 50px 0 0;
+                }
+            }           
+        }
+        .partners-logo {
+            figure {
+                display: inline-block;
+                height: auto;
+                position: relative;
+                img {
+                    max-height: 100px;
+                }
+                figcaption {
+                    background: none;
+                    padding: 0;
+                    top: 0;
+                    overflow: visible;
+                    a {
+                        font-size: 0;
+                        display: block;
+                        height: 100%;
+                    }
+                }
+            }
         }
     }
 
@@ -1010,6 +1083,79 @@ $color-xbrown: #6f4f2a;
 
         .text-center-medium {
             text-align: center;
+
+            .hbg {
+                &:before {
+                    left: -15px;
+                }
+            }
+        }
+    }
+
+    @include media(max-width, 639px){
+        .bio-overview {
+            .wp-block-gallery, .partners-logo  {
+                ul {
+                    margin: 0 -40px 25px 0;
+
+                    li {
+                        width: 50%;
+                        padding: 0 40px 25px 0;
+
+                        figure {
+                            justify-content: center;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+    .bio-reptrans {
+        > ul {            
+            > li {
+                line-height: 1.5;
+
+                > span, 
+                .title {
+                    display: block;
+                    position: relative;
+                    padding: 0 0 0 20px;
+                    font-weight: 600;
+                    color: $color-primary;
+                    cursor: pointer;
+
+                    &:before {
+                        content:"\25BC";
+                        font-size: 15px;
+                        position: absolute;
+                        left: 0;
+                        top:4px;
+                    }
+                }
+                
+                &.active {
+                    .title {
+                        &:before {
+                            content:"\25B2";
+                        }
+                    }
+
+                    ul {
+                        display: block;
+                    }
+                }
+            }
+
+            ul {    
+                display: none;
+                margin: 15px 0 0 50px;
+
+                li {
+                    list-style: disc;
+                    font-size: 80%;
+                }
+            }
         }
     }
 

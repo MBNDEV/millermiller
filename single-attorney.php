@@ -18,7 +18,7 @@ get_header();
                     <h5>attorneys</h5>
                     <h1><?php the_title(); ?></h1>
                     <ul class="email-vcard">
-                        <li><a href="<?php the_field('af_banner_email') ?>">
+                        <li><a href="mailto:<?php the_field('af_banner_email') ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
                         </li>
                         <li><a href="<?php the_field('af_banner_vcard') ?>">
@@ -29,23 +29,43 @@ get_header();
 
                 </div>
                 <div class="cell large-5 align-self-bottom image">
-                    <figure><img src="<?php bloginfo('template_url') ?>/assets/img/img-Joseph-Suntum-2.png" alt=""></figure>
+                    <figure>
+                        <?php 
+                        $profile = get_field('af_banner_profile');
+                        if( !empty( $profile ) ): ?>
+                            <img src="<?php echo esc_url($profile['url']); ?>" alt="<?php echo esc_attr($profile['alt']); ?>" />
+                        <?php else : ?>
+                            <?php the_post_thumbnail('full'); ?>
+                        <?php endif; ?>
+                    </figure>
                 </div>
             </div>
         </div>
     </div>
-    <div class="bio-subhead show-for-large">
+    <div class="bio-subhead show-for-large hide">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell large-8 sub-name">
                     <h5>attorneys</h5>
-                    <img src="<?php bloginfo('template_url') ?>/assets/img/img-Joseph-Suntum-2.png" alt="">
-                    <h2>Joseph Suntum</h2>
+
+                    <?php 
+                    $profile = get_field('af_banner_profile');
+                    if( !empty( $profile ) ): ?>
+                        <img src="<?php echo esc_url($profile['url']); ?>" alt="<?php echo esc_attr($profile['alt']); ?>" />
+                    <?php else : ?>
+                        <?php the_post_thumbnail('full'); ?>
+                    <?php endif; ?> 
+
+                    <h2><?php the_title(); ?></h2>
                 </div>
                 <div class="cell large-4 align-self-middle sub-ev text-right">
                     <ul class="email-vcard">
-                        <li><a href=""><img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a></li>
-                        <li><a href=""><img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a></li>
+                        <li><a href="mailto:<?php the_field('af_banner_email'); ?>">
+                            <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
+                        </li>
+                        <li><a href="<?php the_field('af_banner_vcard'); ?>">
+                            <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -93,6 +113,10 @@ get_header();
                                     <li><a href="#representative">Representative Cases</a></li>
                                     <?php endif; ?>
                                     
+                                    <?php  if( get_field('af_representative_trans_content') ): ?>
+                                    <li><a href="#representative-trans">Representative Transactions</a></li>
+                                    <?php endif; ?>
+                                    
                                     <?php  if( get_field('fa_case_studies_items') ): ?>
                                     <li><a href="#case-studies">Case Studies</a></li>
                                     <?php endif; ?>
@@ -106,47 +130,46 @@ get_header();
                     <article class="bio-copy">
                         
                         <div id="overview" class="bio-overview offtop" data-magellan-target="overview">
-                        
-                            <h2 class="hbg">Overview</h2>    
+
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Overview</h2>  
+                            </div>  
 
                             <?php the_content(); ?>
 
+                            <?php 
+                                $currentAttorney = get_the_ID();
+                                $query = new WP_Query( array(
+                                    'post_type' => 'attorney-testimony',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => -1,
+                                    'meta_key'      => 'atf_attorney_for',
+                                    'meta_value'    => $currentAttorney
+                                ));
                                 
-                            <div class="bio-testimonials testi-s1 show-for-large">
-                                <?php 
-                                    $currentAttorney = get_the_ID();
-                                    $query = new WP_Query( array(
-                                        'post_type' => 'attorney-testimony',
-                                        'post_status' => 'publish',
-                                        'posts_per_page' => -1,
-                                        'meta_key'      => 'atf_attorney_for',
-                                        'meta_value'    => $currentAttorney
-                                    ));
-                                    
-                                ?>
-
-                                
-                                <?php if ($query->have_posts()): ?>
-                                    <div class="testi-slider">
-                                        <?php while ($query->have_posts()) : $query->the_post() ?>
-                                            <div class="testi-item">
-                                                <p><?php the_field('atf_testimony') ?></p>
-                                                <h5><?php the_field('atf_author') ?></h5>
-                                            </div>
-                                        <?php endwhile; wp_reset_postdata(); ?>
-                                    </div>
-                                <?php endif ?>
-                                
-                                
-                                <script>
-                                    $(function(){
-                                        $('.testi-s1 .testi-slider').slick({
-                                            dots: false,
-                                            adaptiveHeight: true
-                                        });
+                            ?>
+                            <?php if ($query->have_posts()): ?>
+                                <div class="bio-testimonials testi-s1 show-for-large">
+                                <div class="testi-slider">
+                                    <?php while ($query->have_posts()) : $query->the_post() ?>
+                                        <div class="testi-item">
+                                            <p><?php the_field('atf_testimony') ?></p>
+                                            <h5><?php the_field('atf_author') ?></h5>
+                                        </div>
+                                    <?php endwhile; wp_reset_postdata(); ?>
+                                </div>
+                                </div>
+                            <?php endif ?>
+                            
+                            <script>
+                                $(function(){
+                                    $('.testi-s1 .testi-slider').slick({
+                                        dots: false,
+                                        adaptiveHeight: true
                                     });
-                                </script>
-                            </div>
+                                });
+                            </script>
+                            
                         </div>    
                         
                         <?php 
@@ -171,7 +194,9 @@ get_header();
                         <?php if(get_field('fa_bar_admissions_content') != "") : ?>
                         <hr>
                         <div id="bar-admissions" class="bio-bar-admissions offtop" data-magellan-target="bar-admissions">
-                            <h2 class="hbg">Bar Admissions</h2>
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Bar Admissions</h2>
+                            </div>
                             <?php the_field('fa_bar_admissions_content'); ?>
                         </div> 
                         <?php endif; ?>
@@ -180,7 +205,9 @@ get_header();
                         <?php if(get_field('fa_professional_affiliations_content') != "") : ?>
                         <hr>
                         <div id="affiliations" class="bio-affiliations offtop" data-magellan-target="affiliations">  
-                            <h2 class="hbg">Professional Affiliations</h2>
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Professional Affiliations</h2>
+                            </div>
                             <?php the_field('fa_professional_affiliations_content'); ?>
                         </div> 
                         <?php endif; ?>
@@ -189,7 +216,9 @@ get_header();
                         <?php if(get_field('fa_education_content') != "") : ?>
                         <hr>
                         <div id="education" class="bio-education offtop" data-magellan-target="education">
-                            <h2 class="hbg">Education</h2>
+                            <div class="text-center-medium">
+                               <h2 class="hbg">Education</h2>
+                            </div>
                             <?php the_field('fa_education_content'); ?>
                         </div>
                         <?php endif; ?>
@@ -198,7 +227,9 @@ get_header();
                         <?php if(get_field('fa_honors_and_awards_content') != "") : ?>
                         <hr>
                         <div id="awards" class="bio-awards offtop" data-magellan-target="awards">
-                            <h2 class="hbg">Honors and Awards</h2>
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Honors and Awards</h2>
+                            </div>
                             <?php the_field('fa_honors_and_awards_content'); ?>
                         </div>
                         <?php endif; ?>
@@ -209,11 +240,13 @@ get_header();
                             if( $apdeItems ): ?>
                         <hr>
                         <div id="appellate" class="bio-appellate offtop" data-magellan-target="appellate">
-                            <h2 class="hbg">Appellate Decisions</h2>
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Appellate Decisions</h2>
+                            </div>
                             <ul>
                                 <?php foreach( $apdeItems as $post ):  setup_postdata($post); ?>
                                 <li>
-                                    <a href="<?php the_permalink(); ?>">
+                                    <a href="<?php the_field('aaf_file'); ?>">
                                         <?php the_title(); ?>
                                     </a>
                                 </li>
@@ -228,13 +261,24 @@ get_header();
                             if( $pubItems ): ?>
                         <hr>
                         <div id="publications" class="bio-publications offtop" data-magellan-target="publications">
-                            <h2 class="hbg">Publications</h2>
+
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Publications</h2>
+                            </div>
                             <ul>
                                 <?php foreach( $pubItems as $post ):  setup_postdata($post); ?>
                                 <li>
-                                    <a href="<?php the_permalink(); ?>">
+                                <?php if (get_field('apf_file') !="" || get_field('apf_link') != "") { ?>
+                                                                          
+                                    <a href="<?php if(get_field('apf_file') !=""){the_field('apf_file');} else {the_field('apf_link');} ?>">
                                         <?php the_title(); ?>
                                     </a>
+
+                                <?php } else { ?>
+                                    
+                                     <?php the_title(); ?>
+
+                                <?php } ?>
                                 </li>
                                 <?php endforeach;  wp_reset_postdata(); ?>
                             </ul>
@@ -247,38 +291,55 @@ get_header();
                             if( $repCase ): ?>
                         <hr>
                         <div id="representative" class="bio-representative offtop" data-magellan-target="representative">
-                            <h2 class="hbg">Representative Cases</h2>
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Representative Cases</h2>
+                            </div>
                             <ul class="grid-x grid-margin-x rep-cases">
                                 <?php foreach( $repCase as $post ):  setup_postdata($post); ?>
                                 <li class="cell medium-6">
                                     <div class="bio-post">
-                                        <figure>
-                                        <a class="img" href="<?php the_permalink(); ?>">
+                                        <figure>                                        
                                         <?php
-                                            if ( has_post_thumbnail() ) {
-                                                the_post_thumbnail();
-                                            } else {
-                                                echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />';
-                                            }
-                                        ?>
-                                        </a>
+                                            $rcImage = get_field('crf_before_image');
+                                            if( !empty( $rcImage ) ): ?>
+                                                <a class="img" data-fancybox href="<?php echo esc_url($rcImage['url']); ?>">
+                                                <img src="<?php echo esc_url($rcImage['url']); ?>" alt="<?php echo esc_attr($rcImage['alt']); ?>" />
+                                                </a>
+                                            <?php else : ?>
+                                                <?php echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />'; ?>
+                                            <?php endif; 
+                                        ?>                                        
                                         </figure>
-                                        <h6><a href="">Eminent Domain </a></h6>
+                                        <!-- <h6><a href="">Eminent Domain </a></h6> -->
                                         <h3><?php the_title(); ?></h3>
-                                        <p><?php
-                                            $excerpt = get_the_excerpt(); 
-                                            $excerpt = substr( $excerpt, 0, 165 );
-                                            $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-                                            echo $excerpt;
-                                        ?></p>
+                                        <p><?php the_field('crf_short_description'); ?></p>
                                     </div>
                                 </li>
                                 <?php endforeach;  wp_reset_postdata(); ?>
                             </ul>
                             <div class="show-for-medium">
-                                <a href="" class="button primary round">more representative cases</a>
+                                <a href="/representative-cases" class="button primary round">more representative cases</a>
                             </div>
                         </div>
+                        <?php endif; ?>
+
+
+                        <?php if(get_field('af_representative_trans_content') != "") : ?>
+                        <hr>
+                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans">
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Representative Transactions</h2>
+                            </div>
+                            <?php the_field('af_representative_trans_content'); ?>
+                        </div>
+
+                        <script>
+                            jQuery(function(){
+                                jQuery('.bio-reptrans ul li .title').click(function(){
+                                    jQuery(this).parent().toggleClass('active');
+                                });
+                            });
+                        </script>
                         <?php endif; ?>
 
 
@@ -287,7 +348,9 @@ get_header();
                             if( $attrCase ): ?>
                         <hr>
                         <div id="case-studies" class="bio-case-studies offtop" data-magellan-target="case-studies">
-                            <h2 class="hbg">Case Studies</h2>
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Case Studies</h2>
+                            </div>
                             <ul class="grid-x grid-margin-x rep-cases">
                                 <?php foreach( $attrCase as $post ):  setup_postdata($post); ?>
                                 <li class="cell medium-6">

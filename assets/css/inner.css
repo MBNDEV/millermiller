@@ -1,3 +1,6 @@
+.sub-menu {
+  display: none; }
+
 /* BLOCK TWO COLUMNS STYLE 4 */
 .cols2-s4 {
   padding: 60px 0; }
@@ -141,6 +144,9 @@
       left: -25px;
       right: -25px;
       top: 45%; }
+    .sec-banner .hbg span {
+      background: none;
+      padding: 0; }
   @media (max-width: 639px) {
     .sec-banner h1 {
       font-size: 32px; }
@@ -311,6 +317,8 @@
   .bio-header .copy {
     padding-top: 50px;
     padding-bottom: 50px; }
+  .bio-header .image img {
+    width: 100%; }
   .bio-header .email-vcard {
     margin: 0 0 50px;
     padding: 10px 3px;
@@ -328,6 +336,8 @@
       .bio-header .email-vcard li img {
         max-height: 25px;
         margin-right: 10px; }
+    .bio-header .email-vcard a[href=""], .bio-header .email-vcard a[href=" "], .bio-header .email-vcard a[href="mailto:"] {
+      pointer-events: none; }
   .bio-header .listed-in {
     margin: 0 -20px 50px;
     padding: 0; }
@@ -356,7 +366,10 @@
     display: flex;
     align-items: center; }
     .bio-subhead .sub-name img {
-      height: 130px; }
+      height: 130px;
+      object-fit: cover;
+      width: 150px;
+      margin: 0 10px; }
     .bio-subhead .sub-name h5 {
       color: #a9d5d1;
       font-size: 18px;
@@ -385,6 +398,8 @@
       .bio-subhead .email-vcard li img {
         max-height: 25px;
         margin-right: 10px; }
+    .bio-subhead .email-vcard a[href=""], .bio-subhead .email-vcard a[href=" "], .bio-subhead .email-vcard a[href="mailto:"] {
+      pointer-events: none; }
 
 .bio-content .hbg {
   margin-bottom: 40px; }
@@ -495,6 +510,8 @@
       color: #404040; }
     .bio-copy .bio-post figure {
       margin: 0 0 30px; }
+      .bio-copy .bio-post figure img {
+        width: 100%; }
     .bio-copy .bio-post h6 {
       color: #737373;
       font-size: 15px;
@@ -504,6 +521,34 @@
         color: #737373; }
     .bio-copy .bio-post h3 {
       font-size: 20px; }
+  .bio-copy .bio-overview ul {
+    margin: 0 0 0 40px;
+    padding: 0; }
+    .bio-copy .bio-overview ul li {
+      list-style: disc;
+      margin-bottom: 20px;
+      color: #2e2e2e; }
+  .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
+    margin: 0 -50px 25px 0; }
+    .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
+      width: 25%;
+      margin: 0 0 25px;
+      padding: 0 50px 0 0; }
+  .bio-copy .bio-overview .partners-logo figure {
+    display: inline-block;
+    height: auto;
+    position: relative; }
+    .bio-copy .bio-overview .partners-logo figure img {
+      max-height: 100px; }
+    .bio-copy .bio-overview .partners-logo figure figcaption {
+      background: none;
+      padding: 0;
+      top: 0;
+      overflow: visible; }
+      .bio-copy .bio-overview .partners-logo figure figcaption a {
+        font-size: 0;
+        display: block;
+        height: 100%; }
   .bio-copy .bio-testimonials {
     background: whitesmoke;
     padding: 40px 20px;
@@ -598,7 +643,44 @@
       .bio-copy .offtop {
         font-size: 15px; }
       .bio-copy .text-center-medium {
-        text-align: center; } }
+        text-align: center; }
+        .bio-copy .text-center-medium .hbg:before {
+          left: -15px; } }
+  @media (max-width: 639px) {
+    .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
+      margin: 0 -40px 25px 0; }
+      .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
+        width: 50%;
+        padding: 0 40px 25px 0; }
+        .bio-copy .bio-overview .wp-block-gallery ul li figure, .bio-copy .bio-overview .partners-logo ul li figure {
+          justify-content: center; } }
+  .bio-copy .bio-reptrans > ul > li {
+    line-height: 1.5; }
+    .bio-copy .bio-reptrans > ul > li > span,
+    .bio-copy .bio-reptrans > ul > li .title {
+      display: block;
+      position: relative;
+      padding: 0 0 0 20px;
+      font-weight: 600;
+      color: #214b47;
+      cursor: pointer; }
+      .bio-copy .bio-reptrans > ul > li > span:before,
+      .bio-copy .bio-reptrans > ul > li .title:before {
+        content: "\25BC";
+        font-size: 15px;
+        position: absolute;
+        left: 0;
+        top: 4px; }
+    .bio-copy .bio-reptrans > ul > li.active .title:before {
+      content: "\25B2"; }
+    .bio-copy .bio-reptrans > ul > li.active ul {
+      display: block; }
+  .bio-copy .bio-reptrans > ul ul {
+    display: none;
+    margin: 15px 0 0 50px; }
+    .bio-copy .bio-reptrans > ul ul li {
+      list-style: disc;
+      font-size: 80%; }
 
 .sec-banner.spa {
   position: relative;

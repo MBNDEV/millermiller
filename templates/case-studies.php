@@ -55,7 +55,7 @@ get_header();
                                             ));
                                             while ($query->have_posts()) : $query->the_post();
                                         ?>
-                                            <li><a href="<?= $currentPageID ?>?attrorney=<?= get_the_ID(); ?>"><?= get_the_title(); ?></a></li>
+                                            <li><a href="<?= $currentPageID ?>?attorney=<?= get_the_ID(); ?>"><?= get_the_title(); ?></a></li>
                                         <?php endwhile; wp_reset_postdata(); ?>
                                     </ul>
                                 </div>
@@ -76,8 +76,8 @@ get_header();
 
                     $attorneyQuery = [];
 
-                    if (isset($_GET['attrorney'])) {
-                        $attorney = $_GET['attrorney'];
+                    if (isset($_GET['attorney'])) {
+                        $attorney = $_GET['attorney'];
                         
                         $attorneyQuery = array(
                             'key'       => 'csa_attorney_assign',

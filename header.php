@@ -19,7 +19,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>> 
+<body <?php body_class(); ?> data-sample="test"> 
 
 <div id="wrapper">
     <header id="header" data-sticky-container data-toggler=".show-menu">

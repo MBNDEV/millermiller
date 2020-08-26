@@ -3,7 +3,7 @@
 $(document).foundation();
 
 AOS.init({
-    easing : 'ease-in-out'
+    easing : 'ease-in-sine'
 });
 
 

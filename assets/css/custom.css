@@ -533,7 +533,8 @@ header {
   .sec-cases h2 {
     font-size: 35px;
     text-transform: uppercase;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    letter-spacing: 7px; }
   .sec-cases h3 {
     font-size: 30px;
     color: #2e2e2e; }

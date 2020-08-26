@@ -1,4 +1,4 @@
-.is-dropdown-submenu {
+.sub-menu {
   display: none; }
 
 /* BLOCK TWO COLUMNS STYLE 4 */
@@ -144,6 +144,9 @@
       left: -25px;
       right: -25px;
       top: 45%; }
+    .sec-banner .hbg span {
+      background: none;
+      padding: 0; }
   @media (max-width: 639px) {
     .sec-banner h1 {
       font-size: 32px; }

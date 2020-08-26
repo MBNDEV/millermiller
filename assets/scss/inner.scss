@@ -10,7 +10,7 @@ $color-brown: #b79064;
 $color-dbrown: #5a3d1c;
 $color-xbrown: #6f4f2a;
 
-.is-dropdown-submenu {
+.sub-menu {
     display: none;
 }
 
@@ -256,6 +256,11 @@ $color-xbrown: #6f4f2a;
 			right: -25px;
 			top: 45%;
 		}
+
+        span {
+            background: none;
+            padding: 0;
+        }
     }
 
     

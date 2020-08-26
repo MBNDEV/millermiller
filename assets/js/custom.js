@@ -2,7 +2,9 @@
 //Foundation Init
 $(document).foundation();
 
-AOS.init();
+AOS.init({
+    easing : 'ease-in-out'
+});
 
 
 //Document ready function scripts 

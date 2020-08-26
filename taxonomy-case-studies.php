@@ -54,7 +54,7 @@ get_header();
                                             ));
                                             while ($query->have_posts()) : $query->the_post();
                                         ?>
-                                            <li><a href="<?= $currentPageID ?>?attorney=<?= get_the_ID(); ?>"><?= get_the_title(); ?></a></li>
+                                            <li><a href="<?= $currentPageID ?>?filter-attorney=<?= get_the_ID(); ?>"><?= get_the_title(); ?></a></li>
                                         <?php endwhile; wp_reset_postdata(); ?>
                                     </ul>
                                 </div>

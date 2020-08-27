@@ -2,9 +2,13 @@
 //Foundation Init
 $(document).foundation();
 
-AOS.init({
-    easing : 'ease-in-sine',
-    anchorPlacement: 'bottom-bottom'
+
+
+$(function(){
+    AOS.init({
+        easing : 'ease-in-sine',
+        anchorPlacement: 'bottom-bottom'
+    });
 });
 
 

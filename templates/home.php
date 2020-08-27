@@ -95,17 +95,17 @@ get_header();
                     <div class="testi-slider">
                         <div class="testi-item">
                             <q data-aos="fade-up" data-aos-delay="1900">From the moment I picked up the phone and called Miller, Miller & Canby, I knew I was talking to the right people.
-                                <cite>Carole Daffron</cite>
+                                <cite data-aos="fade-up" data-aos-delay="2000">Carole Daffron</cite>
                             </q>
                         </div>
                         <div class="testi-item">
                             <q data-aos="fade-up" data-aos-delay="2100">For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
-                                <cite>Paul Chod, Minkoff Development Corp.</cite>
+                                <cite data-aos="fade-up" data-aos-delay="2200">Paul Chod, Minkoff Development Corp.</cite>
                             </q>
                         </div>
                         <div class="testi-item">
                             <q data-aos="fade-up" data-aos-delay="2400">For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
-                                <cite>Paul Chod, Minkoff Development Corp.</cite>
+                                <cite data-aos="fade-up" data-aos-delay="2500">Paul Chod, Minkoff Development Corp.</cite>
                             </q>
                         </div>
                     </div>

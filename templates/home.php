@@ -209,11 +209,11 @@ get_header();
         </div>
     </section>
 
-    <section class="sec-subscribe">
+    <section class="sec-subscribe" data-aos="fade-up" data-aos-delay="1000">
         <div class="grid-container">
-            <div class="subscribe-box">
-                <h2 data-aos="fade-up" data-aos-delay="1000">Subscribe to our Legal News & Notes Newsletter!</h2>
-                <p data-aos="fade-up" data-aos-delay="1300">
+            <div class="subscribe-box" >
+                <h2>Subscribe to our Legal News & Notes Newsletter!</h2>
+                <p>
                     Receive quarterly emails with the latest legal news and firm highlights directly to your inbox. 
                     <a href="http://eepurl.com/SLx4P" target="_blank" class="button primary round">SUBSCRIBE</a>
                 </p>

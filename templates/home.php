@@ -152,23 +152,6 @@ get_header();
             <div class="text-center">
                 <a href="<?php the_permalink(13); ?>" class="button primary round" data-aos="fade-up" data-aos-delay="1900">read more cases</a>
             </div>
-            
-            <script>
-                $(function(){
-                    $('.cases-slider').slick({
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: true,
-                        dotsClass: 'slick-pager',
-                        customPaging: function (slider, i) {
-                            //return (i + 1) + '/' + slider.slideCount;
-                            if(i < 9) dec = "0"; else  dec = ""; 
-                            if(slider.slideCount <= 9) dec2 = "0"; else dec2 = "";
-                            return dec+(i + 1) + '<small>/' + dec2 + slider.slideCount + '</small>';
-                        }
-                    });
-                });
-            </script>
         </div>
     </section>
 

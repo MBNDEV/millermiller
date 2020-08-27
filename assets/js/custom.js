@@ -20,13 +20,36 @@ $(window).load(function() {
 });
 
 
+var slickSlider = {
+    homeCaseSlider = function(panel){
+        var $control = $(panel);
+        if ($control[0]) {
+            $contro.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                dotsClass: 'slick-pager',
+                customPaging: function (slider, i) {
+                    if(i < 9) dec = "0"; else  dec = ""; 
+                    if(slider.slideCount <= 9) dec2 = "0"; else dec2 = "";
+                    return dec+(i + 1) + '<small>/' + dec2 + slider.slideCount + '</small>';
+                }
+            });
+        }
+        
+    }
+}
+
 //Functions
 var compile = {
 
     
     //Document.load scripts
     docLoad: function() {
-        
+
+        slickSlider.homeCaseSlider('.cases-slider');
+
+
         //Fields Placeholder
         $('.field.js label').click(function() {
             $(this).next().focus();

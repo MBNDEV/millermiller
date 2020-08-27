@@ -47,6 +47,9 @@ get_header();
             <div class="grid-container">
                 <div class="grid-x grid-margin-x">
                     <?php query_posts(array(
+                        'post_type' => 'attorney',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
                         'meta_key' => 'af_last_name',
                         'orderby' => 'meta_value',
                         'order' => 'ASC'

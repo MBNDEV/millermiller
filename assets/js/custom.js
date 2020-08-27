@@ -21,7 +21,7 @@ $(window).load(function() {
 
 
 var slickSlider = {
-    homeCaseSlider = function(panel){
+    homeCaseSlider : function(panel){
         var $control = $(panel);
         if ($control[0]) {
             $contro.slick({

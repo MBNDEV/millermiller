@@ -1483,6 +1483,13 @@ main .contact-form p {
   .medium-align-left {
     justify-content: flex-start; } }
 
+.bio-header .copy p {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.6;
+  font-size: 25px; }
+
 @media (max-width: 767px) {
   .attorneys-list .grid-item {
     text-align: center; } }

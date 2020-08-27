@@ -1099,6 +1099,18 @@ main {
 }
 
 
+.bio-header{
+	.copy{
+		p{
+			font-family: $heading-font-family;
+			font-style: italic;
+			font-weight: normal;
+			line-height: 1.6;
+			font-size: 25px;
+		}
+	}
+}
+
 @include media(max-width, 767px){
 	.attorneys-list{
 		.grid-item{

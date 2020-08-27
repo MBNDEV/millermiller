@@ -24,7 +24,7 @@ var slickSlider = {
     homeCaseSlider : function(panel){
         var $control = $(panel);
         if ($control[0]) {
-            $contro.slick({
+            $control.slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 dots: true,

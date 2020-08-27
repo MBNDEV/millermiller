@@ -13,7 +13,7 @@ get_header();
         <div class="grid-container">
             <hgroup>
                 <h1 class="hbg"  data-aos="fade-up">Experienced Maryland Lawyers</h1>
-                <h2  data-aos="fade-up" data-aos-delay="1000">Focusing on 6 Core Practice Areas</h2>
+                <h2>Focusing on 6 Core Practice Areas</h2>
             </hgroup>
 
             <div class="grid-x grid-margin-x cols3-s2">
@@ -151,24 +151,24 @@ get_header();
             </div>
             <ul class="news-list clearfix">
                 <li>
-                    <div class="news-item">
+                    <div class="news-item" data-aos="fade-up" data-aos-delay="1000">
                         <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3  data-aos="fade-up" data-aos-delay="1000"><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
-                        <p  data-aos="fade-up" data-aos-delay="1300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
+                        <h3><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
                     </div>
                 </li>
                 <li>
-                    <div class="news-item">
+                    <div class="news-item" data-aos="fade-up" data-aos-delay="1200">
                         <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3  data-aos="fade-up" data-aos-delay="1000"><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
+                        <h3><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
                         <p  data-aos="fade-up" data-aos-delay="1300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
                 <li>
-                    <div class="news-item">
+                    <div class="news-item" data-aos="fade-up" data-aos-delay="1400">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3 data-aos="fade-up" data-aos-delay="1000"><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
-                        <p  data-aos="fade-up" data-aos-delay="1300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <h3><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
+                        <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
             </ul>

@@ -4,7 +4,7 @@ $(document).foundation();
 
 AOS.init({
     easing : 'ease-in-sine',
-    anchorPlacement: 'center-bottom'
+    anchorPlacement: 'bottom-bottom'
 });
 
 

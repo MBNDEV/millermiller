@@ -180,28 +180,28 @@ get_header();
             <ul class="news-list clearfix">
                 <li>
                     <div class="news-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
+                        <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
+                        <h3  data-aos="fade-up" data-aos-delay="1000"><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
+                        <p  data-aos="fade-up" data-aos-delay="1300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="news-item">
+                        <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
+                        <h3  data-aos="fade-up" data-aos-delay="1600"><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
+                        <p  data-aos="fade-up" data-aos-delay="1900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
                 <li>
                     <div class="news-item">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="news-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <h3  data-aos="fade-up" data-aos-delay="2100"><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
+                        <p  data-aos="fade-up" data-aos-delay="3400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
             </ul>
             <div class="text-center">
-                <a href="<?php the_permalink(15); ?>" class="button primary round">more on news &amp; resources</a>
+                <a href="<?php the_permalink(15); ?>" class="button primary round"  data-aos="fade-up" data-aos-delay="3700">more on news &amp; resources</a>
             </div>
         </div>
     </section>

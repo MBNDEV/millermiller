@@ -20,6 +20,7 @@ get_header();
                         <a href="javascript:;" class="button-filter">Categories</a>
                         <div class="dropdown-lists">
                             <ul>
+
                             	<?php 
                         		   	$args = array(
 						               'taxonomy' => 'case-studies',
@@ -38,7 +39,7 @@ get_header();
                     
                 </div>
                 <div class="cell auto">
-                    <div class="grid-x align-center medium-align-right">
+                    <div class="grid-x align-center medium-align-right hide">
                         <div class="position-relative">
                             <div class="button-dropdown">
                                 <a href="#" class="button-filter display-block padding-horizontal-2">filter by attorney</a>

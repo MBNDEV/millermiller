@@ -7,6 +7,7 @@ get_header();
 <main id="content">
     <div class="wp-block-group sec-banner">
         <div class="wp-block-group__inner-container">
+            <h6>Case Studies</h6>
             <h1 class="hbg"><?= get_queried_object()->name; ?></h1>
         </div>
     </div>
@@ -18,6 +19,7 @@ get_header();
                         <a href="javascript:;" class="button-filter"><?= is_tax() ? get_queried_object()->name : 'Category'; ?></a>
                         <div class="dropdown-lists">
                             <ul>
+                                <li><a href="/case-studies/">All</a></li>
                                 <?php 
                                     $args = array(
                                         'taxonomy' => 'case-studies',

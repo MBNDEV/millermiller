@@ -4,13 +4,6 @@ $(document).foundation();
 
 
 
-$(function(){
-    AOS.init({
-        easing : 'ease-in-sine',
-        anchorPlacement: 'bottom-bottom'
-    });
-});
-
 
 //Document ready function scripts 
 $(document).ready(function() {
@@ -50,6 +43,11 @@ var compile = {
     
     //Document.load scripts
     docLoad: function() {
+
+        AOS.init({
+            easing : 'ease-in-sine',
+            anchorPlacement: 'bottom-bottom'
+        });
 
         slickSlider.homeCaseSlider('.cases-slider');
 

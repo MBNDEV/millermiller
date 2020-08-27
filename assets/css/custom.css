@@ -1483,6 +1483,10 @@ main .contact-form p {
   .medium-align-left {
     justify-content: flex-start; } }
 
+@media (max-width: 767px) {
+  .attorneys-list .grid-item {
+    text-align: center; } }
+
 @media print {
   #header,
   #footer,

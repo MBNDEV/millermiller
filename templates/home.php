@@ -89,22 +89,22 @@ get_header();
             <div class="grid-x grid-margin-x">
                 <div class="cell large-6">
                     <h2 class="hbg" data-aos="fade-up" data-aos-delay="1000">Preserving and protecting client rights in Maryland since <strong data-aos="fade-up" data-aos-delay="1300">1946.</strong></h2>
-                    <a href="<?php the_permalink(11); ?>" class="button secondary round">meet our attorneys</a>
+                    <a href="<?php the_permalink(11); ?>" class="button secondary round" data-aos="fade-up" data-aos-delay="1600">meet our attorneys</a>
                 </div>
                 <div class="cell large-6">
                     <div class="testi-slider">
                         <div class="testi-item">
-                            <q>From the moment I picked up the phone and called Miller, Miller & Canby, I knew I was talking to the right people.
+                            <q data-aos="fade-up" data-aos-delay="1900">From the moment I picked up the phone and called Miller, Miller & Canby, I knew I was talking to the right people.
                                 <cite>Carole Daffron</cite>
                             </q>
                         </div>
                         <div class="testi-item">
-                            <q>For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
+                            <q data-aos="fade-up" data-aos-delay="2100">For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
                                 <cite>Paul Chod, Minkoff Development Corp.</cite>
                             </q>
                         </div>
                         <div class="testi-item">
-                            <q>For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
+                            <q data-aos="fade-up" data-aos-delay="2400">For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
                                 <cite>Paul Chod, Minkoff Development Corp.</cite>
                             </q>
                         </div>
@@ -164,22 +164,22 @@ get_header();
                 <li>
                     <div class="news-item">
                         <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3  data-aos="fade-up" data-aos-delay="1000"><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
-                        <p  data-aos="fade-up" data-aos-delay="1300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
+                        <h3><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
                     </div>
                 </li>
                 <li>
                     <div class="news-item">
                         <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3  data-aos="fade-up" data-aos-delay="1600"><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
-                        <p  data-aos="fade-up" data-aos-delay="1900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <h3><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
                 <li>
                     <div class="news-item">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3  data-aos="fade-up" data-aos-delay="2100"><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
-                        <p  data-aos="fade-up" data-aos-delay="3400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <h3><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
             </ul>

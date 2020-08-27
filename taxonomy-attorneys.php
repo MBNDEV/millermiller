@@ -46,6 +46,11 @@ get_header();
         <div class="attorneys-list">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x">
+                    <?php query_posts(array(
+                        'meta_key' => 'af_last_name',
+                        'orderby' => 'meta_value',
+                        'order' => 'ASC'
+                    )); ?>
                     <?php if(have_posts()) { ?>
                     <?php while ( have_posts() ) : the_post(); ?>
                     <div class="medium-6 large-4 xlarge-3 cell grid-item">
@@ -83,6 +88,7 @@ get_header();
                             <br><br>
                         </div>
                     <?php }  ?>
+                    <?php wp_reset_query(); ?>
                 </div>
             </div>
         </div>

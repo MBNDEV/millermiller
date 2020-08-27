@@ -15,7 +15,7 @@ get_header();
             <div class="grid-x grid-margin-x align-middle text-center medium-text-left">
                 <div class="cell auto position-relative">
                     <div class="button-dropdown">
-                        <a href="javascript:;" class="button-filter">Category - <?= get_queried_object()->term_id; ?></a>
+                        <a href="javascript:;" class="button-filter"><?= is_tax() ? get_queried_object()->name : 'Category'; ?></a>
                         <div class="dropdown-lists">
                             <ul>
                                 <?php 

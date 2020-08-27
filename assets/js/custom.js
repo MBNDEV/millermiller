@@ -32,10 +32,20 @@ var slickSlider = {
                     return dec+(i + 1) + '<small>/' + dec2 + slider.slideCount + '</small>';
                 }
             });
-
-             AOS.refresh();
         }
-        
+    },
+
+    testimonialSlider : function(panel){
+        var $control = $(panel);
+        if ($control[0]) {
+            $control.slick({
+                dots: false,
+                vertical: true,
+                slidesToShow: 2,
+                infinite: true,
+                addaptiveHeight:true
+            });
+        }
     }
 }
 
@@ -48,10 +58,11 @@ var compile = {
 
         AOS.init({
             easing : 'ease-in-sine',
-            anchorPlacement: 'bottom-bottom'
+            anchorPlacement: 'center-bottom'
         });
 
         slickSlider.homeCaseSlider('.cases-slider');
+        slickSlider.testimonialSlider('.testi-slider');
 
 
         //Fields Placeholder

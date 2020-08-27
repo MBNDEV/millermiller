@@ -109,17 +109,6 @@ get_header();
                             </q>
                         </div>
                     </div>
-                    <script>
-                        $(function(){
-                            $('.testi-slider').slick({
-                                dots: false,
-                                vertical: true,
-                                slidesToShow: 2,
-                                infinite: true,
-                                addaptiveHeight:true
-                            });
-                        });
-                    </script>
                 </div>
             </div>
         </div>

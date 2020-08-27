@@ -3,6 +3,8 @@
 $(document).foundation();
 
 
+
+
 //Document ready function scripts 
 $(document).ready(function() {
     compile.docLoad();
@@ -15,13 +17,55 @@ $(window).load(function() {
 });
 
 
+var slickSlider = {
+    homeCaseSlider : function(panel){
+        var $control = $(panel);
+        if ($control[0]) {
+            $control.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                dotsClass: 'slick-pager',
+                customPaging: function (slider, i) {
+                    if(i < 9) dec = "0"; else  dec = ""; 
+                    if(slider.slideCount <= 9) dec2 = "0"; else dec2 = "";
+                    return dec+(i + 1) + '<small>/' + dec2 + slider.slideCount + '</small>';
+                }
+            });
+        }
+    },
+
+    testimonialSlider : function(panel){
+        var $control = $(panel);
+        if ($control[0]) {
+            $control.slick({
+                dots: false,
+                vertical: true,
+                slidesToShow: 2,
+                infinite: true,
+                addaptiveHeight:true
+            });
+        }
+    }
+}
+
 //Functions
 var compile = {
 
     
     //Document.load scripts
     docLoad: function() {
-        
+
+        AOS.init({
+            easing : 'ease-in-sine',
+            anchorPlacement: 'bottom-center',
+            offset: 240
+        });
+
+        slickSlider.homeCaseSlider('.cases-slider');
+        slickSlider.testimonialSlider('.testi-slider');
+
+
         //Fields Placeholder
         $('.field.js label').click(function() {
             $(this).next().focus();

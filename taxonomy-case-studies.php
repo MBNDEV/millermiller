@@ -7,6 +7,7 @@ get_header();
 <main id="content">
     <div class="wp-block-group sec-banner">
         <div class="wp-block-group__inner-container">
+            <h6>Case Studies</h6>
             <h1 class="hbg"><?= get_queried_object()->name; ?></h1>
         </div>
     </div>
@@ -15,9 +16,10 @@ get_header();
             <div class="grid-x grid-margin-x align-middle text-center medium-text-left">
                 <div class="cell auto position-relative">
                     <div class="button-dropdown">
-                        <a href="javascript:;" class="button-filter">Category</a>
+                        <a href="javascript:;" class="button-filter"><?= is_tax() ? get_queried_object()->name : 'Category'; ?></a>
                         <div class="dropdown-lists">
                             <ul>
+                                <li><a href="/case-studies/">All</a></li>
                                 <?php 
                                     $args = array(
                                         'taxonomy' => 'case-studies',
@@ -37,7 +39,7 @@ get_header();
                     
                 </div>
                 <div class="cell auto">
-                     <div class="grid-x align-center medium-align-right">
+                     <div class="grid-x align-center medium-align-right hide">
                         <div class="position-relative">
                             <div class="button-dropdown">
                                 <a href="#" class="button-filter display-block padding-horizontal-2">filter by attorney</a>

@@ -1,4 +1,5 @@
 /* Slider */
+@import url(../vendor/aos/aos.css);
 .slick-slider {
   position: relative;
   display: block;

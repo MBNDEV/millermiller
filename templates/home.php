@@ -116,25 +116,25 @@ get_header();
 
     <section class="sec-cases">
         <div class="grid-container">
-            <h2 class="hbg">Case Studies</h2>
-            <div class="cases-slider">
+            <h2 class="hbg" data-aos="fade-up" data-aos-delay="1000">Case Studies</h2>
+            <div class="cases-slider" data-aos="fade-up" data-aos-delay="1300">
                 <div class="cases-item">
                     <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/case-study-1.jpg" alt=""></figure>
-                    <h3 data-aos="fade-up" data-aos-delay="1000">Eminent Domain</h3>
-                    <h4 data-aos="fade-up" data-aos-delay="1300">Necessity to Take</h4>
-                    <p data-aos="fade-up" data-aos-delay="1600"><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
+                    <h3>Eminent Domain</h3>
+                    <h4>Necessity to Take</h4>
+                    <p><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
                 </div>
                 <div class="cases-item">
                     <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/case-study-1.jpg" alt=""></figure>
-                    <h3 data-aos="fade-up" data-aos-delay="1000">Litigation</h3>
-                    <h4 data-aos="fade-up" data-aos-delay="1300">Breach of Commercial Lease and Appeal</h4>
-                    <p data-aos="fade-up" data-aos-delay="1600"><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
+                    <h3>Litigation</h3>
+                    <h4>Breach of Commercial Lease and Appeal</h4>
+                    <p><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
                 </div>
                 <div class="cases-item">
                     <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/case-study-1.jpg" alt=""></figure>
-                    <h3 data-aos="fade-up" data-aos-delay="1000">Litigation</h3>
-                    <h4 data-aos="fade-up" data-aos-delay="1300">Breach of Commercial Lease and Appeal</h4>
-                    <p data-aos="fade-up" data-aos-delay="1600"><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
+                    <h3>Litigation</h3>
+                    <h4>Breach of Commercial Lease and Appeal</h4>
+                    <p><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
                 </div>
             </div>  
 
@@ -160,20 +160,20 @@ get_header();
                 <li>
                     <div class="news-item">
                         <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3  data-aos="fade-up" data-aos-delay="1600"><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
-                        <p  data-aos="fade-up" data-aos-delay="1900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <h3  data-aos="fade-up" data-aos-delay="1000"><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
+                        <p  data-aos="fade-up" data-aos-delay="1300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
                 <li>
                     <div class="news-item">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3 data-aos="fade-up" data-aos-delay="2200"><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
-                        <p  data-aos="fade-up" data-aos-delay="2500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <h3 data-aos="fade-up" data-aos-delay="1000"><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
+                        <p  data-aos="fade-up" data-aos-delay="1300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
             </ul>
             <div class="text-center">
-                <a href="<?php the_permalink(15); ?>" class="button primary round"  data-aos="fade-up" data-aos-delay="3700">more on news &amp; resources</a>
+                <a href="<?php the_permalink(15); ?>" class="button primary round"  data-aos="fade-up" data-aos-delay="1600">more on news &amp; resources</a>
             </div>
         </div>
     </section>
@@ -186,24 +186,24 @@ get_header();
                 </div>
                 <div class="cell large-6 large-order-1 small-order-1 align-self-middle col-copy client-matter-text">
                     <h2 class="hbg" data-aos="fade-up" data-aos-delay="1000">Our Clients Matter</h2>
-                    <h3 data-aos="fade-up" data-aos-delay="1300">We prove it every day with:</h3><br>
+                    <h3 data-aos="fade-up" data-aos-delay="1100">We prove it every day with:</h3><br>
                     <div class="grid-x grid-margin-x">
                         <div class="cell medium-6 large-5">
                             <ul class="check-list">
-                                <li data-aos="fade-up" data-aos-delay="1600">Tireless Advocacy</li>
-                                <li data-aos="fade-up" data-aos-delay="1900">Creative Problem Solving</li>
-                                <li data-aos="fade-up" data-aos-delay="2200">Client Communication</li>
+                                <li data-aos="fade-up" data-aos-delay="1200">Tireless Advocacy</li>
+                                <li data-aos="fade-up" data-aos-delay="1400">Creative Problem Solving</li>
+                                <li data-aos="fade-up" data-aos-delay="1600">Client Communication</li>
                             </ul>
                         </div>
                         <div class="cell medium-6 large-7">
                             <ul class="check-list">
-                                <li data-aos="fade-up" data-aos-delay="2500">Meticulous Attention To Detail</li>
-                                <li data-aos="fade-up" data-aos-delay="2800">High Quality, Efficient Work</li>
-                                <li data-aos="fade-up" data-aos-delay="3100">Collaboration Among Attorneys And Practice Areas</li>
+                                <li data-aos="fade-up" data-aos-delay="1800">Meticulous Attention To Detail</li>
+                                <li data-aos="fade-up" data-aos-delay="2000">High Quality, Efficient Work</li>
+                                <li data-aos="fade-up" data-aos-delay="2200">Collaboration Among Attorneys And Practice Areas</li>
                             </ul>
                         </div>
                     </div><br>
-                    <a href="<?php the_permalink(7); ?>" class="button primary round" data-aos="fade-up" data-aos-delay="3400">more about our firm</a>
+                    <a href="<?php the_permalink(7); ?>" class="button primary round" data-aos="fade-up" data-aos-delay="2300">more about our firm</a>
                 </div>
             </div>
         </div>

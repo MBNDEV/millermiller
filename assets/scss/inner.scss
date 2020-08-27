@@ -695,8 +695,8 @@ $color-xbrown: #6f4f2a;
         margin-bottom: 40px;
 
 		&:before {
-			background: $color-lgreen;
-			opacity: 0.3;
+			background: $color-blue-100;
+            width: calc(100% + 10px);
 		}
 	}
 

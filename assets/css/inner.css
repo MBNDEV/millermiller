@@ -404,8 +404,8 @@
 .bio-content .hbg {
   margin-bottom: 40px; }
   .bio-content .hbg:before {
-    background: #a9d5d1;
-    opacity: 0.3; }
+    background: #ecf8f7;
+    width: calc(100% + 10px); }
 
 .bio-content hr {
   border-color: #ecf8f7;

@@ -57,8 +57,7 @@ var compile = {
     docLoad: function() {
 
         AOS.init({
-            easing : 'ease-in-sine',
-            anchorPlacement: 'top-top'
+            easing : 'ease-in-sine'
         });
 
         slickSlider.homeCaseSlider('.cases-slider');

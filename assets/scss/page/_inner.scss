@@ -1111,6 +1111,20 @@ main {
 	}
 }
 
+.bio-content{
+	.bio-overview{
+		font-size: 18px;
+		line-height: 1.83;
+	}
+
+	.hbg{
+		&:before{
+			background: $color-blue-100;
+			width: 100%;
+		}
+	}
+}
+
 @include media(max-width, 767px){
 	.attorneys-list{
 		.grid-item{

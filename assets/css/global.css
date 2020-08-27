@@ -9062,6 +9062,14 @@ main .contact-form p {
   line-height: 1.6;
   font-size: 25px; }
 
+.bio-content .bio-overview {
+  font-size: 18px;
+  line-height: 1.83; }
+
+.bio-content .hbg:before {
+  background: #ecf8f7;
+  width: 100%; }
+
 @media (max-width: 767px) {
   .attorneys-list .grid-item {
     text-align: center; } }

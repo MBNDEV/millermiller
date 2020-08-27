@@ -32,6 +32,8 @@ var slickSlider = {
                     return dec+(i + 1) + '<small>/' + dec2 + slider.slideCount + '</small>';
                 }
             });
+
+             AOS.refresh();
         }
         
     }

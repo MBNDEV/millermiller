@@ -59,7 +59,7 @@ get_header();
                                 array(
                                     'taxonomy' => 'attorneys',
                                     'field' => 'id',
-                                    'terms' => get_queried_object()->term_id;
+                                    'terms' => get_queried_object()->term_id
                                 )
                             )
                         )); 

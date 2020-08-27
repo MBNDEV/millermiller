@@ -78,8 +78,8 @@
                             <img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="miller miller canby" title="miller miller canby">
                         </h6>
                         <h1 data-aos="fade-up" data-aos-delay="1200">Client <strong>Focused. <br>Results</strong> Driven.</h1>
-                        <p data-aos="fade-up" data-aos-delay="1300">Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
-                        <a href="<?php the_permalink(24); ?>" class="button secondary large round">contact us </a>
+                        <p data-aos="fade-up" data-aos-delay="1600">Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
+                        <a href="<?php the_permalink(24); ?>" class="button secondary large round" data-aos="fade-up" data-aos-delay="1900">contact us </a>
                     </div>
                 </div>
             </div>

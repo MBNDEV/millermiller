@@ -15,7 +15,7 @@ get_header();
             <div class="grid-x grid-margin-x align-middle text-center medium-text-left">
                 <div class="cell auto position-relative">
                     <div class="button-dropdown">
-                        <a href="javascript:;" class="button-filter">Category</a>
+                        <a href="javascript:;" class="button-filter">Category - <?= get_queried_object()->term_id; ?></a>
                         <div class="dropdown-lists">
                             <ul>
                                 <?php 
@@ -37,7 +37,7 @@ get_header();
                     
                 </div>
                 <div class="cell auto">
-                     <div class="grid-x align-center medium-align-right">
+                     <div class="grid-x align-center medium-align-right hide">
                         <div class="position-relative">
                             <div class="button-dropdown">
                                 <a href="#" class="button-filter display-block padding-horizontal-2">filter by attorney</a>

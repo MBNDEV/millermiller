@@ -58,7 +58,8 @@ var compile = {
 
         AOS.init({
             easing : 'ease-in-sine',
-            anchorPlacement: 'bottom-center'
+            anchorPlacement: 'bottom-center',
+            offset: 240
         });
 
         slickSlider.homeCaseSlider('.cases-slider');

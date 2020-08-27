@@ -52,7 +52,7 @@ get_header();
                         'posts_per_page' => -1,
                         'meta_key' => 'af_last_name',
                         'orderby' => 'meta_value',
-                        'order' => 'DESC'
+                        'order' => 'ASC'
                     );
                     $loop = new WP_Query( $args );
                 ?>

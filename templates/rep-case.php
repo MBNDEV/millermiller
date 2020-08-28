@@ -16,7 +16,7 @@ get_header();
 	?>
 
 
-    <div class="grid-container margin-top-3">
+    <div class="grid-container margin-vertical-3">
         <div class="grid-x grid-margin-x rep-case-lists">
 
             <?php 

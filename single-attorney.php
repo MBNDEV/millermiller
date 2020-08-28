@@ -344,7 +344,7 @@ get_header();
                                 <?php endforeach;  wp_reset_postdata(); ?>
                             </div>
                             <div class="show-for-medium">
-                                <a href="/representative-cases" class="button primary round">more representative cases</a>
+                                <a href="/representative-cases?case-attorney=<?= get_the_ID(); ?>" class="button primary round">more representative cases</a>
                             </div>
                         </div>
                         <?php endif; ?>

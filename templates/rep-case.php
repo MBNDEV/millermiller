@@ -18,60 +18,49 @@ get_header();
 
     <div class="grid-container margin-top-3">
         <div class="grid-x grid-margin-x rep-case-lists">
-            <div class="medium-6 large-6 cell grid-item">
-                <div class="box grid-x grid-padding-x margin-bottom-2">
-                    <div class="cell small-6">
-                        <div class="thumb">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case-before-1.jpg" alt="">
-                            <span>Before</span>
+
+            <?php 
+                $query = new WP_Query( array(
+                    'post_type' => 'special-services-app',
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1,
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                ));
+                while ($query->have_posts()) : $query->the_post();
+            ?>
+
+                <div class="medium-6 large-6 cell grid-item">
+                    <div class="box grid-x grid-padding-x margin-bottom-2">
+                        <div class="cell small-6">
+                            <div class="thumb">
+                                <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                <span>Before</span>
+                            </div>
+                        </div>
+                        <div class="cell small-6">
+                            <div class="thumb">
+                                 <?php $controlImageAfter = get_field('crf_after_image'); ?>
+                                <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                <span>After</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="cell small-6">
-                        <div class="thumb">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case-after-1.jpg" alt="">
-                            <span>Before</span>
-                        </div>
-                    </div>
+                    <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
+                    <h3><?php the_field('crf_location') ?></h3>
+                    <ul>
+                        <li>Initial Offer:</li>
+                        <li><?php the_field('crf_initial_offer') ?></li>
+                    </ul>
+                    <ul>
+                        <li>Final Award:</li>
+                        <li><?php the_field('crf_final_award') ?></li>
+                    </ul>
+                    <p><?php the_field('crf_short_description') ?></p>
                 </div>
-                <h2 class="margin-bottom-2">Industrial & Residentially Zoned - Unimproved Property</h2>
-                <h3>Montgomery County, MD</h3>
-                <ul>
-                    <li>Initial Offer:</li>
-                    <li>$3,750,000</li>
-                </ul>
-                <ul>
-                    <li>Final Award:</li>
-                    <li>$8,545,000</li>
-                </ul>
-                <p>Montgomery County condemned 82.12 acres of industrial and residentially zoned undeveloped property located in the NW quadrant of I-270 and Rt. 121 for the purpose of the North County Depot Project. </p>
-            </div>
-            <div class="medium-6 large-6 cell grid-item">
-                <div class="box grid-x grid-padding-x margin-bottom-2">
-                    <div class="cell small-6">
-                        <div class="thumb">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case-before-1.jpg" alt="">
-                            <span>Before</span>
-                        </div>
-                    </div>
-                    <div class="cell small-6">
-                        <div class="thumb">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/case-after-1.jpg" alt="">
-                            <span>Before</span>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="margin-bottom-2">Industrial & Residentially Zoned - Unimproved Property</h2>
-                <h3>Montgomery County, MD</h3>
-                <ul>
-                    <li>Initial Offer:</li>
-                    <li>$3,750,000</li>
-                </ul>
-                <ul>
-                    <li>Final Award:</li>
-                    <li>$8,545,000</li>
-                </ul>
-                <p>Montgomery County condemned 82.12 acres of industrial and residentially zoned undeveloped property located in the NW quadrant of I-270 and Rt. 121 for the purpose of the North County Depot Project. </p>
-            </div>
+
+            <?php endwhile; wp_reset_postdata(); ?>
 
         </div>
     </div>

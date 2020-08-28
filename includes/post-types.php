@@ -200,26 +200,6 @@ add_action( 'init', 'case_representative_post' );
 // case_representative_post
 
 
-// representative cases
-function representative_cases() {
-    register_post_type( 
-        'representative-case',
-        array(
-            'labels'    => array(
-                'name' => __( 'Representative Cases' ),
-                'singular_name' => __('Representative Case')
-            ),
-            'public'        => true,
-            'has_archive'   => false,
-            'show_in_rest'  => false,
-            'menu_position' => 20,
-            'supports'      =>  array('title', 'page-attributes'),
-            'menu_icon'     => 'dashicons-editor-paragraph',
-        )
-    );
-}
-add_action( 'init', 'representative_cases' );
-// representative cases
 
 
 

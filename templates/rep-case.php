@@ -21,7 +21,7 @@ get_header();
 
             <?php 
                 $query = new WP_Query( array(
-                    'post_type' => 'special-services-app',
+                    'post_type' => 'case-representative',
                     'post_status' => 'publish',
                     'posts_per_page' => -1,
                     'orderby' => 'name',

@@ -9075,6 +9075,54 @@ main .contact-form p {
   .attorneys-list .grid-item {
     text-align: center; } }
 
+.rep-case-lists {
+  font-family: 'Manrope', sans-serif; }
+  .rep-case-lists .box {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem; }
+    .rep-case-lists .box .thumb img {
+      width: 100%; }
+    .rep-case-lists .box .thumb span {
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 9px 16px;
+      line-height: 1.67; }
+    .rep-case-lists .box .cell:nth-child(odd) span {
+      background-color: #404040; }
+    .rep-case-lists .box .cell:nth-child(even) span {
+      background-color: #326762; }
+  .rep-case-lists h2 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.35;
+    color: #404040; }
+  .rep-case-lists h3 {
+    font-size: 15px;
+    font-weight: bold; }
+  .rep-case-lists ul {
+    padding: 0;
+    margin: 0 0 15px;
+    list-style: none;
+    line-height: 0.87; }
+    .rep-case-lists ul li {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 15px;
+      font-weight: bold; }
+      .rep-case-lists ul li:nth-child(odd) {
+        color: #818181; }
+      .rep-case-lists ul li:nth-child(even) {
+        color: #404040;
+        margin-left: 30px; }
+  .rep-case-lists p {
+    color: #818181;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.67; }
+
 @media print {
   #header,
   #footer,

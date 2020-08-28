@@ -15,12 +15,8 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 
-    <style>
-        
-    </style>    
 
-
-    <div class="grid-container">
+    <div class="grid-container margin-top-3">
         <div class="grid-x grid-margin-x rep-case-lists">
             <div class="medium-6 large-6 cell grid-item">
                 <div class="box grid-x grid-padding-x margin-bottom-2">

@@ -9055,6 +9055,11 @@ main .contact-form p {
   .medium-align-left {
     justify-content: flex-start; } }
 
+.disclaimer-text {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  color: #818181; }
+
 .bio-header .copy p {
   font-family: "Lato", sans-serif;
   font-style: italic;

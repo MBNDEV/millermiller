@@ -377,7 +377,7 @@ get_header();
                             <div class="text-center-medium">
                                 <h2 class="hbg">Case Studies</h2>
                             </div>
-                            <ul class="grid-x grid-margin-x rep-cases">
+                            <ul class="grid-x grid-margin-x case-studies">
                                 <?php foreach( $attrCase as $post ):  setup_postdata($post); ?>
                                 <li class="cell medium-6">
                                     <div class="bio-post">
@@ -392,8 +392,21 @@ get_header();
                                         ?>
                                         </a>
                                         </figure>
-                                        <h6><a href="">Eminent Domain </a></h6>
-                                        <h3><?php the_title(); ?></h3>
+                                        <h6>
+                                            <?php  ?>
+                                            <?php 
+                                                $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
+                                                if ($controlPostCategory): ?>
+                                                <?php 
+                                                    $postCategoryLength = count($controlPostCategory);
+                                                    $postCtr = 1;
+                                                    foreach ($controlPostCategory as $pc): ?>
+                                                    
+                                                    <a href="<?= get_term_link($pc->term_id); ?>"><?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?></a>
+                                                <?php $postCtr++; endforeach; ?>
+                                            <?php endif ?>
+                                        </h6>
+                                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                         <p><?php
                                             $excerpt = get_the_excerpt(); 
                                             $excerpt = substr( $excerpt, 0, 165 );

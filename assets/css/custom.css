@@ -1551,6 +1551,39 @@ main .contact-form p {
     font-weight: 500;
     line-height: 1.67; }
 
+.bio-copy > div:nth-child(even) .text-center-medium .hbg:before {
+  background-color: #f5f1ec; }
+
+@media (max-width: 1023px) {
+  .bio-header .copy {
+    padding-bottom: 0; }
+    .bio-header .copy p {
+      font-size: 16px;
+      text-align: left; }
+  .bio-side .bio-menu {
+    margin-bottom: 0; }
+    .bio-side .bio-menu ul {
+      padding-bottom: 0; }
+      .bio-side .bio-menu ul li a {
+        font-size: 18px;
+        line-height: 1.89; }
+  .bio-copy ul li, .bio-copy .bio-appellate ul li {
+    font-size: 18px; } }
+
+@media (max-width: 767px) {
+  .bio-copy .text-center-medium .hbg:before {
+    width: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%); }
+  .bio-content .off-top {
+    padding-top: 2em; }
+  .bio-content hr {
+    margin-top: 50px;
+    margin-bottom: 50px; }
+  .bio-overview p {
+    font-size: 16px;
+    color: #404040; } }
+
 @media print {
   #header,
   #footer,

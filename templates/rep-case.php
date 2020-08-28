@@ -35,14 +35,24 @@ get_header();
                         <div class="cell small-6">
                             <div class="thumb">
                                 <?php $controlImageBefore = get_field('crf_before_image'); ?>
-                                <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                <?php if ($controlImageBefore): ?>
+                                    <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                <?php else: ?>
+                                    <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                <?php endif ?>
+                                
                                 <span>Before</span>
                             </div>
                         </div>
                         <div class="cell small-6">
                             <div class="thumb">
                                  <?php $controlImageAfter = get_field('crf_after_image'); ?>
-                                <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                <?php if ($controlImageAfter): ?>
+                                    <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                <?php else: ?>
+                                    <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                <?php endif ?>
+                                
                                 <span>After</span>
                             </div>
                         </div>

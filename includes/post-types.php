@@ -201,6 +201,8 @@ add_action( 'init', 'case_representative_post' );
 
 
 
+
+
 // Register faqs Post Type
 function faqs_post() {
     register_post_type( 'faq',

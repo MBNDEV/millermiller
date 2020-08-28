@@ -404,12 +404,12 @@
 .bio-content .hbg {
   margin-bottom: 40px; }
   .bio-content .hbg:before {
-    background: #a9d5d1;
-    opacity: 0.3; }
+    background: #ecf8f7;
+    width: calc(100% + 10px); }
 
 .bio-content hr {
   border-color: #ecf8f7;
-  border-width: 5px;
+  border-width: 7px;
   margin-top: 75px;
   margin-bottom: 75px; }
 
@@ -615,9 +615,11 @@
       list-style: none;
       font-size: 25px;
       line-height: 1.8;
-      background: url(../img/icn-pdf.svg) no-repeat left 8px/35px;
-      padding: 0 0 0 50px;
       margin: 0 0 20px; }
+      .bio-copy .bio-appellate ul li a {
+        display: block;
+        background: url(../img/icn-pdf.svg) no-repeat left 8px/35px;
+        padding: 0 0 0 50px; }
   .bio-copy .bio-publications ul {
     margin: 0;
     padding: 0; }

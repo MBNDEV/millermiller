@@ -42,7 +42,7 @@ get_header();
             </div>
         </div>
     </div>
-    <div class="bio-subhead show-for-large hide">
+    <div class="bio-subhead show-for-large">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell large-8 sub-name">
@@ -294,31 +294,57 @@ get_header();
                             <div class="text-center-medium">
                                 <h2 class="hbg">Representative Cases</h2>
                             </div>
-                            <ul class="grid-x grid-margin-x rep-cases">
-                                <?php foreach( $repCase as $post ):  setup_postdata($post); ?>
-                                <li class="cell medium-6">
-                                    <div class="bio-post">
-                                        <figure>                                        
-                                        <?php
-                                            $rcImage = get_field('crf_before_image');
-                                            if( !empty( $rcImage ) ): ?>
-                                                <a class="img" data-fancybox href="<?php echo esc_url($rcImage['url']); ?>">
-                                                <img src="<?php echo esc_url($rcImage['url']); ?>" alt="<?php echo esc_attr($rcImage['alt']); ?>" />
-                                                </a>
-                                            <?php else : ?>
-                                                <?php echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />'; ?>
-                                            <?php endif; 
-                                        ?>                                        
-                                        </figure>
-                                        <!-- <h6><a href="">Eminent Domain </a></h6> -->
-                                        <h3><?php the_title(); ?></h3>
-                                        <p><?php the_field('crf_short_description'); ?></p>
-                                    </div>
-                                </li>
+                            <div class="grid-x grid-margin-x rep-case-lists">
+                                <?php 
+                                    $rcaseCTR = 1;
+                                    foreach( $repCase as $post ):  setup_postdata($post); ?>
+                                        <?php if ($rcaseCTR <= 2): ?>
+                                            <div class="medium-6 large-6 cell grid-item">
+                                                <div class="box grid-x grid-padding-x margin-bottom-2">
+                                                    <div class="cell small-6">
+                                                        <div class="thumb">
+                                                            <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                                            <?php if ($controlImageBefore): ?>
+                                                                <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                                            <?php else: ?>
+                                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                            <?php endif ?>
+                                                            
+                                                            <span>Before</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell small-6">
+                                                        <div class="thumb">
+                                                             <?php $controlImageAfter = get_field('crf_after_image'); ?>
+                                                            <?php if ($controlImageAfter): ?>
+                                                                <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                                            <?php else: ?>
+                                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                            <?php endif ?>
+                                                            
+                                                            <span>After</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
+                                                <h3><?php the_field('crf_location') ?></h3>
+                                                <ul>
+                                                    <li>Initial Offer:</li>
+                                                    <li><?php the_field('crf_initial_offer') ?></li>
+                                                </ul>
+                                                <ul>
+                                                    <li>Final Award:</li>
+                                                    <li><?php the_field('crf_final_award') ?></li>
+                                                </ul>
+                                                <p><?php the_field('crf_short_description') ?></p>
+                                            </div>
+                                        <?php endif ?>
+                                        <?php $rcaseCTR++; ?>
+                                    
                                 <?php endforeach;  wp_reset_postdata(); ?>
-                            </ul>
+                            </div>
                             <div class="show-for-medium">
-                                <a href="/representative-cases" class="button primary round">more representative cases</a>
+                                <a href="/representative-cases?case-attorney=<?= get_the_ID(); ?>" class="button primary round">more representative cases</a>
                             </div>
                         </div>
                         <?php endif; ?>

@@ -50,8 +50,9 @@ get_header();
                         'post_type' => 'attorney',
                         'post_status' => 'publish',
                         'posts_per_page' => -1,
-                        'orderby'=>'title',
-                        'order'=>'ASC'
+                        'meta_key' => 'af_last_name',
+                        'orderby' => 'meta_value',
+                        'order' => 'ASC'
                     );
                     $loop = new WP_Query( $args );
                 ?>
@@ -60,13 +61,13 @@ get_header();
                         <div class="attorney-item">
                             <figure>
                             <a class="post-link" rel="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
-                            <?php 
-                                if ( has_post_thumbnail() ) {
-                                    the_post_thumbnail();
-                                } else {
-                                    echo '<img src="https://via.placeholder.com/660x445/020202/111111?text=[no+thumnail]" alt="" />';
-                                }
-                            ?>
+                                <?php 
+                                    if ( has_post_thumbnail() ) {
+                                        the_post_thumbnail();
+                                    } else {
+                                        echo '<img src="https://via.placeholder.com/660x445/020202/111111?text=[no+thumnail]" alt="" />';
+                                    }
+                                ?>
                             </a>
                             </figure>
                             

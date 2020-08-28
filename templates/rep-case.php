@@ -34,7 +34,7 @@ get_header();
                         'posts_per_page' => -1,
                     );
                 }
-                
+
                 $query = new WP_Query( $attorney );
                 while ($query->have_posts()) : $query->the_post();
             ?>
@@ -83,7 +83,7 @@ get_header();
                         </ul>
                         <p><?php the_field('crf_short_description') ?></p>
                     </div>
-                <?php endforeach; ?>
+                <?php endforeach; wp_reset_postdata(); ?>
 
             <?php endwhile; wp_reset_postdata(); ?>
 

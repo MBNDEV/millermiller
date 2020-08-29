@@ -1107,6 +1107,9 @@ main {
 
 .bio-header{
 	.copy{
+		padding-top: 50px;
+        padding-bottom: 50px;
+
 		p{
 			font-family: $heading-font-family;
 			font-style: italic;
@@ -1231,19 +1234,7 @@ main {
 		}
 	}
 	.bio-side{
-		.bio-menu{
-			margin-bottom: 0;
-			ul{
-				padding-bottom:0;
-
-				li{
-					a{
-						font-size: 18px;
-						line-height: 1.89;
-					}
-				}
-			}
-		}
+		padding: 50px 0;
 	}
 	.bio-copy {
 		ul li, .bio-appellate ul li{font-size: 18px;}

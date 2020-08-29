@@ -314,9 +314,6 @@
     letter-spacing: 3px; }
   .bio-header p {
     font-weight: bold; }
-  .bio-header .copy {
-    padding-top: 50px;
-    padding-bottom: 50px; }
   .bio-header .image img {
     width: 100%; }
   .bio-header .email-vcard {
@@ -471,7 +468,12 @@
     .bio-side:before {
       right: -30px; }
     .bio-side .bio-menu {
-      text-align: center; } }
+      text-align: center; }
+    .bio-side .bio-menu ul {
+      padding-bottom: 0; }
+      .bio-side .bio-menu ul li a {
+        font-size: 18px;
+        line-height: 1.89; } }
 
 .bio-copy {
   padding: 70px 0; }

@@ -553,10 +553,7 @@ $color-xbrown: #6f4f2a;
          font-weight: bold;
      }
 
-     .copy {
-         padding-top: 50px;
-         padding-bottom: 50px;
-     }
+     
 
      .image {
         img {
@@ -792,6 +789,14 @@ $color-xbrown: #6f4f2a;
         .bio-menu {
             text-align: center;
         }
+        .bio-menu ul{
+            padding-bottom:0;
+
+            li a {
+                font-size: 18px;
+                line-height: 1.89;
+            }
+        } 
     }
 }
 

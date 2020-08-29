@@ -9060,12 +9060,15 @@ main .contact-form p {
   font-size: 15px;
   color: #818181; }
 
-.bio-header .copy p {
-  font-family: "Lato", sans-serif;
-  font-style: italic;
-  font-weight: normal;
-  line-height: 1.6;
-  font-size: 25px; }
+.bio-header .copy {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  .bio-header .copy p {
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.6;
+    font-size: 25px; }
 
 .bio-content .bio-overview {
   font-size: 18px;
@@ -9132,13 +9135,8 @@ main .contact-form p {
     .bio-header .copy p {
       font-size: 16px;
       text-align: left; }
-  .bio-side .bio-menu {
-    margin-bottom: 0; }
-    .bio-side .bio-menu ul {
-      padding-bottom: 0; }
-      .bio-side .bio-menu ul li a {
-        font-size: 18px;
-        line-height: 1.89; }
+  .bio-side {
+    padding: 50px 0; }
   .bio-copy ul li, .bio-copy .bio-appellate ul li {
     font-size: 18px; } }
 

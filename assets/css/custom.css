@@ -1554,7 +1554,7 @@ main .contact-form p {
     font-weight: 500;
     line-height: 1.67; }
 
-.bio-copy > div:nth-child(even) .text-center-medium .hbg:before {
+.bio-copy > div:nth-of-type(even) .text-center-medium .hbg:before {
   background-color: #f5f1ec; }
 
 @media (max-width: 1023px) {

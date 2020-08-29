@@ -1212,7 +1212,7 @@ main {
 }
 
 .bio-copy{
-	& > div:nth-child(even){
+	& > div:nth-of-type(even) {
 		.text-center-medium{
 			.hbg{
 				&:before{

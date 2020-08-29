@@ -95,11 +95,11 @@ get_header();
             <?php else: ?>
 
                 <?php 
-                    $attorney =  array(
+                    $query = new WP_Query( array(
                         'post_type' => 'case-representative',
                         'post_status' => 'publish',
                         'posts_per_page' => -1,
-                    );
+                    ));
 
                     while ($query->have_posts()) : $query->the_post();
                  ?>

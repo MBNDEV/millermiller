@@ -712,6 +712,18 @@ $color-xbrown: #6f4f2a;
 
 
 }
+
+@include media(max-width, 767px){
+    .bio-content {
+        .off-top {
+            padding-top: 2em;
+        }
+        hr {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    }
+}
 .bio-side {
 	position: relative;
 	z-index: 1;

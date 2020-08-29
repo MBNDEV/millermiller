@@ -801,6 +801,12 @@ $color-xbrown: #6f4f2a;
 }
 
 
+@include media(max-width, 1023px){
+    .bio-side{
+        padding: 50px 0;
+    }
+}
+
 .bio-copy {
     padding: 70px 0;
 

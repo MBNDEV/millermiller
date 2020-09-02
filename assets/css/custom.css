@@ -259,8 +259,7 @@ header {
             top: 0; } }
     @media (max-width: 767px) {
       header .hsnav-s6 {
-        top: 0 !important;
-        margin-top: 30px; } }
+        top: 0 !important; } }
 
 /* HERO STYLE 2 */
 .hero-s2 {
@@ -799,6 +798,10 @@ header {
       .sec-subscribe .subscribe-box h2 {
         font-size: 24px;
         line-height: 1.2; } }
+
+@media (max-width: 767px) {
+  header .hsnav-s6 .navbar {
+    margin-top: 30px; } }
 
 .hbg:before {
   content: '';

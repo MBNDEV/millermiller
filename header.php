@@ -23,7 +23,7 @@
 
 <div id="wrapper">
     <header id="header" data-sticky-container data-toggler=".show-menu">
-        <div class="hsnav-s6 sticky" data-sticky data-options="marginTop:0">
+        <div class="hsnav-s6 sticky" data-sticky data-options="marginTop:0,scrolltop: false">
             <div class="navbar">
                 <a class="navlogo" href="<?php echo get_home_url(); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="">

@@ -16,10 +16,6 @@ get_header();
 	?>
 
 
-    <style>
-        .rep-case-lists .grid-item{display: none;}
-    </style>
-
     <div class="grid-container margin-vertical-3">
         <div class="grid-x grid-margin-x rep-case-lists">
 

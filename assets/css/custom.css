@@ -259,7 +259,8 @@ header {
             top: 0; } }
     @media (max-width: 767px) {
       header .hsnav-s6 {
-        top: 0 !important; } }
+        top: 0 !important;
+        margin-top: 30px; } }
 
 /* HERO STYLE 2 */
 .hero-s2 {

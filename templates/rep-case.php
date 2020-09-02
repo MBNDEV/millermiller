@@ -16,6 +16,10 @@ get_header();
 	?>
 
 
+    <style>
+        .rep-case-lists .grid-item{display: none;}
+    </style>
+
     <div class="grid-container margin-vertical-3">
         <div class="grid-x grid-margin-x rep-case-lists">
 
@@ -26,7 +30,7 @@ get_header();
                         'post_type' => 'attorney',
                         'post_status' => 'publish',
                         'p' => $_GET['case-attorney'],
-                        'posts_per_page' => 6,
+                        'posts_per_page' => -1,
                     );
 
                     $uniqueCase = [];
@@ -99,9 +103,11 @@ get_header();
                     );
 
                     $query = new WP_Query( $attorney );
+
+                    //$queryCount = wp_count_posts($query);
                     while ($query->have_posts()) : $query->the_post();
                  ?>
-                    <div class="medium-6 large-6 cell grid-item" style="display: none;">
+                    <div class="medium-6 large-6 cell grid-item">
                         <div class="box grid-x grid-padding-x margin-bottom-2">
                             <div class="cell small-6">
                                 <div class="thumb">
@@ -141,18 +147,7 @@ get_header();
                         <p><?php the_field('crf_short_description') ?></p>
                     </div>
 
-                <?php endwhile; ?>
-
-                <?php if (paginate_links()): ?>
-                    <div class="text-center">
-                        <div id="post-pagination" style="display: none">
-                            <?php  echo paginate_links(); ?>
-                        </div>
-                        <div class="wp-block-button">
-                            <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
-                        </div>
-                    </div>
-                <?php endif; wp_reset_postdata();?>
+                <?php endwhile; wp_reset_postdata(); ?>
             <?php endif ?>
                     
 
@@ -172,6 +167,8 @@ get_header();
         </div>
     </section>
 </main>
+
+
 
 <?php
 

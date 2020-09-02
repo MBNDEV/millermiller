@@ -630,6 +630,9 @@
         display: block;
         background: url(../img/icn-pdf.svg) no-repeat left 8px/35px;
         padding: 0 0 0 50px; }
+      @media (max-width: 767px) {
+        .bio-copy .bio-appellate ul li {
+          font-size: 18px; } }
   .bio-copy .bio-publications ul {
     margin: 0;
     padding: 0; }

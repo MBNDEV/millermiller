@@ -56,11 +56,11 @@ var compile = {
     //Document.load scripts
     docLoad: function() {
 
-        AOS.init({
-            easing : 'ease-in-sine',
-            anchorPlacement: 'bottom-center',
-            offset: 240
-        });
+        // AOS.init({
+        //     easing : 'ease-in-sine',
+        //     anchorPlacement: 'bottom-center',
+        //     offset: 240
+        // });
 
         slickSlider.homeCaseSlider('.cases-slider');
         slickSlider.testimonialSlider('.testi-slider');

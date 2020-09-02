@@ -460,6 +460,9 @@
               background: #f5f1ec;
               transform: rotate(45deg);
               z-index: -1; }
+      @media (max-width: 767px) {
+        .bio-side .bio-menu ul {
+          padding-bottom: 0; } }
   @media (max-width: 1410px) {
     .bio-side {
       margin-right: 0; }
@@ -474,7 +477,7 @@
       text-align: center; } }
   @media (max-width: 767px) {
     .bio-side {
-      padding: 0; }
+      padding: 30px 0; }
       .bio-side ul li:first-child a {
         color: #326762;
         font-size: 18px;

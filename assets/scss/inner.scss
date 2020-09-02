@@ -768,6 +768,10 @@ $color-xbrown: #6f4f2a;
 					}					
 				}
 			}
+
+            @include media(max-width, 767px){
+                padding-bottom: 0;
+            }
 		}
     }
 
@@ -795,7 +799,7 @@ $color-xbrown: #6f4f2a;
     }
 
     @include media(max-width, 767px){
-        padding:0;
+        padding:30px 0;
 
         ul li:first-child{
             a{

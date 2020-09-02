@@ -793,6 +793,18 @@ $color-xbrown: #6f4f2a;
             text-align: center;
         }
     }
+
+    @include media(max-width, 767px){
+        padding:0;
+
+        ul li:first-child{
+            a{
+                color: #326762;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
 }
 
 

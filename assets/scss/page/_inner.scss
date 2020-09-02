@@ -1,11 +1,5 @@
-@include media(max-width, 767px) {
-	header{
-		.hsnav-s6 {
-			.navbar{
-				margin-top: 30px;
-			}
-		}
-	}
+#wrapper{
+	overflow: hidden;
 }
 
 .hbg{

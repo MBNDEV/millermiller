@@ -93,7 +93,7 @@ get_header();
 
                 <?php 
                     $attorney =  array(
-                        'post_type' => 'attorney',
+                        'post_type' => 'case-representative',
                         'post_status' => 'publish',
                         'posts_per_page' => -1,
                     );

@@ -1,5 +1,5 @@
 /* Slider */
-@import url(../vendor/aos/aos.css);
+@import url(../vendor/wowjs/animate.css);
 .slick-slider {
   position: relative;
   display: block;

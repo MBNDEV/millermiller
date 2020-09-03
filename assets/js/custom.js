@@ -62,6 +62,8 @@ var compile = {
         //     offset: 240
         // });
 
+        new WOW().init();
+
         slickSlider.homeCaseSlider('.cases-slider');
         slickSlider.testimonialSlider('.testi-slider');
 

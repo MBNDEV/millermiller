@@ -42,7 +42,7 @@ get_header();
             </div>
         </div>
     </div>
-    <div class="bio-subhead show-for-large">
+    <div class="bio-subhead show-for-large" style="display: none;">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell large-8 sub-name">

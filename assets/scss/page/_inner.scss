@@ -1071,6 +1071,26 @@ main {
 }
 
 
+.bio-copy{
+	& > .offtop:nth-of-type(odd){
+		h2.hbg{
+			&:before {
+                background-color: #ecf8f7;
+                
+            }
+		}
+	}
+
+	& > .offtop:nth-of-type(even){
+		h2.hbg{
+			&:before {
+                background-color: #f5f1ec;      
+            }
+		}
+	}
+}
+
+
 
 
 
@@ -1210,6 +1230,7 @@ main {
 	    font-weight: 500;
 	    line-height: 1.67;
     }
+    .grid-item{  display: none; }
 }
 
 

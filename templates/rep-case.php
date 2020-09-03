@@ -48,7 +48,7 @@ get_header();
                                         <div class="thumb">
                                             <?php $controlImageBefore = get_field('crf_before_image'); ?>
                                             <?php if ($controlImageBefore): ?>
-                                                <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                                <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
                                             <?php else: ?>
                                                 <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
                                             <?php endif ?>
@@ -60,7 +60,7 @@ get_header();
                                         <div class="thumb">
                                              <?php $controlImageAfter = get_field('crf_after_image'); ?>
                                             <?php if ($controlImageAfter): ?>
-                                                <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                                <img src="<?= esc_url( $controlImageAfter['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
                                             <?php else: ?>
                                                 <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
                                             <?php endif ?>
@@ -100,6 +100,8 @@ get_header();
 
                     $query = new WP_Query( $attorney );
 
+                    $countQuery = $query->found_posts;
+
                     //$queryCount = wp_count_posts($query);
                     while ($query->have_posts()) : $query->the_post();
                  ?>
@@ -109,7 +111,7 @@ get_header();
                                 <div class="thumb">
                                     <?php $controlImageBefore = get_field('crf_before_image'); ?>
                                     <?php if ($controlImageBefore): ?>
-                                        <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                        <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
                                     <?php else: ?>
                                         <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
                                     <?php endif ?>
@@ -121,7 +123,7 @@ get_header();
                                 <div class="thumb">
                                      <?php $controlImageAfter = get_field('crf_after_image'); ?>
                                     <?php if ($controlImageAfter): ?>
-                                        <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                        <img src="<?= esc_url( $controlImageAfter['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
                                     <?php else: ?>
                                         <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
                                     <?php endif ?>
@@ -144,6 +146,17 @@ get_header();
                     </div>
 
                 <?php endwhile; wp_reset_postdata(); ?>
+
+                
+                
+            <?php endif ?>
+
+            <?php if ($countQuery >= 6 || count($uniqueCase) >= 6): ?>
+                <div class="medoum-12 large-12 cell text-center control-addmore">
+                    <div class="wp-block-button">
+                        <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
+                    </div>
+                </div>
             <?php endif ?>
                     
 
@@ -164,6 +177,26 @@ get_header();
     </section>
 </main>
 
+
+<script>
+    $(function(){
+        size_li = $(".rep-case-lists .grid-item").length;
+        show_lists = 6;
+        $(".rep-case-lists .grid-item:lt(" + show_lists + ")").show();
+        $('#loadMorePosts').click(function () {
+
+            show_lists = (show_lists + 6 <= size_li) ? show_lists + 6 : size_li;
+            $('.rep-case-lists .grid-item:lt('+ show_lists +')').show();
+
+            var displayedItems = $(".rep-case-lists .grid-item:visible").length;
+            if (size_li == displayedItems) {
+                $('.control-addmore').hide();
+            }
+        });
+
+
+    });
+</script>
 
 
 <?php

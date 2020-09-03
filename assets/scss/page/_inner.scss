@@ -1071,6 +1071,26 @@ main {
 }
 
 
+.bio-copy{
+	& > .offtop:nth-child(odd){
+		h2.hbg{
+			&:before {
+                background-color: #ecf8f7;
+                
+            }
+		}
+	}
+
+	& > .offtop:nth-child(even){
+		h2.hbg{
+			&:before {
+                background-color: #ecf8f7;      
+            }
+		}
+	}
+}
+
+
 
 
 

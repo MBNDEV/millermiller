@@ -100,6 +100,8 @@ get_header();
 
                     $query = new WP_Query( $attorney );
 
+                    $countQuery = $query->found_posts;
+
                     //$queryCount = wp_count_posts($query);
                     while ($query->have_posts()) : $query->the_post();
                  ?>
@@ -144,6 +146,15 @@ get_header();
                     </div>
 
                 <?php endwhile; wp_reset_postdata(); ?>
+
+                <?php if ($countQuery >= 6): ?>
+                    <div class="text-center">
+                        <div class="wp-block-button">
+                            <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
+                        </div>
+                    </div>
+                <?php endif ?>
+                
             <?php endif ?>
                     
 

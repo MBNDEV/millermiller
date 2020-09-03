@@ -1072,7 +1072,7 @@ main {
 
 
 .bio-copy{
-	& > .offtop:nth-child(odd){
+	& > .offtop:nth-of-type(odd){
 		h2.hbg{
 			&:before {
                 background-color: #ecf8f7;
@@ -1081,7 +1081,7 @@ main {
 		}
 	}
 
-	& > .offtop:nth-child(even){
+	& > .offtop:nth-of-type(even){
 		h2.hbg{
 			&:before {
                 background-color: #f5f1ec;      

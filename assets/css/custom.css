@@ -1459,10 +1459,10 @@ main .contact-form p {
 .sec-history .history-item:nth-child(even) h4.hbg:before {
   background-color: #f5f1ec; }
 
-.bio-copy > .offtop:nth-child(odd) h2.hbg:before {
+.bio-copy > .offtop:nth-of-type(odd) h2.hbg:before {
   background-color: #ecf8f7; }
 
-.bio-copy > .offtop:nth-child(even) h2.hbg:before {
+.bio-copy > .offtop:nth-of-type(even) h2.hbg:before {
   background-color: #f5f1ec; }
 
 .control-flex {

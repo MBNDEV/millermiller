@@ -6,12 +6,6 @@
 get_header();
 ?>
 
-<style>
-    .rep-case-lists .grid-item{
-        display: none;
-    }
-</style>
-
 <main id="content">
 	<?php
 	while ( have_posts() ) : the_post();

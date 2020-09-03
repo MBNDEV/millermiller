@@ -148,7 +148,7 @@ get_header();
                 <?php endwhile; wp_reset_postdata(); ?>
 
                 <?php if ($countQuery >= 6): ?>
-                    <div class="text-center">
+                    <div class="medoum-12 large-12 cell text-center">
                         <div class="wp-block-button">
                             <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
                         </div>
@@ -175,6 +175,20 @@ get_header();
     </section>
 </main>
 
+
+<script>
+    $(function(){
+        size_li = $(".rep-case-lists .grid-item").length;
+        show_lists = 6;
+        $(".rep-case-lists .grid-item:lt(" + show_lists + ")").show();
+        $('#loadMorePosts').click(function () {
+            x= (x+5 <= size_li) ? x+5 : size_li;
+            $('.rep-case-lists .grid-item:lt('+x+')').show();
+        });
+
+        
+    });
+</script>
 
 
 <?php

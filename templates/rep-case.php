@@ -188,8 +188,8 @@ get_header();
         show_lists = 6;
         $(".rep-case-lists .grid-item:lt(" + show_lists + ")").show();
         $('#loadMorePosts').click(function () {
-            x= (x+5 <= size_li) ? x+5 : size_li;
-            $('.rep-case-lists .grid-item:lt('+x+')').show();
+            show_lists = (show_lists + 5 <= size_li) ? show_lists + 5 : size_li;
+            $('.rep-case-lists .grid-item:lt('+ show_lists +')').show();
         });
 
 

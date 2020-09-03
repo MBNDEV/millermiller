@@ -158,7 +158,7 @@ get_header();
             <?php endif ?>
 
             <?php if ($countQuery >= 6 || count($uniqueCase) >= 6): ?>
-                <div class="medoum-12 large-12 cell text-center">
+                <div class="medoum-12 large-12 cell text-center control-addmore">
                     <div class="wp-block-button">
                         <a class="wp-block-button__link" href="javascript:;" id="loadMorePosts">SEE MORE</a>
                     </div>
@@ -190,8 +190,14 @@ get_header();
         show_lists = 6;
         $(".rep-case-lists .grid-item:lt(" + show_lists + ")").show();
         $('#loadMorePosts').click(function () {
+
             show_lists = (show_lists + 6 <= size_li) ? show_lists + 6 : size_li;
             $('.rep-case-lists .grid-item:lt('+ show_lists +')').show();
+
+            var displayedItems = $(".rep-case-lists .grid-item:visible").length;
+            if (size_li == displayedItems) {
+                $('.control-addmore').hide();
+            }
         });
 
 

@@ -460,6 +460,9 @@
               background: #f5f1ec;
               transform: rotate(45deg);
               z-index: -1; }
+      @media (max-width: 767px) {
+        .bio-side .bio-menu ul {
+          padding-bottom: 0; } }
   @media (max-width: 1410px) {
     .bio-side {
       margin-right: 0; }
@@ -472,6 +475,13 @@
       right: -30px; }
     .bio-side .bio-menu {
       text-align: center; } }
+  @media (max-width: 767px) {
+    .bio-side {
+      padding: 30px 0; }
+      .bio-side ul li:first-child a {
+        color: #326762;
+        font-size: 18px;
+        font-weight: 800; } }
 
 .bio-copy {
   padding: 70px 0; }
@@ -620,6 +630,9 @@
         display: block;
         background: url(../img/icn-pdf.svg) no-repeat left 8px/35px;
         padding: 0 0 0 50px; }
+      @media (max-width: 767px) {
+        .bio-copy .bio-appellate ul li {
+          font-size: 18px; } }
   .bio-copy .bio-publications ul {
     margin: 0;
     padding: 0; }

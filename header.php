@@ -23,7 +23,7 @@
 
 <div id="wrapper">
     <header id="header" data-sticky-container data-toggler=".show-menu">
-        <div class="hsnav-s6 sticky" data-sticky data-options="marginTop:0">
+        <div class="hsnav-s6 sticky changes" data-sticky data-options="marginTop:0; scrolltop:false;">
             <div class="navbar">
                 <a class="navlogo" href="<?php echo get_home_url(); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="">
@@ -74,12 +74,12 @@
             <div class="grid-container"> 
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-8 large-offset-2 align-self-middle">
-                        <h6 data-aos="fade-up" data-aos-delay="1000">
+                        <h6>
                             <img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="miller miller canby" title="miller miller canby">
                         </h6>
-                        <h1 data-aos="fade-up" data-aos-delay="1200">Client <strong>Focused. <br>Results</strong> Driven.</h1>
-                        <p data-aos="fade-up" data-aos-delay="1600">Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
-                        <a href="<?php the_permalink(24); ?>" class="button secondary large round" data-aos="fade-up" data-aos-delay="1900">contact us </a>
+                        <h1>Client <strong>Focused. <br>Results</strong> Driven.</h1>
+                        <p>Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
+                        <a href="<?php the_permalink(24); ?>" class="button secondary large round">contact us </a>
                     </div>
                 </div>
             </div>

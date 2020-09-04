@@ -17,10 +17,10 @@ get_header();
     
     <div class="sec-banner spa">
         <figure class="bg">
-            <?php $controlBannerImage = get_field('paf_banner'); ?>
-            <div style="display: none">
-                <?php print_r($controlBannerImage['banner_image']) ?>
-            </div>
+            <?php 
+                $controlBannerImage = get_field('paf_banner');
+                $controlBannerImage = $controlBannerImage['banner_image'];
+            ?>
             <?php if ($controlBannerImage): ?>
                 <img src="<?= esc_url($controlBannerImage['url']) ?>" alt="<?= esc_attr($controlBannerImage['alt']) ?>"  title="<?= esc_attr($controlBannerImage['alt']) ?>">
             <?php elseif (has_post_thumbnail() ): ?>

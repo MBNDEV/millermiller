@@ -17,11 +17,12 @@ get_header();
     
     <div class="sec-banner spa">
         <figure class="bg">
-            <?php 
-                if ( has_post_thumbnail() ) {
-                    the_post_thumbnail();
-                }
-            ?>
+            <?php if (get_field('banner_image')): ?>
+                <?php $controlBannerImage = get_field('banner_image'); ?>
+                <img src="<?= esc_url($controlBannerImage['url']) ?>" alt="<?= esc_attr($controlBannerImage['alt']) ?>"  title="<?= esc_attr($controlBannerImage['alt']) ?>">
+            <?php elseif (has_post_thumbnail() ): ?>
+                the_post_thumbnail();
+            <?php endif ?>
         </figure>
         <div class="grid-container">
             <div class="breadcrumbs">

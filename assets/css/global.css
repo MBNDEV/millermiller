@@ -9141,7 +9141,8 @@ main .contact-form p {
     font-weight: 500;
     line-height: 1.67; }
   .rep-case-lists .grid-item {
-    display: none; }
+    display: none;
+    padding: 0 10px; }
 
 @media print {
   #header,

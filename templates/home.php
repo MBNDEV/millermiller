@@ -34,7 +34,7 @@ get_header();
 
                     
 
-                <div class="cell medium-6 large-4 col-item">
+                <div class="cell medium-6 large-4 col-item wow fadeInUp">
 
                     <figure>
                         <a href="<?=  get_term_link( $paCat ); ?>"> 

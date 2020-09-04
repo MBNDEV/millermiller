@@ -19,7 +19,7 @@ get_header();
             <div class="grid-x grid-margin-x cols3-s2">
                 <?php
 
-                $delayCtr = 1000;
+                $delayCtr = 2;
                 $paTax = get_terms( 'practice-areas', array(
                     'meta_key'          => 'pac_order_by',
                     'orderby'    => 'meta_value',
@@ -34,7 +34,7 @@ get_header();
 
                     
 
-                <div class="cell medium-6 large-4 col-item wow fadeInUp">
+                <div class="cell medium-6 large-4 col-item wow fadeInUp" data-wow-delay="0.<?= $delayCtr ?>s">
 
                     <figure>
                         <a href="<?=  get_term_link( $paCat ); ?>"> 
@@ -76,7 +76,7 @@ get_header();
                         echo "</ul>"; ?>
 
                 </div>  
-                <?php $delayCtr = $delayCtr + 300; ?>      
+                <?php $delayCtr = $delayCtr + 1; ?>      
 
                 <?php }  ?>
             </div>

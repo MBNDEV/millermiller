@@ -46,24 +46,29 @@ get_header();
                                 <div class="box grid-x grid-padding-x margin-bottom-2">
                                     <div class="cell small-6">
                                         <div class="thumb">
-                                            <?php $controlImageBefore = get_field('crf_before_image'); ?>
-                                            <?php if ($controlImageBefore): ?>
-                                                <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
-                                            <?php else: ?>
-                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                            <?php endif ?>
+                                            <div class="control-thumb">
+                                                <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                                <?php if ($controlImageBefore): ?>
+                                                    <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                                <?php else: ?>
+                                                    <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                <?php endif ?>
+                                            </div>
                                             
                                             <span>Before</span>
                                         </div>
                                     </div>
                                     <div class="cell small-6">
                                         <div class="thumb">
-                                             <?php $controlImageAfter = get_field('crf_after_image'); ?>
-                                            <?php if ($controlImageAfter): ?>
-                                                <img src="<?= esc_url( $controlImageAfter['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
-                                            <?php else: ?>
-                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                            <?php endif ?>
+                                            <div class="control-thumb">
+                                                <?php $controlImageAfter = get_field('crf_after_image'); ?>
+                                                <?php if ($controlImageAfter): ?>
+                                                    <img src="<?= esc_url( $controlImageAfter['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                                <?php else: ?>
+                                                    <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                <?php endif ?>
+                                            </div>
+                                            
                                             
                                             <span>After</span>
                                         </div>
@@ -109,24 +114,28 @@ get_header();
                         <div class="box grid-x grid-padding-x margin-bottom-2">
                             <div class="cell small-6">
                                 <div class="thumb">
-                                    <?php $controlImageBefore = get_field('crf_before_image'); ?>
-                                    <?php if ($controlImageBefore): ?>
-                                        <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
-                                    <?php else: ?>
-                                        <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                    <?php endif ?>
+                                    <div class="control-thumb">
+                                        <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                        <?php if ($controlImageBefore): ?>
+                                            <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                        <?php else: ?>
+                                            <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                        <?php endif ?>
+                                    </div>
                                     
                                     <span><?= get_field('crf_before_image_text') ?></span>
                                 </div>
                             </div>
                             <div class="cell small-6">
                                 <div class="thumb">
-                                     <?php $controlImageAfter = get_field('crf_after_image'); ?>
-                                    <?php if ($controlImageAfter): ?>
-                                        <img src="<?= esc_url( $controlImageAfter['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
-                                    <?php else: ?>
-                                        <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                    <?php endif ?>
+                                    <div class="control-thumb">
+                                         <?php $controlImageAfter = get_field('crf_after_image'); ?>
+                                        <?php if ($controlImageAfter): ?>
+                                            <img src="<?= esc_url( $controlImageAfter['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                        <?php else: ?>
+                                            <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                        <?php endif ?>
+                                    </div>
                                     
                                     <span><?= get_field('crf_after_image_text'); ?></span>
                                 </div>
@@ -164,7 +173,7 @@ get_header();
     </div>
     
 
-	<section class="sec-subscribe">
+	<section class="sec-subscribe wow fadeInUp">
         <div class="grid-container">
             <div class="subscribe-box">
                 <h2>Subscribe to our Legal News & Notes Newsletter!</h2>

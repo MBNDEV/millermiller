@@ -18,6 +18,8 @@ get_header();
         <div class="grid-container">
         <div class="grid-x grid-margin-x practice-areas">
             <?php
+
+            $ctrwowDelay = 2;
             $paTax = get_terms( 'practice-areas', array(
                 'meta_key'			=> 'pac_order_by',
                 'orderby'    => 'meta_value',
@@ -28,7 +30,7 @@ get_header();
             
             foreach ( $paTax as $paCat ) { ?>
 
-            <div class="cell large-4 medium-6 pa-item">
+            <div class="cell large-4 medium-6 pa-item wow fadeInUp" data-wow-delay="0.<?= $ctrwowDelay ?>s">
 
                 <figure>
                     <a href="<?=  get_term_link( $paCat ); ?>"> 
@@ -43,7 +45,8 @@ get_header();
                 <h4 class="hbg">
                     <a href="<?=  get_term_link( $paCat ); ?>"><?= $paCat->name; ?></a>
                 </h4>
-                <?php                 
+                <?php
+                    $ctrwowDelay = $ctrwowDelay + 1;    
                     $args = array(
                         'posts_per_page' => -1,
                         'tax_query' => array(

@@ -539,11 +539,17 @@
       margin-bottom: 20px;
       color: #2e2e2e; }
   .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
-    margin: 0 -50px 25px 0; }
+    margin: 0 -50px 25px 0;
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
     .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
-      width: 25%;
+      width: auto;
       margin: 0 0 25px;
-      padding: 0 50px 0 0; }
+      padding: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0; }
+      .bio-copy .bio-overview .wp-block-gallery ul li + li, .bio-copy .bio-overview .partners-logo ul li + li {
+        margin-left: 50px; }
   .bio-copy .bio-overview .partners-logo figure {
     display: inline-block;
     height: auto;
@@ -623,13 +629,14 @@
     padding: 0; }
     .bio-copy .bio-appellate ul li {
       list-style: none;
-      font-size: 25px;
+      font-size: 18px;
       line-height: 1.8;
       margin: 0 0 20px; }
       .bio-copy .bio-appellate ul li a {
         display: block;
         background: url(../img/icn-pdf.svg) no-repeat left 8px/35px;
-        padding: 0 0 0 50px; }
+        padding: 0 0 0 50px;
+        line-height: 45px; }
       @media (max-width: 767px) {
         .bio-copy .bio-appellate ul li {
           font-size: 18px; } }

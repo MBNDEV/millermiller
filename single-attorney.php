@@ -21,7 +21,7 @@ get_header();
                         <li><a href="mailto:<?php the_field('af_banner_email') ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
                         </li>
-                        <li><a href="<?php the_field('af_banner_vcard') ?>">
+                        <li><a href="<?php the_field('af_banner_vcard') ?>" download="vCard - <?= get_the_title(); ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
                         </li>
                     </ul>

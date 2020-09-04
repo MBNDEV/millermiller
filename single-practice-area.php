@@ -18,10 +18,14 @@ get_header();
     <div class="sec-banner spa">
         <figure class="bg">
             <?php 
-                if ( has_post_thumbnail() ) {
-                    the_post_thumbnail();
-                }
+                $controlBannerImage = get_field('paf_banner');
+                $controlBannerImage = $controlBannerImage['banner_image'];
             ?>
+            <?php if ($controlBannerImage): ?>
+                <img src="<?= esc_url($controlBannerImage['url']) ?>" alt="<?= esc_attr($controlBannerImage['alt']) ?>"  title="<?= esc_attr($controlBannerImage['alt']) ?>">
+            <?php elseif (has_post_thumbnail() ): ?>
+                <?php the_post_thumbnail(); ?>
+            <?php endif ?>
         </figure>
         <div class="grid-container">
             <div class="breadcrumbs">
@@ -191,12 +195,13 @@ get_header();
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h4>
                     <p class="excerpt">
-                    <?php
-                        $excerpt = get_the_excerpt(); 
-                        $excerpt = substr( $excerpt, 0, 165 );
-                        $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-                        echo $excerpt;
-                    ?>
+                        <?php
+                            $excerpt = get_the_excerpt(); 
+                            $excerpt = substr( $excerpt, 0, 165 );
+                            $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                            echo $excerpt;
+                        ?> <a href="<?= get_the_permalink(); ?>">...read more</a>
+                    </p>
                 </div>  
                 <?php } ?>
             </div>

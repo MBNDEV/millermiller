@@ -1517,6 +1517,15 @@ main .contact-form p {
   .rep-case-lists .box {
     margin-left: -0.9375rem;
     margin-right: -0.9375rem; }
+    .rep-case-lists .box .thumb .control-thumb {
+      position: relative;
+      height: 230px;
+      overflow: hidden; }
+      .rep-case-lists .box .thumb .control-thumb img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
     .rep-case-lists .box .thumb img {
       width: 100%; }
     .rep-case-lists .box .thumb span {
@@ -1560,7 +1569,8 @@ main .contact-form p {
     font-weight: 500;
     line-height: 1.67; }
   .rep-case-lists .grid-item {
-    display: none; }
+    display: none;
+    padding: 0 10px; }
 
 @media print {
   #header,

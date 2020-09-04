@@ -62,7 +62,26 @@ var compile = {
         //     offset: 240
         // });
 
-        new WOW().init();
+       
+
+        if ($('.wow')[0]) {
+            $('.wow').each(function(){
+                var classlist = $(this).attr('class');
+                var getDelayVal = '';
+                if( classlist.indexOf('wow-delay-') > -1 ){
+                    var cla = classlist.split(/\s+/);
+                    cla.forEach(function(itm, idx){
+                        if (itm.indexOf('wow-delay-') > -1) {
+                            getDelayVal = itm.replace('wow-delay-','');
+                        }
+                    })
+
+                    $(this).attr('data-wow-delay','0.'+getDelayVal+'s');
+                }
+            });
+
+             new WOW().init();
+        }
 
         slickSlider.homeCaseSlider('.cases-slider');
         slickSlider.testimonialSlider('.testi-slider');

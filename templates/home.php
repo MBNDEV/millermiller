@@ -132,7 +132,11 @@ get_header();
                             <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
                             <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
                         </figure>
-                        <h3></h3>
+                         <?php 
+                            $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
+                            $controlPostCategory = $controlPostCategory[0];
+                        ?>
+                        <h3><?= $controlPostCategory->name ?></h3>
                         <h4><?php the_title(); ?></h4>
                         <p>
                             <strong>Issue:</strong>

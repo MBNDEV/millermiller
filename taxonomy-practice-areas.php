@@ -8,12 +8,12 @@ get_header();
 
     <div class="wp-block-group sec-banner">
         <div class="wp-block-group__inner-container">
-            <h6>
+            <h6 class="wow fadeInUp">
                 <?php
                     echo get_post(9)->post_title;
                 ?>
             </h6>
-            <h1 class="hbg"><?php echo single_cat_title( '', false ); ?></h1>
+            <h1 class="hbg wow fadeInUp" data-wow-delay="0.2s"><?php echo single_cat_title( '', false ); ?></h1>
         </div>
     </div>
 
@@ -21,8 +21,10 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x practice-areas">
                     
-                <?php while (have_posts() ) { the_post(); ?>
-                    <div class="cell large-4 medium-6 pa-item">
+                <?php 
+                    $ctrWowDelay = 2;
+                    while (have_posts() ) { the_post(); ?>
+                    <div class="cell large-4 medium-6 pa-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay ?>s">
                         <figure>
                         <a href="<?php the_permalink(); ?>">
                         <?php 
@@ -46,7 +48,9 @@ get_header();
                             ?> <a href="<?= get_the_permalink(); ?>">...read more</a>
                         </p>
 
-                    </div>  
+                    </div> 
+
+                    <?php $ctrWowDelay = $ctrWowDelay + 1; ?>
                                 
                 <?php }   wp_reset_postdata();  ?>
                     

@@ -88,22 +88,22 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell large-6">
-                    <h2 class="hbg">Preserving and protecting client rights in Maryland since <strong>1946.</strong></h2>
-                    <a href="<?php the_permalink(11); ?>" class="button secondary round">meet our attorneys</a>
+                    <h2 class="hbg wow fadeInUp">Preserving and protecting client rights in Maryland since <strong>1946.</strong></h2>
+                    <a href="<?php the_permalink(11); ?>" class="button secondary round wow fadeInUp" data-wow-delay="0.2s">meet our attorneys</a>
                 </div>
                 <div class="cell large-6">
                     <div class="testi-slider">
-                        <div class="testi-item">
+                        <div class="testi-item wow fadeInUp" data-wow-delay="0.3s">
                             <q>From the moment I picked up the phone and called Miller, Miller & Canby, I knew I was talking to the right people.
                                 <cite>Carole Daffron</cite>
                             </q>
                         </div>
-                        <div class="testi-item">
+                        <div class="testi-item wow fadeInUp" data-wow-delay="0.4s">
                             <q>For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
                                 <cite>Paul Chod, Minkoff Development Corp.</cite>
                             </q>
                         </div>
-                        <div class="testi-item">
+                        <div class="testi-item wow fadeInUp" data-wow-delay="0.5s">
                             <q>For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
                                 <cite>Paul Chod, Minkoff Development Corp.</cite>
                             </q>

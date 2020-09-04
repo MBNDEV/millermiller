@@ -150,27 +150,32 @@ get_header();
                 <h2 class="hbg wow fadeInUp">Latest News</h2>
             </div>
             <ul class="news-list clearfix">
-                <li class="wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="news-item">
-                        <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
-                    </div>
-                </li>
-                <li class="wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="news-item">
-                        <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
-                        <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                    </div>
-                </li>
-                <li class="wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="news-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
-                        <h3><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
-                        <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                    </div>
-                </li>
+                <?php 
+                    $ctrDelay = 2;
+                     $query = new WP_Query( array(
+                        'post_type'     => 'case-study',
+                        'post_status'   => 'publish',
+                        'posts_per_page' => 4
+                    ));
+                    while ($query->have_posts()) : $query->the_post();
+                 ?>
+                     <li class="wow fadeInUp" data-wow-delay="0.<?= $ctrDelay; ?>s">
+                        <div class="news-item">
+                            <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+                            <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                            <h3><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <p>
+                                <?php
+                                    $sContent = strip_tags(get_field('cs_issue')); 
+                                    $sContent = substr( $sContent, 0, 165 );
+                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                    echo $sContent;
+                                ?><a href="/case-studies">...read more</a>
+                            </p>
+                        </div>
+                    </li>
+
+                 <?php $ctrDelay++; endwhile; wp_reset_postdata();  ?>
             </ul>
             <div class="text-center">
                 <a href="<?php the_permalink(15); ?>" class="button primary round wow fadeInUp"  data-wow-delay="0.4s">more on news &amp; resources</a>

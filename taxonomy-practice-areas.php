@@ -55,11 +55,11 @@ get_header();
                 <?php }   wp_reset_postdata();  ?>
                     
             </div>
-            
-            <?php 
-                $subscribe = get_post(182);
-                echo apply_filters('the_content',$subscribe->post_content);
-            ?>
+                <?php 
+                    $subscribe = get_post(182);
+                    echo apply_filters('the_content',$subscribe->post_content);
+                ?>
+           
         </div>  
     </div>  
 

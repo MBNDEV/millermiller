@@ -118,24 +118,33 @@ get_header();
         <div class="grid-container">
             <h2 class="hbg wow fadeInUp">Case Studies</h2>
             <div class="cases-slider wow fadeInUp" data-wow-delay="0.2s">
-                <div class="cases-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/case-study-1.jpg" alt=""></figure>
-                    <h3>Eminent Domain</h3>
-                    <h4>Necessity to Take</h4>
-                    <p><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
-                </div>
-                <div class="cases-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/case-study-1.jpg" alt=""></figure>
-                    <h3>Litigation</h3>
-                    <h4>Breach of Commercial Lease and Appeal</h4>
-                    <p><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
-                </div>
-                <div class="cases-item">
-                    <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/case-study-1.jpg" alt=""></figure>
-                    <h3>Litigation</h3>
-                    <h4>Breach of Commercial Lease and Appeal</h4>
-                    <p><strong>Issue:</strong> Client owned 2-acre shopping center improved with a grocery store situated close to the roadway. The road needed to be widened to accommodate the construction of the State’s Purple Line Light Rail…</p>
-                </div>
+                <?php 
+                    $ctrDelay = 2;
+                     $query = new WP_Query( array(
+                        'post_type'     => 'case-study',
+                        'post_status'   => 'publish',
+                        'posts_per_page' => 4
+                    ));
+                    while ($query->have_posts()) : $query->the_post();
+                 ?>
+                    <div class="cases-item">
+                        <figure>
+                            <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+                            <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                        </figure>
+                        <h3></h3>
+                        <h4><?php the_title(); ?></h4>
+                        <p>
+                            <strong>Issue:</strong>
+                            <?php
+                                $sContent = strip_tags(get_field('cs_issue')); 
+                                $sContent = substr( $sContent, 0, 165 );
+                                $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                echo $sContent;
+                            ?><a href="/case-studies">...read more</a>
+                        </p>
+                    </div>
+                <?php endwhile; wp_reset_postdata();  ?>
             </div>  
 
             <div class="text-center wow fadeInUp"  data-wow-delay="0.2s">
@@ -150,32 +159,31 @@ get_header();
                 <h2 class="hbg wow fadeInUp">Latest News</h2>
             </div>
             <ul class="news-list clearfix">
-                <?php 
+                 <?php 
                     $ctrDelay = 2;
                      $query = new WP_Query( array(
-                        'post_type'     => 'case-study',
+                        'post_type'     => 'post',
                         'post_status'   => 'publish',
-                        'posts_per_page' => 4
+                        'posts_per_page' => 3
                     ));
                     while ($query->have_posts()) : $query->the_post();
                  ?>
                      <li class="wow fadeInUp" data-wow-delay="0.<?= $ctrDelay; ?>s">
                         <div class="news-item">
-                            <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
-                            <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                            <?php the_post_thumbnail(); ?>
                             <h3><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <p>
                                 <?php
-                                    $sContent = strip_tags(get_field('cs_issue')); 
+                                    $sContent = strip_tags(get_the_content()); 
                                     $sContent = substr( $sContent, 0, 165 );
                                     $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
                                     echo $sContent;
-                                ?><a href="/case-studies">...read more</a>
+                                ?><a href="<?= get_the_permalink(); ?>">...read more</a>
                             </p>
                         </div>
                     </li>
-
-                 <?php $ctrDelay++; endwhile; wp_reset_postdata();  ?>
+                <?php $ctrDelay++; endwhile; wp_reset_postdata();  ?>
+                 
             </ul>
             <div class="text-center">
                 <a href="<?php the_permalink(15); ?>" class="button primary round wow fadeInUp"  data-wow-delay="0.4s">more on news &amp; resources</a>

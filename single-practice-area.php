@@ -191,12 +191,13 @@ get_header();
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h4>
                     <p class="excerpt">
-                    <?php
-                        $excerpt = get_the_excerpt(); 
-                        $excerpt = substr( $excerpt, 0, 165 );
-                        $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-                        echo $excerpt;
-                    ?>
+                        <?php
+                            $excerpt = get_the_excerpt(); 
+                            $excerpt = substr( $excerpt, 0, 165 );
+                            $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                            echo $excerpt;
+                        ?> <a href="<?= get_the_permalink(); ?>">...read more</a>
+                    </p>
                 </div>  
                 <?php } ?>
             </div>

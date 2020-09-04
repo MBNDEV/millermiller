@@ -75,11 +75,11 @@
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-8 large-offset-2 align-self-middle">
                         <h6>
-                            <img class="wow fadeInUp" src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="miller miller canby" title="miller miller canby">
+                            <img class="wow fadeInUp" data-wow-delay="0.2s" src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="miller miller canby" title="miller miller canby">
                         </h6>
-                        <h1 class="wow fadeInUp">Client <strong>Focused. <br>Results</strong> Driven.</h1>
-                        <p class="wow fadeInUp">Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
-                        <a href="<?php the_permalink(24); ?>" class="button secondary large round wow fadeInUp">contact us </a>
+                        <h1 class="wow fadeInUp" data-wow-delay="0.3s">Client <strong>Focused. <br>Results</strong> Driven.</h1>
+                        <p class="wow fadeInUp"  data-wow-delay="0.4s">Skilled attorneys. 70 years of success. Deep community roots. These are the foundations that have earned <strong>Miller, Miller & Canby</strong> its reputation as one of the most trusted law firms in Montgomery County.</p>
+                        <a href="<?php the_permalink(24); ?>" class="button secondary large round wow fadeInUp" data-wow-delay="0.5s">contact us </a>
                     </div>
                 </div>
             </div>

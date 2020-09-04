@@ -173,7 +173,7 @@ get_header();
     </div>
     
 
-	<section class="sec-subscribe">
+	<section class="sec-subscribe wow fadeInUp">
         <div class="grid-container">
             <div class="subscribe-box">
                 <h2>Subscribe to our Legal News & Notes Newsletter!</h2>

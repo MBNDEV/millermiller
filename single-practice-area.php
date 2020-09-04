@@ -17,9 +17,9 @@ get_header();
     
     <div class="sec-banner spa">
         <figure class="bg">
-            <?php $controlBannerImage = get_field('banner_image'); ?>
+            <?php $controlBannerImage = get_field('paf_banner'); ?>
             <div style="display: none">
-                <?php print_r($controlBannerImage) ?>
+                <?php print_r($controlBannerImage['banner_image']) ?>
             </div>
             <?php if ($controlBannerImage): ?>
                 <img src="<?= esc_url($controlBannerImage['url']) ?>" alt="<?= esc_attr($controlBannerImage['alt']) ?>"  title="<?= esc_attr($controlBannerImage['alt']) ?>">

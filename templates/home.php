@@ -116,8 +116,8 @@ get_header();
 
     <section class="sec-cases">
         <div class="grid-container">
-            <h2 class="hbg">Case Studies</h2>
-            <div class="cases-slider">
+            <h2 class="hbg wow fadeInUp">Case Studies</h2>
+            <div class="cases-slider wow fadeInUp" data-wow-delay="0.2s">
                 <div class="cases-item">
                     <figure><img src="<?php bloginfo('template_url'); ?>/assets/img/case-study-1.jpg" alt=""></figure>
                     <h3>Eminent Domain</h3>
@@ -138,7 +138,7 @@ get_header();
                 </div>
             </div>  
 
-            <div class="text-center">
+            <div class="text-center wow fadeInUp"  data-wow-delay="0.2s">
                 <a href="<?php the_permalink(13); ?>" class="button primary round">read more cases</a>
             </div>
         </div>
@@ -147,24 +147,24 @@ get_header();
     <section class="sec-news">
         <div class="grid-container">
             <div class="text-center">
-                <h2 class="hbg"  data-aos="fade-up">Latest News</h2>
+                <h2 class="hbg wow fadeInUp">Latest News</h2>
             </div>
             <ul class="news-list clearfix">
-                <li>
+                <li class="wow fadeInUp" data-wow-delay="0.2s">
                     <div class="news-item">
                         <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
                         <h3><a href="#">MM&C Update: Coronavirus COVID-19 Policy</a></h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus</p>
                     </div>
                 </li>
-                <li>
+                <li class="wow fadeInUp" data-wow-delay="0.3s">
                     <div class="news-item">
                         <img  src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
                         <h3><a href="#">MM&C Condemnation Attorney Joseph Suntum Elected Chair of the Owners’ Counsel of America Board</a></h3>
                         <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     </div>
                 </li>
-                <li>
+                <li class="wow fadeInUp" data-wow-delay="0.4s">
                     <div class="news-item">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/news-1.jpg" alt="">
                         <h3><a href="#">MM&C Attorney James Thompson Selected 2020 Best Lawyers in America® “Lawyer of The Year”</a></h3>
@@ -173,7 +173,7 @@ get_header();
                 </li>
             </ul>
             <div class="text-center">
-                <a href="<?php the_permalink(15); ?>" class="button primary round" >more on news &amp; resources</a>
+                <a href="<?php the_permalink(15); ?>" class="button primary round wow fadeInUp"  data-wow-delay="0.4s">more on news &amp; resources</a>
             </div>
         </div>
     </section>
@@ -182,34 +182,36 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x cols2-s4">
                 <div class="cell large-6 large-order-2  small-order-2">
-                    <figure class="col-image"><img src="<?php bloginfo('template_url'); ?>/assets/img/our-clients.jpg" alt=""></figure>
+                    <figure class="col-image wow fadeInUp"  data-wow-delay="0.95s">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/our-clients.jpg" alt="">
+                    </figure>
                 </div>
                 <div class="cell large-6 large-order-1 small-order-1 align-self-middle col-copy client-matter-text">
-                    <h2 class="hbg">Our Clients Matter</h2>
-                    <h3>We prove it every day with:</h3><br>
+                    <h2 class="hbg wow fadeInUp">Our Clients Matter</h2>
+                    <h3 class="wow fadeInUp" data-wow-delay="0.2s">We prove it every day with:</h3><br>
                     <div class="grid-x grid-margin-x">
                         <div class="cell medium-6 large-5">
                             <ul class="check-list">
-                                <li>Tireless Advocacy</li>
-                                <li>Creative Problem Solving</li>
-                                <li>Client Communication</li>
+                                <li class="wow fadeInUp" data-wow-delay="0.3s">Tireless Advocacy</li>
+                                <li class="wow fadeInUp" data-wow-delay="0.4s">Creative Problem Solving</li>
+                                <li class="wow fadeInUp" data-wow-delay="0.5s">Client Communication</li>
                             </ul>
                         </div>
                         <div class="cell medium-6 large-7">
                             <ul class="check-list">
-                                <li>Meticulous Attention To Detail</li>
-                                <li>High Quality, Efficient Work</li>
-                                <li>Collaboration Among Attorneys And Practice Areas</li>
+                                <li class="wow fadeInUp" data-wow-delay="0.6s">Meticulous Attention To Detail</li>
+                                <li class="wow fadeInUp" data-wow-delay="0.7s">High Quality, Efficient Work</li>
+                                <li class="wow fadeInUp" data-wow-delay="0.8s">Collaboration Among Attorneys And Practice Areas</li>
                             </ul>
                         </div>
                     </div><br>
-                    <a href="<?php the_permalink(7); ?>" class="button primary round">more about our firm</a>
+                    <a href="<?php the_permalink(7); ?>" class="button primary round wow fadeInUp" data-wow-delay="0.9s">more about our firm</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="sec-subscribe">
+    <section class="sec-subscribe wow fadeInUp">
         <div class="grid-container">
             <div class="subscribe-box" >
                 <h2>Subscribe to our Legal News & Notes Newsletter!</h2>

@@ -558,6 +558,10 @@ $color-xbrown: #6f4f2a;
      .copy {
          padding-top: 50px;
          padding-bottom: 50px;
+
+        @include media(max-width, 567px){
+            padding-bottom: 0;
+        }
      }
 
      .image {
@@ -572,6 +576,11 @@ $color-xbrown: #6f4f2a;
 
             @include media(max-width, 1023px){
                 margin: 0 auto;
+            }
+
+            @include media(max-width, 567px){
+                height: auto;
+                width: auto;
             }
         }
         

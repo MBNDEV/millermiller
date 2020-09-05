@@ -319,6 +319,9 @@
   .bio-header .copy {
     padding-top: 50px;
     padding-bottom: 50px; }
+    @media (max-width: 567px) {
+      .bio-header .copy {
+        padding-bottom: 0; } }
   .bio-header .image figure {
     height: 500px;
     width: 500px;
@@ -328,6 +331,10 @@
     @media (max-width: 1023px) {
       .bio-header .image figure {
         margin: 0 auto; } }
+    @media (max-width: 567px) {
+      .bio-header .image figure {
+        height: auto;
+        width: auto; } }
   .bio-header .email-vcard {
     margin: 0 0 50px;
     padding: 10px 3px;

@@ -540,16 +540,17 @@
       color: #2e2e2e; }
   .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
     margin: 0 -50px 25px 0;
-    -ms-flex-pack: start;
-    justify-content: flex-start; }
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    flex-shrink: 1; }
     .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
       width: auto;
-      margin: 0 0 25px;
-      padding: 0;
+      padding: 0 25px;
+      margin: 0;
       -ms-flex-positive: 0;
       flex-grow: 0; }
-      .bio-copy .bio-overview .wp-block-gallery ul li + li, .bio-copy .bio-overview .partners-logo ul li + li {
-        margin-left: 50px; }
   .bio-copy .bio-overview .partners-logo figure {
     display: inline-block;
     height: auto;

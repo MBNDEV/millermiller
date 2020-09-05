@@ -145,7 +145,7 @@ get_header();
                                 $sContent = substr( $sContent, 0, 165 );
                                 $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
                                 echo $sContent;
-                            ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more</a>
+                            ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
                         </p>
                     </div>
                 <?php endwhile; wp_reset_postdata();  ?>
@@ -182,7 +182,7 @@ get_header();
                                     $sContent = substr( $sContent, 0, 165 );
                                     $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
                                     echo $sContent;
-                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more</a>
+                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
                             </p>
                         </div>
                     </li>

@@ -122,7 +122,7 @@ get_header();
 	            				</div>
 	            				
 	            				<h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	            				<p><b>Issue:</b> <?= strip_tags(get_field('cs_issue')) ?> <a href="<?= get_the_permalink(); ?>">...read more</a></p>
+	            				<p><b>Issue:</b> <?= strip_tags(get_field('cs_issue')) ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a></p>
 	            			</div>
 	            		</article>
 	            	</div>

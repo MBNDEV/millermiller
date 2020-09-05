@@ -45,7 +45,7 @@ get_header();
                                 $excerpt = substr( $excerpt, 0, 165 );
                                 $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
                                 echo $excerpt;
-                            ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more</a>
+                            ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
                         </p>
 
                     </div> 

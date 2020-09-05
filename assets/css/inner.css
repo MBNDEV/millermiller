@@ -280,7 +280,9 @@
     padding: 0 5px;
     margin-bottom: 40px; }
     .attorneys-list .attorney-item figure {
-      margin: 0 0 20px; }
+      margin: 0 0 20px;
+      height: 312px;
+      overflow: hidden; }
     .attorneys-list .attorney-item h4 {
       color: #397670;
       color: #404040; }
@@ -317,8 +319,12 @@
   .bio-header .copy {
     padding-top: 50px;
     padding-bottom: 50px; }
-  .bio-header .image img {
-    width: 100%; }
+  .bio-header .image figure {
+    height: 500px;
+    width: 500px;
+    overflow: hidden; }
+    .bio-header .image figure img {
+      width: 100%; }
   .bio-header .email-vcard {
     margin: 0 0 50px;
     padding: 10px 3px;

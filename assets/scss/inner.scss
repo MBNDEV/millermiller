@@ -499,6 +499,8 @@ $color-xbrown: #6f4f2a;
          margin-bottom: 40px;
         figure {
             margin: 0 0 20px;
+            height: 312px;
+            overflow: hidden;
         }
         h4 {
             color: $color-green;
@@ -559,9 +561,16 @@ $color-xbrown: #6f4f2a;
      }
 
      .image {
-        img {
-            width: 100%;
+        figure{
+            height: 500px;
+            width: 500px;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+            }
         }
+        
      }
 
      .email-vcard {

@@ -434,15 +434,19 @@ get_header();
 
 
 <script>
+
+    function addingAnimationToLists(el){
+        var wowdelay = 0.2;
+        $(el).each(function(idx, itm){
+            $(this).addClass('wow fadeInUp').attr('data-wow-delay', wowdelay.toFixed(1) + 's');
+            wowdelay = wowdelay + 0.2;
+        });
+    }
     $(function(){
 
-        var wowdelay = 0.2;
-        $('#bar-admissions ul li').each(function(idx, itm){
-
-            $(this).addClass('wow fadeInUp').attr('data-wow-delay', wowdelay.toFixed(1) + 's');
-
-            wowdelay = wowdelay + 0.2;
-        })
+        addingAnimationToLists('#bar-admissions ul li');
+        addingAnimationToLists('#affiliations ul li');
+        addingAnimationToLists('#education ul li');
     })
 </script>
 

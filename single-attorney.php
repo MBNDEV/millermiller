@@ -448,6 +448,7 @@ get_header();
         addingAnimationToLists('#affiliations ul li');
         addingAnimationToLists('#education ul li');
         addingAnimationToLists('.partners-logo ul li');
+        addingAnimationToLists('#awards ul li');
     })
 </script>
 

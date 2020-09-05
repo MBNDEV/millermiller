@@ -15,13 +15,13 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell large-7 copy">
-                    <h5>attorneys</h5>
-                    <h1><?php the_title(); ?></h1>
+                    <h5 class="wow fadeInUp">attorneys</h5>
+                    <h1 class="wow fadeInUp" data-wow-delay="0.2s"><?php the_title(); ?></h1>
                     <ul class="email-vcard">
-                        <li><a href="mailto:<?php the_field('af_banner_email') ?>">
+                        <li class="wow fadeInUp" data-wow-delay="0.4s"><a href="mailto:<?php the_field('af_banner_email') ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
                         </li>
-                        <li><a href="<?php the_field('af_banner_vcard') ?>" download="vCard - <?= get_the_title(); ?>">
+                        <li class="wow fadeInUp" data-wow-delay="0.6s"><a href="<?php the_field('af_banner_vcard') ?>" download="vCard - <?= get_the_title(); ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
                         </li>
                     </ul>

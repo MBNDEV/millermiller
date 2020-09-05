@@ -447,6 +447,7 @@ get_header();
         addingAnimationToLists('#bar-admissions ul li');
         addingAnimationToLists('#affiliations ul li');
         addingAnimationToLists('#education ul li');
+        addingAnimationToLists('.partners-logo ul li');
     })
 </script>
 

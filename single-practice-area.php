@@ -28,18 +28,18 @@ get_header();
             <?php endif ?>
         </figure>
         <div class="grid-container">
-            <div class="breadcrumbs">
+            <div class="breadcrumbs wow fadeInUp">
                 <a href="<?php the_permalink(9); ?>"><?php echo get_post(9)->post_title; ?></a>
                 <a href="<?= get_term_link($terms[0]->term_id); ?>"><?= $terms[0]->name; ?></a>
             </div>   
-            <h5>
+            <h5 class="wow fadeInUp" data-wow-delay="0.2s">
                 <?php if(get_field('paf_banner_sub_title') != "") {
                 the_field('paf_banner_sub_title');
             } else {
                 echo "Client Focused. Results Driven.";
             } ?>
             </h5>
-            <h1 class="hbg">
+            <h1 class="hbg wow fadeInUp" data-wow-delay="0.4s">
                 <span><?php if(get_field('paf_banner_title') != "") {
                     the_field('paf_banner_title');
                 } else {
@@ -47,14 +47,14 @@ get_header();
                 } ?></span>
             </h1>
 
-            <p><?php if(get_field('paf_banner_description') != "") {
+            <p class="wow fadeInUp" data-wow-delay="0.6s"><?php if(get_field('paf_banner_description') != "") {
                 the_field('paf_banner_description');
             } ?></p>
         </div>
     </div>
 
     <div class="sec-pa-cont">      
-        <div class="grid-container">
+        <div class="grid-container wow fadeInUp">
             <?php the_content(); ?>
         </div>
     </div>  
@@ -73,9 +73,11 @@ get_header();
                 </h2>
             </div>
             <ul class="grid-x grid-margin-x">
-                <?php foreach( $paAttorneys as $post ):  setup_postdata($post); ?>
+                <?php 
+                    $ctrWowDelay = 2;
+                    foreach( $paAttorneys as $post ):  setup_postdata($post); ?>
                     <li class="cell large-4">
-                        <div class="attr-item">
+                        <div class="attr-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay ?>s">
                             <a class="img" href="<?php the_permalink(); ?>">
                             <?php
                                 if ( has_post_thumbnail() ) {
@@ -90,6 +92,7 @@ get_header();
                             <a href="<?php the_permalink(); ?>">View Bio</a>
                         </div>
                     </li>
+                    <?php $ctrWowDelay++; ?>
                 <?php endforeach; ?>
                 <?php wp_reset_postdata(); ?>
             </ul>
@@ -133,13 +136,16 @@ get_header();
                 </h2>
             </div>
             <ul  class="accordion" data-accordion  data-multi-expand="true" data-allow-all-closed="true">
-                <?php foreach( $paFaqs as $post ):  setup_postdata($post); ?>
-                    <li class="accordion-item" data-accordion-item>
+                <?php 
+                    $ctrWowDelay = 2;
+                    foreach( $paFaqs as $post ):  setup_postdata($post); ?>
+                    <li class="accordion-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay ?>s" data-accordion-item>
                         <a href="#" class="accordion-title"><?php the_title(); ?></a>
                         <div class="accordion-content" data-tab-content>
                             <?php the_content(); ?>
                         </div>
                     </li>
+                    <?php $ctrWowDelay++; ?>
                 <?php endforeach; ?>
                 <?php wp_reset_postdata(); ?>
             </ul>

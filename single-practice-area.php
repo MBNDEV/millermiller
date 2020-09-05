@@ -210,7 +210,8 @@ get_header();
                             echo $excerpt;
                         ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
                     </p>
-                </div>  
+                </div>
+                <?php $ctrWowDelay++; ?>
                 <?php } ?>
             </div>
         </div>

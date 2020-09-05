@@ -85,7 +85,7 @@ get_header();
                             <?php endif; ?>                  
                         </div>
                     </div>
-                    <?php $ctrWowDelay = $ctrWowDelay + 0.2;  ?>
+                    <?php $ctrWowDelay = $ctrWowDelay + 0.1;  ?>
                     <?php endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>

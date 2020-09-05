@@ -325,6 +325,9 @@
     overflow: hidden; }
     .bio-header .image figure img {
       width: 100%; }
+    @media (max-width: 1023px) {
+      .bio-header .image figure {
+        margin: 0 auto; } }
   .bio-header .email-vcard {
     margin: 0 0 50px;
     padding: 10px 3px;

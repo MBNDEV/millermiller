@@ -565,9 +565,13 @@ $color-xbrown: #6f4f2a;
             height: 500px;
             width: 500px;
             overflow: hidden;
-            
+
             img {
                 width: 100%;
+            }
+
+            @include media(max-width, 1023px){
+                margin: 0 auto;
             }
         }
         

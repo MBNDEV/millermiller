@@ -432,6 +432,20 @@ get_header();
     <?php endwhile; ?>  
 </main>
 
+
+<script>
+    $(function(){
+
+        var wowdelay = 0.2;
+        $('#bar-admissions ul li').each(function(idx, itm){
+
+            $(this).addClass('wow fadeInUp').attr('data-wow-delay', wowdelay.toFixed(1) + 's');
+
+            wowdelay = wowdelay + 0.2;
+        })
+    })
+</script>
+
 <?php
 
 get_footer();

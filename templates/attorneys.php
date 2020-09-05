@@ -55,9 +55,10 @@ get_header();
                         'order' => 'ASC'
                     );
                     $loop = new WP_Query( $args );
+                    $ctrWowDelay = 2;
                 ?>
                 <?php while ( $loop -> have_posts() ) : $loop -> the_post(); ?>
-                    <div class="medium-6 large-4 xlarge-3 cell grid-item">
+                    <div class="medium-6 large-4 xlarge-3 cell grid-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay ?>s">
                         <div class="attorney-item">
                             <figure>
                             <a class="post-link" rel="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
@@ -84,6 +85,7 @@ get_header();
                             <?php endif; ?>                  
                         </div>
                     </div>
+                    <?php $ctrWowDelay++;  ?>
                     <?php endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>

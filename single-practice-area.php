@@ -227,11 +227,6 @@ get_header();
 </main>
 
 
-<script>
-    $(function(){
-        $('main#content').addClass('wow fadeInUp');
-    });
-</script>
 
 <?php
 

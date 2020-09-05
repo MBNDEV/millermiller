@@ -8374,6 +8374,11 @@ header {
 #wrapper {
   overflow: hidden; }
 
+.readmore-link {
+  font-style: italic;
+  display: inline-block;
+  margin-left: 10px; }
+
 .hbg:before {
   content: '';
   position: absolute;

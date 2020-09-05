@@ -280,7 +280,9 @@
     padding: 0 5px;
     margin-bottom: 40px; }
     .attorneys-list .attorney-item figure {
-      margin: 0 0 20px; }
+      margin: 0 0 20px;
+      height: 312px;
+      overflow: hidden; }
     .attorneys-list .attorney-item h4 {
       color: #397670;
       color: #404040; }
@@ -317,8 +319,22 @@
   .bio-header .copy {
     padding-top: 50px;
     padding-bottom: 50px; }
-  .bio-header .image img {
-    width: 100%; }
+    @media (max-width: 567px) {
+      .bio-header .copy {
+        padding-bottom: 0; } }
+  .bio-header .image figure {
+    height: 500px;
+    width: 500px;
+    overflow: hidden; }
+    .bio-header .image figure img {
+      width: 100%; }
+    @media (max-width: 1023px) {
+      .bio-header .image figure {
+        margin: 0 auto; } }
+    @media (max-width: 567px) {
+      .bio-header .image figure {
+        height: auto;
+        width: auto; } }
   .bio-header .email-vcard {
     margin: 0 0 50px;
     padding: 10px 3px;
@@ -540,16 +556,19 @@
       color: #2e2e2e; }
   .bio-copy .bio-overview .wp-block-gallery ul, .bio-copy .bio-overview .partners-logo ul {
     margin: 0 -50px 25px 0;
-    -ms-flex-pack: start;
-    justify-content: flex-start; }
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+    margin-right: -25px;
+    margin-left: -25px; }
     .bio-copy .bio-overview .wp-block-gallery ul li, .bio-copy .bio-overview .partners-logo ul li {
       width: auto;
-      margin: 0 0 25px;
-      padding: 0;
+      padding: 0 25px;
+      margin: 0;
       -ms-flex-positive: 0;
       flex-grow: 0; }
-      .bio-copy .bio-overview .wp-block-gallery ul li + li, .bio-copy .bio-overview .partners-logo ul li + li {
-        margin-left: 50px; }
   .bio-copy .bio-overview .partners-logo figure {
     display: inline-block;
     height: auto;

@@ -54,7 +54,7 @@ get_header();
     </div>
 
     <div class="sec-pa-cont">      
-        <div class="grid-container wow fadeInUp">
+        <div class="grid-container">
             <?php the_content(); ?>
         </div>
     </div>  
@@ -184,8 +184,10 @@ get_header();
             
             <div class="grid-x grid-margin-x practice-areas">        
             
-                <?php while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
-                <div class="cell large-4 medium-6 pa-item">
+                <?php 
+                    $ctrWowDelay = 2;
+                while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
+                <div class="cell large-4 medium-6 pa-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay ?>s">
                     <figure>
                     <a href="<?php the_permalink(); ?>">
                     <?php 
@@ -223,6 +225,13 @@ get_header();
         ?>
     </div>        
 </main>
+
+
+<script>
+    $(function(){
+        $('main#content').addClass('wow fadeInUp');
+    });
+</script>
 
 <?php
 

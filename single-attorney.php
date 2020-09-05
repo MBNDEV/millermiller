@@ -46,7 +46,7 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell large-8 sub-name">
-                    <h5>attorneys</h5>
+                    <h5 class="wow fadeInUp">attorneys</h5>
 
                     <?php 
                     $profile = get_field('af_banner_profile');
@@ -56,14 +56,15 @@ get_header();
                         <?php the_post_thumbnail('full'); ?>
                     <?php endif; ?> 
 
-                    <h2><?php the_title(); ?></h2>
+                    <h2 class="wow fadeInUp" data-wow-delay="0.2s"><?php the_title(); ?></h2>
                 </div>
                 <div class="cell large-4 align-self-middle sub-ev text-right">
                     <ul class="email-vcard">
-                        <li><a href="mailto:<?php the_field('af_banner_email'); ?>">
+                        <li class="wow fadeInUp" data-wow-delay="0.3s">
+                            <a href="mailto:<?php the_field('af_banner_email'); ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
                         </li>
-                        <li><a href="<?php the_field('af_banner_vcard'); ?>">
+                        <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="<?php the_field('af_banner_vcard'); ?>">
                             <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
                         </li>
                     </ul>
@@ -182,9 +183,11 @@ get_header();
                                 <h2 class="hbg">Practice Areas</h2>
                             </div>
                             <ul>
-                                <?php foreach( $paITems as $post ):  setup_postdata($post); ?>
-                                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-                                <?php endforeach; ?>
+                                <?php 
+                                    $ctrWowDelay = 0.2;
+                                    foreach( $paITems as $post ):  setup_postdata($post); ?>
+                                    <li class="wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                                <?php  $ctrWowDelay = $ctrWowDelay + 0.1; endforeach; ?>
                                 <?php wp_reset_postdata(); ?>
                             </ul>
                         </div>
@@ -244,13 +247,15 @@ get_header();
                                 <h2 class="hbg">Appellate Decisions</h2>
                             </div>
                             <ul>
-                                <?php foreach( $apdeItems as $post ):  setup_postdata($post); ?>
-                                <li>
+                                <?php 
+                                    $ctrWowDelay = 0.2;
+                                foreach( $apdeItems as $post ):  setup_postdata($post); ?>
+                                <li class="wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
                                     <a href="<?php the_field('aaf_file'); ?>">
                                         <?php the_title(); ?>
                                     </a>
                                 </li>
-                                <?php endforeach;  wp_reset_postdata(); ?>
+                                <?php $ctrWowDelay = $ctrWowDelay + 0.1; endforeach;  wp_reset_postdata(); ?>
                             </ul>
                         </div>
                         <?php endif; ?>
@@ -266,8 +271,10 @@ get_header();
                                 <h2 class="hbg">Publications</h2>
                             </div>
                             <ul>
-                                <?php foreach( $pubItems as $post ):  setup_postdata($post); ?>
-                                <li>
+                                <?php 
+                                $ctrWowDelay = 0.2;
+                                foreach( $pubItems as $post ):  setup_postdata($post); ?>
+                                <li class="wow fadeInUp" data-wow-delay="<?=  $ctrWowDelay ?>s">
                                 <?php if (get_field('apf_file') !="" || get_field('apf_link') != "") { ?>
                                                                           
                                     <a href="<?php if(get_field('apf_file') !=""){the_field('apf_file');} else {the_field('apf_link');} ?>">
@@ -280,7 +287,7 @@ get_header();
 
                                 <?php } ?>
                                 </li>
-                                <?php endforeach;  wp_reset_postdata(); ?>
+                                <?php $ctrWowDelay = $ctrWowDelay + 0.1; endforeach;  wp_reset_postdata(); ?>
                             </ul>
                         </div>
                         <?php endif; ?>
@@ -297,9 +304,10 @@ get_header();
                             <div class="grid-x grid-margin-x rep-case-lists">
                                 <?php 
                                     $rcaseCTR = 1;
+                                    $ctrWowDelay = 0.2;
                                     foreach( $repCase as $post ):  setup_postdata($post); ?>
                                         <?php if ($rcaseCTR <= 2): ?>
-                                            <div class="medium-6 large-6 cell grid-item">
+                                            <div class="medium-6 large-6 cell grid-item wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
                                                 <div class="box grid-x grid-padding-x margin-bottom-2">
                                                     <div class="cell small-6">
                                                         <div class="thumb">
@@ -339,7 +347,10 @@ get_header();
                                                 <p><?php the_field('crf_short_description') ?></p>
                                             </div>
                                         <?php endif ?>
-                                        <?php $rcaseCTR++; ?>
+                                        <?php 
+                                            $rcaseCTR++;
+                                            $ctrWowDelay = $ctrWowDelay + 0.2;
+                                        ?>
                                     
                                 <?php endforeach;  wp_reset_postdata(); ?>
                             </div>
@@ -378,8 +389,10 @@ get_header();
                                 <h2 class="hbg">Case Studies</h2>
                             </div>
                             <ul class="grid-x grid-margin-x rep-cases">
-                                <?php foreach( $attrCase as $post ):  setup_postdata($post); ?>
-                                <li class="cell medium-6">
+                                <?php 
+                                    $ctrWowDelay = 0.2;
+                                foreach( $attrCase as $post ):  setup_postdata($post); ?>
+                                <li class="cell medium-6 wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>">
                                     <div class="bio-post">
                                         <figure>
                                         <a class="img" href="<?php the_permalink(); ?>">
@@ -402,7 +415,7 @@ get_header();
                                         ?></p>
                                     </div>
                                 </li>
-                                <?php endforeach;  wp_reset_postdata(); ?>
+                                <?php $ctrWowDelay = $ctrWowDelay + 0.2; endforeach;  wp_reset_postdata(); ?>
                             </ul>
                             <div class="show-for-medium">
                                 <a href="<?php the_permalink(13) ?>" class="button primary round">More Case Studies</a>

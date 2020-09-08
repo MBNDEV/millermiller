@@ -257,9 +257,15 @@ get_header();
                                     $ctrWowDelay = 0.2;
                                 foreach( $apdeItems as $post ):  setup_postdata($post); ?>
                                 <li class="wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
-                                    <a href="<?php the_field('aaf_file'); ?>">
+                                    <?php $controllink = get_field('aaf_file') ? get_field('aaf_file') : 'javascript:;' ?>
+                                    
+                                    <?php if ($controllink != 'javascript:;'): ?>
+                                        <a href="<?= $controllink ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    <?php else: ?>
                                         <?php the_title(); ?>
-                                    </a>
+                                    <?php endif ?>
                                 </li>
                                 <?php $ctrWowDelay = $ctrWowDelay + 0.1; endforeach;  wp_reset_postdata(); ?>
                             </ul>

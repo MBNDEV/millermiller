@@ -942,7 +942,14 @@ $color-xbrown: #6f4f2a;
                     -ms-flex-positive: 0;
                     flex-grow: 0;
                 }
-            }           
+            }
+            .wp-block-gallery{
+                .blocks-gallery-item{
+                    figcaption{
+                        display: none;
+                    }
+                }
+            }        
         }
         .partners-logo {
             figure {

@@ -1256,6 +1256,14 @@ main {
     .grid-item{  display: none; padding:0 10px;}
 }
 
+.bio-overview{
+	.rep-case-lists {
+		.grid-item{
+			display: block;
+		}
+	}
+}
+
 
 
 @media print{

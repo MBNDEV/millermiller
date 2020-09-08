@@ -259,9 +259,10 @@ get_header();
                                 <li class="wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
                                     <?php 
                                         $controllink = get_field('aaf_file') ? get_field('aaf_file') : 'javascript:;';
+                                        $controllinkTarget = get_field('aaf_file') ? '_blank' : '_self';
                                         $disableLink = $controllink == 'javascript:;' ? 'cursor:default; pointer-events:none;' : '';
                                     ?>
-                                    <a href="<?= $controllink ?>" style="<?= $disableLink ?>">
+                                    <a href="<?= $controllink ?>" style="<?= $disableLink ?>" target="<?= $controllinkTarget ?>">
                                         <?php the_title(); ?>
                                     </a>
                                 </li>

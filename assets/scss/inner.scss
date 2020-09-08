@@ -581,12 +581,14 @@ $color-xbrown: #6f4f2a;
 
             @include media(max-width, 1023px){
                 margin: 0 auto;
+                height: auto;
             }
 
             @include media(max-width, 567px){
                 height: auto;
                 width: auto;
             }
+
         }
         
      }

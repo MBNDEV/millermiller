@@ -334,7 +334,8 @@
       width: 100%; }
     @media (max-width: 1023px) {
       .bio-header .image figure {
-        margin: 0 auto; } }
+        margin: 0 auto;
+        height: auto; } }
     @media (max-width: 567px) {
       .bio-header .image figure {
         height: auto;

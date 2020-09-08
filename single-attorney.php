@@ -267,7 +267,7 @@ get_header();
 
                         <?php if(get_field('fa_honors_and_awards_content') != "") : ?>
                         <hr>
-                        <div id="awards" class="bio-awards offtop" data-magellan-target="awards">
+                        <div id="awards" class="bio-awards offtop" data-magellan-target="awards"  data-offset="50">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Honors and Awards</h2>
                             </div>
@@ -445,7 +445,7 @@ get_header();
                             $attrCase = get_field('fa_case_studies_items');
                             if( $attrCase ): ?>
                         <hr>
-                        <div id="case-studies" class="bio-case-studies offtop" data-magellan-target="case-studies">
+                        <div id="case-studies" class="bio-case-studies offtop" data-magellan-target="case-studies" data-offset="50">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Case Studies</h2>
                             </div>

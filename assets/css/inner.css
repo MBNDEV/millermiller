@@ -591,6 +591,16 @@
         font-size: 0;
         display: block;
         height: 100%; }
+  .bio-copy .bio-overview .partners-logo-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 -15px 25px; }
+    .bio-copy .bio-overview .partners-logo-flex .item {
+      padding: 0 15px; }
   .bio-copy .bio-testimonials {
     background: whitesmoke;
     padding: 40px 20px;

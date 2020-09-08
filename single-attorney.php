@@ -509,11 +509,8 @@ get_header();
         addingAnimationToLists('#awards ul li');
         addingAnimationToLists('#representative-matters ul li');
 
-        $('.bio-overview .blocks-gallery-item').each(function(){
-            var get_url = $(this).find('.blocks-gallery-item__caption').text().trim();
-            $(this).find('img').wrap('<a href="'+get_url+'" target="_blank"></a>');
-        });
-    })
+      
+    });
 </script>
 
 <?php

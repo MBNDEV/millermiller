@@ -78,6 +78,11 @@ get_header();
             </div>
         </div>
     </div>
+
+    <?php 
+        $attyHasRC = [228, 237, 181, 235];
+        $attyHasRC = in_array(get_the_ID(), $attyHasRC);
+    ?>
     <section class="bio-content" id="bio">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
@@ -124,7 +129,7 @@ get_header();
                                         <li><a href="#representative-matters">Representative Matters</a></li>
                                     <?php endif ?>
                                     
-                                    <?php  if( get_field('fa_representative_cases_items') ): ?>
+                                    <?php  if( $attyHasRC ): ?>
                                     <li><a href="#representative">Representative Cases</a></li>
                                     <?php endif; ?>
                                     
@@ -153,13 +158,9 @@ get_header();
                             <?php the_content(); ?>
 
 
-                            <?php 
-                                $attyHasRC = [228, 237, 181, 235];
-                                $attyHasRC = in_array(get_the_ID(), $attyHasRC);
-                            ?>
+                            
                             <?php if ($attyHasRC): ?>
-                                <h5>
-                                    <a href="/representative-cases">View Representative Tax  Assessment Appeals Here</a></h5>
+                                <h5><a href="/representative-cases">View Representative Tax  Assessment Appeals Here</a></h5>
                             <?php endif ?>
                             
 
@@ -353,9 +354,7 @@ get_header();
                         <?php endif ?>
 
 
-                        <?php 
-                            $repCase = get_field('fa_representative_cases_items');
-                            if( $repCase ): ?>
+                        <?php if( $attyHasRC ): ?>
                         <hr>
                         <div id="representative" class="bio-representative offtop" data-magellan-target="representative">
                             <div class="text-center-medium">
@@ -416,7 +415,7 @@ get_header();
                                     
                                 </div>
                                 <div class="show-for-medium">
-                                    <a href="/representative-cases?case-attorney=<?= get_the_ID(); ?>" class="button primary round">more representative cases</a>
+                                    <a href="/representative-cases" class="button primary round">more representative cases</a>
                                 </div>
                             </div>
                             <?php $ctrWowDelay = $ctrWowDelay + 0.2; ?>

@@ -159,7 +159,7 @@ get_header();
                             ?>
                             <?php if ($attyHasRC): ?>
                                 <h5>
-                                    <a href="/representative-cases/?case-attorney=<?= get_the_ID() ?>">View Representative Tax  Assessment Appeals Here</a></h5>
+                                    <a href="/representative-cases">View Representative Tax  Assessment Appeals Here</a></h5>
                             <?php endif ?>
                             
 
@@ -362,62 +362,64 @@ get_header();
                                 <h2 class="hbg">Representative Cases</h2>
                             </div>
                             <div class="grid-x grid-margin-x rep-case-lists">
-                                <?php 
-                                    $rcaseCTR = 1;
+                                <?php
                                     $ctrWowDelay = 0.2;
-                                    foreach( $repCase as $post ):  setup_postdata($post); ?>
-                                        <?php if ($rcaseCTR <= 2): ?>
-                                            <div class="medium-6 large-6 cell grid-item wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
-                                                <div class="box grid-x grid-padding-x margin-bottom-2">
-                                                    <div class="cell small-6">
-                                                        <div class="thumb">
-                                                            <?php $controlImageBefore = get_field('crf_before_image'); ?>
-                                                            <?php if ($controlImageBefore): ?>
-                                                                <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
-                                                            <?php else: ?>
-                                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                                            <?php endif ?>
-                                                            
-                                                            <span>Before</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cell small-6">
-                                                        <div class="thumb">
-                                                             <?php $controlImageAfter = get_field('crf_after_image'); ?>
-                                                            <?php if ($controlImageAfter): ?>
-                                                                <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
-                                                            <?php else: ?>
-                                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                                            <?php endif ?>
-                                                            
-                                                            <span>After</span>
-                                                        </div>
-                                                    </div>
+                                    $query = new WP_Query( array(
+                                        'post_type' => 'case-representative',
+                                        'post_status' => 'publish',
+                                        'posts_per_page' => 2,
+                                    ));
+                                    while ($query->have_posts()) : $query->the_post();
+                                ?>
+
+                                    <div class="medium-6 large-6 cell grid-item wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
+                                        <div class="box grid-x grid-padding-x margin-bottom-2">
+                                            <div class="cell small-6">
+                                                <div class="thumb">
+                                                    <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                                    <?php if ($controlImageBefore): ?>
+                                                        <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                                    <?php else: ?>
+                                                        <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                    <?php endif ?>
+                                                    
+                                                    <span>Before</span>
                                                 </div>
-                                                <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
-                                                <h3><?php the_field('crf_location') ?></h3>
-                                                <ul>
-                                                    <li>Initial Offer:</li>
-                                                    <li><?php the_field('crf_initial_offer') ?></li>
-                                                </ul>
-                                                <ul>
-                                                    <li>Final Award:</li>
-                                                    <li><?php the_field('crf_final_award') ?></li>
-                                                </ul>
-                                                <p><?php the_field('crf_short_description') ?></p>
                                             </div>
-                                        <?php endif ?>
-                                        <?php 
-                                            $rcaseCTR++;
-                                            $ctrWowDelay = $ctrWowDelay + 0.2;
-                                        ?>
+                                            <div class="cell small-6">
+                                                <div class="thumb">
+                                                     <?php $controlImageAfter = get_field('crf_after_image'); ?>
+                                                    <?php if ($controlImageAfter): ?>
+                                                        <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                                    <?php else: ?>
+                                                        <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                    <?php endif ?>
+                                                    
+                                                    <span>After</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
+                                        <h3><?php the_field('crf_location') ?></h3>
+                                        <ul>
+                                            <li>Initial Offer:</li>
+                                            <li><?php the_field('crf_initial_offer') ?></li>
+                                        </ul>
+                                        <ul>
+                                            <li>Final Award:</li>
+                                            <li><?php the_field('crf_final_award') ?></li>
+                                        </ul>
+                                        <p><?php the_field('crf_short_description') ?></p>
+                                    </div>
+
+                                    <?php endwhile; wp_reset_postdata(); ?>
                                     
-                                <?php endforeach;  wp_reset_postdata(); ?>
+                                </div>
+                                <div class="show-for-medium">
+                                    <a href="/representative-cases?case-attorney=<?= get_the_ID(); ?>" class="button primary round">more representative cases</a>
+                                </div>
                             </div>
-                            <div class="show-for-medium">
-                                <a href="/representative-cases?case-attorney=<?= get_the_ID(); ?>" class="button primary round">more representative cases</a>
-                            </div>
-                        </div>
+                            <?php $ctrWowDelay = $ctrWowDelay + 0.2; ?>
                         <?php endif; ?>
 
 

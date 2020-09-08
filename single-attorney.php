@@ -104,7 +104,7 @@ get_header();
                                     <li><a href="#education">Education</a></li>
                                     <?php endif; ?>
 
-                                    <?php if (get_field('af_clerkships')): ?>
+                                    <?php if (get_field('af_clerkships_content')): ?>
                                         <li><a href="#clerkships">Clerkships</a></li>
                                     <?php endif ?>
                                     
@@ -244,14 +244,14 @@ get_header();
                         </div>
                         <?php endif; ?>
 
-                        <?php if (get_field('af_clerkships')): ?>
+                        <?php if (get_field('af_clerkships_content') != ''): ?>
 
                             <hr>
                             <div id="clerkships" class="bio-clerkships offtop" data-magellan-target="clerkships">
                                 <div class="text-center-medium">
                                    <h2 class="hbg">Clerkships</h2>
                                 </div>
-                                <?php the_field('af_clerkships'); ?>
+                                <?php the_field('af_clerkships_content'); ?>
                             </div>
                             
                         <?php endif ?>

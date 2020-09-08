@@ -271,31 +271,38 @@ get_header();
                             $pubItems = get_field('fa_publications_items');
                             if( $pubItems ): ?>
                         <hr>
-                        <div id="publications" class="bio-publications offtop" data-magellan-target="publications">
+                            <div id="publications" class="bio-publications offtop" data-magellan-target="publications">
 
-                            <div class="text-center-medium">
-                                <h2 class="hbg">Publications</h2>
+                                <div class="text-center-medium">
+                                    <h2 class="hbg">Publications</h2>
+                                </div>
+                                <ul>
+
+                                    <?php 
+                                        $ctrWowDelay = 0.2;
+
+                                        foreach ($pubItems as $post): setup_postdata($post); ?>
+
+                                        <li class="wow fadeInUp" data-wow-delay="<?=  $ctrWowDelay ?>s">
+
+                                            <?php if (get_field('apf_file') !="" || get_field('apf_link') != ""): ?>
+
+                                               <?php $target = get_field('apf_file') ? '_blank' : '_self'; ?>
+
+                                                <a target="<?= $target ?>" href="<?php if(get_field('apf_file') !=""){the_field('apf_file');} else {the_field('apf_link');} ?>">
+                                                    <?php the_title(); ?>
+                                                </a>
+
+                                            <?php else: ?>
+
+                                                <?php the_title(); ?>
+                                                
+                                            <?php endif ?>
+                                        </li>
+                                        
+                                    <?php $ctrWowDelay = $ctrWowDelay + 0.1; endforeach;  wp_reset_postdata(); ?>
+                                </ul>
                             </div>
-                            <ul>
-                                <?php 
-                                $ctrWowDelay = 0.2;
-                                foreach( $pubItems as $post ):  setup_postdata($post); ?>
-                                <li class="wow fadeInUp" data-wow-delay="<?=  $ctrWowDelay ?>s">
-                                <?php if (get_field('apf_file') !="" || get_field('apf_link') != "") { ?>
-                                                                          
-                                    <a href="<?php if(get_field('apf_file') !=""){the_field('apf_file');} else {the_field('apf_link');} ?>">
-                                        <?php the_title(); ?>
-                                    </a>
-
-                                <?php } else { ?>
-                                    
-                                     <?php the_title(); ?>
-
-                                <?php } ?>
-                                </li>
-                                <?php $ctrWowDelay = $ctrWowDelay + 0.1; endforeach;  wp_reset_postdata(); ?>
-                            </ul>
-                        </div>
                         <?php endif; ?>
 
 

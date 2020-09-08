@@ -122,7 +122,13 @@ get_header();
 	            				</div>
 	            				
 	            				<h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	            				<p><b>Issue:</b> <?= strip_tags(get_field('cs_issue')) ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a></p>
+	            				<p><b>Issue:</b> 
+                                    <?php
+                                        $sContent = strip_tags(get_field('cs_issue')); 
+                                        $sContent = substr( $sContent, 0, 165 );
+                                        $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                        echo $sContent;
+                                    ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a></p>
 	            			</div>
 	            		</article>
 	            	</div>
@@ -147,10 +153,10 @@ get_header();
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script>
 	$(function(){
-		var $caseList_iso =  $('.case-lists').isotope({
-		  	itemSelector: '.case-item',
-		  	percentPosition: true,
-		});
+		// var $caseList_iso =  $('.case-lists').isotope({
+		//   	itemSelector: '.case-item',
+		//   	percentPosition: true,
+		// });
 
         var $nextLink = $('#post-pagination .next').attr('href');
         $('#loadMorePosts').click(function(e){

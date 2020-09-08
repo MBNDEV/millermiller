@@ -203,7 +203,7 @@ get_header();
                             $paITems = get_field('af_practice_areas_items');
                             if( $paITems ): ?>
                         <hr>
-                        <div id="practice-areas" class="bio-practice-areas offtop" data-magellan-target="practice-areas">
+                        <div id="practice-areas" class="bio-practice-areas offtop" data-magellan-target="practice-areas"   data-offset="180">
                             
                             <div class="text-center-medium">
                                 <h2 class="hbg">Practice Areas</h2>
@@ -222,7 +222,7 @@ get_header();
 
                         <?php if(get_field('fa_bar_admissions_content') != "") : ?>
                         <hr>
-                        <div id="bar-admissions" class="bio-bar-admissions offtop" data-magellan-target="bar-admissions">
+                        <div id="bar-admissions" class="bio-bar-admissions offtop" data-magellan-target="bar-admissions"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Bar Admissions</h2>
                             </div>
@@ -233,7 +233,7 @@ get_header();
 
                         <?php if(get_field('fa_professional_affiliations_content') != "") : ?>
                         <hr>
-                        <div id="affiliations" class="bio-affiliations offtop" data-magellan-target="affiliations">  
+                        <div id="affiliations" class="bio-affiliations offtop" data-magellan-target="affiliations"   data-offset="180">  
                             <div class="text-center-medium">
                                 <h2 class="hbg">Professional Affiliations</h2>
                             </div>
@@ -244,7 +244,7 @@ get_header();
 
                         <?php if(get_field('fa_education_content') != "") : ?>
                         <hr>
-                        <div id="education" class="bio-education offtop" data-magellan-target="education">
+                        <div id="education" class="bio-education offtop" data-magellan-target="education"   data-offset="180">
                             <div class="text-center-medium">
                                <h2 class="hbg">Education</h2>
                             </div>
@@ -255,7 +255,7 @@ get_header();
                         <?php if (get_field('af_clerkships_content') != ''): ?>
 
                             <hr>
-                            <div id="clerkships" class="bio-clerkships offtop" data-magellan-target="clerkships">
+                            <div id="clerkships" class="bio-clerkships offtop" data-magellan-target="clerkships"   data-offset="180">
                                 <div class="text-center-medium">
                                    <h2 class="hbg">Clerkships</h2>
                                 </div>
@@ -267,7 +267,7 @@ get_header();
 
                         <?php if(get_field('fa_honors_and_awards_content') != "") : ?>
                         <hr>
-                        <div id="awards" class="bio-awards offtop" data-magellan-target="awards"  data-offset="50">
+                        <div id="awards" class="bio-awards offtop" data-magellan-target="awards"  data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Honors and Awards</h2>
                             </div>
@@ -280,7 +280,7 @@ get_header();
                             $apdeItems = get_field('fa_appellate_decisions_items');
                             if( $apdeItems ): ?>
                         <hr>
-                        <div id="appellate" class="bio-appellate offtop" data-magellan-target="appellate">
+                        <div id="appellate" class="bio-appellate offtop" data-magellan-target="appellate"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Appellate Decisions</h2>
                             </div>
@@ -308,7 +308,7 @@ get_header();
                             $pubItems = get_field('fa_publications_items');
                             if( $pubItems ): ?>
                         <hr>
-                            <div id="publications" class="bio-publications offtop" data-magellan-target="publications">
+                            <div id="publications" class="bio-publications offtop" data-magellan-target="publications"   data-offset="180">
 
                                 <div class="text-center-medium">
                                     <h2 class="hbg">Publications</h2>
@@ -345,7 +345,7 @@ get_header();
 
                         <?php if (get_field('fa_representative_matters_content')): ?>
                             <hr>
-                            <div id="representative-matters" class="bio-representative-matters offtop" data-magellan-target="representative-matters">
+                            <div id="representative-matters" class="bio-representative-matters offtop" data-magellan-target="representative-matters"   data-offset="180">
                                 <div class="text-center-medium">
                                    <h2 class="hbg">Representative Matters</h2>
                                 </div>
@@ -356,7 +356,7 @@ get_header();
 
                         <?php if( $attyHasRC ): ?>
                         <hr>
-                        <div id="representative" class="bio-representative offtop" data-magellan-target="representative">
+                        <div id="representative" class="bio-representative offtop" data-magellan-target="representative"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Representative Cases</h2>
                             </div>
@@ -424,7 +424,7 @@ get_header();
 
                         <?php if(get_field('af_representative_trans_content') != "") : ?>
                         <hr>
-                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans">
+                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Representative Transactions</h2>
                             </div>
@@ -445,7 +445,7 @@ get_header();
                             $attrCase = get_field('fa_case_studies_items');
                             if( $attrCase ): ?>
                         <hr>
-                        <div id="case-studies" class="bio-case-studies offtop" data-magellan-target="case-studies" data-offset="50">
+                        <div id="case-studies" class="bio-case-studies offtop" data-magellan-target="case-studies"  data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Case Studies</h2>
                             </div>

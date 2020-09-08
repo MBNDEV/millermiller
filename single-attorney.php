@@ -153,8 +153,11 @@ get_header();
                             <?php the_content(); ?>
 
 
-                            <?php $repCaseContentLink = get_field('fa_representative_cases_items'); ?>
-                            <?php if ($repCaseContentLink): ?>
+                            <?php 
+                                $attyHasRC = [228, 237, 181, 235];
+                                $attyHasRC = in_array(get_the_ID(), $attyHasRC);
+                            ?>
+                            <?php if ($attyHasRC): ?>
                                 <h5>
                                     <a href="/representative-cases/?case-attorney=<?= get_the_ID() ?>">View Representative Tax  Assessment Appeals Here</a></h5>
                             <?php endif ?>

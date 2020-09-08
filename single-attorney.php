@@ -144,7 +144,13 @@ get_header();
 
                             <?php the_content(); ?>
 
-                            <h5><a href="/representative-cases/?case-attorney=<?= get_the_ID() ?>">View Representative Tax  Assessment Appeals Here</a></h5>
+
+                            <?php $repCaseContentLink = get_field('fa_representative_cases_items'); ?>
+                            <?php if ($repCaseContentLink): ?>
+                                <h5>
+                                    <a href="/representative-cases/?case-attorney=<?= get_the_ID() ?>">View Representative Tax  Assessment Appeals Here</a></h5>
+                            <?php endif ?>
+                            
 
                             <?php 
                                 $currentAttorney = get_the_ID();

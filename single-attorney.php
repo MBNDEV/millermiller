@@ -18,12 +18,18 @@ get_header();
                     <h5 class="wow fadeInUp">attorneys</h5>
                     <h1 class="wow fadeInUp" data-wow-delay="0.2s"><?php the_title(); ?></h1>
                     <ul class="email-vcard">
-                        <li class="wow fadeInUp" data-wow-delay="0.4s"><a href="mailto:<?php the_field('af_banner_email') ?>">
-                            <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
-                        </li>
-                        <li class="wow fadeInUp" data-wow-delay="0.6s"><a href="<?php the_field('af_banner_vcard') ?>" download="vCard - <?= get_the_title(); ?>">
-                            <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
-                        </li>
+                        <?php if (get_field('af_banner_email')): ?>
+                            <li class="wow fadeInUp" data-wow-delay="0.4s"><a href="mailto:<?php the_field('af_banner_email') ?>">
+                                <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
+                            </li>
+                        <?php endif ?>
+                        
+                        <?php if (get_field('af_banner_vcard')): ?>
+                            <li class="wow fadeInUp" data-wow-delay="0.6s"><a href="<?php the_field('af_banner_vcard') ?>" download="vCard - <?= get_the_title(); ?>">
+                                <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
+                            </li>
+                        <?php endif ?>
+                       
                     </ul>
                     <p><?php the_field('af_banner_intro') ?></p>
 
@@ -72,6 +78,11 @@ get_header();
             </div>
         </div>
     </div>
+
+    <?php 
+        $attyHasRC = [228, 237, 181, 235];
+        $attyHasRC = in_array(get_the_ID(), $attyHasRC);
+    ?>
     <section class="bio-content" id="bio">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
@@ -97,6 +108,10 @@ get_header();
                                     <?php  if( get_field('fa_education_content') ): ?>
                                     <li><a href="#education">Education</a></li>
                                     <?php endif; ?>
+
+                                    <?php if (get_field('af_clerkships_content')): ?>
+                                        <li><a href="#clerkships">Clerkships</a></li>
+                                    <?php endif ?>
                                     
                                     <?php  if( get_field('fa_honors_and_awards_content') ): ?>
                                     <li><a href="#awards">Honors and Awards</a></li>
@@ -109,8 +124,12 @@ get_header();
                                     <?php  if( get_field('fa_publications_items') ): ?>
                                     <li><a href="#publications">Publications</a></li>
                                     <?php endif; ?>
+
+                                    <?php if (get_field('fa_representative_matters_content')): ?>
+                                        <li><a href="#representative-matters">Representative Matters</a></li>
+                                    <?php endif ?>
                                     
-                                    <?php  if( get_field('fa_representative_cases_items') ): ?>
+                                    <?php  if( $attyHasRC ): ?>
                                     <li><a href="#representative">Representative Cases</a></li>
                                     <?php endif; ?>
                                     
@@ -137,6 +156,13 @@ get_header();
                             </div>  
 
                             <?php the_content(); ?>
+
+
+                            
+                            <?php if ($attyHasRC): ?>
+                                <h5><a href="/representative-cases">View Representative Tax  Assessment Appeals Here</a></h5>
+                            <?php endif ?>
+                            
 
                             <?php 
                                 $currentAttorney = get_the_ID();
@@ -177,7 +203,7 @@ get_header();
                             $paITems = get_field('af_practice_areas_items');
                             if( $paITems ): ?>
                         <hr>
-                        <div id="practice-areas" class="bio-practice-areas offtop" data-magellan-target="practice-areas">
+                        <div id="practice-areas" class="bio-practice-areas offtop" data-magellan-target="practice-areas"   data-offset="180">
                             
                             <div class="text-center-medium">
                                 <h2 class="hbg">Practice Areas</h2>
@@ -196,7 +222,7 @@ get_header();
 
                         <?php if(get_field('fa_bar_admissions_content') != "") : ?>
                         <hr>
-                        <div id="bar-admissions" class="bio-bar-admissions offtop" data-magellan-target="bar-admissions">
+                        <div id="bar-admissions" class="bio-bar-admissions offtop" data-magellan-target="bar-admissions"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Bar Admissions</h2>
                             </div>
@@ -207,7 +233,7 @@ get_header();
 
                         <?php if(get_field('fa_professional_affiliations_content') != "") : ?>
                         <hr>
-                        <div id="affiliations" class="bio-affiliations offtop" data-magellan-target="affiliations">  
+                        <div id="affiliations" class="bio-affiliations offtop" data-magellan-target="affiliations"   data-offset="180">  
                             <div class="text-center-medium">
                                 <h2 class="hbg">Professional Affiliations</h2>
                             </div>
@@ -218,7 +244,7 @@ get_header();
 
                         <?php if(get_field('fa_education_content') != "") : ?>
                         <hr>
-                        <div id="education" class="bio-education offtop" data-magellan-target="education">
+                        <div id="education" class="bio-education offtop" data-magellan-target="education"   data-offset="180">
                             <div class="text-center-medium">
                                <h2 class="hbg">Education</h2>
                             </div>
@@ -226,10 +252,22 @@ get_header();
                         </div>
                         <?php endif; ?>
 
+                        <?php if (get_field('af_clerkships_content') != ''): ?>
+
+                            <hr>
+                            <div id="clerkships" class="bio-clerkships offtop" data-magellan-target="clerkships"   data-offset="180">
+                                <div class="text-center-medium">
+                                   <h2 class="hbg">Clerkships</h2>
+                                </div>
+                                <?php the_field('af_clerkships_content'); ?>
+                            </div>
+                            
+                        <?php endif ?>
+
 
                         <?php if(get_field('fa_honors_and_awards_content') != "") : ?>
                         <hr>
-                        <div id="awards" class="bio-awards offtop" data-magellan-target="awards">
+                        <div id="awards" class="bio-awards offtop" data-magellan-target="awards"  data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Honors and Awards</h2>
                             </div>
@@ -242,7 +280,7 @@ get_header();
                             $apdeItems = get_field('fa_appellate_decisions_items');
                             if( $apdeItems ): ?>
                         <hr>
-                        <div id="appellate" class="bio-appellate offtop" data-magellan-target="appellate">
+                        <div id="appellate" class="bio-appellate offtop" data-magellan-target="appellate"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Appellate Decisions</h2>
                             </div>
@@ -251,7 +289,12 @@ get_header();
                                     $ctrWowDelay = 0.2;
                                 foreach( $apdeItems as $post ):  setup_postdata($post); ?>
                                 <li class="wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
-                                    <a href="<?php the_field('aaf_file'); ?>">
+                                    <?php 
+                                        $controllink = get_field('aaf_file') ? get_field('aaf_file') : 'javascript:;';
+                                        $controllinkTarget = get_field('aaf_file') ? '_blank' : '_self';
+                                        $disableLink = $controllink == 'javascript:;' ? 'cursor:default; pointer-events:none;' : '';
+                                    ?>
+                                    <a href="<?= $controllink ?>" style="<?= $disableLink ?>" target="<?= $controllinkTarget ?>">
                                         <?php the_title(); ?>
                                     </a>
                                 </li>
@@ -265,105 +308,123 @@ get_header();
                             $pubItems = get_field('fa_publications_items');
                             if( $pubItems ): ?>
                         <hr>
-                        <div id="publications" class="bio-publications offtop" data-magellan-target="publications">
+                            <div id="publications" class="bio-publications offtop" data-magellan-target="publications"   data-offset="180">
 
-                            <div class="text-center-medium">
-                                <h2 class="hbg">Publications</h2>
+                                <div class="text-center-medium">
+                                    <h2 class="hbg">Publications</h2>
+                                </div>
+                                <ul>
+
+                                    <?php 
+                                        $ctrWowDelay = 0.2;
+
+                                        foreach ($pubItems as $post): setup_postdata($post); ?>
+
+                                        <li class="wow fadeInUp" data-wow-delay="<?=  $ctrWowDelay ?>s">
+
+                                            <?php if (get_field('apf_file') !="" || get_field('apf_link') != ""): ?>
+
+                                               <?php $target = get_field('apf_file') ? '_blank' : '_self'; ?>
+
+                                                <a target="<?= $target ?>" href="<?php if(get_field('apf_file') !=""){the_field('apf_file');} else {the_field('apf_link');} ?>">
+                                                    <?php the_title(); ?>
+                                                </a>
+
+                                            <?php else: ?>
+
+                                                <?php the_title(); ?>
+                                                
+                                            <?php endif ?>
+                                        </li>
+                                        
+                                    <?php $ctrWowDelay = $ctrWowDelay + 0.1; endforeach;  wp_reset_postdata(); ?>
+                                </ul>
                             </div>
-                            <ul>
-                                <?php 
-                                $ctrWowDelay = 0.2;
-                                foreach( $pubItems as $post ):  setup_postdata($post); ?>
-                                <li class="wow fadeInUp" data-wow-delay="<?=  $ctrWowDelay ?>s">
-                                <?php if (get_field('apf_file') !="" || get_field('apf_link') != "") { ?>
-                                                                          
-                                    <a href="<?php if(get_field('apf_file') !=""){the_field('apf_file');} else {the_field('apf_link');} ?>">
-                                        <?php the_title(); ?>
-                                    </a>
-
-                                <?php } else { ?>
-                                    
-                                     <?php the_title(); ?>
-
-                                <?php } ?>
-                                </li>
-                                <?php $ctrWowDelay = $ctrWowDelay + 0.1; endforeach;  wp_reset_postdata(); ?>
-                            </ul>
-                        </div>
                         <?php endif; ?>
 
 
-                        <?php 
-                            $repCase = get_field('fa_representative_cases_items');
-                            if( $repCase ): ?>
+                        <?php if (get_field('fa_representative_matters_content')): ?>
+                            <hr>
+                            <div id="representative-matters" class="bio-representative-matters offtop" data-magellan-target="representative-matters"   data-offset="180">
+                                <div class="text-center-medium">
+                                   <h2 class="hbg">Representative Matters</h2>
+                                </div>
+                                <?php the_field('fa_representative_matters_content'); ?>
+                            </div>
+                        <?php endif ?>
+
+
+                        <?php if( $attyHasRC ): ?>
                         <hr>
-                        <div id="representative" class="bio-representative offtop" data-magellan-target="representative">
+                        <div id="representative" class="bio-representative offtop" data-magellan-target="representative"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Representative Cases</h2>
                             </div>
                             <div class="grid-x grid-margin-x rep-case-lists">
-                                <?php 
-                                    $rcaseCTR = 1;
+                                <?php
                                     $ctrWowDelay = 0.2;
-                                    foreach( $repCase as $post ):  setup_postdata($post); ?>
-                                        <?php if ($rcaseCTR <= 2): ?>
-                                            <div class="medium-6 large-6 cell grid-item wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
-                                                <div class="box grid-x grid-padding-x margin-bottom-2">
-                                                    <div class="cell small-6">
-                                                        <div class="thumb">
-                                                            <?php $controlImageBefore = get_field('crf_before_image'); ?>
-                                                            <?php if ($controlImageBefore): ?>
-                                                                <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
-                                                            <?php else: ?>
-                                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                                            <?php endif ?>
-                                                            
-                                                            <span>Before</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cell small-6">
-                                                        <div class="thumb">
-                                                             <?php $controlImageAfter = get_field('crf_after_image'); ?>
-                                                            <?php if ($controlImageAfter): ?>
-                                                                <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
-                                                            <?php else: ?>
-                                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
-                                                            <?php endif ?>
-                                                            
-                                                            <span>After</span>
-                                                        </div>
-                                                    </div>
+                                    $query = new WP_Query( array(
+                                        'post_type' => 'case-representative',
+                                        'post_status' => 'publish',
+                                        'posts_per_page' => 2,
+                                    ));
+                                    while ($query->have_posts()) : $query->the_post();
+                                ?>
+
+                                    <div class="medium-6 large-6 cell grid-item wow fadeInUp" data-wow-delay="<?= $ctrWowDelay ?>s">
+                                        <div class="box grid-x grid-padding-x margin-bottom-2">
+                                            <div class="cell small-6">
+                                                <div class="thumb">
+                                                    <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                                    <?php if ($controlImageBefore): ?>
+                                                        <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                                    <?php else: ?>
+                                                        <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                    <?php endif ?>
+                                                    
+                                                    <span>Before</span>
                                                 </div>
-                                                <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
-                                                <h3><?php the_field('crf_location') ?></h3>
-                                                <ul>
-                                                    <li>Initial Offer:</li>
-                                                    <li><?php the_field('crf_initial_offer') ?></li>
-                                                </ul>
-                                                <ul>
-                                                    <li>Final Award:</li>
-                                                    <li><?php the_field('crf_final_award') ?></li>
-                                                </ul>
-                                                <p><?php the_field('crf_short_description') ?></p>
                                             </div>
-                                        <?php endif ?>
-                                        <?php 
-                                            $rcaseCTR++;
-                                            $ctrWowDelay = $ctrWowDelay + 0.2;
-                                        ?>
+                                            <div class="cell small-6">
+                                                <div class="thumb">
+                                                     <?php $controlImageAfter = get_field('crf_after_image'); ?>
+                                                    <?php if ($controlImageAfter): ?>
+                                                        <img src="<?= esc_url( $controlImageAfter['url'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                                    <?php else: ?>
+                                                        <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                                    <?php endif ?>
+                                                    
+                                                    <span>After</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
+                                        <h3><?php the_field('crf_location') ?></h3>
+                                        <ul>
+                                            <li>Initial Offer:</li>
+                                            <li><?php the_field('crf_initial_offer') ?></li>
+                                        </ul>
+                                        <ul>
+                                            <li>Final Award:</li>
+                                            <li><?php the_field('crf_final_award') ?></li>
+                                        </ul>
+                                        <p><?php the_field('crf_short_description') ?></p>
+                                    </div>
+
+                                    <?php endwhile; wp_reset_postdata(); ?>
                                     
-                                <?php endforeach;  wp_reset_postdata(); ?>
+                                </div>
+                                <div class="show-for-medium">
+                                    <a href="/representative-cases" class="button primary round">more representative cases</a>
+                                </div>
                             </div>
-                            <div class="show-for-medium">
-                                <a href="/representative-cases?case-attorney=<?= get_the_ID(); ?>" class="button primary round">more representative cases</a>
-                            </div>
-                        </div>
+                            <?php $ctrWowDelay = $ctrWowDelay + 0.2; ?>
                         <?php endif; ?>
 
 
                         <?php if(get_field('af_representative_trans_content') != "") : ?>
                         <hr>
-                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans">
+                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans"   data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Representative Transactions</h2>
                             </div>
@@ -384,7 +445,7 @@ get_header();
                             $attrCase = get_field('fa_case_studies_items');
                             if( $attrCase ): ?>
                         <hr>
-                        <div id="case-studies" class="bio-case-studies offtop" data-magellan-target="case-studies">
+                        <div id="case-studies" class="bio-case-studies offtop" data-magellan-target="case-studies"  data-offset="180">
                             <div class="text-center-medium">
                                 <h2 class="hbg">Case Studies</h2>
                             </div>
@@ -447,9 +508,13 @@ get_header();
         addingAnimationToLists('#bar-admissions ul li');
         addingAnimationToLists('#affiliations ul li');
         addingAnimationToLists('#education ul li');
+        addingAnimationToLists('#clerkships ul li');
         addingAnimationToLists('.partners-logo ul li');
         addingAnimationToLists('#awards ul li');
-    })
+        addingAnimationToLists('#representative-matters ul li');
+
+      
+    });
 </script>
 
 <?php

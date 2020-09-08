@@ -144,6 +144,8 @@ get_header();
 
                             <?php the_content(); ?>
 
+                            <h5><a href="/representative-cases/?case-attorney=<?= get_the_ID() ?>">View Representative Tax  Assessment Appeals Here</a></h5>
+
                             <?php 
                                 $currentAttorney = get_the_ID();
                                 $query = new WP_Query( array(

@@ -103,6 +103,10 @@ get_header();
                                     <?php  if( get_field('fa_education_content') ): ?>
                                     <li><a href="#education">Education</a></li>
                                     <?php endif; ?>
+
+                                    <?php if (get_field('af_clerkships')): ?>
+                                        <li><a href="#clerkships">Clerkships</a></li>
+                                    <?php endif ?>
                                     
                                     <?php  if( get_field('fa_honors_and_awards_content') ): ?>
                                     <li><a href="#awards">Honors and Awards</a></li>
@@ -239,6 +243,18 @@ get_header();
                             <?php the_field('fa_education_content'); ?>
                         </div>
                         <?php endif; ?>
+
+                        <?php if (get_field('af_clerkships')): ?>
+
+                            <hr>
+                            <div id="clerkships" class="bio-clerkships offtop" data-magellan-target="clerkships">
+                                <div class="text-center-medium">
+                                   <h2 class="hbg">Clerkships</h2>
+                                </div>
+                                <?php the_field('af_clerkships'); ?>
+                            </div>
+                            
+                        <?php endif ?>
 
 
                         <?php if(get_field('fa_honors_and_awards_content') != "") : ?>

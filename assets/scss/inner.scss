@@ -943,13 +943,11 @@ $color-xbrown: #6f4f2a;
                     flex-grow: 0;
                 }
             }
-            .wp-block-gallery{
-                .blocks-gallery-item{
-                    figcaption{
-                        display: none;
-                    }
+            .blocks-gallery-item{
+                figcaption{
+                    display: none;
                 }
-            }        
+            }     
         }
         .partners-logo {
             figure {

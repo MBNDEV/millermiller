@@ -70,7 +70,7 @@ get_header();
 
     <section class="page-content">
         <div class="grid-container">
-            <div class="grid-x grid-margin-x case-lists">
+            <div class="grid-x grid-margin-x case-lists align-center">
             	<?php 
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $query_limit_items = 9;

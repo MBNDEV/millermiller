@@ -119,6 +119,10 @@ get_header();
                                     <?php  if( get_field('fa_publications_items') ): ?>
                                     <li><a href="#publications">Publications</a></li>
                                     <?php endif; ?>
+
+                                    <?php if (get_field('fa_representative_matters_content')): ?>
+                                        <li><a href="#representative-matters">Representative Matters</a></li>
+                                    <?php endif ?>
                                     
                                     <?php  if( get_field('fa_representative_cases_items') ): ?>
                                     <li><a href="#representative">Representative Cases</a></li>
@@ -335,6 +339,17 @@ get_header();
                         <?php endif; ?>
 
 
+                        <?php if (get_field('fa_representative_matters_content')): ?>
+                            <hr>
+                            <div id="representative-matters" class="bio-representative-matters offtop" data-magellan-target="representative-matters">
+                                <div class="text-center-medium">
+                                   <h2 class="hbg">Representative Matters</h2>
+                                </div>
+                                <?php the_field('fa_representative_matters_content'); ?>
+                            </div>
+                        <?php endif ?>
+
+
                         <?php 
                             $repCase = get_field('fa_representative_cases_items');
                             if( $repCase ): ?>
@@ -492,6 +507,7 @@ get_header();
         addingAnimationToLists('#clerkships ul li');
         addingAnimationToLists('.partners-logo ul li');
         addingAnimationToLists('#awards ul li');
+        addingAnimationToLists('#representative-matters ul li');
 
         $('.bio-overview .blocks-gallery-item').each(function(){
             var get_url = $(this).find('.blocks-gallery-item__caption').text().trim();

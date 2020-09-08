@@ -315,7 +315,11 @@
     text-transform: uppercase;
     letter-spacing: 3px; }
   .bio-header p {
-    font-weight: bold; }
+    font-weight: bold;
+    width: 70%; }
+    @media (max-width: 1023px) {
+      .bio-header p {
+        width: 100%; } }
   .bio-header .copy {
     padding-top: 50px;
     padding-bottom: 50px; }
@@ -323,7 +327,7 @@
       .bio-header .copy {
         padding-bottom: 0; } }
   .bio-header .image figure {
-    height: 500px;
+    height: 100%;
     width: 500px;
     overflow: hidden; }
     .bio-header .image figure img {

@@ -553,6 +553,11 @@ $color-xbrown: #6f4f2a;
 
      p {
          font-weight: bold;
+         width: 70%;
+
+         @include media(max-width, 1023px){
+            width: 100%;
+        }
      }
 
      .copy {
@@ -566,7 +571,7 @@ $color-xbrown: #6f4f2a;
 
      .image {
         figure{
-            height: 500px;
+            height: 100%;
             width: 500px;
             overflow: hidden;
 

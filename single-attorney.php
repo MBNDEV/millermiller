@@ -18,12 +18,18 @@ get_header();
                     <h5 class="wow fadeInUp">attorneys</h5>
                     <h1 class="wow fadeInUp" data-wow-delay="0.2s"><?php the_title(); ?></h1>
                     <ul class="email-vcard">
-                        <li class="wow fadeInUp" data-wow-delay="0.4s"><a href="mailto:<?php the_field('af_banner_email') ?>">
-                            <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
-                        </li>
-                        <li class="wow fadeInUp" data-wow-delay="0.6s"><a href="<?php the_field('af_banner_vcard') ?>" download="vCard - <?= get_the_title(); ?>">
-                            <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
-                        </li>
+                        <?php if (get_field('af_banner_email')): ?>
+                            <li class="wow fadeInUp" data-wow-delay="0.4s"><a href="mailto:<?php the_field('af_banner_email') ?>">
+                                <img src="<?php bloginfo('template_url') ?>/assets/img/icn-email2.svg" alt=""> EMAIL</a>
+                            </li>
+                        <?php endif ?>
+                        
+                        <?php if (get_field('af_banner_vcard')): ?>
+                            <li class="wow fadeInUp" data-wow-delay="0.6s"><a href="<?php the_field('af_banner_vcard') ?>" download="vCard - <?= get_the_title(); ?>">
+                                <img src="<?php bloginfo('template_url') ?>/assets/img/icn-vcard.svg" alt=""> vCard</a>
+                            </li>
+                        <?php endif ?>
+                       
                     </ul>
                     <p><?php the_field('af_banner_intro') ?></p>
 

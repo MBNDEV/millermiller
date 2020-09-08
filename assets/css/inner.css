@@ -569,7 +569,7 @@
       margin: 0;
       -ms-flex-positive: 0;
       flex-grow: 0; }
-  .bio-copy .bio-overview .wp-block-gallery .wp-block-gallery .blocks-gallery-item figcaption, .bio-copy .bio-overview .partners-logo .wp-block-gallery .blocks-gallery-item figcaption {
+  .bio-copy .bio-overview .wp-block-gallery .blocks-gallery-item figcaption, .bio-copy .bio-overview .partners-logo .blocks-gallery-item figcaption {
     display: none; }
   .bio-copy .bio-overview .partners-logo figure {
     display: inline-block;

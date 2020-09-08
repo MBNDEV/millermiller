@@ -125,7 +125,7 @@ get_header();
 	            				<p><b>Issue:</b> 
                                     <?php
                                         $sContent = strip_tags(get_field('cs_issue')); 
-                                        $sContent = substr( $sContent, 0, 165 );
+                                        $sContent = substr( $sContent, 0, 200 );
                                         $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
                                         echo $sContent;
                                     ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a></p>

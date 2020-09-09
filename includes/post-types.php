@@ -202,7 +202,7 @@ add_action( 'init', 'case_representative_post' );
 // tax_assestment_appeals
 function tax_assestment_appeals() {
     register_post_type( 
-        'tax-assestment-appeal',
+        'tax-assestment',
         array(
             'labels'    => array(
                 'name' => __( 'Tax Appeals' ),

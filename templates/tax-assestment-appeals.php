@@ -1,6 +1,6 @@
 <?php
 /**
-	Template Name: Tax Assestment Appeals
+	Template Name: Tax Assestment Template
  */
 
 get_header();

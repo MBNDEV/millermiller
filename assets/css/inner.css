@@ -601,10 +601,12 @@
     margin: 0 -15px 25px;
     padding: 0; }
     .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container figure {
-      padding: 0 15px; }
+      padding: 0 15px;
+      width: 25%; }
       @media (max-width: 767px) {
         .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container figure {
-          margin: 15px 0; } }
+          margin: 15px 0;
+          width: auto; } }
     @media (max-width: 767px) {
       .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container {
         -ms-flex-pack: center;

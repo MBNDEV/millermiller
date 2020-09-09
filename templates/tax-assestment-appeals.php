@@ -28,7 +28,7 @@ get_header();
 			    $countQuery = $query->found_posts;
 			    while ($query->have_posts()) : $query->the_post();
 			?>
-                <div class="medium-6 large-6 cell grid-item margin-bottom-1">
+                <div class="medium-6 large-6 cell grid-item margin-bottom-3">
                     <div class="box grid-x grid-padding-x margin-bottom-1">
                         <div class="cell small-12">
                             <div class="thumb">

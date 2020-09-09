@@ -21,7 +21,7 @@ get_header();
 
             <?php 
                 $attorney =  array(
-                    'post_type' => 'tax-assestment-appeal',
+                    'post_type' => 'tax-assestment',
                     'post_status' => 'publish',
                     'posts_per_page' => -1,
                 );
@@ -38,29 +38,26 @@ get_header();
                         <div class="cell small-12">
                             <div class="thumb">
                                 <div class="control-thumb">
-                                    <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                    <?php $controlImageBefore = get_field('taf_thumbnail'); ?>
                                     <?php if ($controlImageBefore): ?>
                                         <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
                                     <?php else: ?>
                                         <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
                                     <?php endif ?>
                                 </div>
-                                
-                                <span><?= get_field('crf_before_image_text') ?></span>
                             </div>
                         </div>
                     </div>
                     <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
-                    <h3><?php the_field('crf_location') ?></h3>
+                    <h3><?php the_field('taf_address') ?></h3>
                     <ul>
                         <li>Original Assessment:</li>
-                        <li><?php the_field('crf_initial_offer') ?></li>
+                        <li><?php the_field('taf_original_assestment') ?></li>
                     </ul>
                     <ul>
                         <li>Assessment After Appeal:</li>
-                        <li><?php the_field('crf_final_award') ?></li>
+                        <li><?php the_field('taf_assessment_after_appeal') ?></li>
                     </ul>
-                    <p><?php the_field('crf_short_description') ?></p>
                 </div>
 
             <?php endwhile; wp_reset_postdata(); ?>

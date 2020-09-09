@@ -223,6 +223,27 @@ add_action( 'init', 'tax_assestment_appeals' );
 
 
 
+// project update post type
+function project_update_post() {
+    register_post_type( 'project-update',
+        array(
+            'labels'    => array(
+                'name' => __( 'Project Updates' ),
+                'singular_name' => __('Project Update')
+            ),
+            'public'        => true,
+            'has_archive'   => true,
+            'show_in_rest'  => true,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+            //'rewrite' => array( 'slug' => 'practice-area', 'with_front' => true ),
+        )
+    );
+}
+add_action( 'init', 'project_update_post' );
+// project update post type
+
 
 
 

@@ -678,6 +678,9 @@
   .bio-copy .bio-education {
     font-size: 25px;
     color: #2e2e2e; }
+    .bio-copy .bio-education ul ul {
+      margin-left: 30px;
+      margin-top: 10px; }
   .bio-copy .bio-awards ul {
     margin: 0;
     padding: 0; }

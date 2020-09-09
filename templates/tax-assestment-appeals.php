@@ -19,20 +19,15 @@ get_header();
     <div class="grid-container margin-vertical-3">
         <div class="grid-x grid-margin-x rep-case-lists">
 
-            <?php 
-                $attorney =  array(
-                    'post_type' => 'tax-assestment',
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                );
-
-                $query = new WP_Query( $attorney );
-
-                $countQuery = $query->found_posts;
-
-                //$queryCount = wp_count_posts($query);
-                while ($query->have_posts()) : $query->the_post();
-             ?>
+        	<?php 
+			    $query = new WP_Query( array(
+			        'post_type' => 'tax-assestment',
+			        'post_status' => 'publish',
+			        'posts_per_page' => -1,
+			    ));
+			    $countQuery = $query->found_posts;
+			    while ($query->have_posts()) : $query->the_post();
+			?>
                 <div class="medium-6 large-6 cell grid-item">
                     <div class="box grid-x grid-padding-x margin-bottom-2">
                         <div class="cell small-12">

@@ -995,8 +995,8 @@ $color-xbrown: #6f4f2a;
             }
 
             .wp-block-group__inner-container{
-                flex: 1;
                 width: auto;
+                margin: 0;
             }
 
             @include media(max-width, 767px){

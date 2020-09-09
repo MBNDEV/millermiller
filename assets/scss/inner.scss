@@ -989,8 +989,10 @@ $color-xbrown: #6f4f2a;
             padding:0;
             figure{
                 padding: 0 15px;
+                width: 25%;
                 @include media(max-width, 767px){
                    margin: 15px 0;
+                   width: auto;
                 }
             }
 

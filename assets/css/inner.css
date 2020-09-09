@@ -604,6 +604,9 @@
       @media (max-width: 767px) {
         .bio-copy .bio-overview .partners-logo-flex .item {
           margin: 15px 0; } }
+    .bio-copy .bio-overview .partners-logo-flex .wp-block-group__inner-container {
+      flex: 1;
+      width: auto; }
     @media (max-width: 767px) {
       .bio-copy .bio-overview .partners-logo-flex {
         -ms-flex-pack: center;

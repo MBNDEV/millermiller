@@ -28,8 +28,8 @@ get_header();
 			    $countQuery = $query->found_posts;
 			    while ($query->have_posts()) : $query->the_post();
 			?>
-                <div class="medium-6 large-6 cell grid-item">
-                    <div class="box grid-x grid-padding-x margin-bottom-2">
+                <div class="medium-6 large-6 cell grid-item margin-bottom-1">
+                    <div class="box grid-x grid-padding-x margin-bottom-1">
                         <div class="cell small-12">
                             <div class="thumb">
                                 <div class="control-thumb">
@@ -43,7 +43,7 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
+                    <h2 class="margin-bottom-1"><?php the_title(); ?></h2>
                     <h3><?php the_field('taf_address') ?></h3>
                     <ul>
                         <li>Original Assessment:</li>

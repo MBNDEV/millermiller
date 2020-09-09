@@ -199,6 +199,29 @@ function case_representative_post() {
 add_action( 'init', 'case_representative_post' );
 // case_representative_post
 
+// tax_assestment_appeals
+function tax_assestment_appeals() {
+    register_post_type( 
+        'tax-assestment-appeal',
+        array(
+            'labels'    => array(
+                'name' => __( 'Tax Appeals' ),
+                'singular_name' => __('Tax Appeal')
+            ),
+            'public'        => true,
+            'publicly_queryable' => false,
+            'has_archive'   => false,
+            'show_in_rest'  => false,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'page-attributes'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+        )
+    );
+}
+add_action( 'init', 'tax_assestment_appeals' );
+// tax_assestment_appeals
+
+
 
 
 

@@ -80,7 +80,7 @@ get_header();
     </div>
 
     <?php 
-        $attyHasRC = [228, 237, 181, 235, 226];
+        $attyHasRC = [228, 237, 181, 235];
         $attyHasRC = in_array(get_the_ID(), $attyHasRC);
     ?>
     <section class="bio-content" id="bio">

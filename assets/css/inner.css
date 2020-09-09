@@ -591,6 +591,26 @@
         font-size: 0;
         display: block;
         height: 100%; }
+  .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 -15px 25px;
+    padding: 0; }
+    .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container figure {
+      padding: 0 15px;
+      width: 25%; }
+      @media (max-width: 767px) {
+        .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container figure {
+          margin: 15px 0;
+          width: auto; } }
+    @media (max-width: 767px) {
+      .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container {
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .bio-copy .bio-overview .partners-logo-flex {
     display: -ms-flexbox;
     display: flex;
@@ -604,6 +624,9 @@
       @media (max-width: 767px) {
         .bio-copy .bio-overview .partners-logo-flex .item {
           margin: 15px 0; } }
+    .bio-copy .bio-overview .partners-logo-flex .wp-block-group__inner-container {
+      width: auto;
+      margin: 0; }
     @media (max-width: 767px) {
       .bio-copy .bio-overview .partners-logo-flex {
         -ms-flex-pack: center;
@@ -654,9 +677,16 @@
       background: url(../img/icn-check.svg) no-repeat left 10px;
       padding: 0 0 0 26px;
       margin: 0 0 20px; }
+    .bio-copy .bio-affiliations ul ul {
+      margin-top: 10px; }
+      .bio-copy .bio-affiliations ul ul li {
+        margin-bottom: 10px; }
   .bio-copy .bio-education {
     font-size: 25px;
     color: #2e2e2e; }
+    .bio-copy .bio-education ul ul {
+      margin-left: 30px;
+      margin-top: 10px; }
   .bio-copy .bio-awards ul {
     margin: 0;
     padding: 0; }

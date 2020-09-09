@@ -199,6 +199,50 @@ function case_representative_post() {
 add_action( 'init', 'case_representative_post' );
 // case_representative_post
 
+// tax_assestment_appeals
+function tax_assestment_appeals() {
+    register_post_type( 
+        'tax-assestment',
+        array(
+            'labels'    => array(
+                'name' => __( 'Tax Appeals' ),
+                'singular_name' => __('Tax Appeal')
+            ),
+            'public'        => true,
+            'publicly_queryable' => false,
+            'has_archive'   => false,
+            'show_in_rest'  => false,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'page-attributes'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+        )
+    );
+}
+add_action( 'init', 'tax_assestment_appeals' );
+// tax_assestment_appeals
+
+
+
+// project update post type
+function project_update_post() {
+    register_post_type( 'project-update',
+        array(
+            'labels'    => array(
+                'name' => __( 'Project Updates' ),
+                'singular_name' => __('Project Update')
+            ),
+            'public'        => true,
+            'has_archive'   => true,
+            'show_in_rest'  => true,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+            'rewrite' => array( 'slug' => 'project-update', 'with_front' => true ),
+        )
+    );
+}
+add_action( 'init', 'project_update_post' );
+// project update post type
 
 
 

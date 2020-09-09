@@ -986,6 +986,7 @@ $color-xbrown: #6f4f2a;
             -ms-flex-align: center;
             align-items: center;
             margin: 0 -15px 25px;
+            padding:0;
             figure{
                 padding: 0 15px;
                 @include media(max-width, 767px){

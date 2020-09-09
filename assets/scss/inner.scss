@@ -1112,6 +1112,13 @@ $color-xbrown: #6f4f2a;
         font-size: 25px;
         color: $color-dark;
 
+        ul{
+            ul{
+                margin-left: 30px;
+                margin-top: 10px;
+            }
+        }
+
     }
 
     .bio-awards {

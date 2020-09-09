@@ -237,7 +237,7 @@ function project_update_post() {
             'menu_position' => 20,
             'supports'      =>  array('title', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
             'menu_icon'     => 'dashicons-editor-paragraph',
-            //'rewrite' => array( 'slug' => 'practice-area', 'with_front' => true ),
+            'rewrite' => array( 'slug' => 'project-update', 'with_front' => true ),
         )
     );
 }

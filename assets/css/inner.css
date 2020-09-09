@@ -591,6 +591,23 @@
         font-size: 0;
         display: block;
         height: 100%; }
+  .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 -15px 25px; }
+    .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container figure {
+      padding: 0 15px; }
+      @media (max-width: 767px) {
+        .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container figure {
+          margin: 15px 0; } }
+    @media (max-width: 767px) {
+      .bio-copy .bio-overview .partners-logo-group .wp-block-group__inner-container {
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .bio-copy .bio-overview .partners-logo-flex {
     display: -ms-flexbox;
     display: flex;

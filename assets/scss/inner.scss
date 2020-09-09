@@ -978,6 +978,27 @@ $color-xbrown: #6f4f2a;
             }
         }
 
+        .partners-logo-group .wp-block-group__inner-container{
+             display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            margin: 0 -15px 25px;
+            figure{
+                padding: 0 15px;
+                @include media(max-width, 767px){
+                   margin: 15px 0;
+                }
+            }
+
+            @include media(max-width, 767px){
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+        }
+
         .partners-logo-flex{
             display: -ms-flexbox;
             display: flex;

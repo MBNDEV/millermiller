@@ -51,7 +51,7 @@ get_header();
                         ));
                         while ($query->have_posts()) : $query->the_post();
                     ?>
-                        <div class="cell large-4 medium-6 small-12" data-filter="<?= get_field('county') ?>">
+                        <div class="cell large-4 medium-6 small-12 margin-bottom-3" data-filter="<?= get_field('county') ?>">
                             <article>
                                 <div class="wp-block-image">
                                     <?php if (get_the_post_thumbnail_url()): ?>

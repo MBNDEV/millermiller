@@ -25,12 +25,13 @@ get_header();
                             <a href="javascript:;" class="button-filter">Filter by County</a>
                             <div class="dropdown-lists">
                                 <ul>
-                                   <li><a href="javascript:;" data-filter="anne-arundel-county">Anne Arundel County</a></li>
-                                   <li><a href="javascript:;" data-filter="baltimore-city">Baltimore City</a></li>
-                                   <li><a href="javascript:;" data-filter="howard-county">Howard County</a></li>
-                                   <li><a href="javascript:;" data-filter="montgomery-county">Montgomery County</a></li>
-                                   <li><a href="javascript:;" data-filter="prince-george-county">Prince George’s County</a></li>
-                                   <li><a href="javascript:;" data-filter="st-marys-county">St. Mary’s County</a></li>
+                                   <li><a href="javascript:;">All</a></li>
+                                   <li><a href="javascript:;">Anne Arundel County</a></li>
+                                   <li><a href="javascript:;">Baltimore City</a></li>
+                                   <li><a href="javascript:;">Howard County</a></li>
+                                   <li><a href="javascript:;">Montgomery County</a></li>
+                                   <li><a href="javascript:;">Prince George’s County</a></li>
+                                   <li><a href="javascript:;">St. Mary’s County</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -39,7 +40,7 @@ get_header();
             </div>
         </div>
         
-        <div class="attorneys-list">
+        <div class="project-list">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x">
                     <?php 
@@ -50,9 +51,15 @@ get_header();
                         ));
                         while ($query->have_posts()) : $query->the_post();
                     ?>
-                        <div class="cell large-4 medium-6 small-12">
+                        <div class="cell large-4 medium-6 small-12" data-filter="<?= get_field('county') ?>">
                             <article>
-                                <div class="wp-block-image"></div>
+                                <div class="wp-block-image">
+                                    <?php if (get_the_post_thumbnail_url()): ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php else: ?>
+                                        <img src="https://via.placeholder.com/660x445/020202/111111?text=[no+thumnail]" alt="<?= get_field('county'); ?>" title="<?= get_field('county') ?>" />
+                                    <?php endif ?>
+                                </div>
                                 <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
                                 <small>County: <?php the_field('county') ?></small>
                             </article>
@@ -63,6 +70,32 @@ get_header();
         </div>
 
 </main>
+
+<script>
+    $(function(){
+
+        $('.proj-up-filter .dropdown-lists a').click(function(){
+            var selected = $(this).text().toLowerCase();
+            var filterTxt = $('.proj-up-filter .dropdown-lists').find('.button-filter');
+
+            if (selected == 'all') {
+                filterTxt.text('Filter by County');
+                $('.project .cell').show();
+            }else{
+                filterTxt.text(selected);
+
+                $('.project .cell').each(function(){
+                    var itmfilter = $(this).data('filter').toLowerCase();
+                    if (itmfilter == selected.toLowerCase()) {
+                        $(this).show();
+                    }else{
+                        $(this).hide();
+                    }
+                });
+            }
+        });
+    });
+</script>
 
 <?php
 

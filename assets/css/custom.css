@@ -1591,6 +1591,12 @@ main .contact-form p {
     height: 100%;
     object-fit: cover; }
 
+.project-content .sec-banner h2 {
+  font-size: 50px; }
+
+.project-content h1 {
+  font-size: 40px; }
+
 @media print {
   #header,
   #footer,

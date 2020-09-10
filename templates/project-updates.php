@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main id="content">
+<main id="content" class="project-content">
 	<?php
 	while ( have_posts() ) : the_post();
 		

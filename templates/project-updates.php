@@ -1,6 +1,6 @@
 <?php
 /**
-	Template Name: Attorneys Template
+	Template Name: Project Updates Template
  */
 
 get_header();

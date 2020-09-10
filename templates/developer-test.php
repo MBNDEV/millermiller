@@ -37,11 +37,10 @@ get_header();
                     'orderby' => 'name',
                     'order' => 'ASC',
                 ));
-                
+                while ($query->have_posts()) : $query->the_post();
             ?>
-            <pre>
-                <?php print_r($query) ?>
-            </pre>
+                <h6><small><?php the_title(); ?></small></h6>
+            <?php endwhile; wp_reset_postdata(); ?>
             
         </div>
 

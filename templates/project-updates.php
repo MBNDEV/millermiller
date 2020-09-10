@@ -40,7 +40,7 @@ get_header();
             </div>
         </div>
         
-        <div class="project-list">
+        <div class="project-list margin-top-3">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x">
                     <?php 
@@ -78,13 +78,15 @@ get_header();
             var selected = $(this).text().toLowerCase();
             var filterTxt = $('.proj-up-filter .dropdown-lists').find('.button-filter');
             console.log(selected);
+
+            filterElment = $('.project-list .cell');
             if (selected == 'all') {
                 filterTxt.text('Filter by County');
-                $('.project .cell').show();
+                filterElment.show();
             }else{
                 filterTxt.text(selected);
 
-                $('.project .cell').each(function(){
+                filterElment.each(function(){
                     var itmfilter = $(this).data('filter').toLowerCase();
                     if (itmfilter == selected.toLowerCase()) {
                         $(this).show();

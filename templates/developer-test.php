@@ -29,21 +29,20 @@ get_header();
             </form>
 
             <?php 
-                if( isset( $_REQUEST['search'] ) ) {
-                    query_posts( array(
-                        's' => $_REQUEST['search'],
-                        'post_type' =>  array($_REQUEST['post'], $_REQUEST['case-study']),
-                        'paged' => $paged
-                    ));
-
-                    if( have_posts() ) : while ( have_posts() ) :
-                        the_title();
-                        the_content();                      
-                    endwhile; endif;
-
-                    wp_reset_query(); 
-                }
+                $query = new WP_Query( array(
+                    'post_type' => array('post', 'case-study'),
+                    's' => 'litigation',
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1,
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                ));
+                
             ?>
+            <pre>
+                <?php print_r($query) ?>
+            </pre>
+            
         </div>
 
 

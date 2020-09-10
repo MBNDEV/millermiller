@@ -57,7 +57,7 @@ get_header();
                                     <?php if (get_the_post_thumbnail_url()): ?>
                                         <?php the_post_thumbnail(); ?>
                                     <?php else: ?>
-                                        <img src="https://via.placeholder.com/660x445/020202/111111?text=[no+thumnail]" alt="<?= get_field('county'); ?>" title="<?= get_field('county') ?>" />
+                                        <img src="https://via.placeholder.com/660x445/214b47/ffffff?text=[no+thumnail]" alt="<?= get_field('county'); ?>" title="<?= get_field('county') ?>" />
                                     <?php endif ?>
                                 </div>
                                 <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
@@ -77,7 +77,7 @@ get_header();
         $('.proj-up-filter .dropdown-lists a').click(function(){
             var selected = $(this).text().toLowerCase();
             var filterTxt = $('.proj-up-filter .dropdown-lists').find('.button-filter');
-
+            console.log(selected);
             if (selected == 'all') {
                 filterTxt.text('Filter by County');
                 $('.project .cell').show();

@@ -6,16 +6,18 @@ get_header();
 <main id="content">
     <div class="wp-block-group sec-banner">
         <div class="wp-block-group__inner-container">
-            <h1 class="hbg"><?php the_title(); ?></h1>
+            <h1 class="hbg"><?php the_field('county'); ?></h1>
         </div>
     </div>
 	<section class="page-content">
         <div class="grid-container">
-            <?php
-                while ( have_posts() ) : the_post();
-                    the_content();
-                endwhile; // End of the loop.
-            ?>      
+            <?php while ( have_posts() ) : the_post(); ?>
+
+                <h1> <?php the_title(); ?></h1>
+                <?php the_content(); ?>
+
+                
+            <?php endwhile;  ?>      
         </div>     
 	</section>
 </main>

@@ -17,7 +17,7 @@ get_header();
                         <?php if (get_the_post_thumbnail_url()): ?>
                             <?php the_post_thumbnail(); ?>
                         <?php else: ?>
-                            <img src="<?= esc_attr(catch_that_image()) ?>" alt="<?= the_title(); ?>">
+                           <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
                         <?php endif ?>
                     </div>
                 </div>

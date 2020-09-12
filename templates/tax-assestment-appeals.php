@@ -35,7 +35,7 @@ get_header();
                                 <div class="control-thumb">
                                     <?php $controlImageBefore = get_field('taf_thumbnail'); ?>
                                     <?php if ($controlImageBefore): ?>
-                                        <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                        <img src="<?= esc_url( $controlImageBefore['url'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
                                     <?php else: ?>
                                         <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
                                     <?php endif ?>

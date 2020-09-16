@@ -1585,3 +1585,38 @@ $color-xbrown: #6f4f2a;
         }
     }
 }
+
+.case-studies-content {
+    .page-content{
+        padding-top: 50px;
+    }
+}
+.search-form {
+    width: 360px;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 50px;
+
+    .group-fields{
+        display: flex;
+        align-items: stretch;
+
+        input{
+            margin: 0;
+            padding: 7px 20px;
+            height: 40px;
+            border-right: 0;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        button{
+            padding: 0px 15px;
+            line-height: 1;
+            cursor: pointer;
+            border: 2px solid #e0e0e0;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    }
+}

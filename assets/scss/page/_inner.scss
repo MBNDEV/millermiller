@@ -214,9 +214,12 @@ main {
 
 .blog{
 	.page-content{
-		padding: 100px 0 50px;
+		padding: 50px 0;
 	}
 } 
+.archive .page-content{
+	padding: 50px 0;
+}
 .page-content {
     padding: 100px 0;
 

@@ -34,7 +34,7 @@ get_header();
                             </div>
                             <h1><?php the_title(); ?></h1>    
                             <div class="content-issue padding-bottom-3">
-                                <h5>Issue:</h5>
+                                <h5><?= get_field('cs_case_issue_title') ? get_field('cs_case_issue_title') : 'Issue' ?>:</h5>
 
                                 <?php the_field('cs_issue'); ?>
                                 
@@ -51,7 +51,7 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell small-12 medium-2">
-                    <h2>Goal:</h2>
+                    <h2><?= get_field('cs_goal_title') ? get_field('cs_goal_title') : 'Goal' ?>:</h2>
                 </div>
                 <div class="cell small-12 medium-10">
                     <?php the_field('cs_goal') ?>
@@ -61,7 +61,7 @@ get_header();
 
             <div class="grid-x grid-margin-x">
                 <div class="cell small-12 medium-2">
-                    <h2>Success:</h2>
+                    <h2><?= get_field('cs_success_title') ? get_field('cs_success_title') : 'Success' ?>:</h2>
                 </div>
                 <div class="cell small-12 medium-10">
                     <?php the_field('cs_success') ?>

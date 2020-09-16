@@ -17,7 +17,7 @@ get_header();
     <div class="grid-container">
 
 
- 		<div class="grid-x grid-margin-x align-center">
+ 		<div class="grid-x grid-margin-x align-center blog-lists">
 
  			<?php 
  				$searchTerm = $_GET['search'];

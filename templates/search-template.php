@@ -36,12 +36,15 @@ get_header();
                         <div class="wp-block-image">
                         	<?php if (get_the_post_thumbnail()): ?>
 		                        <?php the_post_thumbnail(); ?>
+		                    <?php elseif (get_field('cs_thumbnail')): ?>
+		                     	<?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+	            				<img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
 		                    <?php else: ?>
 		                        <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
 		                        
 		                    <?php endif ?>
                         </div>
-                        <h6><?= get_post_type(); ?></h6>
+                        <h6><?= get_post_type() == 'case-study' ? 'Case Studdy' : 'News'; ?></h6>
                         <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
                         <small>
                             <?php 

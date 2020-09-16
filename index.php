@@ -66,8 +66,7 @@ get_header();
     </div>
     <section class="page-content">
         <div class="grid-container">
-            <div class="grid-x grid-margin-x blog-lists">
-
+            <div class="grid-x grid-margin-x">
                 <div class="cell medium-12">
                     <form action="/search-results" class="search-form" method="get">
                         <div class="group-fields">
@@ -80,6 +79,10 @@ get_header();
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="grid-x grid-margin-x blog-lists">
+
+                
 
                 <?php while ( have_posts() ) : the_post(); ?>
 

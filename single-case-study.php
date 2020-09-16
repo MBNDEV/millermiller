@@ -34,7 +34,7 @@ get_header();
                             </div>
                             <h1><?php the_title(); ?></h1>    
                             <div class="content-issue padding-bottom-3">
-                                <h5><?= get_field('cs_goal_title') ? get_field('cs_goal_title') : 'Issue' ?>:</h5>
+                                <h5><?= get_field('cs_case_issue_title') ? get_field('cs_case_issue_title') : 'Issue' ?>:</h5>
 
                                 <?php the_field('cs_issue'); ?>
                                 

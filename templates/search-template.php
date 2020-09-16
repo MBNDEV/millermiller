@@ -46,24 +46,28 @@ get_header();
                         </div>
                         <h6><?= get_post_type() == 'case-study' ? 'Case Studdy' : 'News'; ?></h6>
                         <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                        <small>
-                            <?php 
-                                $controlPostCategory = get_the_category(get_the_ID());
-                                $postCategoryLength = count($controlPostCategory);
-                                $postCtr = 1;
-                            ?>
-                            <?php foreach ($controlPostCategory as $pc): ?>
-                                <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
-                            <?php $postCtr++; endforeach; ?>
-                        </small>
+                        <?php if (get_the_category(get_the_ID())): ?>
+                        	<small>
+	                            <?php 
+	                                $controlPostCategory = get_the_category(get_the_ID());
+	                                $postCategoryLength = count($controlPostCategory);
+	                                $postCtr = 1;
+	                            ?>
+	                            <?php foreach ($controlPostCategory as $pc): ?>
+	                                <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
+	                            <?php $postCtr++; endforeach; ?>
+	                        </small>
+                        	
+                        <?php endif ?>
+                        
                         <?php if (get_field('cs_issue')): ?>
-                        	<p><b>Issue:</b> 
+                        	<small><b>Issue:</b> 
                                     <?php
                                         $sContent = strip_tags(get_field('cs_issue')); 
                                         $sContent = substr( $sContent, 0, 200 );
                                         $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
                                         echo $sContent;
-                                    ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a></p>
+                                    ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a></small>
                         <?php endif ?>
 					</article>
     			</div>

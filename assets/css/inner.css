@@ -974,7 +974,9 @@
       margin: 0;
       padding: 7px 20px;
       height: 40px;
-      border-right: 0; }
+      border-right: 0;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px; }
     .search-form .group-fields button {
       padding: 0px 15px;
       line-height: 1;

@@ -17,7 +17,7 @@ get_header();
     <div class="grid-container">
 
 
- 		<div class="grid-x grid-margin-x align-center blog-lists">
+ 		<div class="grid-x grid-margin-x align-center blog-lists margin-top-3 padding-top-3">
 
  			<?php 
  				$searchTerm = $_GET['search'];
@@ -32,7 +32,7 @@ get_header();
 			    while ($query->have_posts()) : $query->the_post();
 			?>
     			<div class="cell small-4 medium-4">
-    				<article>
+    				<article class="margin-bottom-3">
                         <div class="wp-block-image">
                         	<?php if (get_the_post_thumbnail()): ?>
 		                        <?php the_post_thumbnail(); ?>

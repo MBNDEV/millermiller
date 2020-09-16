@@ -32,7 +32,28 @@ get_header();
 			    while ($query->have_posts()) : $query->the_post();
 			?>
     			<div class="cell small-4 medium-4">
-    				<p><?php the_title(); ?></p>
+    				<article>
+                        <div class="wp-block-image">
+                        	<?php if (get_the_post_thumbnail()): ?>
+		                        <?php the_post_thumbnail(); ?>
+		                    <?php else: ?>
+		                        <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
+		                        
+		                    <?php endif ?>
+                        </div>
+                        <h6><?= get_post_type(); ?></h6>
+                        <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                        <small>
+                            <?php 
+                                $controlPostCategory = get_the_category(get_the_ID());
+                                $postCategoryLength = count($controlPostCategory);
+                                $postCtr = 1;
+                            ?>
+                            <?php foreach ($controlPostCategory as $pc): ?>
+                                <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
+                            <?php $postCtr++; endforeach; ?>
+                        </small>
+					</article>
     			</div>
     		<?php endwhile; wp_reset_postdata(); ?>
     	</div>

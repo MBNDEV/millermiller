@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main id="content">
+<main id="content" class="case-studies-content">
     <div class="wp-block-group sec-banner">
         <div class="wp-block-group__inner-container">
             <h1 class="hbg"><?php the_title(); ?></h1>
@@ -72,34 +72,11 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x case-lists align-center">
                 <div class="cell medium-12">
-                    <style>
-                        .search-form{
-                            width: 360px;
-                        }
-                        .search-form .group-fields{
-                            display: flex;
-                            align-items: stretch;
-                        }
-                        .search-form .group-fields input{
-                            margin: 0;
-                            padding: 7px 20px;
-                            height: 40px;
-                            border-right: 0;
-                        }
-                        .search-form .group-fields button{
-                            padding: 0px 15px;
-                            line-height: 1;
-                            cursor: pointer;
-                            border: 2px solid #e0e0e0;
-                            border-top-right-radius: 8px;
-                            border-bottom-right-radius: 8px;
-                        }
-                    </style>
                     <form action="" class="search-form">
                         <div class="group-fields">
                             <input type="text">
                             <button type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27.007" viewBox="0 0 27 27.007">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" viewBox="0 0 27 27.007">
                                     <path id="prefix__icn-search" d="M31.184 29.545l-7.509-7.58a10.7 10.7 0 1 0-1.624 1.645l7.46 7.53a1.156 1.156 0 0 0 1.631.042 1.163 1.163 0 0 0 .042-1.637zM15.265 23.7a8.45 8.45 0 1 1 5.977-2.475 8.4 8.4 0 0 1-5.977 2.475z" transform="translate(-4.5 -4.493)" style="fill:#333"/>
                                 </svg>
                             </button>

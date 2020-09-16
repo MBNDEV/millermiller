@@ -72,7 +72,30 @@ get_header();
         <div class="grid-container">
             <div class="grid-x grid-margin-x case-lists align-center">
                 <div class="cell medium-12">
-                    <form action="">
+                    <style>
+                        .search-form{
+                            width: 360px;
+                        }
+                        .search-form .group-fields{
+                            display: flex;
+                            align-items: stretch;
+                        }
+                        .search-form .group-fields input{
+                            margin: 0;
+                            padding: 7px 20px;
+                            height: 40px;
+                            border-right: 0;
+                        }
+                        .search-form .group-fields button{
+                            padding: 0px 15px;
+                            line-height: 1;
+                            cursor: pointer;
+                            border: 2px solid #e0e0e0;
+                            border-top-right-radius: 8px;
+                            border-bottom-right-radius: 8px;
+                        }
+                    </style>
+                    <form action="" class="search-form">
                         <div class="group-fields">
                             <input type="text">
                             <button type="submit">

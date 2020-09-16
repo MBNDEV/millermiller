@@ -19,11 +19,22 @@ get_header();
 
  		<div class="grid-x grid-margin-x align-center">
 
-    		<div class="cell small-12 medium-12">
-
-
-				
-    		</div>
+ 			<?php 
+ 				$searchTerm = $_GET['search'];
+			    $query = new WP_Query( array(
+			    	's' => $searchTerm,
+			        'post_type' => array( 'case-study', 'posts' ),
+			        'post_status' => 'publish',
+			        'posts_per_page' => -1,
+			        'orderby' => 'name',
+			        'order' => 'ASC',
+			    ));
+			    while ($query->have_posts()) : $query->the_post();
+			?>
+    			<div class="cell small-4 medium-4">
+    				<p><?php the_title(); ?></p>
+    			</div>
+    		<?php endwhile; wp_reset_postdata(); ?>
     	</div>
     </div>
 	

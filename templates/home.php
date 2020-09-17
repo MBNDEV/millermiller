@@ -129,7 +129,7 @@ get_header();
                  ?>
                     <div class="cases-item">
                         <figure>
-                            <a href="<?= get_the_template() ?>">
+                            <a href="<?= get_the_permalink() ?>">
                                 <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
                                 <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
                             </a>

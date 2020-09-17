@@ -89,13 +89,14 @@ get_header();
                     <div class="cell large-4 medium-6 small-12">
                         <article>
                             <div class="wp-block-image">
-                                <?php if (get_the_post_thumbnail()): ?>
-                                     <?php the_post_thumbnail(); ?>
-                                <?php else: ?>
-                                    <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
-                                    
-                                <?php endif ?>
-                               
+                                <a href="<?php echo get_the_permalink(); ?>">
+                                    <?php if (get_the_post_thumbnail()): ?>
+                                         <?php the_post_thumbnail(); ?>
+                                    <?php else: ?>
+                                        <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
+                                        
+                                    <?php endif ?>
+                                </a>
                             </div>
                             
                             <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>

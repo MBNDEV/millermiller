@@ -984,3 +984,6 @@
       border: 2px solid #e0e0e0;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px; }
+  @media (max-width: 554px) {
+    .search-form {
+      width: 100%; } }

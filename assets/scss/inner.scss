@@ -1619,4 +1619,8 @@ $color-xbrown: #6f4f2a;
             border-bottom-right-radius: 8px;
         }
     }
+
+    @include media(max-width, 554px){
+        width: 100%;
+    }
 }

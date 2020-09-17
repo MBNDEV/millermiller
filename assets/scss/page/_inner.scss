@@ -319,6 +319,15 @@ main {
 		    position: relative;
 		}
     }
+
+    .cell{
+    	.grid-x.align-right{
+    		@include media(max-width, 554px) {
+    		    -ms-flex-pack: center;
+    			justify-content: center;
+    		}
+    	}
+    }
 }
 .blog-lists{
 	article{

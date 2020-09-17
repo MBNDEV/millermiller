@@ -1006,6 +1006,10 @@ main .contact-form p {
       width: 100%; }
     .blog-filter .button-dropdown .button-filter.button-filter-active {
       position: relative; }
+  @media (max-width: 554px) {
+    .blog-filter .cell .grid-x.align-right {
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .blog-lists article img {
   width: 100%;

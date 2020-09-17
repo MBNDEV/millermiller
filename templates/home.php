@@ -129,8 +129,10 @@ get_header();
                  ?>
                     <div class="cases-item">
                         <figure>
-                            <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
-                            <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                            <a href="<?= get_the_template() ?>">
+                                <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+                                <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                            </a>
                         </figure>
                          <?php 
                             $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
@@ -174,7 +176,9 @@ get_header();
                  ?>
                      <li class="wow fadeInUp" data-wow-delay="0.<?= $ctrDelay; ?>s">
                         <div class="news-item">
-                            <?php the_post_thumbnail(); ?>
+                            <a href="<?= get_the_permalink(); ?>">
+                                <?php the_post_thumbnail(); ?>
+                            </a>
                             <h3><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <p>
                                 <?php

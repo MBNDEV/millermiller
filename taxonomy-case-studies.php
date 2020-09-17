@@ -93,8 +93,10 @@ get_header();
                     <div class="cell small-12 medium-4 case-item">
                         <article>
                             <div class="case-thumbnail">
-                                <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
-                                <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                                <a href="<?= get_the_permalink(); ?>">
+                                    <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+                                    <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                                </a>
                             </div>
                             <div class="case-content">
                                 <div class="category-lists">

@@ -54,11 +54,13 @@ get_header();
                         <div class="cell large-4 medium-6 small-12 margin-bottom-3" data-filter="<?= get_field('county') ?>">
                             <article>
                                 <div class="wp-block-image">
-                                    <?php if (get_the_post_thumbnail_url()): ?>
-                                        <?php the_post_thumbnail(); ?>
-                                    <?php else: ?>
-                                        <img src="/wp-content/uploads/2020/09/no-thumbnail-image.png" alt="<?= get_field('county'); ?>" title="<?= get_field('county') ?>" />
-                                    <?php endif ?>
+                                    <a href="<?= get_the_permalink(); ?>">
+                                        <?php if (get_the_post_thumbnail_url()): ?>
+                                            <?php the_post_thumbnail(); ?>
+                                        <?php else: ?>
+                                            <img src="/wp-content/uploads/2020/09/no-thumbnail-image.png" alt="<?= get_field('county'); ?>" title="<?= get_field('county') ?>" />
+                                        <?php endif ?>
+                                    </a>
                                 </div>
                                 <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
                                 <small>County: <?php the_field('county') ?></small>

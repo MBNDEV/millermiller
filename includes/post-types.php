@@ -132,6 +132,28 @@ add_action( 'init', 'attorney_testimonials_post' );
 // attorney_testimonials
 
 
+// miller miller canby testimonial
+function mmc_testimonials_post() {
+    register_post_type( 
+        'mmc_testimonial',
+        array(
+            'labels'    => array(
+                'name' => __( 'MM&C Testimonials' ),
+                'singular_name' => __('MM&C Testimonial')
+            ),
+            'public'        => true,
+            'publicly_queryable' => false,
+            'has_archive'   => false,
+            'show_in_rest'  => false,
+            'menu_position' => 20,
+            'supports'      =>  array('title', 'page-attributes'),
+            'menu_icon'     => 'dashicons-editor-paragraph',
+        )
+    );
+}
+add_action( 'init', 'mmc_testimonials_post' );
+// miller miller canby testimonial
+
 
 // attorney_partners_post
 function attorney_appellate_post() {

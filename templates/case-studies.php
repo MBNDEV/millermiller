@@ -136,7 +136,7 @@ get_header();
 	            				</div>
 	            				
 	            				<h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	            				<p><b>Issue:</b> 
+	            				<p><b><?= get_field('cs_case_issue_title') ? get_field('cs_case_issue_title') : 'Issue' ?>:</b> 
                                     <?php
                                         $sContent = strip_tags(get_field('cs_issue')); 
                                         $sContent = substr( $sContent, 0, 200 );

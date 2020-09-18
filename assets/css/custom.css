@@ -1616,6 +1616,9 @@ main .contact-form p {
 .project-content h1 {
   font-size: 40px; }
 
+.text-gray {
+  color: #707070 !important; }
+
 @media print {
   #header,
   #footer,

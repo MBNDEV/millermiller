@@ -57,12 +57,12 @@ get_header();
                                 <li>
                                     <span><img src="<?= get_template_directory_uri(); ?>/assets/img/icn-location.svg" alt="location" title="location"></span>
                                     <span>
-                                        <a href="https://goo.gl/maps/Dbvxrd4KgecodzgPA" target="_blank">200-B Monroe Street, <br>Rockville, MD 20850</a>
+                                        <a href="https://goo.gl/maps/Dbvxrd4KgecodzgPA" target="_blank" class="text-gray">200-B Monroe Street, <br>Rockville, MD 20850</a>
                                     </span>
                                 </li>
                                 <li>
                                     <span><img src="<?= get_template_directory_uri(); ?>/assets/img/icn-phone.svg" alt="location" title="location"></span>
-                                    <span><a href="tel:3017625212">301-762-5212</a></span>
+                                    <span><a href="tel:3017625212" class="text-gray">301-762-5212</a></span>
                                 </li>
                                 <li>
                                     <span><img src="<?= get_template_directory_uri(); ?>/assets/img/icn-fax.svg" alt="location" title="location"></span>

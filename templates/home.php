@@ -103,8 +103,10 @@ get_header();
                             while ($query->have_posts()) : $query->the_post();
                         ?>
 
-                            <div class="testi-item wow fadeInUp" data-wow-delay="0.<?= $ctrDelay; ?>s">
-                                <q><?php the_field('mmctf_testimony') ?> <cite><?php the_field('mmctf_author') ?></cite> </q>
+                            <div class="testi-item">
+                                <div class="wow fadeInUp" data-wow-delay="0.<?= $ctrDelay; ?>s">
+                                    <q><?php the_field('mmctf_testimony') ?> <cite><?php the_field('mmctf_author') ?></cite> </q>
+                                </div>
                             </div>
 
                         <?php $ctrDelay = $ctrDelay + 2; endwhile; wp_reset_postdata(); ?>

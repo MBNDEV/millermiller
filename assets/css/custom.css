@@ -1069,7 +1069,9 @@ main .contact-form p {
       padding-top: 50px; }
     @media (max-width: 556px) {
       .blog-header .blog-hero.case-study-detailed .breadcrumbs a {
-        font-size: 14px; } }
+        font-size: 14px; }
+        .blog-header .blog-hero.case-study-detailed .breadcrumbs a + a:before {
+          margin: 0 10px; } }
     @media (max-width: 420px) {
       .blog-header .blog-hero.case-study-detailed .breadcrumbs a {
         font-size: 12px; } }

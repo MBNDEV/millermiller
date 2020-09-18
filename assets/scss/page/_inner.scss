@@ -418,8 +418,13 @@ main {
         	
     		.breadcrumbs{
     			a{
+
     				@include media(max-width, 556px){
     					font-size: 14px;
+
+    					& + a:before{
+    						margin: 0 10px;
+    					}
     				}
     				@include media(max-width, 420px){
     					font-size: 12px;

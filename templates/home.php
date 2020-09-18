@@ -99,6 +99,7 @@ get_header();
                                 'post_type' => 'mmc_testimonial',
                                 'post_status' => 'publish',
                                 'posts_per_page' => -1,
+                                
                             ));
                             while ($query->have_posts()) : $query->the_post();
                         ?>

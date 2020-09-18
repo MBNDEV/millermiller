@@ -8701,6 +8701,10 @@ main .contact-form p {
       margin-left: 50px;
       width: 75%;
       padding: 100px 0 50px; }
+      @media (max-width: 556px) {
+        .blog-header .blog-hero .case-info {
+          width: 80%;
+          margin-left: 25px; } }
     .blog-header .blog-hero .blog-date {
       font-size: 15px;
       font-weight: 500; }

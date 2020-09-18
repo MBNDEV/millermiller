@@ -515,6 +515,11 @@ main {
 			margin-left: 50px;
 		    width: 75%;
 			padding: 100px 0 50px;
+
+			@include media(max-width, 556px){
+				width: 80%;
+				margin-left: 25px;
+			}
 		}
 
 		.blog-date{

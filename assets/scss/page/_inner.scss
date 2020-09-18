@@ -414,6 +414,21 @@ main {
             padding-top: 50px;
         }
 		
+        &.case-study-detailed{
+        	
+    		.breadcrumbs{
+    			a{
+    				@include media(max-width, 556px){
+    					font-size: 14px;
+    				}
+    				@include media(max-width, 420px){
+    					font-size: 12px;
+    				}
+    			}
+        	}
+        	
+        }
+
 		* {
     		position: relative;
 		    z-index: 20;

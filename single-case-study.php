@@ -49,24 +49,31 @@ get_header();
     
     <section class="page-content case-details">
         <div class="grid-container">
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-12 medium-2">
-                    <h2><?= get_field('cs_goal_title') ? get_field('cs_goal_title') : 'Goal' ?>:</h2>
+            <?php if (get_field('cs_goal')): ?>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-12 medium-2">
+                        <h2><?= get_field('cs_goal_title') ? get_field('cs_goal_title') : 'Goal' ?>:</h2>
+                    </div>
+                    <div class="cell small-12 medium-10">
+                        <?php the_field('cs_goal') ?>
+                    </div>
                 </div>
-                <div class="cell small-12 medium-10">
-                    <?php the_field('cs_goal') ?>
-                </div>
-            </div>
-            <div class="divider"></div>
 
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-12 medium-2">
-                    <h2><?= get_field('cs_success_title') ? get_field('cs_success_title') : 'Success' ?>:</h2>
+                <div class="divider"></div>
+            <?php endif ?>
+            <?php if (get_field('cs_success')): ?>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-12 medium-2">
+                        <h2><?= get_field('cs_success_title') ? get_field('cs_success_title') : 'Success' ?>:</h2>
+                    </div>
+                    <div class="cell small-12 medium-10">
+                        <?php the_field('cs_success') ?>
+                    </div>
                 </div>
-                <div class="cell small-12 medium-10">
-                    <?php the_field('cs_success') ?>
-                </div>
-            </div>
+            <?php endif ?>
+            
+
+            
             <div class="bottom-related-posts margin-top-3">
                     
                  <?php 

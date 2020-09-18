@@ -1512,14 +1512,14 @@ $color-xbrown: #6f4f2a;
 
     @include media(max-width, 480px){
         .attr-item {   
-            text-align: center;         
+            text-align: center;
+
             .img {
                 width: 170px;
                 margin: 0 auto 15px;
                 float: none;
                 display: block;
                 overflow: hidden;
-                
             }
     
             h4 {

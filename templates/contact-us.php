@@ -66,7 +66,7 @@ get_header();
                                 </li>
                                 <li>
                                     <span><img src="<?= get_template_directory_uri(); ?>/assets/img/icn-fax.svg" alt="location" title="location"></span>
-                                    <span><a href="tel:3017626044">301-762-6044</a></span>
+                                    <span>301-762-6044</span>
                                 </li>
                             </ul>
                         </div>

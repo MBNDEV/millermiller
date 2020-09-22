@@ -45,7 +45,21 @@ get_header();
 		                        
 		                    <?php endif ?>
                         </div>
-                        <h6><?= get_post_type() == 'case-study' ? 'Case Studdy' : 'News'; ?></h6>
+                        <?php if ($searchPost == 'case-study'): ?>
+                        	<div class="category-lists">
+            					<?php  $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies'); ?>
+                                <?php if ($controlPostCategory): ?>
+									<?php 
+                                	 	$postCategoryLength = count($controlPostCategory);
+                                    	$postCtr = 1;
+                                	 	foreach ($controlPostCategory as $pc): ?>
+	                                    
+	                                    <a href="<?= get_term_link($pc->term_id); ?>"><small><?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?></small></a>
+	                                <?php $postCtr++; endforeach; ?>
+                                <?php endif ?>
+            				</div>
+                        <?php endif ?>
+                        
                         <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
                         <?php if (get_the_category(get_the_ID())): ?>
                         	<small>

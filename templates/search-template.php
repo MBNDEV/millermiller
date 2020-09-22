@@ -36,10 +36,10 @@ get_header();
     				<article class="margin-bottom-3">
                         <div class="wp-block-image">
                         	<?php if (get_the_post_thumbnail()): ?>
-		                        <?php the_post_thumbnail(); ?>
+		                        <a href="<?= get_the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 		                    <?php elseif (get_field('cs_thumbnail')): ?>
 		                     	<?php $controlThumbnail = get_field('cs_thumbnail'); ?>
-	            				<img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+	            				<a href="<?= get_the_permalink(); ?>"><img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>"></a>
 		                    <?php else: ?>
 		                        <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
 		                        
@@ -59,7 +59,7 @@ get_header();
                                 <?php endif ?>
             				</div>
                         <?php endif ?>
-                        
+
                         <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
                         <?php if (get_the_category(get_the_ID())): ?>
                         	<small>

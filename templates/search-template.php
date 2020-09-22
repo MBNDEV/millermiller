@@ -21,9 +21,10 @@ get_header();
 
  			<?php 
  				$searchTerm = $_GET['search'];
+ 				$searchPost = $_GET['type'];
 			    $query = new WP_Query( array(
 			    	's' => $searchTerm,
-			        'post_type' => array( 'case-study', 'post' ),
+			        'post_type' => array( $searchPost ),
 			        'post_status' => 'publish',
 			        'posts_per_page' => -1,
 			        'orderby' => 'name',

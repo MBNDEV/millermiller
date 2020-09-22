@@ -71,6 +71,7 @@ get_header();
                     <form action="/search-results" class="search-form" method="get">
                         <div class="group-fields">
                             <input type="text" name="search" id="saerch">
+                            <input type="hidden" name="type" id="type" value="post">
                             <button type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" viewBox="0 0 27 27.007">
                                     <path id="prefix__icn-search" d="M31.184 29.545l-7.509-7.58a10.7 10.7 0 1 0-1.624 1.645l7.46 7.53a1.156 1.156 0 0 0 1.631.042 1.163 1.163 0 0 0 .042-1.637zM15.265 23.7a8.45 8.45 0 1 1 5.977-2.475 8.4 8.4 0 0 1-5.977 2.475z" transform="translate(-4.5 -4.493)" style="fill:#333"/>

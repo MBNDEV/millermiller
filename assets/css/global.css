@@ -8592,6 +8592,9 @@ main .contact-form p {
   .blog-lists article h5 a:hover {
     opacity: 0.8; }
 
+.blog-lists article p {
+  font-size: 18px; }
+
 .blog-lists article img {
   width: 100%; }
 

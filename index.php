@@ -101,6 +101,14 @@ get_header();
                             </div>
                             
                             <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <p class="margin-bottom-0">
+                                <?php
+                                    $sContent = strip_tags(get_the_content()); 
+                                    $sContent = substr( $sContent, 0, 165 );
+                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                    echo $sContent;
+                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
+                            </p>
                             <small>
                                 <?php 
                                     $controlPostCategory = get_the_category(get_the_ID());

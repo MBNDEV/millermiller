@@ -48,7 +48,6 @@ get_header();
 	            				<a href="<?= get_the_permalink(); ?>"><img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>"></a>
 		                    <?php else: ?>
 		                        <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
-		                        
 		                    <?php endif ?>
                         </div>
                         <?php if ($searchPost == 'case-study'): ?>
@@ -67,6 +66,16 @@ get_header();
                         <?php endif ?>
 
                         <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                        <?php if ($searchPost == 'post'): ?>
+                            <p class="margin-bottom-0">
+                                <?php
+                                    $sContent = strip_tags(get_the_content()); 
+                                    $sContent = substr( $sContent, 0, 80 );
+                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                    echo $sContent;
+                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
+                            </p>
+                        <?php endif ?> 
                         <?php if (get_the_category(get_the_ID())): ?>
                         	<small>
 	                            <?php 

@@ -75,20 +75,21 @@ get_header();
                                     echo $sContent;
                                 ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
                             </p>
+                             <?php if (get_the_category(get_the_ID())): ?>
+                                <small>
+                                    <?php 
+                                        $controlPostCategory = get_the_category(get_the_ID());
+                                        $postCategoryLength = count($controlPostCategory);
+                                        $postCtr = 1;
+                                    ?>
+                                    <?php foreach ($controlPostCategory as $pc): ?>
+                                        <a href="<?php echo get_term_link( $pc->term_id ); ?>"><?= $pc->name ?></a><?= $postCtr != $postCategoryLength ? ',' :''; ?>
+                                    <?php $postCtr++; endforeach; ?>
+                                </small>
+                                
+                            <?php endif ?>
                         <?php endif ?> 
-                        <?php if (get_the_category(get_the_ID())): ?>
-                        	<small>
-	                            <?php 
-	                                $controlPostCategory = get_the_category(get_the_ID());
-	                                $postCategoryLength = count($controlPostCategory);
-	                                $postCtr = 1;
-	                            ?>
-	                            <?php foreach ($controlPostCategory as $pc): ?>
-	                                <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
-	                            <?php $postCtr++; endforeach; ?>
-	                        </small>
-                        	
-                        <?php endif ?>
+                       
                         
                         <?php if (get_field('cs_issue')): ?>
                         	<small><b>Issue:</b> 

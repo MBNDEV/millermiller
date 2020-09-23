@@ -106,10 +106,9 @@ get_header();
                                     $controlPostCategory = get_the_category(get_the_ID());
                                     $postCategoryLength = count($controlPostCategory);
                                     $postCtr = 1;
-
                                 ?>
                                 <?php foreach ($controlPostCategory as $pc): ?>
-                                    <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
+                                    <a href="<?php echo get_term_link( $pc->term_id ); ?>"><?= $pc->name ?></a><?= $postCtr != $postCategoryLength ? ',' :''; ?>
                                 <?php $postCtr++; endforeach; ?>
                             </small>
                         </article>

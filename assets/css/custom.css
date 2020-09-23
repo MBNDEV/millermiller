@@ -1023,6 +1023,9 @@ main .contact-form p {
 .blog-lists article p {
   font-size: 18px; }
 
+.blog-lists article small {
+  font-size: 16px; }
+
 .blog-lists article img {
   width: 100%; }
 

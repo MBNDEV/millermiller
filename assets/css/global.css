@@ -8599,10 +8599,8 @@ main .contact-form p {
   width: 100%;
   display: block; }
 
-.blog-lists article h5 a {
-  color: #214b47; }
-  .blog-lists article h5 a:hover {
-    opacity: 0.8; }
+.blog-lists article h5 a:hover {
+  opacity: 0.8; }
 
 .blog-lists article small {
   font-size: 16px; }

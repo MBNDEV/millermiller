@@ -99,16 +99,7 @@ get_header();
                                     <?php endif ?>
                                 </a>
                             </div>
-                            
-                            <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                            <p class="margin-bottom-0">
-                                <?php
-                                    $sContent = strip_tags(get_the_content()); 
-                                    $sContent = substr( $sContent, 0, 80 );
-                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
-                                    echo $sContent;
-                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
-                            </p>
+
                             <small>
                                 <?php 
                                     $controlPostCategory = get_the_category(get_the_ID());
@@ -119,6 +110,17 @@ get_header();
                                     <a href="<?php echo get_term_link( $pc->term_id ); ?>"><?= $pc->name ?></a><?= $postCtr != $postCategoryLength ? ',' :''; ?>
                                 <?php $postCtr++; endforeach; ?>
                             </small>
+                            
+                            <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <p class="margin-bottom-0">
+                                <?php
+                                    $sContent = strip_tags(get_the_content()); 
+                                    $sContent = substr( $sContent, 0, 80 );
+                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                    echo $sContent;
+                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
+                            </p>
+                            
                         </article>
                     </div>
 

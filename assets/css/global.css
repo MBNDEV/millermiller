@@ -8522,6 +8522,9 @@ main .contact-form p {
       margin-bottom: 15px;
       margin-right: 2rem; }
 
+.search-results article h5 {
+  line-height: 1.8em; }
+
 .blog-filter {
   background-color: #2e2e2e;
   color: #fff;

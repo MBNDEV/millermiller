@@ -173,54 +173,69 @@ get_header();
     );
     $relPa = new WP_Query( $args ); ?>
 
-    <?php if($relPa->have_posts()): ?>
-    <div class="sec-pa-rel">
-        <div class="grid-container">
-            <div class="text-center">
-                <h2 class="hbg more_on">
-                    <span class="lblue">MORE ON <?php echo $terms[0]->name; ?></span></h2>
-            </div><br>
-        
-            
-            <div class="grid-x grid-margin-x practice-areas">        
-            
-                <?php 
-                    $ctrWowDelay = 2;
-                while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
-                <div class="cell large-4 medium-6 pa-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay;  ?>s">
-                    <figure>
-                    <a href="<?php the_permalink(); ?>">
-                    <?php 
-                        if ( has_post_thumbnail() ) {
-                            the_post_thumbnail();
-                        } else {
-                            echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />';
-                        }
-                    ?>
-                    </a>
-                    </figure>
-                    <h4 class="hbg">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </h4>
-                    <p class="excerpt">
-                        <?php
-                            $excerpt = get_the_excerpt(); 
-                            $excerpt = substr( $excerpt, 0, 165 );
-                            $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-                            echo $excerpt;
-                        ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
-                    </p>
-                </div>
-                <?php 
+        <?php if($relPa->have_posts()): ?>
+            <div class="sec-pa-rel">
+                <div class="grid-container">
+                    <div class="text-center">
+                        <h2 class="hbg more_on">
+                            <span class="lblue">MORE ON <?php echo $terms[0]->name; ?></span></h2>
+                    </div><br>
+                
                     
-                   $ctrWowDelay++;
-                ?>
-                <?php } ?>
+                    <div class="grid-x grid-margin-x practice-areas">        
+                    
+                        <?php 
+                            $ctrWowDelay = 2;
+                        while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
+                        <div class="cell large-4 medium-6 pa-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay;  ?>s">
+                            <figure>
+                            <a href="<?php the_permalink(); ?>">
+                            <?php 
+                                if ( has_post_thumbnail() ) {
+                                    the_post_thumbnail();
+                                } else {
+                                    echo '<img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="" />';
+                                }
+                            ?>
+                            </a>
+                            </figure>
+                            <h4 class="hbg">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h4>
+                            <p class="excerpt">
+                                <?php
+                                    $excerpt = get_the_excerpt(); 
+                                    $excerpt = substr( $excerpt, 0, 165 );
+                                    $excerpt = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                                    echo $excerpt;
+                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
+                            </p>
+                        </div>
+                        <?php 
+                            
+                           $ctrWowDelay++;
+                        ?>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php   endwhile;  wp_reset_postdata(); ?> 
+
+    <?php if (get_the_ID() == 277): ?>
+        <div class="sec-pa-rel" style="display: none">
+            <div class="grid-container">
+                <div class="text-center">
+                    <h2 class="hbg more_on">
+                        <span class="lblue">MORE ON <?php echo $terms[0]->name; ?></span></h2>
+                </div>
+                <br>
+
+                <div class="grid-x grid-margin-x practice-areas">
+                </div>
             </div>
         </div>
-    </div>
-    <?php endif; ?>
-    <?php   endwhile;  wp_reset_postdata(); ?> 
+    <?php endif ?>
 
     <div class="sec-subscribe-spa">
         <?php 

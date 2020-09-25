@@ -124,6 +124,8 @@
     margin-bottom: 0; }
   .sec-banner h2, .sec-banner h3, .sec-banner h4, .sec-banner h5, .sec-banner h6 {
     color: #a9d5d1; }
+  .sec-banner h5 {
+    color: #fff; }
   .sec-banner h1 {
     font-size: 50px;
     font-weight: 400;

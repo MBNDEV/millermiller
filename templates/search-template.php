@@ -32,7 +32,7 @@ get_header();
     <div class="grid-container">
 
 
- 		<div class="grid-x grid-margin-x align-center blog-lists margin-top-3 padding-top-3">
+ 		<div class="grid-x grid-margin-x align-center blog-lists margin-top-3 padding-top-3 search-results">
 
  			<?php 
  				

@@ -240,7 +240,7 @@ get_header();
                         while ($query->have_posts()) : $query->the_post();
                     ?>
 
-                        <div class="medium-6 large-6 cell grid-item">
+                        <div class="medium-6 large-6 cell">
                             <div class="box grid-x grid-padding-x margin-bottom-2">
                                 <div class="cell small-6">
                                     <div class="thumb">
@@ -287,14 +287,12 @@ get_header();
                     <?php endwhile; wp_reset_postdata(); ?>
                 </div>
 
-                <div class="grid-x grid-margin-x margin-top-3">
-                    <div class="text-center">
-                        <div class="wp-block-button">
-                            <a class="wp-block-button__link" href="/representative-cases/" id="loadMorePosts">More Representative Cases</a>
-                        </div>
+                <div class="text-center margin-top-2">
+                    <div class="wp-block-button">
+                        <a class="wp-block-button__link" href="/representative-cases/" id="loadMorePosts">More Representative Cases</a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     <?php endif ?>

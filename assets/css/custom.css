@@ -945,6 +945,15 @@ main .contact-form p {
   padding: 100px 0; }
   .page-content .blog-lists article {
     margin-bottom: 70px; }
+    .page-content .blog-lists article .wp-block-image {
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      overflow: hidden; }
+    .page-content .blog-lists article p {
+      font-size: 15px;
+      color: #818181;
+      font-weight: 500; }
     .page-content .blog-lists article h5 {
       line-height: 1.8em;
       margin-bottom: 15px;

@@ -226,6 +226,19 @@ main {
     .blog-lists article {
 	    margin-bottom: 70px;
 
+	    .wp-block-image{
+			padding-bottom: 56.25%;
+		    position: relative;
+		    height: 0;
+		    overflow: hidden;
+	    }
+
+	    p{
+			font-size: 15px;
+		    color: #818181;
+		    font-weight: 500;
+	    }
+
 	    h5{ 
 	        line-height: 1.8em;
 	        // margin-top: 40px;

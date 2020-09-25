@@ -96,6 +96,10 @@ get_header();
                                     <?php  if( get_field('af_practice_areas_items') ): ?>
                                     <li><a href="#practice-areas">Practice Areas</a></li>
                                     <?php endif; ?>
+
+                                    <?php  if( get_field('af_representative_trans_content') ): ?>
+                                    <li><a href="#representative-trans">Representative Transactions</a></li>
+                                    <?php endif; ?>
                                     
                                     <?php  if( get_field('fa_bar_admissions_content') ): ?>
                                     <li><a href="#bar-admissions">Bar Admissions</a></li>
@@ -131,10 +135,6 @@ get_header();
                                     
                                     <?php  if( $attyHasRC ): ?>
                                     <li><a href="#representative">Representative Cases</a></li>
-                                    <?php endif; ?>
-                                    
-                                    <?php  if( get_field('af_representative_trans_content') ): ?>
-                                    <li><a href="#representative-trans">Representative Transactions</a></li>
                                     <?php endif; ?>
                                     
                                     <?php  if( get_field('fa_case_studies_items') ): ?>
@@ -217,6 +217,25 @@ get_header();
                                 <?php wp_reset_postdata(); ?>
                             </ul>
                         </div>
+                        <?php endif; ?>
+
+
+                        <?php if(get_field('af_representative_trans_content') != "") : ?>
+                        <hr>
+                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans"   data-offset="180">
+                            <div class="text-center-medium">
+                                <h2 class="hbg">Representative Transactions</h2>
+                            </div>
+                            <?php the_field('af_representative_trans_content'); ?>
+                        </div>
+
+                        <script>
+                            jQuery(function(){
+                                jQuery('.bio-reptrans ul li .title').click(function(){
+                                    jQuery(this).parent().toggleClass('active');
+                                });
+                            });
+                        </script>
                         <?php endif; ?>
 
 
@@ -422,23 +441,7 @@ get_header();
                         <?php endif; ?>
 
 
-                        <?php if(get_field('af_representative_trans_content') != "") : ?>
-                        <hr>
-                        <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans"   data-offset="180">
-                            <div class="text-center-medium">
-                                <h2 class="hbg">Representative Transactions</h2>
-                            </div>
-                            <?php the_field('af_representative_trans_content'); ?>
-                        </div>
-
-                        <script>
-                            jQuery(function(){
-                                jQuery('.bio-reptrans ul li .title').click(function(){
-                                    jQuery(this).parent().toggleClass('active');
-                                });
-                            });
-                        </script>
-                        <?php endif; ?>
+                        
 
 
                         <?php 

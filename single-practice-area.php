@@ -187,7 +187,7 @@ get_header();
                 <?php 
                     $ctrWowDelay = 2;
                 while ( $relPa->have_posts() ) { $relPa->the_post(); ?>
-                <div class="cell large-4 medium-6 pa-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay ?>s">
+                <div class="cell large-4 medium-6 pa-item wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay == 10 ? 2 : $ctrWowDelay;  ?>s">
                     <figure>
                     <a href="<?php the_permalink(); ?>">
                     <?php 
@@ -211,7 +211,14 @@ get_header();
                         ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
                     </p>
                 </div>
-                <?php $ctrWowDelay++; ?>
+                <?php 
+                    
+                    if ($ctrWowDelay == 10) {
+                        $ctrWowDelay = 0
+                    }else{
+                        $ctrWowDelay++;
+                    }
+                ?>
                 <?php } ?>
             </div>
         </div>

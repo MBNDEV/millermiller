@@ -227,6 +227,10 @@ $color-xbrown: #6f4f2a;
 		color: $color-lgreen;
 	}
 
+    h5{
+        color: $color-white;
+    }
+
 	h1 {
 		font-size: 50px;
 		font-weight: 400;
@@ -1303,7 +1307,7 @@ $color-xbrown: #6f4f2a;
 
     &:before {
         content: "";
-        background-image: linear-gradient(to bottom, #214b47, rgba(25, 52, 49, 0) 158%);
+        // background-image: linear-gradient(to bottom, #214b47, rgba(25, 52, 49, 0) 158%);
         position: absolute;
         left: 0;
         right: 0;
@@ -1348,7 +1352,8 @@ $color-xbrown: #6f4f2a;
             padding: 0 15px;
 
             & + a {
-                border-left: 1px solid $color-gray-300;
+                // border-left: 1px solid $color-gray-300;
+                border-left: 1px solid $color-white;
             }
         }
     }
@@ -1512,12 +1517,14 @@ $color-xbrown: #6f4f2a;
 
     @include media(max-width, 480px){
         .attr-item {   
-            text-align: center;         
+            text-align: center;
+
             .img {
                 width: 170px;
                 margin: 0 auto 15px;
                 float: none;
                 display: block;
+                overflow: hidden;
             }
     
             h4 {
@@ -1618,5 +1625,9 @@ $color-xbrown: #6f4f2a;
             border-top-right-radius: 8px;
             border-bottom-right-radius: 8px;
         }
+    }
+
+    @include media(max-width, 554px){
+        width: 100%;
     }
 }

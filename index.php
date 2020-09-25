@@ -66,12 +66,12 @@ get_header();
     </div>
     <section class="page-content">
         <div class="grid-container">
-            <div class="grid-x grid-margin-x blog-lists">
-
+            <div class="grid-x grid-margin-x">
                 <div class="cell medium-12">
                     <form action="/search-results" class="search-form" method="get">
                         <div class="group-fields">
                             <input type="text" name="search" id="saerch">
+                            <input type="hidden" name="type" id="type" value="post">
                             <button type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" viewBox="0 0 27 27.007">
                                     <path id="prefix__icn-search" d="M31.184 29.545l-7.509-7.58a10.7 10.7 0 1 0-1.624 1.645l7.46 7.53a1.156 1.156 0 0 0 1.631.042 1.163 1.163 0 0 0 .042-1.637zM15.265 23.7a8.45 8.45 0 1 1 5.977-2.475 8.4 8.4 0 0 1-5.977 2.475z" transform="translate(-4.5 -4.493)" style="fill:#333"/>
@@ -80,33 +80,47 @@ get_header();
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="grid-x grid-margin-x blog-lists">
+
+                
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
                     <div class="cell large-4 medium-6 small-12">
                         <article>
                             <div class="wp-block-image">
-                                <?php if (get_the_post_thumbnail()): ?>
-                                     <?php the_post_thumbnail(); ?>
-                                <?php else: ?>
-                                    <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
-                                    
-                                <?php endif ?>
-                               
+                                <a href="<?php echo get_the_permalink(); ?>">
+                                    <?php if (get_the_post_thumbnail()): ?>
+                                         <?php the_post_thumbnail(); ?>
+                                    <?php else: ?>
+                                        <img width="214" height="87" src="/wp-content/uploads/2020/08/mmc_logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="mmc_logo">
+                                        
+                                    <?php endif ?>
+                                </a>
                             </div>
-                            
-                            <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+
                             <small>
                                 <?php 
                                     $controlPostCategory = get_the_category(get_the_ID());
                                     $postCategoryLength = count($controlPostCategory);
                                     $postCtr = 1;
-
                                 ?>
                                 <?php foreach ($controlPostCategory as $pc): ?>
-                                    <?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?>
+                                    <a href="<?php echo get_term_link( $pc->term_id ); ?>"><?= $pc->name ?></a><?= $postCtr != $postCategoryLength ? ',' :''; ?>
                                 <?php $postCtr++; endforeach; ?>
                             </small>
+                            
+                            <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <p class="margin-bottom-0">
+                                <?php
+                                    $sContent = strip_tags(get_the_content()); 
+                                    $sContent = substr( $sContent, 0, 80 );
+                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                    echo $sContent;
+                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
+                            </p>
+                            
                         </article>
                     </div>
 

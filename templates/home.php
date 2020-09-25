@@ -93,21 +93,25 @@ get_header();
                 </div>
                 <div class="cell large-6">
                     <div class="testi-slider">
-                        <div class="testi-item wow fadeInUp" data-wow-delay="0.3s">
-                            <q>From the moment I picked up the phone and called Miller, Miller & Canby, I knew I was talking to the right people.
-                                <cite>Carole Daffron</cite>
-                            </q>
-                        </div>
-                        <div class="testi-item wow fadeInUp" data-wow-delay="0.4s">
-                            <q>For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
-                                <cite>Paul Chod, Minkoff Development Corp.</cite>
-                            </q>
-                        </div>
-                        <div class="testi-item wow fadeInUp" data-wow-delay="0.5s">
-                            <q>For more than 30 years, MM&C has helped us reach our objectives in the most effective and cost-efficient manner possible.
-                                <cite>Paul Chod, Minkoff Development Corp.</cite>
-                            </q>
-                        </div>
+                        <?php 
+                            $ctrDelay = 2;
+                            $query = new WP_Query( array(
+                                'post_type' => 'mmc_testimonial',
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1,
+                                
+                            ));
+                            while ($query->have_posts()) : $query->the_post();
+                        ?>
+
+                            <div class="testi-item">
+                                <div class="wow fadeInUp" data-wow-delay="0.<?= $ctrDelay; ?>s">
+                                    <q><?php the_field('mmctf_testimony') ?> <cite><?php the_field('mmctf_author') ?></cite> </q>
+                                </div>
+                            </div>
+
+                        <?php $ctrDelay = $ctrDelay + 2; endwhile; wp_reset_postdata(); ?>
+
                     </div>
                 </div>
             </div>
@@ -129,8 +133,10 @@ get_header();
                  ?>
                     <div class="cases-item">
                         <figure>
-                            <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
-                            <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                            <a href="<?= get_the_permalink() ?>">
+                                <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+                                <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                            </a>
                         </figure>
                          <?php 
                             $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
@@ -174,7 +180,9 @@ get_header();
                  ?>
                      <li class="wow fadeInUp" data-wow-delay="0.<?= $ctrDelay; ?>s">
                         <div class="news-item">
-                            <?php the_post_thumbnail(); ?>
+                            <a href="<?= get_the_permalink(); ?>">
+                                <?php the_post_thumbnail(); ?>
+                            </a>
                             <h3><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <p>
                                 <?php

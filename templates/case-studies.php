@@ -75,6 +75,7 @@ get_header();
                     <form action="/search-results" class="search-form" method="get">
                         <div class="group-fields">
                             <input type="text" name="search" id="saerch">
+                            <input type="hidden" name="type" id="type" value="case-study">
                             <button type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" viewBox="0 0 27 27.007">
                                     <path id="prefix__icn-search" d="M31.184 29.545l-7.509-7.58a10.7 10.7 0 1 0-1.624 1.645l7.46 7.53a1.156 1.156 0 0 0 1.631.042 1.163 1.163 0 0 0 .042-1.637zM15.265 23.7a8.45 8.45 0 1 1 5.977-2.475 8.4 8.4 0 0 1-5.977 2.475z" transform="translate(-4.5 -4.493)" style="fill:#333"/>
@@ -111,8 +112,10 @@ get_header();
 					<div class="cell small-12 medium-4 case-item">
 	            		<article>
 	            			<div class="case-thumbnail">
-	            				<?php $controlThumbnail = get_field('cs_thumbnail'); ?>
-	            				<img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                                <a href="<?= get_the_permalink(); ?>">
+	            				   <?php $controlThumbnail = get_field('cs_thumbnail'); ?>
+	            				   <img src="<?= esc_url( $controlThumbnail['url'] ); ?>" alt="<?= esc_attr( $controlThumbnail['alt'] ); ?>" title="<?= esc_attr( $controlThumbnail['alt'] ); ?>">
+                                </a>
 	            			</div>
 	            			<div class="case-content">
 	            				<div class="category-lists">
@@ -134,7 +137,7 @@ get_header();
 	            				</div>
 	            				
 	            				<h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	            				<p><b>Issue:</b> 
+	            				<p><b><?= get_field('cs_case_issue_title') ? get_field('cs_case_issue_title') : 'Issue' ?>:</b> 
                                     <?php
                                         $sContent = strip_tags(get_field('cs_issue')); 
                                         $sContent = substr( $sContent, 0, 200 );

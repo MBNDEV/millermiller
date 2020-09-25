@@ -15,23 +15,25 @@
  
             <div class="grid-x grid-margin-x">
                 <div class="cell large-3">
-                    <div class="foot-logo"><img src="<?php bloginfo('template_url') ?>/assets/img/logo3.png" alt=""></div>
+                    <div class="foot-logo">
+                        <img src="<?php bloginfo('template_url') ?>/assets/img/logo3.png" alt="miller miller canby logo" title="miller miller canby">
+                    </div>
                 </div>
                 <div class="cell large-4">
                     <div class="control-website-info">
                         <ul class="foot-info">
                             <li class="loc">
                                 <i class="icn-location light"></i> 
-                                <a href="#" target="_blank">200-B Monroe Street, Rockville, MD 20850 </a>
+                                <a href="https://goo.gl/maps/Dbvxrd4KgecodzgPA" target="_blank">200-B Monroe Street, Rockville, MD 20850 </a>
                             </li>
                             <li class="ph">
                                 <i class="icn-phone light"></i> 
-                                <a href="tel:480 648 0017">301-762-5212</a>
+                                <a href="tel:3017625212">301-762-5212</a>
                             </li>
                         </ul>
                         
                         <div class="foot-social">
-                            <a class="foot-pay" href="#"><img src="<?php bloginfo('template_url') ?>/assets/img/logo-payonline.png" alt=""></a>
+                            <a class="foot-pay" href="https://secure.lawpay.com/pages/millermillercanby/operating" target="_blank"><img src="<?php bloginfo('template_url') ?>/assets/img/logo-payonline.png" alt=""></a>
                             <span>CONNECT WITH US:</span>
                             <a href="https://www.linkedin.com/company/2743058?trk=prof-exp-company-name" target="_blank">
                                 <img src="<?php bloginfo('template_url') ?>/assets/img/icn-instagram.svg" alt="">                        

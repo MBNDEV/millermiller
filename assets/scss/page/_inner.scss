@@ -228,11 +228,15 @@ main {
 
 	    h5{ 
 	        line-height: 1.8em;
-	        margin-top: 40px;
+	        // margin-top: 40px;
 	        margin-bottom: 15px;
 	        margin-right: 2rem;
 	    }
 	}
+}
+
+.search-results article h5{
+	line-height: 1.8em;
 }
 
 .blog-filter{
@@ -319,6 +323,15 @@ main {
 		    position: relative;
 		}
     }
+
+    .cell{
+    	.grid-x.align-right{
+    		@include media(max-width, 554px) {
+    		    -ms-flex-pack: center;
+    			justify-content: center;
+    		}
+    	}
+    }
 }
 .blog-lists{
 	article{
@@ -332,6 +345,12 @@ main {
 			&:hover{
 				opacity: 0.8;
 			}
+		}
+		p{
+			font-size: 18px;
+		}
+		small{
+			font-size: 16px;
 		}
 	}
 }
@@ -405,6 +424,26 @@ main {
             padding-top: 50px;
         }
 		
+        &.case-study-detailed{
+        	
+    		.breadcrumbs{
+    			a{
+
+    				@include media(max-width, 556px){
+    					font-size: 14px;
+
+    					& + a:before{
+    						margin: 0 10px;
+    					}
+    				}
+    				@include media(max-width, 420px){
+    					font-size: 12px;
+    				}
+    			}
+        	}
+        	
+        }
+
 		* {
     		position: relative;
 		    z-index: 20;
@@ -486,6 +525,11 @@ main {
 			margin-left: 50px;
 		    width: 75%;
 			padding: 100px 0 50px;
+
+			@include media(max-width, 556px){
+				width: 80%;
+				margin-left: 25px;
+			}
 		}
 
 		.blog-date{
@@ -1291,6 +1335,10 @@ main {
 	h1{
 		font-size: 40px;
 	}
+}
+
+.text-gray{
+	color: $color-gray-400 !important;
 }
 
 

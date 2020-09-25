@@ -8519,9 +8519,11 @@ main .contact-form p {
     margin-bottom: 70px; }
     .page-content .blog-lists article h5 {
       line-height: 1.8em;
-      margin-top: 40px;
       margin-bottom: 15px;
       margin-right: 2rem; }
+
+.search-results article h5 {
+  line-height: 1.8em; }
 
 .blog-filter {
   background-color: #2e2e2e;
@@ -8578,6 +8580,10 @@ main .contact-form p {
       width: 100%; }
     .blog-filter .button-dropdown .button-filter.button-filter-active {
       position: relative; }
+  @media (max-width: 554px) {
+    .blog-filter .cell .grid-x.align-right {
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .blog-lists article img {
   width: 100%;
@@ -8587,6 +8593,12 @@ main .contact-form p {
   color: #404040; }
   .blog-lists article h5 a:hover {
     opacity: 0.8; }
+
+.blog-lists article p {
+  font-size: 18px; }
+
+.blog-lists article small {
+  font-size: 16px; }
 
 .blog-lists article img {
   width: 100%; }
@@ -8635,6 +8647,14 @@ main .contact-form p {
       top: initial;
       left: initial;
       padding-top: 50px; }
+    @media (max-width: 556px) {
+      .blog-header .blog-hero.case-study-detailed .breadcrumbs a {
+        font-size: 14px; }
+        .blog-header .blog-hero.case-study-detailed .breadcrumbs a + a:before {
+          margin: 0 10px; } }
+    @media (max-width: 420px) {
+      .blog-header .blog-hero.case-study-detailed .breadcrumbs a {
+        font-size: 12px; } }
     .blog-header .blog-hero * {
       position: relative;
       z-index: 20; }
@@ -8689,6 +8709,10 @@ main .contact-form p {
       margin-left: 50px;
       width: 75%;
       padding: 100px 0 50px; }
+      @media (max-width: 556px) {
+        .blog-header .blog-hero .case-info {
+          width: 80%;
+          margin-left: 25px; } }
     .blog-header .blog-hero .blog-date {
       font-size: 15px;
       font-weight: 500; }
@@ -9171,6 +9195,9 @@ main .contact-form p {
 
 .project-content h1 {
   font-size: 40px; }
+
+.text-gray {
+  color: #707070 !important; }
 
 @media print {
   #header,

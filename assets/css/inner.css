@@ -124,6 +124,8 @@
     margin-bottom: 0; }
   .sec-banner h2, .sec-banner h3, .sec-banner h4, .sec-banner h5, .sec-banner h6 {
     color: #a9d5d1; }
+  .sec-banner h5 {
+    color: #fff; }
   .sec-banner h1 {
     font-size: 50px;
     font-weight: 400;
@@ -784,7 +786,6 @@
   min-height: 518px; }
   .sec-banner.spa:before {
     content: "";
-    background-image: linear-gradient(to bottom, #214b47, rgba(25, 52, 49, 0) 158%);
     position: absolute;
     left: 0;
     right: 0;
@@ -819,7 +820,7 @@
       color: #f2f2f2;
       padding: 0 15px; }
       .sec-banner.spa .breadcrumbs a + a {
-        border-left: 1px solid #818181; }
+        border-left: 1px solid #fff; }
   @media (max-width: 639px) {
     .sec-banner.spa .breadcrumbs {
       font-size: 15px;
@@ -923,7 +924,8 @@
         width: 170px;
         margin: 0 auto 15px;
         float: none;
-        display: block; }
+        display: block;
+        overflow: hidden; }
       .sec-pa-attr .attr-item h4 {
         margin-top: 0; } }
 
@@ -984,3 +986,6 @@
       border: 2px solid #e0e0e0;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px; }
+  @media (max-width: 554px) {
+    .search-form {
+      width: 100%; } }

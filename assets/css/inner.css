@@ -820,7 +820,7 @@
       color: #f2f2f2;
       padding: 0 15px; }
       .sec-banner.spa .breadcrumbs a + a {
-        border-left: 1px solid #818181; }
+        border-left: 1px solid #fff; }
   @media (max-width: 639px) {
     .sec-banner.spa .breadcrumbs {
       font-size: 15px;

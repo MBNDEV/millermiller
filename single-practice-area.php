@@ -230,9 +230,71 @@ get_header();
                         <span class="lblue">MORE ON <?php echo $terms[0]->name; ?></span></h2>
                 </div>
                 <br>
+                <div class="grid-x grid-margin-x rep-case-lists">
+                    <?php 
+                        $query = new WP_Query( array(
+                            'post_type' => 'case-representative',
+                            'post_status' => 'publish',
+                            'posts_per_page' => 2,
+                        ));
+                        while ($query->have_posts()) : $query->the_post();
+                    ?>
 
-                <div class="grid-x grid-margin-x practice-areas">
+                        <div class="medium-6 large-6 cell grid-item">
+                            <div class="box grid-x grid-padding-x margin-bottom-2">
+                                <div class="cell small-6">
+                                    <div class="thumb">
+                                        <div class="control-thumb">
+                                            <?php $controlImageBefore = get_field('crf_before_image'); ?>
+                                            <?php if ($controlImageBefore): ?>
+                                                <img src="<?= esc_url( $controlImageBefore['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageBefore['alt'] ); ?>"  title="<?= esc_attr( $controlImageBefore['alt'] ); ?>">
+                                            <?php else: ?>
+                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                            <?php endif ?>
+                                        </div>
+                                        
+                                        <span><?= get_field('crf_before_image_text') ?></span>
+                                    </div>
+                                </div>
+                                <div class="cell small-6">
+                                    <div class="thumb">
+                                        <div class="control-thumb">
+                                             <?php $controlImageAfter = get_field('crf_after_image'); ?>
+                                            <?php if ($controlImageAfter): ?>
+                                                <img src="<?= esc_url( $controlImageAfter['sizes']['medium'] ); ?>" alt="<?= esc_attr( $controlImageAfter['alt'] ); ?>"  title="<?= esc_attr( $controlImageAfter['alt'] ); ?>">
+                                            <?php else: ?>
+                                                <img src="https://via.placeholder.com/450x242/f0f0f0/cccccc?text=[no+thumnail]" alt="placeholder" title="placeholder" />
+                                            <?php endif ?>
+                                        </div>
+                                        
+                                        <span><?= get_field('crf_after_image_text'); ?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="margin-bottom-2"><?php the_title(); ?></h2>
+                            <h3><?php the_field('crf_location') ?></h3>
+                            <ul>
+                                <li>Initial Offer:</li>
+                                <li><?php the_field('crf_initial_offer') ?></li>
+                            </ul>
+                            <ul>
+                                <li>Final Award:</li>
+                                <li><?php the_field('crf_final_award') ?></li>
+                            </ul>
+                            <p><?php the_field('crf_short_description') ?></p>
+                        </div>
+
+                    <?php endwhile; wp_reset_postdata(); ?>
                 </div>
+
+                <div class="grid-x grid-margin-x margin-top-3">
+                    <div class="text-center">
+                        <div class="wp-block-button">
+                            <a class="wp-block-button__link" href="/representative-cases/" id="loadMorePosts">More Representative Cases</a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     <?php endif ?>

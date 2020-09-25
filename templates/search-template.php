@@ -86,7 +86,7 @@ get_header();
                             <p class="margin-bottom-0">
                                 <?php
                                     $sContent = strip_tags(get_the_content()); 
-                                    $sContent = substr( $sContent, 0, 80 );
+                                    $sContent = substr( $sContent, 0, 150 );
                                     $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
                                     echo $sContent;
                                 ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>

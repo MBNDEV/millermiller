@@ -943,12 +943,22 @@ main .contact-form p {
 
 .page-content {
   padding: 100px 0; }
-  .page-content .blog-lists article {
-    margin-bottom: 70px; }
-    .page-content .blog-lists article h5 {
-      line-height: 1.8em;
-      margin-bottom: 15px;
-      margin-right: 2rem; }
+
+.blog-lists article {
+  margin-bottom: 70px; }
+  .blog-lists article .wp-block-image {
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    overflow: hidden; }
+  .blog-lists article p {
+    font-size: 15px;
+    color: #818181;
+    font-weight: 500; }
+  .blog-lists article h5 {
+    line-height: 1.8em;
+    margin-bottom: 15px;
+    margin-right: 2rem; }
 
 .search-results article h5 {
   line-height: 1.8em; }
@@ -1017,13 +1027,8 @@ main .contact-form p {
   width: 100%;
   display: block; }
 
-.blog-lists article h5 a {
-  color: #404040; }
-  .blog-lists article h5 a:hover {
-    opacity: 0.8; }
-
-.blog-lists article p {
-  font-size: 18px; }
+.blog-lists article h5 a:hover {
+  opacity: 0.8; }
 
 .blog-lists article small {
   font-size: 16px; }

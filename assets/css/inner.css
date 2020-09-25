@@ -301,6 +301,13 @@
         .attorneys-list .attorney-item .attorney-pa a:hover {
           color: #397670; }
 
+.single-attorney .bio-header p {
+  font-weight: bold;
+  width: 90%; }
+  @media (max-width: 1023px) {
+    .single-attorney .bio-header p {
+      width: 100%; } }
+
 .bio-header {
   background: #2a5c57;
   color: #fff;
@@ -318,7 +325,7 @@
     letter-spacing: 3px; }
   .bio-header p {
     font-weight: bold;
-    width: 70%; }
+    width: 90%; }
     @media (max-width: 1023px) {
       .bio-header p {
         width: 100%; } }

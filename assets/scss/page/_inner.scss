@@ -222,17 +222,30 @@ main {
 }
 .page-content {
     padding: 100px 0;
+}
 
-    .blog-lists article {
-	    margin-bottom: 70px;
+.blog-lists article {
+    margin-bottom: 70px;
 
-	    h5{ 
-	        line-height: 1.8em;
-	        // margin-top: 40px;
-	        margin-bottom: 15px;
-	        margin-right: 2rem;
-	    }
-	}
+    .wp-block-image{
+		padding-bottom: 56.25%;
+	    position: relative;
+	    height: 0;
+	    overflow: hidden;
+    }
+
+    p{
+		font-size: 15px;
+	    color: #818181;
+	    font-weight: 500;
+    }
+
+    h5{ 
+        line-height: 1.8em;
+        // margin-top: 40px;
+        margin-bottom: 15px;
+        margin-right: 2rem;
+    }
 }
 
 .search-results article h5{
@@ -340,14 +353,11 @@ main {
 			display: block;
 		}
 		h5 a{
-			color: $color-dark-grey;
+			// color: $color-primary;
 
 			&:hover{
 				opacity: 0.8;
 			}
-		}
-		p{
-			font-size: 18px;
 		}
 		small{
 			font-size: 16px;

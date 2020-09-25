@@ -67,14 +67,7 @@ get_header();
 
                         <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
                         <?php if ($searchPost == 'post'): ?>
-                            <p class="margin-bottom-0">
-                                <?php
-                                    $sContent = strip_tags(get_the_content()); 
-                                    $sContent = substr( $sContent, 0, 80 );
-                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
-                                    echo $sContent;
-                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
-                            </p>
+
                              <?php if (get_the_category(get_the_ID())): ?>
                                 <small>
                                     <?php 
@@ -88,6 +81,16 @@ get_header();
                                 </small>
                                 
                             <?php endif ?>
+                            
+                            <p class="margin-bottom-0">
+                                <?php
+                                    $sContent = strip_tags(get_the_content()); 
+                                    $sContent = substr( $sContent, 0, 80 );
+                                    $sContent = substr( $sContent, 0, strrpos( $sContent, ' ' ) );
+                                    echo $sContent;
+                                ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a>
+                            </p>
+                            
                         <?php endif ?> 
                        
                         

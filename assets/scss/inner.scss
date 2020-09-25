@@ -536,6 +536,21 @@ $color-xbrown: #6f4f2a;
 }
 
 
+.single-attorney{
+
+    .bio-header{
+        p {
+             font-weight: bold;
+             width: 90%;
+
+             @include media(max-width, 1023px){
+                width: 100%;
+            }
+         }
+    }
+
+}
+
 .bio-header {
 	 background: $color-dgreen;
      color: $color-white;
@@ -557,7 +572,7 @@ $color-xbrown: #6f4f2a;
 
      p {
          font-weight: bold;
-         width: 70%;
+         width: 90%;
 
          @include media(max-width, 1023px){
             width: 100%;

@@ -98,7 +98,7 @@ get_header();
                                     <?php endif; ?>
 
                                     <?php  if( get_field('af_representative_trans_content') ): ?>
-                                    <li><a href="#representative-trans">Representative Transactions</a></li>
+                                    <li><a href="#representative-trans"><?= get_field('af_representative_trans_title') ? get_field('af_representative_trans_title') : 'Representative Transactions' ?></a></li>
                                     <?php endif; ?>
                                     
                                     <?php  if( get_field('fa_bar_admissions_content') ): ?>
@@ -224,7 +224,9 @@ get_header();
                         <hr>
                         <div id="representative-trans" class="bio-reptrans offtop" data-magellan-target="representative-trans"   data-offset="180">
                             <div class="text-center-medium">
-                                <h2 class="hbg">Representative Transactions</h2>
+                                <h2 class="hbg">
+                                    <?= get_field('af_representative_trans_title') ? get_field('af_representative_trans_title') : 'Representative Transactions' ?>
+                                </h2>
                             </div>
                             <?php the_field('af_representative_trans_content'); ?>
                         </div>

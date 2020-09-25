@@ -223,7 +223,7 @@ get_header();
     <?php   endwhile;  wp_reset_postdata(); ?> 
 
     <?php if (get_the_ID() == 277): ?>
-        <div class="sec-pa-rel" style="display: none">
+        <div class="sec-pa-rel">
             <div class="grid-container">
                 <div class="text-center">
                     <h2 class="hbg more_on">
@@ -232,15 +232,17 @@ get_header();
                 <br>
                 <div class="grid-x grid-margin-x rep-case-lists">
                     <?php 
+                        $ctrWowDelay = 2;
                         $query = new WP_Query( array(
                             'post_type' => 'case-representative',
                             'post_status' => 'publish',
                             'posts_per_page' => 2,
                         ));
                         while ($query->have_posts()) : $query->the_post();
+                            $ctrWowDelay = 2;
                     ?>
 
-                        <div class="medium-6 large-6 cell">
+                        <div class="medium-6 large-6 cell wow fadeInUp" data-wow-delay="0.<?= $ctrWowDelay;  ?>s">
                             <div class="box grid-x grid-padding-x margin-bottom-2">
                                 <div class="cell small-6">
                                     <div class="thumb">
@@ -284,7 +286,7 @@ get_header();
                             <p><?php the_field('crf_short_description') ?></p>
                         </div>
 
-                    <?php endwhile; wp_reset_postdata(); ?>
+                    <?php $ctrWowDelay++; endwhile; wp_reset_postdata(); ?>
                 </div>
 
                 <div class="text-center margin-top-2">

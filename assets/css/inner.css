@@ -93,16 +93,24 @@
       font-weight: 400;
       max-width: 93%; }
     .practice-areas .pa-item a {
-      position: relative;
+      position: initial;
       line-height: 35px; }
       .practice-areas .pa-item a:hover {
         color: #397670; }
       .practice-areas .pa-item a:before {
         content: ""; }
     .practice-areas .pa-item figure {
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      height: 0;
+      padding-bottom: 56.25%;
+      overflow: hidden; }
       .practice-areas .pa-item figure img {
-        width: 100%; }
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover; }
   .practice-areas .wp-block-image img {
     width: 100%; }
 

@@ -150,7 +150,7 @@ function catch_that_image() {
 
 
 
-function advanced_custom_search( $where, &$wp_query ) {
+function advanced_custom_search( $where, $wp_query ) {
 
     global $wpdb;
  

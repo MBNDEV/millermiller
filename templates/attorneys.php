@@ -58,7 +58,7 @@ get_header();
                     $ctrWowDelay = 0.2;
                 ?>
                 <?php while ( $loop -> have_posts() ) : $loop -> the_post(); ?>
-                    <div class="medium-6 large-4 xlarge-3 cell grid-item wow fadeInUp" data-wow-offset="5" data-wow-delay="<?= $ctrWowDelay ?>s">
+                    <div class="medium-6 large-4 xlarge-3 cell grid-item wow fadeInUp hidden_onload" data-wow-offset="5" data-wow-delay="<?= $ctrWowDelay ?>s">
                         <div class="attorney-item">
                             <figure>
                             <a class="post-link" rel="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">

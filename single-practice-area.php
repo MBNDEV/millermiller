@@ -226,8 +226,17 @@ get_header();
         <div class="sec-pa-rel">
             <div class="grid-container">
                 <div class="text-center">
-                    <h2 class="hbg more_on">
-                        <span class="lblue">MORE ON <?php echo $terms[0]->name; ?></span></h2>
+                    <?php 
+                        $more_on_title = "";
+                        if(!empty(get_field('more_on_title'))){
+                            $more_on_title = get_field('more_on_title');
+                        }else{
+
+                            $more_on_title = $terms[0]->name;
+                        }
+
+                    ?>
+                    <h2 class="hbg more_on"><span class="lblue">MORE ON <?php echo $more_on_title;?></span></h2>
                 </div>
                 <br>
                 <div class="grid-x grid-margin-x rep-case-lists">

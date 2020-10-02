@@ -224,14 +224,23 @@ main {
     padding: 100px 0;
 }
 
+
+
+
 .blog-lists article {
     margin-bottom: 70px;
+
+    
 
     .wp-block-image{
 		padding-bottom: 56.25%;
 	    position: relative;
 	    height: 0;
 	    overflow: hidden;
+    }
+
+    .readmore-link{
+        color:#3c9088;
     }
 
     p{
@@ -241,10 +250,34 @@ main {
     }
 
     h5{ 
-        line-height: 1.8em;
+        line-height: 1.5em;
         // margin-top: 40px;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         margin-right: 2rem;
+        a{
+            color:#3c9088;
+        }
+    }
+}
+
+.post_entries_cat{
+    margin-bottom:10px;
+    line-height:1;
+    a{
+        color:#3c9088;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+    small{
+        font-size:14px;
+        a{
+            color:#3c9088;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -360,7 +393,7 @@ main {
 			}
 		}
 		small{
-			font-size: 16px;
+			font-size: 14px;
 		}
 	}
 }
@@ -1222,6 +1255,10 @@ main {
 	}
 }
 
+
+.hidden_onload{
+    visibility: hidden;
+}
 
 .rep-case-lists{
     font-family: 'Manrope', sans-serif;

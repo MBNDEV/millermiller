@@ -100,7 +100,9 @@ get_header();
                                 </a>
                             </div>
 
-                            <small>
+                            <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <div class="post_entries_cat">
+                                <small>
                                 <?php 
                                     $controlPostCategory = get_the_category(get_the_ID());
                                     $postCategoryLength = count($controlPostCategory);
@@ -110,8 +112,7 @@ get_header();
                                     <a href="<?php echo get_term_link( $pc->term_id ); ?>"><?= $pc->name ?></a><?= $postCtr != $postCategoryLength ? ',' :''; ?>
                                 <?php $postCtr++; endforeach; ?>
                             </small>
-                            
-                            <h5><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            </div>
                             <p class="margin-bottom-0">
                                 <?php
                                     $sContent = strip_tags(get_the_content()); 

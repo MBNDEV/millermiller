@@ -118,7 +118,8 @@ get_header();
                                 </a>
 	            			</div>
 	            			<div class="case-content">
-	            				<div class="category-lists">
+                                <h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	            				<div class="post_entries_cat category-lists">
 	            					<?php 
 	            						$controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
 	            					 	
@@ -136,7 +137,6 @@ get_header();
 	            					
 	            				</div>
 	            				
-	            				<h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	            				<p><b><?= get_field('cs_case_issue_title') ? get_field('cs_case_issue_title') : 'Issue' ?>:</b> 
                                     <?php
                                         $sContent = strip_tags(get_field('cs_issue')); 

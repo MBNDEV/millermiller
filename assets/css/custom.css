@@ -951,14 +951,32 @@ main .contact-form p {
     position: relative;
     height: 0;
     overflow: hidden; }
+  .blog-lists article .readmore-link {
+    color: #3c9088; }
   .blog-lists article p {
     font-size: 15px;
     color: #818181;
     font-weight: 500; }
   .blog-lists article h5 {
-    line-height: 1.8em;
-    margin-bottom: 15px;
+    line-height: 1.5em;
+    margin-bottom: 5px;
     margin-right: 2rem; }
+    .blog-lists article h5 a {
+      color: #3c9088; }
+
+.post_entries_cat {
+  margin-bottom: 10px;
+  line-height: 1; }
+  .post_entries_cat a {
+    color: #3c9088; }
+    .post_entries_cat a:hover {
+      text-decoration: underline; }
+  .post_entries_cat small {
+    font-size: 14px; }
+    .post_entries_cat small a {
+      color: #3c9088; }
+      .post_entries_cat small a:hover {
+        text-decoration: underline; }
 
 .search-results article h5 {
   line-height: 1.8em; }
@@ -1031,7 +1049,7 @@ main .contact-form p {
   opacity: 0.8; }
 
 .blog-lists article small {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .blog-lists article img {
   width: 100%; }
@@ -1548,6 +1566,9 @@ main .contact-form p {
 @media (max-width: 767px) {
   .attorneys-list .grid-item {
     text-align: center; } }
+
+.hidden_onload {
+  visibility: hidden; }
 
 .rep-case-lists {
   font-family: 'Manrope', sans-serif; }

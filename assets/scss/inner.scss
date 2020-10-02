@@ -1331,15 +1331,13 @@ $color-xbrown: #6f4f2a;
 
     &:before {
         content: "";
-        // background-image: linear-gradient(to bottom, #214b47, rgba(25, 52, 49, 0) 158%);
+        background-color: rgba(45,45,45,0.35);
         position: absolute;
         left: 0;
         right: 0;
         top:0;
         bottom: 0;
         z-index: -1;
-
-        background-color: rgba(45,45,45,0.5);
     }
 
     p {

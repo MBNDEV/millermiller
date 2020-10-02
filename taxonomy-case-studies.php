@@ -99,7 +99,10 @@ get_header();
                                 </a>
                             </div>
                             <div class="case-content">
-                                <div class="category-lists">
+                                
+                                
+                                <h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                <div class="post_entries_cat category-lists">
                                     <?php 
                                         $controlPostCategory = get_the_terms(get_the_ID(), 'case-studies');
                                         
@@ -113,11 +116,7 @@ get_header();
                                             <a href="<?= get_term_link($pc->term_id); ?>"><small><?= $pc->name ?><?= $postCtr != $postCategoryLength ? ',' :''; ?></small></a>
                                         <?php $postCtr++; endforeach; ?>
                                     <?php endif ?>
-                                   
-                                    
                                 </div>
-                                
-                                <h2><a href="<?= get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                 <p><b>Issue:</b> <?= strip_tags(get_field('cs_issue')) ?>...<a href="<?= get_the_permalink(); ?>" class="readmore-link">read more →</a></p>
                                 
                             </div>
